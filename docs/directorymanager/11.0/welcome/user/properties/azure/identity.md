@@ -1,6 +1,6 @@
 ---
 title: "Entra ID User Identity Tab"
-description: "View or update the name, user type, email, usage location, and photo of a Microsoft Entra ID user or mailbox in Directory Manager."
+description: "View or update the name, user type, email, usage location, and photo of a Microsoft Entra ID user or mailbox in GroupID."
 keywords:
   - Entra ID user identity
   - member and guest user types
@@ -17,7 +17,7 @@ ID-based identity store.
 
 **Display name**
 
-The name of the user as it is displayed in the Directory Manager portal.
+The name of the user as it is displayed in the GroupID portal.
 
 **Username**
 
@@ -83,4 +83,4 @@ also provides many image editing options, including rotate, crop, flip, and resi
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

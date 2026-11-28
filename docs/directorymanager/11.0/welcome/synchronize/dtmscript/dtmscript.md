@@ -1,5 +1,5 @@
 ---
-title: "Write Synchronize Scripts for Directory Manager"
+title: "Write Synchronize Scripts for GroupID"
 description: "Learn how Synchronize transform and container scripts work, the DTM keywords, the Context, and the restrictions and options that apply to scripts."
 keywords:
   - synchronize script
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 70
 ---
 
-# Write Synchronize Scripts for Directory Manager
+# Write Synchronize Scripts for GroupID
 
 Synchronize scripts are written in Visual Basic .NET. A script runs after Synchronize establishes a
 current source row ("object"). The script determines a single value (the "result" value) and assigns
@@ -25,15 +25,15 @@ The type of script determines the nature of the script result:
 ## Examples and Language Overview
 
 - For examples of transform scripts, see the
-  [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+  [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
   topic.
 - For examples of container scripts, see the
   [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)
   topic.
 - For general information, see
-  [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+  [Visual Basic .NET Scripting for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
   topic.
-- For general information, see the Python for Directory Manager topic.
+- For general information, see the Python for GroupID topic.
 
 ## DTM keywords
 
@@ -176,6 +176,6 @@ file as follows:
 
 **See Also**
 
-- [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
-- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Visual Basic .NET Scripting for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+- [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
 - [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)

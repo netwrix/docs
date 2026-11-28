@@ -1,15 +1,15 @@
 ---
-title: "Remove-Contact Cmdlet in Directory Manager"
-description: "Delete a contact from the directory by using the Remove-Contact cmdlet in the Directory Manager Management Shell."
+title: "Remove-Contact Cmdlet in GroupID"
+description: "Delete a contact from the directory by using the Remove-Contact cmdlet in the GroupID Management Shell."
 keywords:
   - Remove-Contact
   - delete contact
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - contact cmdlet
 sidebar_position: 30
 ---
 
-# Remove-Contact Cmdlet in Directory Manager
+# Remove-Contact Cmdlet in GroupID
 
 Use the **Remove-Contact** cmdlet to delete a contact from the directory.
 
@@ -38,6 +38,6 @@ Remove-Contact -Identity "SampleContact"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

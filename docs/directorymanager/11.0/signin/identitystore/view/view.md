@@ -1,5 +1,5 @@
 ---
-title: "View Identity Store History in Directory Manager"
+title: "View Identity Store History in GroupID"
 description: "View, filter, annotate, and export the history of configuration, workflow, and security role changes made to an identity store in Admin Center."
 keywords:
   - identity store history
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# View Identity Store History in Directory Manager
+# View Identity Store History in GroupID
 
-In Admin Center, you can view the history data that the Directory Manager history-tracking function collects
+In Admin Center, you can view the history data that the GroupID history-tracking function collects
 for changes made to the configurations, workflows, and security roles in an identity store.
 
 This data represents the events that history tracking is configured to track. For example, history
@@ -44,7 +44,7 @@ viewed in Admin Center.
 
 ## Filter History Data
 
-Directory Manager provides filters to limit the history results displayed on the **Identity Store History**
+GroupID provides filters to limit the history results displayed on the **Identity Store History**
 page. You can define a criterion to filter history data by action, machine name, new value, old
 value, and more.
 
@@ -113,7 +113,7 @@ items count along with the range of items you're viewing.
 
 ## Annotate History Items
 
-Directory Manager lets users add notes to the history actions they performed. A note might explain
+GroupID lets users add notes to the history actions they performed. A note might explain
 the reason for an action, such as why they changed the security type for a group. Only the user who
 added a note can update it. Other users can view it, but they can't edit it or add comments.
 
@@ -149,6 +149,6 @@ You can export identity store history to Microsoft Excel, CSV, and XML formats.
 
 **See Also**
 
-- [Configure History Tracking in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md)
-- [History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history.md)
-- [Directory Manager Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+- [Configure History Tracking in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md)
+- [History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md)
+- [GroupID Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)

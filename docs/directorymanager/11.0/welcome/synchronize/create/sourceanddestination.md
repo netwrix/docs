@@ -7,7 +7,7 @@ keywords:
   - data source provider
   - Microsoft Excel destination
   - Oracle time stamp
-  - Directory Manager
+  - GroupID
 sidebar_position: 10
 ---
 
@@ -102,7 +102,7 @@ To configure the settings for the providers:
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)

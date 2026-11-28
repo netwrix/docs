@@ -1,8 +1,8 @@
 ---
-title: "Get Started with Directory Manager"
-description: "Learn about the Directory Manager clients, the initial Admin Center configuration, supported browsers and devices, and supported languages."
+title: "Get Started with GroupID"
+description: "Learn about the GroupID clients, the initial Admin Center configuration, supported browsers and devices, and supported languages."
 keywords:
-  - Directory Manager clients
+  - GroupID clients
   - Admin Center configuration
   - identity store setup
   - supported browsers
@@ -10,58 +10,58 @@ keywords:
 sidebar_position: 3
 ---
 
-# Get Started with Directory Manager
+# Get Started with GroupID
 
-Before you start with Directory Manager, learn about the following:
+Before you start with GroupID, learn about the following:
 
-- Directory Manager clients
+- GroupID clients
 - Initial Admin Center configurations after installation
 - Compatible devices and browsers
 - Supported languages
 
 ## Clients
 
-The Directory Manager application has the following main modules, or clients:
+The GroupID application has the following main modules, or clients:
 
 - **Admin Center** - The administrative console that enables administrators to configure settings
-  and controls that Directory Manager needs to function.
-- **Directory Manager portal** - The user-facing portal that enables administrators and users to
+  and controls that GroupID needs to function.
+- **GroupID portal** - The user-facing portal that enables administrators and users to
   create and manage directory objects, sync data between providers, manage entitlements for file
   servers and SharePoint sites, and generate reports to analyze your directory.
-- **Directory Manager mobile app** - The app provides limited functions, like searching the
-  directory and joining or leaving groups. You can also perform these operations in the Directory
-  Manager portal, but the app is more convenient.
+- **GroupID mobile app** - The app provides limited functions, like searching the
+  directory and joining or leaving groups. You can also perform these operations in the GroupID
+  portal, but the app is more convenient.
 - **Management Shell** - This command-line interface is for users who are comfortable with
-  scripts. Use Management Shell cmdlets instead of the Directory Manager portal to perform several
+  scripts. Use Management Shell cmdlets instead of the GroupID portal to perform several
   group and user management functions.
-- **APIs** - Integrate other applications with Directory Manager to perform several user management
+- **APIs** - Integrate other applications with GroupID to perform several user management
   and group management functions.
 
 ## Initial Admin Center Configurations
 
-After you install and configure Directory Manager, the Super Admin is the only user who can sign in
-to Admin Center. (See the [Sign In to Directory Manager Admin Center](/docs/directorymanager/11.0/signin/signin.md)
+After you install and configure GroupID, the Super Admin is the only user who can sign in
+to Admin Center. (See the [Sign In to GroupID Admin Center](/docs/directorymanager/11.0/signin/signin.md)
 topic.) This user must create an identity store and configure security roles, so that other users
 can sign in and use the application. The Super Admin can choose to configure further settings or let
 another admin user in an identity store do so.
 
 Configure the following settings in Admin Center so that administrators and users can
-perform identity and access management tasks using Directory Manager:
+perform identity and access management tasks using GroupID:
 
 - **Create and configure identity stores** - You build an identity store on an identity provider. With an
   identity store, you can manage objects and object permissions in the provider. See the
-  [Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/overview.md)
+  [Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/overview.md)
   topic for additional information.
 - **Create data sources** - You build a data source on a provider, such as directories, databases, and
   files. Synchronize jobs, query-based searches, and group membership queries use data sources as
   source and destination. See the
-  [ Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/overview.md) topic.
-- **Create a Directory Manager portal** - Create a web-based Directory Manager portal and link it to
+  [ Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/overview.md) topic.
+- **Create a GroupID portal** - Create a web-based GroupID portal and link it to
   an identity store, so that users can carry out user, group, and entitlement management tasks. See
-  the [Directory Manager Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md) topic.
-- **Create an SMS gateway account** - Using an SMS gateway account, Directory Manager sends text
+  the [GroupID Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md) topic.
+- **Create an SMS gateway account** - Using an SMS gateway account, GroupID sends text
   messages to users’ mobile numbers, which may include verification codes and password reset links.
-  See the [SMS Gateway Support in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/overview.md) topic.
+  See the [SMS Gateway Support in GroupID](/docs/directorymanager/11.0/signin/smsgateway/overview.md) topic.
 
 See the
 [Menu Pane](/docs/directorymanager/11.0/signin/concepts/navigation.md#menu-pane) topic
@@ -69,11 +69,11 @@ for additional information.
 
 ## Compatibility
 
-This section lists the browsers, devices, and languages that Directory Manager supports.
+This section lists the browsers, devices, and languages that GroupID supports.
 
-- **Supported devices** - Admin Center and the Directory Manager portal can run on all modern
+- **Supported devices** - Admin Center and the GroupID portal can run on all modern
   desktop, laptop, and tablet devices.
-- **Supported browsers** - Admin Center and the Directory Manager portal support the latest
+- **Supported browsers** - Admin Center and the GroupID portal support the latest
   versions of the following browsers:
 
     - Microsoft Edge
@@ -83,8 +83,8 @@ This section lists the browsers, devices, and languages that Directory Manager s
 
 ## Localization
 
-Directory Manager detects the language settings of the web browser accessing Admin Center or the
-Directory Manager portal, and attempts to serve the application’s content in that language.
+GroupID detects the language settings of the web browser accessing Admin Center or the
+GroupID portal, and attempts to serve the application’s content in that language.
 Supported languages are:
 
 - Danish
@@ -100,13 +100,13 @@ Supported languages are:
 - Swedish
 - Turkish
 
-If Directory Manager doesn't support the browser’s language or can't detect it, it serves the
+If GroupID doesn't support the browser’s language or can't detect it, it serves the
 content in English.
 
 See Also
 
-- [ Directory Manager Installation Overview](/docs/directorymanager/11.0/about/about.md)
-- [Sign In to Directory Manager Admin Center](/docs/directorymanager/11.0/signin/signin.md)
-- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [ GroupID Installation Overview](/docs/directorymanager/11.0/about/about.md)
+- [Sign In to GroupID Admin Center](/docs/directorymanager/11.0/signin/signin.md)
+- [Sign In to the GroupID Portal](/docs/directorymanager/11.0/welcome/login.md)
 - [GroupID Management Shell](/docs/directorymanager/11.0/managementshell/overview.md)
-- [Directory Manager APIs](/docs/directorymanager/11.0/apis/welcome.md)
+- [GroupID APIs](/docs/directorymanager/11.0/apis/welcome.md)

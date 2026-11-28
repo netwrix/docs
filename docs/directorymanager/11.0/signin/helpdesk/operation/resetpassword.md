@@ -1,5 +1,5 @@
 ---
-title: "Reset User Passwords as Helpdesk in Directory Manager"
+title: "Reset User Passwords as Helpdesk in GroupID"
 description: "Reset passwords for enrolled and unenrolled users in restricted or unrestricted mode, and send the new password or a secure link."
 keywords:
   - reset password
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Reset User Passwords as Helpdesk in Directory Manager
+# Reset User Passwords as Helpdesk in GroupID
 
 Admin Center provides a variety of options to helpdesk users for resetting passwords and then
 communicating them to users.
@@ -29,7 +29,7 @@ topic.
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. Locate your required user. To
    search for a user, see
-   the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   the [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Click the ellipsis button for the user and select **Reset Password**. For enrolled users, the
    **Reset Password** dialog box has two pages: **Authenticate** and **Reset**. Under the
@@ -37,7 +37,7 @@ topic.
    only the **Reset** page is available.  
    Use the **History** button to view user history, which lists the actions performed on the user and by
    the user. This history is specific to helpdesk functions, as listed in the
-   [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+   [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md)
    topic.
 4. The **Reset** page displays the user name, the identity store where this user resides, the last
    time the user changed their password, and the lock status of the account. In case the user
@@ -78,7 +78,7 @@ could be restricted to:
   before resetting their passwords. The Security Questions authentication type may be mandatory.
 
 See the
-[Helpdesk Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
+[Helpdesk Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
 topic.
 
 **To reset a password in restricted mode:**
@@ -86,13 +86,13 @@ topic.
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. Locate your required user. To
    search for a user, see
-   the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   the [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Click the ellipsis button for the user and select **Reset Password**. The **Reset Password**
    dialog box has two pages: **Authenticate** and **Reset**.  
    Use the **History** button to view user history, which lists the actions performed on the user and by
    the user. This history is specific to helpdesk functions, as listed in the
-   [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+   [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md)
    topic.
 4. The **Authenticate** page displays the authentication types the user's account is enrolled
    with. You could be restricted to authenticate the user according to the authentication policy
@@ -135,5 +135,5 @@ topic.
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

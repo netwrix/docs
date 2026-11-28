@@ -1,5 +1,5 @@
 ---
-title: "Invoke-Schedule Cmdlet in Directory Manager"
+title: "Invoke-Schedule Cmdlet in GroupID"
 description: "Use the Invoke-Schedule cmdlet to run a scheduled job immediately, by schedule name or job ID, without waiting for its trigger."
 keywords:
   - Invoke-Schedule
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Invoke-Schedule Cmdlet in Directory Manager
+# Invoke-Schedule Cmdlet in GroupID
 
 The **Invoke-Schedule** cmdlet executes the specified schedule job.
 
@@ -60,6 +60,6 @@ Get-Schedule -JobType GUS -TriggerType RunDaily -MatchingCriteria And | Select-O
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

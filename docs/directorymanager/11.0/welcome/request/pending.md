@@ -1,6 +1,6 @@
 ---
-title: "Manage Your Request Inbox in Directory Manager"
-description: "Use the Request Inbox in the Directory Manager portal to view the workflow requests waiting for your approval and approve or deny them."
+title: "Manage Your Request Inbox in GroupID"
+description: "Use the Request Inbox in the GroupID portal to view the workflow requests waiting for your approval and approve or deny them."
 keywords:
   - Request Inbox
   - workflow approver
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Manage Your Request Inbox in Directory Manager
+# Manage Your Request Inbox in GroupID
 
-Using the Directory Manager portal, designated approvers can view workflow requests and approve or
+Using the GroupID portal, designated approvers can view workflow requests and approve or
 deny them. On the left navigation bar, click **Requests**. Then click **Request Inbox** to view the
 workflow requests that are waiting for approval. You can also view the request count next to the
 **Request Inbox** label.
@@ -31,6 +31,6 @@ You can perform the following functions on the **Request Inbox** page:
 
 **See Also**
 
-- [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
-- [Approve, Deny, and Filter Requests in Directory Manager](/docs/directorymanager/11.0/welcome/request/allrequest.md)
-- [View Your Workflow Requests in Directory Manager](/docs/directorymanager/11.0/welcome/request/myrequest.md)
+- [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
+- [Approve, Deny, and Filter Requests in GroupID](/docs/directorymanager/11.0/welcome/request/allrequest.md)
+- [View Your Workflow Requests in GroupID](/docs/directorymanager/11.0/welcome/request/myrequest.md)

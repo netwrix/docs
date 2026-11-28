@@ -1,6 +1,6 @@
 ---
 title: "Create a Synchronize Job Collection API"
-description: "Create a Synchronize job collection, a group of jobs that run in a set order, with a POST request to the Directory Manager data service."
+description: "Create a Synchronize job collection, a group of jobs that run in a set order, with a POST request to the GroupID data service."
 keywords:
   - create job collection API
   - DataSyncJobs Collections POST
@@ -16,7 +16,7 @@ Use this API to create a new job collection, which is a group of individual jobs
 particular order.
 
 See the
-[Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+[Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
 topic for additional information on job collections.
 
 ## Endpoint
@@ -460,5 +460,5 @@ https://demomachine:4443/GroupIDDataService/api/DataSyncJobs/Collections
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

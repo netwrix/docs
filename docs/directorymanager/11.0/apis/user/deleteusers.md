@@ -1,8 +1,8 @@
 ---
-title: "Delete Multiple Users with the Directory Manager API"
+title: "Delete Multiple Users with the GroupID API"
 description: "Delete several users from an identity store in one DELETE request by passing a list of user identities."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - delete multiple users
   - bulk delete users
   - identity store
@@ -10,7 +10,7 @@ sidebar_position: 30
 unlisted: true
 ---
 
-# Delete Multiple Users with the Directory Manager API
+# Delete Multiple Users with the GroupID API
 
 This API deletes multiple users from the identity store given in the endpoint URL.
 
@@ -78,5 +78,5 @@ DELETE
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

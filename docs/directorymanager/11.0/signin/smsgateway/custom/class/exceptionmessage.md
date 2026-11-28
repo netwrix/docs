@@ -5,7 +5,7 @@ keywords:
   - SendSmsMessageResult.ExceptionMessage
   - SMS gateway exception
   - custom SMS gateway
-  - Imanami.directorymanager.DataTransferObjects
+  - Imanami.GroupID.DataTransferObjects
 sidebar_position: 10
 ---
 
@@ -13,9 +13,9 @@ sidebar_position: 10
 
 Gets the exception message if one occurs while sending an SMS message.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

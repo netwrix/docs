@@ -20,7 +20,7 @@ also rename, change the order, and remove jobs from the job collection.
     - To add an existing job to the collection, select **Add Existing Job(s)**. Select
       the checkbox next to the name of each job to be added and click **Add in Collection**.
     - To add a new job to the collection, select **Add New Job**. Follow the steps from
-      [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md).
+      [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md).
 
 2. Rename the jobs in the job collection by clicking the **three vertical dots** button and then clicking
    **Rename**.
@@ -38,4 +38,4 @@ also rename, change the order, and remove jobs from the job collection.
 
 **See Also**
 
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)

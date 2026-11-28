@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager group properties: General tab"
+title: "GroupID group properties: General tab"
 description: "View or change a group's display name, alias, expiration policy, scope, type, and manager permissions on the General tab."
 keywords:
-  - "Directory Manager group properties"
+  - "GroupID group properties"
   - "group expiration policy"
   - "group scope"
   - "group type"
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager group properties: General tab
+# GroupID group properties: General tab
 
 This tab lets you view or modify the general information about the group.
 
@@ -26,10 +26,10 @@ The alias for the group.
 
 Select this checkbox to enable the group managers (primary owner and Exchange additional owners) to
 update this group's membership directly on the directory server. Additional owners aren't included
-because they are Directory Manager-specific and the directory doesn't recognize them.
+because they are GroupID-specific and the directory doesn't recognize them.
 
 This is a provider-end permission and doesn't impact role-based permissions assigned at the
-identity store level in Directory Manager. Nor do role-based permissions assigned at the identity
+identity store level in GroupID. Nor do role-based permissions assigned at the identity
 store level have any impact on this feature.
 
 Enabling this setting automatically grants the required permissions to the manager. For Active Directory, for
@@ -115,4 +115,4 @@ The email address of the group (applies to mail-enabled groups only, such as an 
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

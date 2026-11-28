@@ -6,7 +6,7 @@ keywords:
   - create unmanaged group
   - group scope
   - SecurityType
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 50
 ---
 
@@ -15,7 +15,7 @@ sidebar_position: 50
 Use the New-Group cmdlet to create a new unmanaged group in a particular container in the
 directory.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
+You can view events related to this cmdlet in the GroupID portal, under the History node
 in the left pane.
 
 ## Syntax
@@ -75,6 +75,6 @@ New-Group -Name "Enrollment" -OrganizationalUnit "OU=Local Recruiting,OU=Recruit
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

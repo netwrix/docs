@@ -1,33 +1,33 @@
 ---
-title: "View and Manage My Groups in Directory Manager"
-description: "View the groups you own in the Directory Manager portal and update, expire, move, or delete them, and filter the list."
+title: "View and Manage My Groups in GroupID"
+description: "View the groups you own in the GroupID portal and update, expire, move, or delete them, and filter the list."
 keywords:
   - My Groups
   - group ownership
   - Smart Group update
   - group filters
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 50
 ---
 
-# View and Manage My Groups in Directory Manager
+# View and Manage My Groups in GroupID
 
 To view and manage the groups that you own in the identity store, click **Groups** on the left
 navigation pane and select **My Groups**. This page lists all your active groups:
 
-- [View Your Group Memberships in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mymemberships.md)
-- [View My Expired Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
-- [View My Expiring Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
-- [View My Deleted Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)
-- [View Your Smart Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mysmartgroups.md)
-- [View My Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mydynasties.md)
-- [View Your Microsoft Teams in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myteams.md) (for Microsoft Entra ID
+- [View Your Group Memberships in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mymemberships.md)
+- [View My Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
+- [View My Expiring Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
+- [View My Deleted Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)
+- [View Your Smart Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mysmartgroups.md)
+- [View My Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydynasties.md)
+- [View Your Microsoft Teams in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myteams.md) (for Microsoft Entra ID
   based identity store)
 
 By default, the **My Groups** tab displays the groups that you are the primary owner of. To include
 the groups for which you are an additional owner, select the **Display additional group ownership in
 My Groups** checkbox on the
-[Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel. This tab
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel. This tab
 lists active groups only; expired and deleted groups aren't displayed.
 
 You can
@@ -42,7 +42,7 @@ clicking **My Groups Grid Filters**. All your groups matching the filters appear
   update details on **Processing Object (s)** wizard. Click **OK** once done. If you click
   **Background**, the update runs in the background and appears in the **Background Tasks** tab.
 - View and modify the
-  [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
+  [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
   group.
 - Manually expire your groups. After you expire a group, it appears in the **My Expired Groups**
   list.
@@ -98,7 +98,7 @@ Use the page numbers under the group listing to page through all groups.
 
 You can control the number of records displayed per page by modifying the **Search results per
 page** setting on the
-[Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
 
 ## Modify Search Directory
 
@@ -108,7 +108,7 @@ a domain to search active groups from.
 ## Transfer Ownership
 
 You can find
-[Transfer Group Ownership in Directory Manager](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
+[Transfer Group Ownership in GroupID](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
 on the top right corner. Use Transfer Ownership to:
 
 - Assign owners to orphan groups.
@@ -137,8 +137,8 @@ You can add filters in **My Group Grid Filters** while searching for specific gr
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

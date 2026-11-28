@@ -17,7 +17,7 @@ You can manage the following replication settings for an identity store:
 - Specify the object attributes that you want to use in the identity store. The Replication service
   then replicates the selected attributes to Elasticsearch.  
   Attributes that you don't select for replication aren't available in the identity store and
-  can't be used in Directory Manager functions.
+  can't be used in GroupID functions.
 - Force run the service at any given time to replicate object attributes.
 - Restore object data to Elasticsearch for an identity store.
 
@@ -57,9 +57,9 @@ modify the list as required.
 
     :::note
     If extension attributes are added in a Microsoft Entra ID-based identity store, the
-    Directory Manager Schema Replication schedule fetches the latest schema at its next run and adds
+    GroupID Schema Replication schedule fetches the latest schema at its next run and adds
     the newly added extension attributes to the **Select Replication Attributes** list. See the
-    [Update the Directory Manager Schema Replication Schedule](/docs/directorymanager/11.0/signin/schedule/schemareplication.md)
+    [Update the GroupID Schema Replication Schedule](/docs/directorymanager/11.0/signin/schedule/schemareplication.md)
     topic for additional information.  
      Select the required extension attributes from the **Select Replication Attributes** list and
     add them to the list of attributes to replicate. See the
@@ -88,7 +88,7 @@ replicate its value in the Elasticsearch repository:
    identity store.  
    To run replication again for every object of the type that the added attribute belongs to (the
    user object in the example), empty the replication timestamp for the specific object type in the
-   Directory Manager database.
+   GroupID database.
 
 :::note
 When you use the Upgrade wizard to upgrade a Smart Group that someone created with a custom attribute
@@ -164,7 +164,7 @@ restores the following for an identity store:
 
 - the current attribute values of objects (group, user, contact, computer, and OU) from the provider
   (for example, Active Directory)
-- the Directory Manager pseudo attributes of those objects from the Directory Manager database to Elasticsearch
+- the GroupID pseudo attributes of those objects from the GroupID database to Elasticsearch
 
 **To restore object data:**
 
@@ -177,5 +177,5 @@ restores the following for an identity store:
 
 **See Also**
 
-- [Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.0/signin/replication/overview.md)
-- [Manage Global Replication Settings in Directory Manager](/docs/directorymanager/11.0/signin/replication/settings.md)
+- [Elasticsearch and Replication Service in GroupID](/docs/directorymanager/11.0/signin/replication/overview.md)
+- [Manage Global Replication Settings in GroupID](/docs/directorymanager/11.0/signin/replication/settings.md)

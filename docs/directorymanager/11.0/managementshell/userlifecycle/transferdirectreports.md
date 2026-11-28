@@ -1,11 +1,11 @@
 ---
 title: "Transfer-DirectReports Cmdlet"
-description: "Transfer direct reports to a new manager in the connected identity store with the Transfer-DirectReports cmdlet in Directory Manager."
+description: "Transfer direct reports to a new manager in the connected identity store with the Transfer-DirectReports cmdlet in GroupID."
 keywords:
   - Transfer-DirectReports
   - direct reports
   - user lifecycle
-  - Directory Manager Management Shell
+  - GroupID Management Shell
 sidebar_position: 50
 ---
 
@@ -45,6 +45,6 @@ Transfer-DirectReports -DirectReports "F Jafar","azram" -Manager "Robin"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for GroupID ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,5 +1,5 @@
 ---
-title: "Customize the Create Object Wizards in a Directory Manager Portal"
+title: "Customize the Create Object Wizards in a GroupID Portal"
 description: "Add, rearrange, and remove wizard pages and fields that portal users see when they create users, groups, contacts, and mailboxes."
 keywords:
   - Create Object wizard
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 100
 ---
 
-# Customize the Create Object Wizards in a Directory Manager Portal
+# Customize the Create Object Wizards in a GroupID Portal
 
 Using a portal, users can create the following directory objects:
 
@@ -31,7 +31,7 @@ as needed.
 In the portal, the _Create Group_ wizard starts with the _Group Type_ page, where users can
 select the type of group they want to create. Options on this page vary, depending on the
 permissions assigned to the user in the identity store. (See the
-[Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.)
 :::
 
@@ -149,7 +149,7 @@ You can update the following for a page:
     the wizard.
     The list contains basic display types and custom display types defined on the **Custom Display
     Types** page. See the
-    [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+    [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
     topic.
 11. In the **Visibility Level** dropdown list, select a security role. The field is visible
     to users of the selected role and roles with a priority value higher than the selected role. See
@@ -172,7 +172,7 @@ You can update the following for a page:
     - DNs
     - Custom display types created with the Grid type
 
-    When you select any of these display types, Directory Manager identifies that the value for the field has
+    When you select any of these display types, GroupID identifies that the value for the field has
     to be searched using the _Find_ dialog box. The **Search Object Types** area is displayed, where
     you can select the required object types. For example, if you select _Group_, only groups can
     be searched and selected as value for the field.
@@ -190,7 +190,7 @@ You can update the following for a page:
     field.
     A value entered for the field is checked against the words listed on the **Bad Words List**
     page. Matched values can't be saved. See the
-    [Manage the Bad Words List in a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
+    [Manage the Bad Words List in a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
     topic.
 20. Click **OK**. The field is displayed in the **Fields** area on the **Edit Category** pane. You
     can rearrange the fields, update field properties, and even remove a field from the wizard page.
@@ -274,4 +274,4 @@ The following field properties vary from field to field. You can:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

@@ -1,6 +1,6 @@
 ---
-title: "New-IdentityStore Cmdlet in Directory Manager"
-description: "Create an Active Directory, Microsoft Entra ID, or Google Workspace identity store in Directory Manager with the New-IdentityStore cmdlet."
+title: "New-IdentityStore Cmdlet in GroupID"
+description: "Create an Active Directory, Microsoft Entra ID, or Google Workspace identity store in GroupID with the New-IdentityStore cmdlet."
 keywords:
   - New-IdentityStore
   - create identity store
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 130
 ---
 
-# New-IdentityStore Cmdlet in Directory Manager
+# New-IdentityStore Cmdlet in GroupID
 
 The **New-IdentityStore** cmdlet creates a new identity store. This cmdlet requires valid
 credentials and connectivity before it creates the store. However, you can override this behavior
@@ -27,7 +27,7 @@ parameters that become available depending on the value of _IdentityStoreType_ a
 
     Domain: The domain of the Microsoft Entra ID or Office 365 store.
 
-    AppId: The name of the Directory Manager application registered in the Microsoft Entra ID admin
+    AppId: The name of the GroupID application registered in the Microsoft Entra ID admin
     panel.
 
 - IdentityStoreType: GoogleWorkspace
@@ -132,6 +132,6 @@ New-IdentityStore -IdentityStoreType ActiveDirectory -IdentityStoreName DemoAdSt
 
 **See Also**
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

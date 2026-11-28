@@ -1,5 +1,5 @@
 ---
-title: "Configure a Messaging Provider in Directory Manager"
+title: "Configure a Messaging Provider in GroupID"
 description: "Set Microsoft Exchange, Office 365, Google Workspace, or another provider to create email addresses for mail-enabled objects, or skip messaging."
 keywords:
   - messaging provider
@@ -11,13 +11,13 @@ keywords:
 sidebar_position: 100
 ---
 
-# Configure a Messaging Provider in Directory Manager
+# Configure a Messaging Provider in GroupID
 
-Directory Manager can create email addresses for mail-enabled objects (groups, users, and contacts)
+GroupID can create email addresses for mail-enabled objects (groups, users, and contacts)
 with any mailing system, such as an Exchange Server (2013/2016/2019) deployed in your environment
 or an external email provider such as Exchange Online and Office 365.
 
-Directory Manager supports the following messaging providers:
+GroupID supports the following messaging providers:
 
 - Microsoft Exchange 2013/2016/2019
 - Office 365
@@ -29,8 +29,8 @@ of mail-enabled objects in the identity store, select the _None_ option.
 
 ## Exchange Server Priority
 
-In environments that run multiple versions of Microsoft Exchange, you can use Directory Manager to
-set Exchange Server priority. Directory Manager repeats all messaging provider-related actions on
+In environments that run multiple versions of Microsoft Exchange, you can use GroupID to
+set Exchange Server priority. GroupID repeats all messaging provider-related actions on
 Exchange servers according to priority.
 
 Assume you have an environment with:
@@ -39,8 +39,8 @@ Assume you have an environment with:
 - Exchange 2013 with two servers: ExchA and ExchB, where you set Exchange server priority as ExchB
   and ExchA
 
-When you create a mail-enabled group using Directory Manager, it is created in Active Directory
-first. Messaging provider-related configurations go to ExchB. If that fails, Directory Manager
+When you create a mail-enabled group using GroupID, it is created in Active Directory
+first. Messaging provider-related configurations go to ExchB. If that fails, GroupID
 repeats the same action on ExchA.
 
 What do you want to do?
@@ -72,13 +72,13 @@ Step 6 – Enter the username and password of an authorized user account on the 
 Username and Password boxes.
 
 Step 7 – The Server Name column in the Server Status & Priority area lists the mail servers in the
-environment. Directory Manager randomly assigns the highest priority to a server. You can change its
+environment. GroupID randomly assigns the highest priority to a server. You can change its
 priority level and set the priority for other servers.
 
 Step 8 – If your required server isn't listed, click **Sync Again**.
 
 - In the Server Status & Priority section, select the checkbox for the server you want to specify
-  or change the priority for. Directory Manager checks the availability of the server and displays
+  or change the priority for. GroupID checks the availability of the server and displays
   its status as _Online_ (available) or _Offline_ (unavailable) in the **Status** column.
 - In the Priority box, select a priority level for the server, with '1' representing the highest
   priority.
@@ -102,22 +102,22 @@ exists.
 
 Step 6 – Enter the domain name configured for Office 365 in the **Domain name** box.
 
-Step 7 – In the ApplicationID box, enter the application ID assigned to the Directory Manager
+Step 7 – In the ApplicationID box, enter the application ID assigned to the GroupID
 application when you registered it in Microsoft Entra admin center.
 
 Step 8 – In the Client box, provide the client secret value generated against the certificate
-uploaded to Microsoft Entra admin center while registering the Directory Manager application.
+uploaded to Microsoft Entra admin center while registering the GroupID application.
 
 Step 9 – Specify the path to the PFX certificate in the PFX Certificate box. For that, click
 **Choose File** and browse for the file. Select it and click **Open**.  
-As a prerequisite, the PFX certificate must be generated on the Directory Manager server and
+As a prerequisite, the PFX certificate must be generated on the GroupID server and
 exported to this machine for upload.
 
 Step 10 – In the PFX Certificate Password box, enter the password that was created while exporting
 the PFX certificate.
 
 Step 11 – In the Server Status & Priority area, the **Server Name** box displays the name of the
-mail server; the priority option doesn't apply to it. Directory Manager checks the availability of
+mail server; the priority option doesn't apply to it. GroupID checks the availability of
 the server and displays its status as _Online_ (available) or _Offline_ (unavailable) in the Status
 column.  
 If the server isn't listed, click **Sync Again**.
@@ -126,7 +126,7 @@ Step 12 – Click **Save**.
 
 :::note
 When Office 365 is configured as the messaging provider for an Active Directory identity
-store, Directory Manager creates distribution groups but doesn't populate their membership in
+store, GroupID creates distribution groups but doesn't populate their membership in
 Office 365. Use AD Connect or any directory synchronization tool to replicate information (such as
 membership information) between on-premises AD and Office 365.
 :::
@@ -157,7 +157,7 @@ As a prerequisite, you must generate the p12 key file for your account in Google
 download it.
 
 Step 8 – In the Server Status & Priority area, the Server Name box displays the name of the mail
-server; the priority option doesn't apply to it. Directory Manager checks the availability of the
+server; the priority option doesn't apply to it. GroupID checks the availability of the
 server and displays its status as _Online_ (available) or _Offline_ (unavailable) in the Status
 column.  
 If the server isn't listed, click **Sync Again**.
@@ -214,4 +214,4 @@ Step 5 – Click **Save**.
 
 **See Also**
 
-- [Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+- [Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)

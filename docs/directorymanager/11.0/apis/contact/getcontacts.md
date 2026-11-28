@@ -1,8 +1,8 @@
 ---
-title: "Get Contacts API in Directory Manager"
-description: "Retrieve attributes for multiple contacts from an identity store with a GET request to the Directory Manager Contacts endpoint."
+title: "Get Contacts API in GroupID"
+description: "Retrieve attributes for multiple contacts from an identity store with a GET request to the GroupID Contacts endpoint."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - get contacts
   - contact objects
   - identity store
@@ -11,7 +11,7 @@ sidebar_position: 50
 unlisted: true
 ---
 
-# Get Contacts API in Directory Manager
+# Get Contacts API in GroupID
 
 Use this API to retrieve information about multiple contacts from a specified identity store.
 
@@ -262,5 +262,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

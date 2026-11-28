@@ -1,5 +1,5 @@
 ---
-title: "Change Your Password in Directory Manager"
+title: "Change Your Password in GroupID"
 description: "Change your identity store account password in Admin Center, including limits for MFA-enabled Microsoft Entra ID users and master accounts."
 keywords:
   - change password
@@ -9,10 +9,10 @@ keywords:
 sidebar_position: 50
 ---
 
-# Change Your Password in Directory Manager
+# Change Your Password in GroupID
 
 You can change the password of your identity store account. After changing it, use the new password
-to sign in to Directory Manager and other applications that use your domain account.
+to sign in to GroupID and other applications that use your domain account.
 
 What do you want to do?
 
@@ -31,16 +31,16 @@ Step 3 – Enter a new password in the **New Password** and **Confirm Password**
 Step 4 – Click **Change Password**.
 
 :::note
-MFA-enabled Microsoft Entra ID users can't change their passwords in Directory Manager. If they try
+MFA-enabled Microsoft Entra ID users can't change their passwords in GroupID. If they try
 to use the option, the following message is displayed.
 :::
 
 ![Message shown when an MFA-enabled Microsoft Entra ID user tries to change a password in Admin Center](/images/directorymanager/11.0/admincenter/general/admincenterchangepassword.webp)
 
 If the user's account is a master account, the passwords of its child accounts also can't be changed
-in Directory Manager.
+in GroupID.
 
 **See Also**
 
-- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
-- [Navigate Admin Center in Directory Manager](/docs/directorymanager/11.0/signin/concepts/navigation.md)
+- [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Navigate Admin Center in GroupID](/docs/directorymanager/11.0/signin/concepts/navigation.md)

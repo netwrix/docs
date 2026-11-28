@@ -1,5 +1,5 @@
 ---
-title: "Dynasties in Directory Manager"
+title: "Dynasties in GroupID"
 description: "Learn how a Dynasty creates and maintains child Smart Groups from a directory query and a group-by field, and how child groups inherit properties."
 keywords:
   - Dynasty
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Dynasties in Directory Manager
+# Dynasties in GroupID
 
 A Dynasty is a Smart Group that creates and manages other Smart Groups using information in the
 directory. Dynasties help you manage large distribution lists by creating hierarchical group
@@ -32,7 +32,7 @@ Marketing, and Human Resources.
 
 ## Built-in updates
 
-Directory Manager keeps the Dynasty active in two ways:
+GroupID keeps the Dynasty active in two ways:
 
 - By adding new child groups as new values are returned for the group-by field.
 - By removing existing child groups as previous values of the group-by field no longer exist in the
@@ -74,7 +74,7 @@ organization.
 
 **See Also**
 
-- [Manage Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
-- [Create an Active Directory Dynasty in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
-- [Create a Microsoft Entra ID Dynasty in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty_1.md)
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Manage Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
+- [Create an Active Directory Dynasty in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
+- [Create a Microsoft Entra ID Dynasty in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty_1.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)

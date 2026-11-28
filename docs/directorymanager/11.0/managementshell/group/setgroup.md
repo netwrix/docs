@@ -6,7 +6,7 @@ keywords:
   - modify unmanaged group
   - group expiration policy
   - additional owners
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 80
 ---
 
@@ -17,7 +17,7 @@ modify the parameters of a Smart Group that are native attributes of an unmanage
 directory. To modify Smart Group-specific attributes, use the
 [Set-SmartGroup Cmdlet](/docs/directorymanager/11.0/managementshell/smartgroup/setsmartgroup.md) cmdlet.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
+You can view events related to this cmdlet in the GroupID portal, under the History node
 in the left pane.
 
 ## Syntax
@@ -170,6 +170,6 @@ Set-Group -Identity "CN=Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Clear Ma
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
 - [Group Commands](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

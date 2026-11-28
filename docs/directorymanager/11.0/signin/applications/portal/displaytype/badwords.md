@@ -1,5 +1,5 @@
 ---
-title: "Manage the Bad Words List in a Directory Manager Portal"
+title: "Manage the Bad Words List in a GroupID Portal"
 description: "Add, update, and remove words in a portal's bad words list, and turn the bad words check on or off."
 keywords:
   - bad words list
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# Manage the Bad Words List in a Directory Manager Portal
+# Manage the Bad Words List in a GroupID Portal
 
-Use Directory Manager to restrict portal users from saving data that contains words that might
+Use GroupID to restrict portal users from saving data that contains words that might
 be offensive. You can maintain a list of undesired words for a portal. When a user enters a value
 that contains a word on the list, the portal doesn't save the entry until the word is removed or
 corrected.
@@ -86,4 +86,4 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

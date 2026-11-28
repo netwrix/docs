@@ -1,5 +1,5 @@
 ---
-title: "Manage SharePoint Sites for Directory Manager Entitlement"
+title: "Manage SharePoint Sites for GroupID Entitlement"
 description: "Add SharePoint sites to a Microsoft Entra ID identity store, exclude document libraries, change the service account, and replicate permissions."
 keywords:
   - SharePoint entitlement
@@ -10,12 +10,12 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage SharePoint Sites for Directory Manager Entitlement
+# Manage SharePoint Sites for GroupID Entitlement
 
 A Microsoft Entra ID user who is signed in to Admin Center and doesn't have multifactor
 authentication (MFA) enabled can add and configure SharePoint sites in an Entra ID identity store to
-replicate their entitlement data to Elasticsearch for Directory Manager. The user can then manage
-permissions on the sites and the document libraries in those sites using Directory Manager.
+replicate their entitlement data to Elasticsearch for GroupID. The user can then manage
+permissions on the sites and the document libraries in those sites using GroupID.
 
 The user can also manage certain settings for a site, such as changing the service account for
 reading and managing permissions and excluding a document library in a site from entitlement
@@ -34,7 +34,7 @@ What do you want to do?
 
 ## Specify SharePoint Sites for Entitlement Management
 
-Provide the SharePoint admin URL and credentials to connect to SharePoint. Directory Manager fetches all the
+Provide the SharePoint admin URL and credentials to connect to SharePoint. GroupID fetches all the
 sites under it to replicate the permissions on document libraries there.
 
 To provide the SharePoint admin URL, do the following:
@@ -54,7 +54,7 @@ Step 5 – On the **Configure New Site** dialog box:
 - In the **Site URL** box, enter the **SharePoint admin URL** to fetch the sites.
 - In the **User name** and **Password** boxes, provide the credentials of a service account to
   connect to the site for managing entitlements.
-- In the **Application ID** box, provide the application ID assigned to the Directory Manager
+- In the **Application ID** box, provide the application ID assigned to the GroupID
   application when you registered it in Microsoft Entra Admin Center.
 - Click **Add Site**.
   The URL of this site is displayed in the **SharePoint Admin URL** box on the **Entitlement** page.
@@ -111,13 +111,13 @@ button for a site and select **Edit**. On the **Edit Site** dialog box:
 
 - The **Site Libraries** area displays the document libraries in the site.
 - The name of the
-  [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md)
+  [Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md)
   that computes the permissions on document libraries in the site and replicates them to
   Elasticsearch is displayed next to **Job**.
 
 ## Exclude a Document Library from Replication
 
-By default, Directory Manager computes and replicates permissions on all document libraries in the SharePoint
+By default, GroupID computes and replicates permissions on all document libraries in the SharePoint
 sites that fall under the admin URL. You can exclude a document library in a site from this
 activity.
 
@@ -143,7 +143,7 @@ Step 6 – Click **Save** on the **Entitlement** page.
 
 ## Connect to a Site Using a Different Account
 
-Directory Manager connects to a site using the service account specified while configuring the SharePoint
+GroupID connects to a site using the service account specified while configuring the SharePoint
 admin URL for reading and managing the effective permissions assigned to objects on the document
 libraries. You can designate a different account for this activity.
 
@@ -161,8 +161,8 @@ button for a site and select **Edit**.
 
 Step 5 – On the **Edit Site** dialog box, you can change the service account used to connect to the
 site for reading and updating permissions. The
-[Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md),
-[Edit the Directory Manager Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md),
+[Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md),
+[Edit the GroupID Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md),
 and
 [Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementtemporarypermissions.md)
 run in the context of the account specified here.
@@ -190,7 +190,7 @@ After you add the SharePoint admin URL to manage entitlements for document libra
 you must replicate object permissions from the SharePoint server to Elasticsearch.
 
 The
-[Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md)
+[Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md)
 runs on a set frequency to replicate the effective permissions on document libraries in the sites.
 You can also run this schedule manually at any time for a site listed in the **Included SharePoint Sites**
 area on the **Entitlement** page.
@@ -216,11 +216,11 @@ Step 4 – On the **Entitlement** page, you can manually replicate permissions f
 
     Either click the **Replicate** icon or the **Replicate** button.
 
-This triggers the Directory Manager Entitlement schedule for the identity store, which computes and replicates
+This triggers the GroupID Entitlement schedule for the identity store, which computes and replicates
 the effective permissions granted to directory objects on document libraries in the sites. This
 process may take some time.
 
-The **Last Replicated** column displays the date and time the Directory Manager Entitlement schedule last ran.
+The **Last Replicated** column displays the date and time the GroupID Entitlement schedule last ran.
 
 ## Exclude a Site from Entitlement Management
 
@@ -274,5 +274,5 @@ Step 5 – Click **Save**.
 
 **See Also**
 
-- [Entitlement Management in Directory Manager](/docs/directorymanager/11.0/signin/entitlement/overview.md)
-- [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+- [Entitlement Management in GroupID](/docs/directorymanager/11.0/signin/entitlement/overview.md)
+- [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)

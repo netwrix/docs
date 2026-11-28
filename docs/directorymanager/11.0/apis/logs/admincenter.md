@@ -6,7 +6,7 @@ keywords:
   - Logs API
   - download Admin Center logs
   - Admin Center log download endpoint
-  - Directory Manager Admin Center
+  - GroupID Admin Center
 sidebar_position: 10
 unlisted: true
 ---
@@ -14,7 +14,7 @@ unlisted: true
 # Download Admin Center Logs with the API
 
 Use this API to get Admin Center logs. See the
-[View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic
+[View and Export Admin Center History in GroupID](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic
 for additional information.
 
 ## Endpoint
@@ -35,5 +35,5 @@ Save the encrypted response as a zip file to a desired location.
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Logs APIs](/docs/directorymanager/11.0/apis/logs/logsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Logs APIs](/docs/directorymanager/11.0/apis/logs/logsapis.md)

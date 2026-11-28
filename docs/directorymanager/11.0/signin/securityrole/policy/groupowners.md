@@ -1,5 +1,5 @@
 ---
-title: "Group Owners Policy for Security Roles in Directory Manager"
+title: "Group Owners Policy for Security Roles in GroupID"
 description: "Require a primary owner and a range of additional owners when role members create or update static groups and Smart Groups."
 keywords:
   - Group Owners policy
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 10
 ---
 
-# Group Owners Policy for Security Roles in Directory Manager
+# Group Owners Policy for Security Roles in GroupID
 
 Use the Group Owners policy to specify a group ownership criterion that role members must
-fulfill when they create or update static groups and Smart Groups using the Directory Manager portal or
+fulfill when they create or update static groups and Smart Groups using the GroupID portal or
 Management Shell. You can:
 
 - Control whether groups must have a primary owner.
@@ -27,10 +27,10 @@ What do you want to do?
 
 ## Enforce a Primary Owner
 
-The Group Owners policy ensures that groups that are created and managed using Directory Manager have a
+The Group Owners policy ensures that groups that are created and managed using GroupID have a
 primary owner. This substantially reduces the occurrence of orphan groups in the directory.
 
-When you create a new group using Directory Manager, the signed-in user is set as its primary owner. With the
+When you create a new group using GroupID, the signed-in user is set as its primary owner. With the
 primary owner enforced under the Group Owners policy, the user who creates or manages the group can
 change the primary owner but can't remove it.
 
@@ -90,11 +90,11 @@ role members can have any number of additional owners and even no additional own
 
 :::note
 When additional owners were added using an earlier version of GroupID, and their number
-exceeds the value of this setting, Directory Manager retains them. However, you can't add more
+exceeds the value of this setting, GroupID retains them. However, you can't add more
 additional owners.
 :::
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

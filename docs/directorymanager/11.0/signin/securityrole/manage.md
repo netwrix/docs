@@ -1,5 +1,5 @@
 ---
-title: "Manage Security Roles in Directory Manager"
+title: "Manage Security Roles in GroupID"
 description: "Enable, disable, copy, edit, and delete security roles, and change role priority, criteria, and permissions for an identity store."
 keywords:
   - manage security roles
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Security Roles in Directory Manager
+# Manage Security Roles in GroupID
 
 After creating a security role, you can manage various settings for it, such as role criteria,
 permissions, and policies.
@@ -25,21 +25,21 @@ permissions, and policies.
 
     | Label | Description |
     | --- | --- |
-    | Enable | Shows whether the security role is enabled or disabled. Use the toggle button for an enabled role to disable it and vice versa. Members of a disabled role can't access Directory Manager. |
+    | Enable | Shows whether the security role is enabled or disabled. Use the toggle button for an enabled role to disable it and vice versa. Members of a disabled role can't access GroupID. |
     | Display name | The display name of the security role. |
-    | Priority | Each security role is assigned a value from 1-99, where 1 indicates the highest priority and 99 indicates the lowest priority. Role priority is unique for a role in an identity store. Role priority is used to resolve conflicts when a user has more than one role in Directory Manager. For example, when a user has two roles (Administrator and User) with role priority set to 1 and 25 respectively, the permissions and policies for the higher priority role (Administrator) apply when the user signs in to Directory Manager. |
+    | Priority | Each security role is assigned a value from 1-99, where 1 indicates the highest priority and 99 indicates the lowest priority. Role priority is unique for a role in an identity store. Role priority is used to resolve conflicts when a user has more than one role in GroupID. For example, when a user has two roles (Administrator and User) with role priority set to 1 and 25 respectively, the permissions and policies for the higher priority role (Administrator) apply when the user signs in to GroupID. |
     | Criteria | Role criteria determine the users the role applies to. You can specify a container or group as criteria for a role. <br /><ul><li>For a container, all users residing in it are assigned the role.</li><li>For a group, all group members are assigned the role.</li></ul> |
     | Description | A description for the security role. |
     | Actions | <ul><li>Click **Edit** for a security role to update its details, criteria, policies, and permissions.</li><li>Click the ellipsis button and select **Delete** to delete the security role.</li><li>Click the ellipsis button and select **Copy** to create a new security role by copying the respective role.</li></ul> |
 
 ## Enable or Disable a Role
 
-You can disable a role to prevent its members from signing in to Directory Manager. You can also enable a
-disabled role to allow its members to access Directory Manager. By default, all new roles created for an
+You can disable a role to prevent its members from signing in to GroupID. You can also enable a
+disabled role to allow its members to access GroupID. By default, all new roles created for an
 identity store are enabled.
 
 :::note
-To prevent an individual role member from accessing Directory Manager, you must remove that member from
+To prevent an individual role member from accessing GroupID, you must remove that member from
 the group or container specified as role criteria.
 :::
 
@@ -98,7 +98,7 @@ By changing role criteria, you can specify a different set of users as members o
 4. On the **Security Roles** page, click **Edit** for a security role.
 5. On the **Edit Security Role** page, the **Criteria** area displays the role criteria. Click **Add
    Criteria** to change it. On the **Add Criteria** dialog box, update the criteria. See the
-   [Set Security Role Criteria in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
+   [Set Security Role Criteria in GroupID](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
    topic for details.
 6. Click **Update Security Role**.
 7. On the **Security Roles** page, click **Save**.
@@ -119,7 +119,7 @@ You can update the permissions assigned to a role.
 6. On the **Add Permissions** dialog box, select **Allow** for a permission to assign it to the
    role. Select **Deny** for a permission to deny it to the role. To learn about the available
    permissions, see the
-   [Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+   [Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
    topic.
 7. After assigning the required permissions, click **OK**.
 8. Click **Update Security Role**.
@@ -128,12 +128,12 @@ You can update the permissions assigned to a role.
 ## Define Policies for a Role
 
 To define policies for a security role, see the
-[Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+[Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
 topic.
 
 ## Delete a Role
 
-When you delete a security role, role members can't access Directory Manager.
+When you delete a security role, role members can't access GroupID.
 
 **To delete a role:**
 
@@ -147,5 +147,5 @@ When you delete a security role, role members can't access Directory Manager.
 
 See Also
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Create a Security Role in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/create.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Create a Security Role in GroupID](/docs/directorymanager/11.0/signin/securityrole/create.md)

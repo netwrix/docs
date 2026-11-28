@@ -1,5 +1,5 @@
 ---
-title: "Set Up Email Authentication in Directory Manager"
+title: "Set Up Email Authentication in GroupID"
 description: "Enable email authentication for an identity store, customize the confirmation code email, and enforce it for a security role."
 keywords:
   - email authentication
@@ -10,20 +10,20 @@ keywords:
 sidebar_position: 20
 ---
 
-# Set Up Email Authentication in Directory Manager
+# Set Up Email Authentication in GroupID
 
 Users can enroll and authenticate their identity store accounts using Email. An email sent to a
-user's email address contains a confirmation code that the user must enter in Directory Manager to enroll in and
+user's email address contains a confirmation code that the user must enter in GroupID to enroll in and
 authenticate their accounts.
 
-Directory Manager provides a default notification template for enrollment and authentication via email in various
+GroupID provides a default notification template for enrollment and authentication via email in various
 languages. You can change the subject line and the body text in the template for any of these
 languages.
 
 :::note
 Before configuring Email authentication, ensure that an SMTP server is configured for the identity
 store. See the
-[Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+[Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
 topic.
 :::
 
@@ -45,7 +45,7 @@ topic.
 ## Modify the Email Template
 
 You can modify the subject line and body text of the email sent to users. The email contains a
-confirmation code that users must enter in Directory Manager to enroll in and authenticate their accounts.
+confirmation code that users must enter in GroupID to enroll in and authenticate their accounts.
 
 **To modify the subject line and body of the email:**
 
@@ -71,8 +71,8 @@ confirmation code that users must enter in Directory Manager to enroll in and au
       notification, as it is sent to users.
 
 5. Modify and format the text of the email, except the [USER] and [CODE] placeholders.
-   Directory Manager replaces [USER] with the name of the user and inserts a randomly generated verification
-   code into the [CODE] placeholder. The user must enter this code in Directory Manager to enroll and
+   GroupID replaces [USER] with the name of the user and inserts a randomly generated verification
+   code into the [CODE] placeholder. The user must enter this code in GroupID to enroll and
    authenticate.
 6. Click the **Title** tile to change the subject line of the email notification.
 7. After making the required changes, click **Save**.
@@ -90,5 +90,5 @@ and authentication.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Customize Directory Manager Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Customize GroupID Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)

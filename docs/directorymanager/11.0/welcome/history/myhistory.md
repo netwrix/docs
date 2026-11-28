@@ -1,5 +1,5 @@
 ---
-title: "View My History in the Directory Manager Portal"
+title: "View My History in the GroupID Portal"
 description: "View, filter, annotate, and export the log of actions you performed in the identity store, plus changes others made to your profile."
 keywords:
   - My History
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# View My History in the Directory Manager Portal
+# View My History in the GroupID Portal
 
 To view a log of all actions you have performed in the identity store, click **History** on the left
 navigation bar.
@@ -64,7 +64,7 @@ action along with their old and new values.
 
 ## Add notes to history items
 
-Directory Manager lets a user add notes to history items that were logged as a result of any change
+GroupID lets a user add notes to history items that were logged as a result of any change
 they made. A note may explain the reason for making a certain change, such as why they changed the
 security type for a group.
 
@@ -79,7 +79,7 @@ edit or add comments.
 
 The option to add a note is available on the My Account History card on the Dashboard and on all
 History pages: My History,
-[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
+[View My Direct Reports' History in GroupID](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
 and [View and Filter History of Groups You Own](/docs/directorymanager/11.0/welcome/history/mydirectorygroup.md).
 
 1. Click the **Add Note** button next to a history item to add a note to it.
@@ -130,5 +130,5 @@ The file is created at the download location specified in the browser settings.
 
 **See Also**
 
-- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [GroupID Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

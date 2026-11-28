@@ -1,21 +1,21 @@
 ---
-title: "Get-UserRole Cmdlet in Directory Manager"
+title: "Get-UserRole Cmdlet in GroupID"
 description: "View the role of a user in an identity store, including the highest-priority role or all roles across clients, with the Get-UserRole cmdlet."
 keywords:
   - Get-UserRole
   - user role
   - identity store
-  - Directory Manager client
+  - GroupID client
   - PowerShell cmdlet
 sidebar_position: 120
 ---
 
-# Get-UserRole Cmdlet in Directory Manager
+# Get-UserRole Cmdlet in GroupID
 
 The Get-UserRole cmdlet displays information about the role of the specified user in an
 identity store.
 
-If a user has different roles in different Directory Manager clients of an identity store and the
+If a user has different roles in different GroupID clients of an identity store and the
 ClientName parameter isn't specified, this cmdlet displays the highest-priority role of the user. If
 the identity store name isn't specified, this cmdlet uses the connected identity store.
 
@@ -64,7 +64,7 @@ Get-UserRole -Identity testingaccount@example.com -ClientName 'ManagementShell `
 Example 4:
 
 This example retrieves the highest-priority role of the _testingaccount_ user in the connected identity
-store. If the user has different roles in different Directory Manager clients, only the role having
+store. If the user has different roles in different GroupID clients, only the role having
 the highest priority is retrieved.
 
 ```
@@ -91,6 +91,6 @@ store through pipelining.
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

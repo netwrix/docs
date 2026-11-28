@@ -1,5 +1,5 @@
 ---
-title: "Manage Property Validation Attributes in Directory Manager"
+title: "Manage Property Validation Attributes in GroupID"
 description: "Add, update, or remove the fields users and group owners see during profile validation and group attestation in the portal."
 keywords:
   - property validation
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 110
 ---
 
-# Manage Property Validation Attributes in Directory Manager
+# Manage Property Validation Attributes in GroupID
 
-In Directory Manager, property validation applies to:
+In GroupID, property validation applies to:
 
 - Users
 - Groups
@@ -44,7 +44,7 @@ neither be edited nor removed.
 
 ## Property Validation for Groups
 
-The Directory Manager administrator can require group owners to review and validate the attributes and
+The GroupID administrator can require group owners to review and validate the attributes and
 membership of an expiring group before renewing it. See the
 [Enable Group Attestation](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md#enable-group-attestation)
 topic.
@@ -100,7 +100,7 @@ edited nor removed.
 9. Use the **Display Type** dropdown list to specify the display type to use for rendering the
    attribute in the portal. The list contains basic display types and custom display types defined
    on the **Custom Display Types** page. See the
-   [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+   [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
    topic.
 10. In the **Visibility Level** dropdown list, select a security role. The field is visible
     to users of this role and roles with a priority value higher than this role. See
@@ -122,7 +122,7 @@ edited nor removed.
     field.  
     A value entered for the field is checked against the words listed on the **Bad Words List**
     page. Matched values can't be saved. See the
-    [Manage the Bad Words List in a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
+    [Manage the Bad Words List in a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
     topic.
 17. The **Image Attribute** list is available when ‘DN’ is selected as the display type. This list
     supports ‘thumbnailPhoto’ as its value.
@@ -198,5 +198,5 @@ The following field properties vary from field to field. You can:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Configure User Profile Validation in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/profilevalidation.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Configure User Profile Validation in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/profilevalidation.md)

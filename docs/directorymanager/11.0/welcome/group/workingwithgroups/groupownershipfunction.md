@@ -1,5 +1,5 @@
 ---
-title: "Manage Group Owners in Directory Manager"
+title: "Manage Group Owners in GroupID"
 description: "Change a group's primary owner, set, import, and export additional owners, and manage temporary ownership and Exchange additional owners."
 keywords:
   - group owner
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 50
 ---
 
-# Manage Group Owners in Directory Manager
+# Manage Group Owners in GroupID
 
-Use the Directory Manager portal to perform ownership-related functions such as changing the
+Use the GroupID portal to perform ownership-related functions such as changing the
 primary owner of a group, specifying additional owners of a group, and importing or exporting
 additional owners.
 
@@ -47,7 +47,7 @@ Exchange additional owners for a group, provided that Exchange 2013/2016/2019 is
 messaging provider for the identity store. Exchange additional owners are stored in the
 _msExchangecoManagedby_ attribute.
 
-Directory Manager sends group expiry, deletion, and renewal notifications to all Exchange additional owners
+GroupID sends group expiry, deletion, and renewal notifications to all Exchange additional owners
 along with the group’s primary owner and additional owners.
 
 :::note
@@ -84,18 +84,18 @@ What do you want to do?
 
 To change a group's primary owner:
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
 2. Select the required group and click **Properties** on the toolbar.
 3. The group's properties page is displayed.
 4. On the
-   [Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
+   [Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
    the **Owner** box displays the group's primary owner.
 
     To change the primary owner, click **Browse** to launch the
-    [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can
+    [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can
     search and select another owner.
 
 5. Save the changes.
@@ -120,19 +120,19 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 If the administrator has specified the Group Owner policy for the identity store, it may have an
 impact on the number of additional owners the group can have.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
 2. Select the required group and click **Properties** on the toolbar.
 3. The group's
-   [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
+   [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
    is displayed.
 4. On the
-   [Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
+   [Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
    click **Add** in the **Additional Owners** area.
 5. Enter a search string to locate the object to add as an additional owner, or click **Advanced**
-   to use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for
+   to use the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for
    performing a search.
 6. By default, all group-related notifications (such as group expiry, deletion, and renewal
    notifications) are sent to the primary owner and all additional owners. To exclude an additional
@@ -152,26 +152,26 @@ impact on the number of additional owners the group can have.
 
 To import additional owners for a group:
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
     import its additional owners from an external file.
 
 2. Select the required group from the list and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the
-   [Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
+   [Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/owner.md),
    click **Import** to launch the **Import Additional Owners** wizard.
 4. See
-   [Import additional group owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/importadditionalowners.md)
+   [Import additional group owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/importadditionalowners.md)
    for further information and instructions.
 5. Save the changes.
 
@@ -179,19 +179,19 @@ To import additional owners for a group:
 
 You can export additional owners of a group to an external file.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
     export its additional owners to an external file.
 
 2. Select the group and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Owner** tab, click **Export** to launch the **Export Additional Owners** wizard.
@@ -219,11 +219,11 @@ You can export additional owners of a group to an external file.
 Ownership type indicates whether an object is a temporary or permanent additional owner of a group.
 You can change the ownership type of an additional owner from temporary to permanent and vice versa.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
    change the ownership type of its additional owners.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 3. On the group's
-   [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+   [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
    page, click the **Owner** tab.
 4. To change the ownership type of an additional owner, click anywhere in the respective row to make
    it editable, and select an option from the **Ownership** list:
@@ -263,7 +263,7 @@ You can change the ownership type of an additional owner from temporary to perma
         Smith is displayed as Group A’s additional owner with ‘Removal Pending’ as ownership
         type from May 15 to 19, 2019.
 
-        On May 20, Smith’s ownership type in Directory Manager changes to ‘Temporary Removed’,
+        On May 20, Smith’s ownership type in GroupID changes to ‘Temporary Removed’,
         lasting until May 30, 2019.
 
         After May 30, Smith is added back to Group A as a permanent additional owner.
@@ -286,25 +286,25 @@ run on the particular days for temporary ownership update.
 
 If your portal is connected to an identity store that has Exchange Server
 2013/2016/2019 deployed, you can specify Exchange additional owners for a group. Exchange
-additional owners have the same privileges as the primary owner. Directory Manager sends group expiry,
+additional owners have the same privileges as the primary owner. GroupID sends group expiry,
 deletion, and renewal notifications to all Exchange additional owners along with the group’s primary
 owner and additional owners.
 
 Microsoft Exchange 2013/2016/2019 offers the co-managed by feature, which lets you specify
 Exchange additional group owners.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
 2. Select the required group and click **Properties** on the toolbar.
 3. The group's
-   [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
+   [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
    is displayed.
 4. On the **Email** tab, click **Add** in the **Managed By** area.
 5. Enter a search string to locate the object to add as an Exchange additional owner, or click
    **Advanced** to use the
-   [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+   [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
    search.
 
     :::note
@@ -316,4 +316,4 @@ Exchange additional group owners.
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

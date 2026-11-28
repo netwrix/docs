@@ -1,6 +1,6 @@
 ---
-title: "Customize the Directory Manager Portal Navigation Bar"
-description: "Add, update, rearrange, and remove nodes, sub-nodes, and tabs on the left navigation bar of a Directory Manager portal."
+title: "Customize the GroupID Portal Navigation Bar"
+description: "Add, update, rearrange, and remove nodes, sub-nodes, and tabs on the left navigation bar of a GroupID portal."
 keywords:
   - portal navigation bar
   - navigation nodes
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 60
 ---
 
-# Customize the Directory Manager Portal Navigation Bar
+# Customize the GroupID Portal Navigation Bar
 
 Use the left navigation bar in a portal to navigate through the following nodes:
 
@@ -29,7 +29,7 @@ page that contains tabs under that sub-node. The following image shows the navig
 
 ![Portal navigation bar with expanded nodes and sub-nodes](/images/directorymanager/11.0/admincenter/portal/design/navigation_bar.webp)
 
-Use Directory Manager to customize the nodes, sub-nodes, and their respective tabs.
+Use GroupID to customize the nodes, sub-nodes, and their respective tabs.
 
 What do you want to do?
 
@@ -201,7 +201,7 @@ that:
     webpage is displayed when users click the sub-node in the portal.
     Use the following formats to specify the URL:
 
-    - To link a page from within the Directory Manager portal template:
+    - To link a page from within the GroupID portal template:
       GroupManagement/Groups/MyGroups
     - To link to an external webpage:
       https://www.xyz.com.
@@ -358,4 +358,4 @@ You can modify the following for a tab:
 
 See Also
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

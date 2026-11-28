@@ -1,6 +1,6 @@
 ---
 title: "SendSmsMessageResult class"
-description: "Check the SendSmsMessageResult class, which returns the delivery status and any exception from sending an SMS message in Directory Manager."
+description: "Check the SendSmsMessageResult class, which returns the delivery status and any exception from sending an SMS message in GroupID."
 keywords:
   - SendSmsMessageResult class
   - SMS delivery status

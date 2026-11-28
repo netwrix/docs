@@ -1,6 +1,6 @@
 ---
-title: "Install Directory Manager"
-description: "Run the Directory Manager Installation Tool to accept the license agreement and install the product files."
+title: "Install GroupID"
+description: "Run the GroupID Installation Tool to accept the license agreement and install the product files."
 keywords:
   - install directory manager
   - directory manager installation tool
@@ -9,18 +9,18 @@ keywords:
 sidebar_position: 30
 ---
 
-# Install Directory Manager
+# Install GroupID
 
-Installing Directory Manager is straightforward. The Installation Tool asks you to agree to the license agreement and then
-installs Directory Manager to the default location:
+Installing GroupID is straightforward. The Installation Tool asks you to agree to the license agreement and then
+installs GroupID to the default location:
 
 ```
 C:\Program Files\Imanami\GroupID 11.0\
 ```
 
-To install Directory Manager:
+To install GroupID:
 
-1. Run _directorymanagerInstallTool.exe_ from the GroupID `<version #>` folder in the Directory Manager installation
+1. Run _directorymanagerInstallTool.exe_ from the GroupID `<version #>` folder in the GroupID installation
    package. It launches the Installation Tool.
 
     ![Installation Tool welcome page](/images/directorymanager/11.0/install/installer/introduction.webp)
@@ -34,23 +34,23 @@ To install Directory Manager:
 
     ![Installation progress bar](/images/directorymanager/11.0/install/installer/installationprogress.webp)
 
-4. The progress bar shows the installation progress while all files are copied and Directory Manager is
+4. The progress bar shows the installation progress while all files are copied and GroupID is
    installed.
 
     On successful installation, the **Run Configuration Tool** page appears.
 
     ![Run Configuration Tool page after a successful installation](/images/directorymanager/11.0/install/installer/runconfigurationtool.webp)
 
-5. Click **Next** to proceed with configuring Directory Manager.
+5. Click **Next** to proceed with configuring GroupID.
 
     OR
 
-    Click **Close** on the title bar to close the Directory Manager Installer and configure Directory Manager later.
+    Click **Close** on the title bar to close the GroupID Installer and configure GroupID later.
     For more information, see the
-    [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md) topic.
+    [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md) topic.
 
 See Also
 
-- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
-- [Run the Directory Manager Preparation Tool](/docs/directorymanager/11.0/about/installer/preparationtool.md)
-- [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [Run the GroupID Preparation Tool](/docs/directorymanager/11.0/about/installer/preparationtool.md)
+- [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)

@@ -1,6 +1,6 @@
 ---
 title: "Update a Smart Group API"
-description: "Update a Smart Group by identity with a POST request, so Directory Manager refreshes its membership."
+description: "Update a Smart Group by identity with a POST request, so GroupID refreshes its membership."
 keywords:
   - update Smart Group API
   - Smart Group update
@@ -42,5 +42,5 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

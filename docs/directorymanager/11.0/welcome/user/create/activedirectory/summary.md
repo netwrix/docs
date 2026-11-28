@@ -1,8 +1,8 @@
 ---
 title: "Review the Summary page before creating an object"
-description: "Review the selections you made in a Directory Manager creation wizard, then go back to change them or click Finish to create the object."
+description: "Review the selections you made in a GroupID creation wizard, then go back to change them or click Finish to create the object."
 keywords:
-  - Directory Manager
+  - GroupID
   - Summary page
   - object creation wizard
   - wizard review
@@ -19,7 +19,7 @@ before creating the object.
 
 **See Also**
 
-- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Create an Active Directory mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)
-- [Create an Active Directory contact in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/contact.md)
-- [Create Active Directory Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create an AD user in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Create an Active Directory mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)
+- [Create an Active Directory contact in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/contact.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)

@@ -1,17 +1,17 @@
 ---
-title: "Download Directory Manager Logs from Admin Center"
-description: "Collect Directory Manager service, application, tool, and Windows Event Viewer logs and download them as one zipped file."
+title: "Download GroupID Logs from Admin Center"
+description: "Collect GroupID service, application, tool, and Windows Event Viewer logs and download them as one zipped file."
 keywords:
-  - Directory Manager logs
+  - GroupID logs
   - download log files
   - file logging
   - Event Viewer logs
 sidebar_position: 100
 ---
 
-# Download Directory Manager Logs from Admin Center
+# Download GroupID Logs from Admin Center
 
-Directory Manager generates logs for its services, clients, and Windows events, which are saved at
+GroupID generates logs for its services, clients, and Windows events, which are saved at
 different locations on the network. Rather than locating these log files in their respective
 folders, you can collect and dump your required logs to a desired location.
 
@@ -25,19 +25,19 @@ What do you want to do?
 2. On the **GroupID Settings** page, click the **Logs** tab.
 3. On the **Logs** tab:
 
-- On the **Applications** card, select the checkboxes for the Directory Manager services and portals that you
+- On the **Applications** card, select the checkboxes for the GroupID services and portals that you
   want to fetch the logs for. To select all options, select the **Select All** checkbox on the
   card.  
   Each application has a _file logging_ level set for it. Log files generated against file logging
   are fetched.
 
-    - For applications deployed in native IIS, logs are fetched from the Directory Manager server.
+    - For applications deployed in native IIS, logs are fetched from the GroupID server.
     - For applications deployed in remote IIS, logs are fetched from the remote IIS machine.
     - For applications deployed in Docker, logs are fetched from the machine running the Docker
       daemon.
 
 - On the **Tools & Management Shell** card, select the checkboxes for Management Shell and the
-  Directory Manager tools that you want to fetch the logs for. To select all options, select the **Select
+  GroupID tools that you want to fetch the logs for. To select all options, select the **Select
   All** checkbox on the card. Logs are fetched from the local machine. If you haven't used
   Management Shell or a tool on the machine, its respective logs aren't available.
 - On selecting the **Event Viewer** checkbox on the **Event Viewer** card, the **Logs** button is
@@ -46,11 +46,11 @@ What do you want to do?
   logs and click **OK**.
 
 4. Click **Download**.  
-   Directory Manager creates a zipped file containing the selected logs and saves it to the download location
+   GroupID creates a zipped file containing the selected logs and saves it to the download location
    set in browser settings.
 
 **See Also**
 
-- [Directory Manager Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+- [GroupID Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
 - For a Portal -
-  [Manage Portal Log Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/log.md)
+  [Manage Portal Log Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/log.md)

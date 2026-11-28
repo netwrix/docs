@@ -1,16 +1,16 @@
 ---
-title: "Delete Multiple Contacts with the Directory Manager API"
+title: "Delete Multiple Contacts with the GroupID API"
 description: "Delete several contacts from an identity store in one DELETE request by passing a list of contact IDs."
 keywords:
   - bulk delete contacts
   - delete multiple contacts API
   - contact IDs
-  - Directory Manager API
+  - GroupID API
 sidebar_position: 30
 unlisted: true
 ---
 
-# Delete Multiple Contacts with the Directory Manager API
+# Delete Multiple Contacts with the GroupID API
 
 This API is for deleting multiple contacts from a specified identity store.
 
@@ -82,5 +82,5 @@ DELETE
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

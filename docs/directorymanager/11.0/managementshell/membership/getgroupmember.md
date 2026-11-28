@@ -1,15 +1,15 @@
 ---
-title: "Get-GroupMember Cmdlet for Directory Manager"
+title: "Get-GroupMember Cmdlet for GroupID"
 description: "Retrieve the members of a group from the directory, optionally filtered with an LDAP filter, using the Get-GroupMember cmdlet."
 keywords:
   - Get-GroupMember
   - list group members
   - LDAP filter
-  - Directory Manager cmdlets
+  - GroupID cmdlets
 sidebar_position: 20
 ---
 
-# Get-GroupMember Cmdlet for Directory Manager
+# Get-GroupMember Cmdlet for GroupID
 
 Use this cmdlet to retrieve members of a particular group from the directory. You can apply filters
 to the results the cmdlet returns.
@@ -53,6 +53,6 @@ Get-GroupMember -Identity "CN=Enrollment,OU=Local Recruiting,OU=Recruiting,DC=HR
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

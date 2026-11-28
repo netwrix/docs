@@ -1,6 +1,6 @@
 ---
-title: "Authenticate Your Account in Directory Manager"
-description: "Pass multifactor or second factor authentication in Directory Manager by using security questions, mobile, email, an authenticator app, YubiKey, or Windows Hello."
+title: "Authenticate Your Account in GroupID"
+description: "Pass multifactor or second factor authentication in GroupID by using security questions, mobile, email, an authenticator app, YubiKey, or Windows Hello."
 keywords:
   - authenticate identity store account
   - verification code
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Authenticate Your Account in Directory Manager
+# Authenticate Your Account in GroupID
 
-To authenticate your identity store account in Directory Manager for multifactor authentication or second
+To authenticate your identity store account in GroupID for multifactor authentication or second
 factor authentication, you must use one or more authentication types that you enrolled your account
 with.
 
@@ -27,7 +27,7 @@ What do you want to do?
 
 ## Authenticate using Security Questions
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
@@ -39,12 +39,12 @@ What do you want to do?
 ## Authenticate using Mobile
 
 To authenticate using mobile, you must enter the last 4 digits of the mobile number you provided
-during enrollment. Directory Manager sends a confirmation code to this number; you must enter the code in
-Directory Manager for authentication.
+during enrollment. GroupID sends a confirmation code to this number; you must enter the code in
+GroupID for authentication.
 
 **To authenticate using mobile:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
@@ -59,12 +59,12 @@ RECOMMENDED: If you don’t receive the code, recheck your mobile number and cli
 ## Authenticate using Email
 
 To authenticate using email, you must complete the email address you provided during enrollment.
-Directory Manager then sends a confirmation code to this email address; you must enter the code in
-Directory Manager for authentication.
+GroupID then sends a confirmation code to this email address; you must enter the code in
+GroupID for authentication.
 
 **To authenticate using email:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
@@ -78,7 +78,7 @@ RECOMMENDED: If you don’t receive the code, recheck your email address and cli
 
 ## Authenticate using Authenticator
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
@@ -90,19 +90,19 @@ RECOMMENDED: If you don’t receive the code, recheck your email address and cli
 
 ## Authenticate using YubiKey
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
 3. Insert the YubiKey device in the USB slot of your computer.
 4. Select the **YubiKey** checkbox and click **Continue**.
 5. On the next page, click your YubiKey device name.  
-   Directory Manager directs you to tap on the physical device.
-6. When you tap the device, you are authenticated in Directory Manager.
+   GroupID directs you to tap on the physical device.
+6. When you tap the device, you are authenticated in GroupID.
 
 ## Authenticate using Windows Hello
 
-1. When you launch Admin Center, the Directory Manager portal, or the Directory Manager Mobile app,
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app,
    the **GroupID Authenticate** page is displayed.
 2. On signing in, enrolled users are redirected to the **Authenticate** page. This page lists the
    authentication types the user enrolled their account with.
@@ -113,7 +113,7 @@ RECOMMENDED: If you don’t receive the code, recheck your email address and cli
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
 - [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
-- [Authentication Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
-- [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
+- [Authentication Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
+- [Enroll Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)

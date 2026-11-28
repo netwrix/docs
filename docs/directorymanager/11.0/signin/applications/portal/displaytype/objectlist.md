@@ -1,5 +1,5 @@
 ---
-title: "Specify Attributes for the Directory Manager Object List View"
+title: "Specify Attributes for the GroupID Object List View"
 description: "Choose which attributes the portal shows for each group on the Similar Groups tab."
 keywords:
   - object list view
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 140
 ---
 
-# Specify Attributes for the Directory Manager Object List View
+# Specify Attributes for the GroupID Object List View
 
 In the portal, the object list is a listing of groups that are similar to another group. Group
 similarity is measured on the basis of group type and membership.
@@ -57,5 +57,5 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Specify Attributes for the Directory Manager Object Card](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectcard.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Specify Attributes for the GroupID Object Card](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectcard.md)

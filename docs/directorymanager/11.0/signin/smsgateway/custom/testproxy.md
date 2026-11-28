@@ -1,6 +1,6 @@
 ---
 title: "ISmsGateway.TestProxy Method (SMS Gateway API)"
-description: "Validate the proxy settings Directory Manager uses to reach a custom SMS gateway by implementing the ISmsGateway.TestProxy method."
+description: "Validate the proxy settings GroupID uses to reach a custom SMS gateway by implementing the ISmsGateway.TestProxy method."
 keywords:
   - ISmsGateway.TestProxy
   - SMS gateway proxy settings
@@ -31,4 +31,4 @@ True if the proxy settings are valid.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

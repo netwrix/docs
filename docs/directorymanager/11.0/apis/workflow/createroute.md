@@ -1,5 +1,5 @@
 ---
-title: "Create a Directory Manager Workflow Route"
+title: "Create a GroupID Workflow Route"
 description: "Use this POST endpoint to create a workflow route that sends approval requests when chosen objects, events, and fields match."
 keywords:
   - create workflow route
@@ -11,7 +11,7 @@ sidebar_position: 40
 unlisted: true
 ---
 
-# Create a Directory Manager Workflow Route
+# Create a GroupID Workflow Route
 
 Use this API to create a new workflow route. To create a workflow, you must specify the
 following:
@@ -30,7 +30,7 @@ following:
 See the
 [Create a New Workflow](/docs/directorymanager/11.0/signin/workflow/implement.md#create-a-new-workflow)
 section of the
-[Create and Manage Workflows in Directory Manager](/docs/directorymanager/11.0/signin/workflow/implement.md)
+[Create and Manage Workflows in GroupID](/docs/directorymanager/11.0/signin/workflow/implement.md)
 topic for more information.
 
 ## Endpoint
@@ -153,5 +153,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

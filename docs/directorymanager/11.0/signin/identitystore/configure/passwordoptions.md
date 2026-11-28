@@ -1,5 +1,5 @@
 ---
-title: "Configure Password Options in Directory Manager"
+title: "Configure Password Options in GroupID"
 description: "Restrict passwords, define allowed-password regular expressions, and block passwords listed in an imported file for an identity store."
 keywords:
   - password restrictions
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 160
 ---
 
-# Configure Password Options in Directory Manager
+# Configure Password Options in GroupID
 
 You can define the following password restrictions and rules for an identity store:
 
@@ -19,7 +19,7 @@ You can define the following password restrictions and rules for an identity sto
 - Define regular expressions for allowed passwords
 - Specify disallowed passwords using an external file
 
-When identity store users reset or change their passwords using Directory Manager, their new
+When identity store users reset or change their passwords using GroupID, their new
 passwords must follow the defined rules.
 
 :::note
@@ -112,7 +112,7 @@ users follow certain rules and patterns.
 ## Specify Disallowed Passwords Using an External File
 
 A simple way of preventing users from using certain words or strings as passwords is to add those
-restricted passwords to a CSV or TXT file and upload it to Directory Manager.
+restricted passwords to a CSV or TXT file and upload it to GroupID.
 
 **To upload the file:**
 

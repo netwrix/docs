@@ -1,6 +1,6 @@
 ---
-title: "Enroll Your Identity Store Account in Directory Manager"
-description: "Enroll your identity store account in the Directory Manager portal using security questions, SMS, email, an authenticator app, YubiKey, or Windows Hello."
+title: "Enroll Your Identity Store Account in GroupID"
+description: "Enroll your identity store account in the GroupID portal using security questions, SMS, email, an authenticator app, YubiKey, or Windows Hello."
 keywords:
   - enroll identity store account
   - second factor authentication enrollment
@@ -10,17 +10,17 @@ keywords:
 sidebar_position: 10
 ---
 
-# Enroll Your Identity Store Account in Directory Manager
+# Enroll Your Identity Store Account in GroupID
 
 With second factor authentication enabled for a user role in an identity store, unenrolled users
 must enroll their identity store accounts before they can connect the portal to that identity store
 and sign in.
 
-Enrolling an identity store account means that a user must register this account in Directory
-Manager using an authentication type.
+Enrolling an identity store account means that a user must register this account in GroupID
+using an authentication type.
 
 After users enroll their accounts, they must authenticate with the same authentication types
-whenever they sign in to the Directory Manager portal using that account.
+whenever they sign in to the GroupID portal using that account.
 
 What do you want to do?
 
@@ -33,7 +33,7 @@ What do you want to do?
 
     OR
 
-    Scan the QR code if the QR code is enabled in Directory Manager Admin Center.
+    Scan the QR code if the QR code is enabled in GroupID Admin Center.
 
 2. Click the profile icon in the top right corner and select **Enroll your account**.
 3. The authentication types available for enrollment are listed as tabs on the **Your Enrollments**
@@ -97,5 +97,5 @@ What do you want to do?
 
 **See Also**
 
-- [Second Factor Authentication in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
-- [Authenticate Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)
+- [Second Factor Authentication in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
+- [Authenticate Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)

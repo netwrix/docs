@@ -1,5 +1,5 @@
 ---
-title: "Get Data Source Provider Options API in Directory Manager"
+title: "Get Data Source Provider Options API in GroupID"
 description: "Retrieve the provider type, capability mappings, and creatable objects of a data source specified by its ID."
 keywords:
   - data source provider options
@@ -10,7 +10,7 @@ sidebar_position: 140
 unlisted: true
 ---
 
-# Get Data Source Provider Options API in Directory Manager
+# Get Data Source Provider Options API in GroupID
 
 Use this API to retrieve information about the provider of a specified data source.
 
@@ -46,5 +46,5 @@ GET
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

@@ -1,5 +1,5 @@
 ---
-title: "Group Advanced Settings in Directory Manager"
+title: "Group Advanced Settings in GroupID"
 description: "Control a group's address book visibility, out-of-office replies, and non-delivery report recipients on the Advanced tab of group properties."
 keywords:
   - group Advanced tab
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 80
 ---
 
-# Group Advanced Settings in Directory Manager
+# Group Advanced Settings in GroupID
 
 Use this tab to control the group's visibility in the messaging provider's address book and manage
 out-of-office notifications.
@@ -59,4 +59,4 @@ Non-delivery reports are sent if an SMTP server is configured for the identity s
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

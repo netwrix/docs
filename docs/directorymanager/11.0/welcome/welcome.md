@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Portal Overview"
-description: "Learn what users and administrators can do in the Directory Manager portal, from group and user management to workflows and reports."
+title: "GroupID Portal Overview"
+description: "Learn what users and administrators can do in the GroupID portal, from group and user management to workflows and reports."
 keywords:
-  - Directory Manager portal
+  - GroupID portal
   - group management
   - user management
   - identity store
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 50
 ---
 
-# Directory Manager Portal Overview
+# GroupID Portal Overview
 
-A Directory Manager portal represents a virtual link with the directory. Using it, users can do the
+A GroupID portal represents a virtual link with the directory. Using it, users can do the
 following in an identity store:
 
 - Search the directory.
@@ -26,7 +26,7 @@ following in an identity store:
 - Generate hundreds of insightful reports on Active Directory, Microsoft Entra ID, Exchange, and
   Office 365 objects, such as groups, users, mailboxes, contacts, computers, and servers.
 - View history data for directory objects that are created, updated, or deleted in the directory
-  using Directory Manager.
+  using GroupID.
 
 Delegating group and user management tasks to end users reduces the workload on IT administrators
 and helpdesk, as users can manage their groups and direct reports without assistance from an
@@ -34,11 +34,11 @@ administrator. Moreover, when users maintain and update their profile informatio
 accurate and reliable.
 
 Administrators can maintain complete control over data integrity, as they can implement fine-grained
-controls and policies that determine what users can view and change using the Directory Manager
+controls and policies that determine what users can view and change using the GroupID
 portal. They can also define workflows for an identity store that serve as a built-in auditing
 system to ensure that users enter correct data before changes are committed to the directory.
 
-A Directory Manager portal can be linked with multiple identity stores, thus eliminating the need to
+A GroupID portal can be linked with multiple identity stores, thus eliminating the need to
 create a separate portal for each identity store. Users can select an identity store to sign in.
 
 :::note
@@ -49,12 +49,12 @@ different user roles within an identity store, you may not have access to all po
 
 **See Also**
 
-- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
-- [Directory Manager Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)
-- [Manage Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
-- [Manage users in Directory Manager](/docs/directorymanager/11.0/welcome/user/overview.md)
-- [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
-- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
-- [Directory Manager Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)
-- [Directory Manager Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
-- [Directory Manager Reports Dashboard](/docs/directorymanager/11.0/welcome/dashboard/dashboard.md)
+- [Sign In to the GroupID Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [GroupID Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)
+- [Manage Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
+- [Manage users in GroupID](/docs/directorymanager/11.0/welcome/user/overview.md)
+- [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
+- [GroupID Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
+- [GroupID Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)
+- [GroupID Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
+- [GroupID Reports Dashboard](/docs/directorymanager/11.0/welcome/dashboard/dashboard.md)

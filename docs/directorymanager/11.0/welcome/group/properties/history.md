@@ -1,22 +1,22 @@
 ---
-title: "Directory Manager object properties: History tab"
+title: "GroupID object properties: History tab"
 description: "View an object's change history, export it, and add, edit, or remove notes on history items from the History tab."
 keywords:
   - "object history"
   - "export history data"
   - "history notes"
   - "administrative view"
-  - "Directory Manager history"
+  - "GroupID history"
 sidebar_position: 140
 ---
 
-# Directory Manager object properties: History tab
+# GroupID object properties: History tab
 
 This tab displays the object's history, which includes all changes to the object since its creation.
 
 History is available if the administrator has enabled history tracking for the identity store in
-Directory Manager Management Console. See
-[Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md).
+GroupID Management Console. See
+[GroupID Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md).
 
 What do you want to do?
 
@@ -57,7 +57,7 @@ You can export history data displayed on this page to an external file.
 
 ## Add notes to history items
 
-Directory Manager enables a user to add notes to history items that were logged as a result of any
+GroupID enables a user to add notes to history items that were logged as a result of any
 change they made. A note may explain the reason for making a certain change, such as why they changed the
 security type for a group.
 
@@ -71,8 +71,8 @@ edit or add comments.
 ### Add a note
 
 The option to add a note is available on the My Account History card on Dashboard, and all History
-pages ([View My History in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
-[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md), and
+pages ([View My History in the GroupID Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
+[View My Direct Reports' History in GroupID](/docs/directorymanager/11.0/welcome/history/mydirectreport.md), and
 [View and Filter History of Groups You Own](/docs/directorymanager/11.0/welcome/history/mydirectorygroup.md)).
 
 1. Click the **Add Note** button next to a history item to add a note to it.
@@ -110,6 +110,6 @@ You can remove only your own notes.
 
 See Also
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [GroupID Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

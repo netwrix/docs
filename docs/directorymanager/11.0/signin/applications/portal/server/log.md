@@ -1,26 +1,26 @@
 ---
-title: "Manage Portal Log Settings in Directory Manager"
-description: "Set or turn off file logging and Windows logging for a Directory Manager portal deployment instance, and find where the logs are stored."
+title: "Manage Portal Log Settings in GroupID"
+description: "Set or turn off file logging and Windows logging for a GroupID portal deployment instance, and find where the logs are stored."
 keywords:
   - portal logging
   - file logging level
   - Windows logging
   - Event Viewer
   - log files
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 50
 ---
 
-# Manage Portal Log Settings in Directory Manager
+# Manage Portal Log Settings in GroupID
 
-Directory Manager uses Windows logging and file logging to monitor events from a portal. You can set
+GroupID uses Windows logging and file logging to monitor events from a portal. You can set
 the logging level for a deployment instance of a portal to track a specific set of information for
 it.
 
 ## File Logging
 
 File logging records events for a portal’s deployment instance in a text file. When the file size
-reaches 100 MB, Directory Manager archives it in the same directory by replacing the file extension
+reaches 100 MB, GroupID archives it in the same directory by replacing the file extension
 with the suffix _.Log.X_, and then creates a new text file with the original name. _X_ in _.Log.X_
 is a number from 1 to 10 representing the archiving order, where 1 denotes the most recent file.
 
@@ -41,7 +41,7 @@ Windows logging records events from a deployment instance of a portal in a centr
 named _Imanami GroupID_. Windows log entries are generated on the machine where IIS is running.
 
 - For portal instances deployed in native IIS, you can view Windows logs in the Windows Event Viewer
-  on the Directory Manager server.
+  on the GroupID server.
 - For portal instances deployed in remote IIS, you can view Windows logs in the Windows Event Viewer
   on the remote IIS machine.
 
@@ -55,10 +55,10 @@ Windows logging isn't available for a portal instance deployed in Docker.
 
 ### View Windows Logs
 
-1. On the Directory Manager server/remote IIS machine, type _eventvwr_ in the Run dialog box and
+1. On the GroupID server/remote IIS machine, type _eventvwr_ in the Run dialog box and
    click **OK** to launch Windows Event Viewer.
 2. Click **Applications and Service Logs > Imanami GroupID** in the left pane to view the event logs
-   for Directory Manager.
+   for GroupID.
 
 ## Change the File Logging Level for a Portal Instance
 
@@ -131,5 +131,5 @@ Windows logging isn't available for a portal instance deployed in Docker.
 
 **See Also**
 
-- [Directory Manager Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)
-- [Download Directory Manager Logs from Admin Center](/docs/directorymanager/11.0/signin/concepts/logs.md)
+- [GroupID Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)
+- [Download GroupID Logs from Admin Center](/docs/directorymanager/11.0/signin/concepts/logs.md)

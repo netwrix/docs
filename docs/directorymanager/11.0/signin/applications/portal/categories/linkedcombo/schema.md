@@ -1,21 +1,21 @@
 ---
-title: "Define Linked Combo Field Relationships in Directory Manager"
+title: "Define Linked Combo Field Relationships in GroupID"
 description: "Map linked fields to binding expressions and set parent-child relationships on the Schema page of the Linked Combo Display Type wizard."
 keywords:
   - linked combo schema
   - binding expression
   - parent-child field relationship
   - linked combo display type
-  - Directory Manager Portal
+  - GroupID Portal
 sidebar_position: 20
 ---
 
-# Define Linked Combo Field Relationships in Directory Manager
+# Define Linked Combo Field Relationships in GroupID
 
 On the **Schema** page of the **Linked Combo Display Type** wizard, define the parent-child
 relationship between fields. Every linked field must have a parent field except the primary parent
 field. Each linked field also requires a data binding expression that defines its mapping with the
-underlying XML data. Directory Manager provides a list of all possible data binding expressions
+underlying XML data. GroupID provides a list of all possible data binding expressions
 (extracted from the XML source file) to select from.
 
 Do the following:
@@ -96,4 +96,4 @@ Do the following:
 
 See Also
 
-- [Linked Combo Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)
+- [Linked Combo Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)

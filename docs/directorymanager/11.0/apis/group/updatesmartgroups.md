@@ -5,7 +5,7 @@ keywords:
   - update Smart Groups API
   - Smart Groups Update endpoint
   - bulk Smart Group update
-  - Directory Manager data service
+  - GroupID data service
 sidebar_position: 190
 unlisted: true
 ---
@@ -57,5 +57,5 @@ https://demomachine:4443/GroupIDDataService/api/IdentityStores/{identityStoreId}
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

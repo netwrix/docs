@@ -1,5 +1,5 @@
 ---
-title: "Enable-DistributionGroup Cmdlet in Directory Manager"
+title: "Enable-DistributionGroup Cmdlet in GroupID"
 description: "Mail-enable a distribution group with the Enable-DistributionGroup cmdlet."
 keywords:
   - Enable-DistributionGroup
@@ -9,11 +9,11 @@ keywords:
 sidebar_position: 20
 ---
 
-# Enable-DistributionGroup Cmdlet in Directory Manager
+# Enable-DistributionGroup Cmdlet in GroupID
 
 This cmdlet makes a distribution group in the directory mail-enabled.
 
-Directory Manager maintains a history for this cmdlet, which you can view in the Directory Manager
+GroupID maintains a history for this cmdlet, which you can view in the GroupID
 portal, under the **History** node in the left panel.
 
 ## Syntax
@@ -42,6 +42,6 @@ Enable-DistributionGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Ima
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Mail-Enable and Mail-Disable Group Cmdlets](/docs/directorymanager/11.0/managementshell/mailenableddisabledgroups/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Mail-Enable and Mail-Disable Group Cmdlets](/docs/directorymanager/11.0/managementshell/mailenableddisabledgroups/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,6 +1,6 @@
 ---
-title: "Add a Directory Manager Server to an Existing Cluster"
-description: "Configure a new Directory Manager server to join an existing cluster and share its database, Elasticsearch cluster, and service settings."
+title: "Add a GroupID Server to an Existing Cluster"
+description: "Configure a new GroupID server to join an existing cluster and share its database, Elasticsearch cluster, and service settings."
 keywords:
   - add directory manager server to cluster
   - directory manager load balancing
@@ -11,28 +11,28 @@ keywords:
 sidebar_position: 30
 ---
 
-# Add a Directory Manager Server to an Existing Cluster
+# Add a GroupID Server to an Existing Cluster
 
-While installing Directory Manager, you can choose to create a Directory Manager server with load
+While installing GroupID, you can choose to create a GroupID server with load
 balancing support, where the load is balanced in real time across multiple Data Services, portals,
 and Elasticsearch instances.
 
 This option also configures the GroupID Elasticsearch Service as a secondary node to the
-primary node for the Elasticsearch Service cluster configured on the Directory Manager server.
+primary node for the Elasticsearch Service cluster configured on the GroupID server.
 
-To configure a Directory Manager server with an existing database:
+To configure a GroupID server with an existing database:
 
 1. On the **Select to create new server or use existing server** page of the Configuration Tool,
    select the
-   [Configure a Directory Manager Server and Database](/docs/directorymanager/11.0/about/configure/gidserver.md)
+   [Configure a GroupID Server and Database](/docs/directorymanager/11.0/about/configure/gidserver.md)
    option. See step 2 in the
-   [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md) topic.
+   [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md) topic.
 2. Click **Next**.
 
     ![Database settings page with SQL Server, authentication, and database fields](/images/directorymanager/11.0/install/configure/databasesettings.webp)
 
-3. In the **SQL Server** list, select the SQL Server to use with this new Directory Manager server.
-   The SQL Server must be the same one used with the primary node of Directory Manager.
+3. In the **SQL Server** list, select the SQL Server to use with this new GroupID server.
+   The SQL Server must be the same one used with the primary node of GroupID.
 
     If the required server doesn't appear in the list, ensure that the **SQL Server Browser**
     service is running on the SQL Server machine and then click **Refresh**.
@@ -40,13 +40,13 @@ To configure a Directory Manager server with an existing database:
 4. In the **Authentication** list, select an authentication mode to use when connecting to the SQL
    Server database. The modes are:
 
-    - **SQL Server Authentication** - Sets SQL Server to work with Directory Manager using a SQL
+    - **SQL Server Authentication** - Sets SQL Server to work with GroupID using a SQL
       Server account. See the
-      [SQL Server Authentication Modes for Directory Manager](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
+      [SQL Server Authentication Modes for GroupID](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
       topic for additional information.
-    - **Windows Authentication** - Sets SQL Server to work with Directory Manager using a Windows
+    - **Windows Authentication** - Sets SQL Server to work with GroupID using a Windows
       user account. See the
-      [SQL Server Authentication Modes for Directory Manager](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
+      [SQL Server Authentication Modes for GroupID](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
       topic for additional details.
 
 5. Depending on the authentication mode you selected, do the following:
@@ -56,11 +56,11 @@ To configure a Directory Manager server with an existing database:
     - For Windows Authentication: the user name and password fields are disabled and populated with
       the credentials of the signed-in user.
 
-6. In the **SQL Database** box, specify the name of the SQL database that the primary Directory
-   Manager node uses. This new Directory Manager instance uses the same database.
+6. In the **SQL Database** box, specify the name of the SQL database that the primary GroupID
+   node uses. This new GroupID instance uses the same database.
 
     :::note
-    When you configure a new Directory Manager machine with the existing database option, the **Copy
+    When you configure a new GroupID machine with the existing database option, the **Copy
     Database** button has no relevance.
     :::
 
@@ -68,20 +68,20 @@ To configure a Directory Manager server with an existing database:
 
     ![License page showing the license information from the primary node](/images/directorymanager/11.0/install/configure/license_w_existing_db_option.webp)
 
-8. On the **License** page, the license information of Directory Manager installed on the primary
+8. On the **License** page, the license information of GroupID installed on the primary
    node is displayed. A valid license and key enable the **Next** button. If the **Next** button
    remains disabled, check your entries for errors.
 9. Click **Next**.
 
-    ![Directory Manager Service Configurations page](/images/directorymanager/11.0/install/configure/servicesconfiguration.webp)
+    ![GroupID Service Configurations page](/images/directorymanager/11.0/install/configure/servicesconfiguration.webp)
 
-10. Directory Manager requires two services:
+10. GroupID requires two services:
 
-    - **GroupID Data Service**: A web-based service that Directory Manager uses to communicate with
+    - **GroupID Data Service**: A web-based service that GroupID uses to communicate with
       Microsoft SQL Server for storing and fetching data in the database.
-    - **GroupID Security Service**: A web-based service that Directory Manager uses to:
+    - **GroupID Security Service**: A web-based service that GroupID uses to:
 
-        - Authenticate and authorize users on different Directory Manager functionalities according
+        - Authenticate and authorize users on different GroupID functionalities according
           to their roles.
         - Encrypt and decrypt data that the Data Service stores in and fetches from the SQL
           database.
@@ -96,18 +96,18 @@ To configure a Directory Manager server with an existing database:
     - **Admin Center**: A web-based application that you can access over the Internet and Intranet.
 
     :::note
-    This Directory Manager instance uses the Email and Scheduler services of the selected cluster.
+    This GroupID instance uses the Email and Scheduler services of the selected cluster.
     :::
 
 11. Click **Next**.
 
     ![Elasticsearch Settings page](/images/directorymanager/11.0/install/configure/elasticsearchsettings.webp)
 
-12. Directory Manager provides the following two options for Elasticsearch configuration. Select
+12. GroupID provides the following two options for Elasticsearch configuration. Select
     the relevant option:
 
-    - **Let GroupID install and manage Elasticsearch**: If you select this option, the Directory
-      Manager Configuration Tool installs Elasticsearch. It presents the default configuration of
+    - **Let GroupID install and manage Elasticsearch**: If you select this option, the GroupID
+      Configuration Tool installs Elasticsearch. It presents the default configuration of
       the Elasticsearch cluster it creates:
 
         ![Select Elastic Cluster page](/images/directorymanager/11.0/install/configure/select_cluster_w_existing_db_option.webp)
@@ -128,8 +128,7 @@ To configure a Directory Manager server with an existing database:
 
         ![Elasticsearch settings page for an existing Elasticsearch installation](/images/directorymanager/11.0/install/configure/elasticsearchsettings-2.webp)
 
-        Provide the configuration of the Elasticsearch instance you want to use with Directory
-        Manager:
+        Provide the configuration of the Elasticsearch instance you want to use with GroupID:
 
         - **Elasticsearch URL**: The URL for accessing Elasticsearch.
         - **Elasticsearch Username**: The service account for Elasticsearch.
@@ -141,7 +140,7 @@ To configure a Directory Manager server with an existing database:
 
     :::note
     If you configure a Group Managed Service Account (gMSA) as an App Pool service account, the
-    Directory Manager Configuration Tool adds this account to the local Administrators and IIS_IUSRS
+    GroupID Configuration Tool adds this account to the local Administrators and IIS_IUSRS
     groups.
     :::
 
@@ -152,29 +151,29 @@ To configure a Directory Manager server with an existing database:
     be a member of the Backup Operators and IIS_IUSRS groups.
     :::
 
-14. On the **Service Account Settings** page, specify the service account to use for the Directory
-    Manager app pool in IIS and Windows services.
+14. On the **Service Account Settings** page, specify the service account to use for the GroupID
+    app pool in IIS and Windows services.
 
     - Use a domain account or a Group Managed Service Account (gMSA).
     - The account must be a member of the Administrators group or both the Backup Operators and
       IIS_IUSRS groups.
-    - The account you specify manages the Directory Manager app pool in IIS. The Data Service,
+    - The account you specify manages the GroupID app pool in IIS. The Data Service,
       Mobile Service, Security Service, and the portals run under the app pool.
-    - By default, a local account, `GroupIDSSuser`, is set for the Directory Manager app pool, but
+    - By default, a local account, `GroupIDSSuser`, is set for the GroupID app pool, but
       you can't proceed unless you change it to a domain account or gMSA.
     - You can specify a local account (with local administrator rights) in the app pool for a
       machine that isn't joined to any domain (this applies to a Microsoft Entra ID identity store
       only).
 
         :::note
-        For the Directory Manager app pool, you can use a domain account for a machine joined to a
+        For the GroupID app pool, you can use a domain account for a machine joined to a
         domain.
         :::
 
         :::note
         Before you use a Group Managed Service Account, ensure that:
 
-        - Key Distribution Service (KDS) is enabled on the Directory Manager machine.
+        - Key Distribution Service (KDS) is enabled on the GroupID machine.
         - The Microsoft AD module for PowerShell is installed on the machine.
         :::
 
@@ -208,23 +207,23 @@ To configure a Directory Manager server with an existing database:
     Group Managed Service Account).
 17. Click **Configure**.
 
-    ![Configuring Directory Manager progress page](/images/directorymanager/11.0/install/configure/configuring.webp)
+    ![Configuring GroupID progress page](/images/directorymanager/11.0/install/configure/configuring.webp)
 
-18. The next page displays the progress while Directory Manager configures the server on the
+18. The next page displays the progress while GroupID configures the server on the
     machine.
 
-    ![Directory Manager configured successfully page](/images/directorymanager/11.0/install/configure/configuresuccess.webp)
+    ![GroupID configured successfully page](/images/directorymanager/11.0/install/configure/configuresuccess.webp)
 
-19. This completes the configuration of Directory Manager as a secondary node on your machine. Click
-    **Launch GroupID** to start using Directory Manager. The Sign In page opens:
+19. This completes the configuration of GroupID as a secondary node on your machine. Click
+    **Launch GroupID** to start using GroupID. The Sign In page opens:
 
-    ![Directory Manager Sign In page](/images/directorymanager/11.0/install/configure/launchgid.webp)
+    ![GroupID Sign In page](/images/directorymanager/11.0/install/configure/launchgid.webp)
 
-    To sign in to Directory Manager Admin Center for the first time, provide the GroupID Administrator
+    To sign in to GroupID Admin Center for the first time, provide the GroupID Administrator
     user name and password.
 
-    Alternatively, click **Next** to launch the Upgrade wizard for upgrading Directory Manager.
+    Alternatively, click **Next** to launch the Upgrade wizard for upgrading GroupID.
 
 See Also
 
-- [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)

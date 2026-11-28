@@ -11,7 +11,7 @@ sidebar_position: 100
 
 # Edit Dynasty options on a group
 
-Directory Manager provides advanced options that you can use to enhance the Dynasty structure and its
+GroupID provides advanced options that you can use to enhance the Dynasty structure and its
 membership. You can:
 
 - Modify the attributes an Organizational/Geographical/Custom Dynasty is built on
@@ -62,7 +62,7 @@ You can view and change the attributes for parent and middle Dynasties.
 - Click **Remove** to remove the selected attribute.
 
 See the
-[Configure Dynasty attributes in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md)
+[Configure Dynasty attributes in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md)
 for details.
 
 **Inheritance**
@@ -105,7 +105,7 @@ managers as members of a single group.
 
 You can view and change these structure options for parent and middle Dynasties. For details, see
 the
-[Set managerial Dynasty options in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md).
+[Set managerial Dynasty options in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md).
 
 :::note
 (1) If the **Set manager as owner** checkbox is selected, the **Always inherit** option is
@@ -125,7 +125,7 @@ Dynasties, replacing their respective primary owners.
 Set a custom attribute to create a managerial lineage in the context of this attribute.
 
 See the
-[Set managerial Dynasty options in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md)for
+[Set managerial Dynasty options in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md)for
 a discussion on attributes.
 
 In addition to the scenarios discussed, the following also apply on Dynasty update:
@@ -203,5 +203,5 @@ See Inheritance.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)

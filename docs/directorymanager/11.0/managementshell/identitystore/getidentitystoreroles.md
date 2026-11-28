@@ -1,6 +1,6 @@
 ---
 title: "Get-IdentityStoreRoles Cmdlet"
-description: "Get the security roles of a Directory Manager identity store, including role priority, criteria, and permissions, with the Get-IdentityStoreRoles cmdlet."
+description: "Get the security roles of a GroupID identity store, including role priority, criteria, and permissions, with the Get-IdentityStoreRoles cmdlet."
 keywords:
   - Get-IdentityStoreRoles
   - security roles
@@ -64,6 +64,6 @@ AdStore1 identity store through the pipeline operator.
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

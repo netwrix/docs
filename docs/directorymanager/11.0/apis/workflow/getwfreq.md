@@ -1,9 +1,9 @@
 ---
-title: "Get Workflow Requests by ID in Directory Manager"
+title: "Get Workflow Requests by ID in GroupID"
 description: "Retrieve the details of one or more workflow requests by passing their request IDs in the endpoint URL."
 keywords:
   - workflow request details
-  - Directory Manager API
+  - GroupID API
   - workflow request ID
   - Workflows endpoint
   - GET request
@@ -11,7 +11,7 @@ sidebar_position: 150
 unlisted: true
 ---
 
-# Get Workflow Requests by ID in Directory Manager
+# Get Workflow Requests by ID in GroupID
 
 Use this API to retrieve information about the workflow requests whose IDs are specified in the
 endpoint URL.
@@ -119,5 +119,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

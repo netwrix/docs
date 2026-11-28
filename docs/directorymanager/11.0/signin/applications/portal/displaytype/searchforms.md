@@ -1,8 +1,8 @@
 ---
-title: "Customize Search Forms in the Directory Manager Portal"
-description: "Add, edit, remove, and rearrange the fields on the Advanced Search and Find dialog search forms in the Directory Manager portal."
+title: "Customize Search Forms in the GroupID Portal"
+description: "Add, edit, remove, and rearrange the fields on the Advanced Search and Find dialog search forms in the GroupID portal."
 keywords:
-  - Directory Manager
+  - GroupID
   - search forms
   - Advanced Search
   - Find dialog
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Customize Search Forms in the Directory Manager Portal
+# Customize Search Forms in the GroupID Portal
 
 You can customize the search forms for a portal. You can:
 
@@ -53,7 +53,7 @@ The following table lists the search forms that you can customize:
    form for performing a search.  
    Click **Add Field** to add a new field. The **Add Field** pane is displayed.
 7. In the **Field** dropdown list, select a schema attribute to link to the field.  
-   Directory Manager matches the search string that portal users enter in the field to this
+   GroupID matches the search string that portal users enter in the field to this
    attribute’s values to fetch search results.
 8. In the **Display Name** box, enter a display name for the field. This name is the field’s label
    on the search form.
@@ -61,7 +61,7 @@ The following table lists the search forms that you can customize:
 10. In the **Display Type** dropdown list, select the display type to use to render this field in
     the portal. The list contains basic display types and custom display types defined on the
     **Custom Display Types** page. See the
-    [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+    [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
     topic.
 11. Click **OK**. The field is displayed in the **Fields** area on the **Edit Search Form** pane.  
     To rearrange the fields on the search form, click the plus sign for a field and drag to change
@@ -109,7 +109,7 @@ You can change the following for a field on a search form:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Customize Search Results in the Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchresults.md)
-- [Customize Quick Search in the Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/quicksearch.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Customize Search Results in the GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchresults.md)
+- [Customize Quick Search in the GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/quicksearch.md)

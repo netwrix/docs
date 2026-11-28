@@ -1,5 +1,5 @@
 ---
-title: "Security Role Permissions in Directory Manager"
+title: "Security Role Permissions in GroupID"
 description: "Reference for the permissions you can allow or deny to a security role, grouped by Users, Groups, Admin Center, Synchronize, and other tabs."
 keywords:
   - security role permissions
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Security Role Permissions in Directory Manager
+# Security Role Permissions in GroupID
 
-Allow or deny permissions to a security role on different Directory Manager functions.
+Allow or deny permissions to a security role on different GroupID functions.
 
 On the **Create Security Role**/**Copy Security Role**/**Update Security Role** page, click **Select what
 members can do** in the **Permissions** area to grant permissions to role members.
@@ -35,8 +35,8 @@ Permissions are grouped under the following categories, with each tab representi
 
 ## Users
 
-User-related permissions apply to all the Directory Manager clients that facilitate user management, such as
-the Directory Manager portal, Management Shell, and the Directory Manager mobile app.
+User-related permissions apply to all the GroupID clients that facilitate user management, such as
+the GroupID portal, Management Shell, and the GroupID mobile app.
 
 Click the **Users** tab on the **Add Permissions** dialog box.
 
@@ -59,8 +59,8 @@ denied and **Manage Any Profile** allowed, role members can manage their own pro
 
 ## Groups
 
-Group-related permissions apply to all the Directory Manager clients that facilitate group management, such as
-the Directory Manager portal, Management Shell, and the Directory Manager mobile app.
+Group-related permissions apply to all the GroupID clients that facilitate group management, such as
+the GroupID portal, Management Shell, and the GroupID mobile app.
 
 Click the **Groups** tab on the **Add Permissions** dialog box.
 
@@ -88,8 +88,8 @@ The following table describes the permissions:
 | --- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.  | Create Application                   | Enables role members to create a new application using the **Applications** node in Admin Center. This permission only allows role members to create an entirely new application. They can't create an application by copying an existing one or create another instance of an application.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | 2.  | Create Data Source                   | Enables role members to create data sources for Synchronize jobs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 3.  | Create Identity Store                | Enables role members to create identity stores in Directory Manager.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 4.  | Manage Admin Center Settings         | Enables role members to manage the following in Admin Center settings: - Add and remove questions in the global question pool. - Add, edit, and remove Directory Manager licenses. - Download log files for Directory Manager. These options can be accessed by clicking the **Settings** button at the bottom of the left navigation pane in Admin Center. If this permission is denied, role members can view the question pool, licenses, and dump logs function as read-only.                                                                                                                                                                                                                                                                                                                         |
+| 3.  | Create Identity Store                | Enables role members to create identity stores in GroupID.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 4.  | Manage Admin Center Settings         | Enables role members to manage the following in Admin Center settings: - Add and remove questions in the global question pool. - Add, edit, and remove GroupID licenses. - Download log files for GroupID. These options can be accessed by clicking the **Settings** button at the bottom of the left navigation pane in Admin Center. If this permission is denied, role members can view the question pool, licenses, and dump logs function as read-only.                                                                                                                                                                                                                                                                                                                         |
 | 5.  | Manage Application Design Settings   | Enables role members to update the design settings for an application in Admin Center. Applications can be accessed using the **Applications** node in the left pane. If this permission is denied, design settings are displayed to role members as read-only. NOTE: The **Manage Applications** permission must be granted to the role as a prerequisite to the **Manage Application Design Settings** permission.                                                                                                                                                                                                                                                                                                                                                                 |
 | 6.  | Manage Application Server Settings   | Enables role members to update the server settings for an application in Admin Center. Applications can be accessed using the **Applications** node in the left pane. If this permission is denied, server settings are displayed to role members as read-only. NOTE: The **Manage Applications** permission must be granted to the role as a prerequisite to the **Manage Application Server Settings** permission.                                                                                                                                                                                                                                                                                                                                                                 |
 | 7.  | Manage Applications                  | Enables role members to do the following using the **Applications** node in Admin Center: - Create new applications by copying an existing application, deploy instances of an application, and delete an application. - View the already created applications as read-only. NOTE: If you allow this permission to the role while denying the **Manage Application Server Settings** and **Manage Application Design Settings** permissions, role members can't update the server and design settings for an application. These settings are displayed as read-only. To enable them to update the server and design configurations for an application, this permission must be granted as a prerequisite along with the respective permissions.                  |
@@ -101,8 +101,8 @@ The following table describes the permissions:
 | 13. | Manage Identity Store Link           | Enables role members to create, update, and delete identity store links.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | 14. | Manage Notifications Editor          | Enables role members to manage the Notification Editor in Admin Center, such as search and edit notification templates. The Notification Editor can be accessed in any of the following ways: - Using the Notification Editor button at the bottom of the left navigation pane in Admin Center. - Using the Notification Editor button on the Notification Queue page. If this permission is denied, the following happens: - The Notification Editor button on the Notification Queue page is disabled. - When launched using the Notification Editor button in the navigation pane, the Notification Editor page is displayed as read-only.                                                                                                                                        |
 | 15. | Manage Notifications Queue           | Enables role members to manage the notification queue in Admin Center, such as resend and delete queued notifications. The Notification Queue page can be accessed using the Notifications node in the left pane. If this permission is denied, role members can only view the page as read-only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 16. | Manage Replication                   | Enables role members to manage replication in Directory Manager. Role members can manage the following: - Global replication settings on the Replication page, that can be accessed by clicking the Replication node in Admin Center. - Replication settings for an identity store, that are controlled from within that identity store. - Run replication for an identity store from the identity store card pinned on the Identity Stores page. If this permission is denied, the Replication pages for both global and identity store settings are read-only, while the replication option won't be available on the identity store card. NOTE: The Manage Identity Store permission must be granted to the role as a prerequisite to the Manage Replication permission. |
-| 17. | Manage SAML                          | Enables role members to access Directory Manager Authenticate and manage: - Directory Manager as an identity provider - Directory Manager as a service provider                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 16. | Manage Replication                   | Enables role members to manage replication in GroupID. Role members can manage the following: - Global replication settings on the Replication page, that can be accessed by clicking the Replication node in Admin Center. - Replication settings for an identity store, that are controlled from within that identity store. - Run replication for an identity store from the identity store card pinned on the Identity Stores page. If this permission is denied, the Replication pages for both global and identity store settings are read-only, while the replication option won't be available on the identity store card. NOTE: The Manage Identity Store permission must be granted to the role as a prerequisite to the Manage Replication permission. |
+| 17. | Manage SAML                          | Enables role members to access GroupID Authenticate and manage: - GroupID as an identity provider - GroupID as a service provider                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | 18. | Manage Scheduling                    | Enables role members to create, update, and delete scheduled jobs for the identity store. If this permission is denied, the Scheduling page in identity store properties is read-only for role members. NOTE: The **Manage Identity Store** permission must be granted to the role as a prerequisite to the **Manage Scheduling** permission.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 19. | Manage Security Roles                | Enables role members to manage security roles in the identity store, such as create, update, and delete roles. Role members can also manage policies and permissions for roles. If this permission is denied, security roles and their configurations in identity store properties are read-only for role members. NOTE: The **Manage Identity Store** permission must be granted to the role as a prerequisite to the **Manage Security Roles** permission.                                                                                                                                                                                                                                                                                                        |
 | 20. | Manage SMS Gateways                  | Enables role members to create, update, and delete SMS gateway accounts in Admin Center. If this permission is denied, role members can view the gateway accounts as read-only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -110,7 +110,7 @@ The following table describes the permissions:
 
 ## Synchronize
 
-To manage permissions for Synchronize in the Directory Manager portal, click the **Synchronize** tab on the
+To manage permissions for Synchronize in the GroupID portal, click the **Synchronize** tab on the
 **Add Permissions** dialog box.
 
 The following table describes the permissions:
@@ -129,7 +129,7 @@ To manage password reset and account unlock permissions, click the **Password Ma
 the **Add Permissions** dialog box.
 
 End users can manage their identity store account passwords and unlock their accounts using the
-Directory Manager portal while helpdesk users can reset passwords and unlock accounts for other users through
+GroupID portal while helpdesk users can reset passwords and unlock accounts for other users through
 Admin Center.
 
 The following table describes the permissions:
@@ -141,7 +141,7 @@ The following table describes the permissions:
 | 3.  | Change My Password    | Enables role members to change their identity store account password.                    |
 | 4.  | Reset Any Password    | Enables helpdesk users to reset the account password for any user in the identity store. |
 | 5.  | Reset My Password     | Enables role members to reset their identity store account password.                     |
-| 6.  | Unenroll              | Enables helpdesk users to unenroll a user's identity store account in Directory Manager.           |
+| 6.  | Unenroll              | Enables helpdesk users to unenroll a user's identity store account in GroupID.           |
 | 7.  | Unlock Any Account    | Enables helpdesk users to unlock the identity store account for any user.                |
 
 :::note
@@ -153,7 +153,7 @@ denied and Unlock Any Account allowed, role members can unlock all accounts, inc
 
 ## Miscellaneous
 
-To grant permissions on miscellaneous functions in Directory Manager, click the **Misc** tab on the **Add
+To grant permissions on miscellaneous functions in GroupID, click the **Misc** tab on the **Add
 Permissions** dialog box.
 
 The following table describes the permissions:
@@ -162,10 +162,10 @@ The following table describes the permissions:
 
 |     | Permissions                      | Descriptions                                                                                                                                                           |
 | --- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.  | Enable Login to Service Provider | Enables role members to sign in to third-party applications using Directory Manager as an identity provider.                                                                       |
+| 1.  | Enable Login to Service Provider | Enables role members to sign in to third-party applications using GroupID as an identity provider.                                                                       |
 | 2.  | Manage All Requests              | Enables role members to approve/deny workflow requests, even when they aren't designated as approvers of those requests.                                             |
-| 3.  | Manage Report                    | Enables role members to create, edit, and delete reports for the identity store in the Directory Manager portal. Role members can't view and download the reports. |
-| 4.  | View and Download Report         | Enables role members to view and download the reports generated for the identity store in the Directory Manager portal.                                                          |
+| 3.  | Manage Report                    | Enables role members to create, edit, and delete reports for the identity store in the GroupID portal. Role members can't view and download the reports. |
+| 4.  | View and Download Report         | Enables role members to view and download the reports generated for the identity store in the GroupID portal.                                                          |
 
 <!-- vale Netwrix.LoginVerb = YES -->
 
@@ -182,7 +182,7 @@ The following table describes the permissions:
 
 ## Entitlement
 
-To grant permissions on entitlements in the Directory Manager portal, click the **Entitlement** tab on the
+To grant permissions on entitlements in the GroupID portal, click the **Entitlement** tab on the
 **Add Permissions** dialog box.
 
 For an Active Directory identity store, this tab lists the file servers that have been selected for
@@ -207,18 +207,18 @@ The following table describes the permissions:
 | --- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1.  | Permission Set                       | Select the kind of permission set to grant to role members. - Administrative: Grants all the effective permissions to role members on all the document libraries in the site. - Basic: Enables role members to navigate within the site to view the document libraries and the permissions assigned on them. You can change the permission set for both Administrative and Basic. Use the toggle button for each of the listed permissions to allow or deny it.   |
 | 2.  | Allow user to navigate to this share | Enables role members to navigate this SharePoint site and explore the document libraries along with the permissions assigned on them. If this checkbox isn't selected, role members can view basic information about the site only. They can't navigate the site to view the document libraries and permissions.                                                                                                                      |
-| 3.  | Add new user                         | Enables role members to search and select users from the directory and grant permissions to them on one or more document libraries in the site. NOTE: The facility to search and select groups isn't available. Groups have to be added from SharePoint. Using Directory Manager, role members can manage group permissions. The **Type** column lists the effective permissions. While adding users, role members can grant permissions that you enable here. |
+| 3.  | Add new user                         | Enables role members to search and select users from the directory and grant permissions to them on one or more document libraries in the site. NOTE: The facility to search and select groups isn't available. Groups have to be added from SharePoint. Using GroupID, role members can manage group permissions. The **Type** column lists the effective permissions. While adding users, role members can grant permissions that you enable here. |
 | 4.  | Modify user / group                  | Enables role members to update the permissions assigned to users and groups on document libraries in the site. The **Type** column lists the effective permissions. Role members can only modify the permissions that you enable here.                                                                                                                                                                                                                |
 | 5.  | Remove user / group                  | Enables role members to remove users and groups from the permission list of document libraries in the site. Removed users and groups can't access the respective document library in the site.                                                                                                                                                                                                                                                      |
 
 :::note
 For more information on role permissions, see the
-[User Roles in Microsoft Entra ID and GroupID](/docs/directorymanager/11.0/signin/identitystore/advsentraid.md#user-roles-in-microsoft-entra-id-and-directory-manager)
+[User Roles in Microsoft Entra ID and GroupID](/docs/directorymanager/11.0/signin/identitystore/advsentraid.md#user-roles-in-microsoft-entra-id-and-groupid)
 topic.
 :::
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Create a Security Role in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/create.md)
-- [Manage Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/manage.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Create a Security Role in GroupID](/docs/directorymanager/11.0/signin/securityrole/create.md)
+- [Manage Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/manage.md)

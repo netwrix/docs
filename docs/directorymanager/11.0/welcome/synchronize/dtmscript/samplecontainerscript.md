@@ -85,6 +85,6 @@ sidebar_position: 10
 
 **See Also**
 
-- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
-- [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
-- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Write Synchronize Scripts for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Visual Basic .NET Scripting for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+- [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)

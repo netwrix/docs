@@ -1,5 +1,5 @@
 ---
-title: "Helpdesk Policy for Security Roles in Directory Manager"
+title: "Helpdesk Policy for Security Roles in GroupID"
 description: "Set restricted or unrestricted mode and password reset options for helpdesk role members who reset passwords, unlock accounts, and unenroll users."
 keywords:
   - Helpdesk policy
@@ -11,15 +11,15 @@ keywords:
 sidebar_position: 70
 ---
 
-# Helpdesk Policy for Security Roles in Directory Manager
+# Helpdesk Policy for Security Roles in GroupID
 
 The Helpdesk policy is for the helpdesk role in an identity store.
 
 Helpdesk role members use the Helpdesk node in Admin Center to reset the domain account passwords
 and unlock accounts of identity store users. They can also unenroll identity store accounts of users
-in Directory Manager. They can also view the actions that users perform in the identity store, such as
+in GroupID. They can also view the actions that users perform in the identity store, such as
 password change or reset, account enrollment or unenrollment, and the date and time they signed in to
-Directory Manager.
+GroupID.
 
 :::note
 Grant the helpdesk role the following permissions in an identity store to enable
@@ -33,7 +33,7 @@ If these permissions are denied, the Helpdesk policy has no impact, because role
 authorized to perform the respective operations. See
 [Password Management](/docs/directorymanager/11.0/signin/securityrole/permissions.md#password-management)
 in the
-[Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.
 :::
 
@@ -162,7 +162,7 @@ authenticate end users before unlocking their identity store accounts or resetti
 RECOMMENDED: Before you apply this setting, ensure that the Security Questions
 authentication type is enabled and configured for the identity store, as well as enforced as an
 account enrollment method for security roles. See the
-[Set Up Security Question Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
+[Set Up Security Question Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
 topic.
 
 **To enforce security questions for authentication:**
@@ -276,7 +276,7 @@ end users' mobile phones. See the
 topic.  
  (2) You must configure an SMTP server for the identity store for email to be sent to end users. See
 the
-[Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+[Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
 topic.
 :::
 
@@ -304,6 +304,6 @@ change the password the next time they sign in to their workstations.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

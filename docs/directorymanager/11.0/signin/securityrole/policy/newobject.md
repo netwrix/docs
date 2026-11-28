@@ -1,5 +1,5 @@
 ---
-title: "New Object Policy for Security Roles in Directory Manager"
+title: "New Object Policy for Security Roles in GroupID"
 description: "Limit where role members can create directory objects by restricting creation to their own OU or to specific OUs for each object type."
 keywords:
   - New Object policy
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# New Object Policy for Security Roles in Directory Manager
+# New Object Policy for Security Roles in GroupID
 
-The New Object policy applies when role members create directory objects using the Directory Manager
+The New Object policy applies when role members create directory objects using the GroupID
 portal or Management Shell. Use this policy to:
 
 - Limit role members to creating new directory objects in the OUs they reside in.
@@ -126,5 +126,5 @@ the directory.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

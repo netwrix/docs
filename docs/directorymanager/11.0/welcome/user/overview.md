@@ -1,21 +1,21 @@
 ---
-title: "Manage users in Directory Manager"
-description: "Learn what users can do in the Directory Manager portal, from creating objects and managing direct reports to resetting passwords and validating profiles."
+title: "Manage users in GroupID"
+description: "Learn what users can do in the GroupID portal, from creating objects and managing direct reports to resetting passwords and validating profiles."
 keywords:
   - user management
   - dotted line management
   - direct reports
   - linked accounts
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 50
 ---
 
-# Manage users in Directory Manager
+# Manage users in GroupID
 
-With Directory Manager, you can:
+With GroupID, you can:
 
 - Automate user provisioning and deprovisioning in bulk. See the
-  [Directory Manager Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md) section.
+  [GroupID Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md) section.
 - Establish ownership by defining a clear managerial hierarchy with dotted line management. See the
   [Dotted line management](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/organization.md#dotted-line-management)
   section of the
@@ -27,17 +27,17 @@ With Directory Manager, you can:
       [ Create User, Mailbox, and Contact Objects](/docs/directorymanager/11.0/welcome/user/create/overview.md)
       topic.
     - Manage their direct reports. See the
-      [Manage Your Direct Reports in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/directreport.md)
+      [Manage Your Direct Reports in GroupID](/docs/directorymanager/11.0/welcome/user/manage/directreport.md)
       topic.
     - Update their profiles in the directory. See the
-      [Validate your profile in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
+      [Validate your profile in GroupID](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
       topic.
 
 - Link identical users in different directory services, such as Active Directory and Microsoft Entra
-  ID. See the [Link Accounts Across Identity Stores in Directory Manager](/docs/directorymanager/11.0/welcome/user/linkedaccounts.md)
+  ID. See the [Link Accounts Across Identity Stores in GroupID](/docs/directorymanager/11.0/welcome/user/linkedaccounts.md)
   topic.
 
-The following table lists the major functions that users can perform in the Directory Manager portal.
+The following table lists the major functions that users can perform in the GroupID portal.
 
 | Functions                     | Description                                                                                                                                                                        |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,6 +59,6 @@ The contact object type isn't supported in a Microsoft Entra ID based identity s
 
 **See Also**
 
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [Second Factor Authentication in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Second Factor Authentication in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

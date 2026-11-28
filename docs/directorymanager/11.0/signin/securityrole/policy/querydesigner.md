@@ -1,8 +1,8 @@
 ---
 title: "Configure a Query Designer Policy for a Security Role"
-description: "Restrict the containers, object types, tabs, attributes, and operators that security role members can use in the Directory Manager Query Designer."
+description: "Restrict the containers, object types, tabs, attributes, and operators that security role members can use in the GroupID Query Designer."
 keywords:
-  - Directory Manager
+  - GroupID
   - Query Designer
   - Smart Group query
   - security role policy
@@ -14,7 +14,7 @@ sidebar_position: 90
 
 You can define a role-based access policy for the Query Designer. Using the Query Designer, users
 can create queries for various purposes, as discussed in the
-[Specify Smart Group Query Attributes in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/displaytype/queryattributes.md)
+[Specify Smart Group Query Attributes in GroupID](/docs/directorymanager/11.0/signin/applications/portal/displaytype/queryattributes.md)
 topic.
 
 Use the Query Designer policy to restrict the following Query Designer features for a
@@ -255,7 +255,7 @@ the query (see the **Filter Criteria** tab of the Query Designer). You can:
     :::note
     This schema attribute setting overrides the schema attribute setting specified on the
     Smart Group Attribute page in the portal's design settings. See the
-    [Specify Smart Group Query Attributes in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/displaytype/queryattributes.md)
+    [Specify Smart Group Query Attributes in GroupID](/docs/directorymanager/11.0/signin/applications/portal/displaytype/queryattributes.md)
     topic.
     :::
 
@@ -324,5 +324,5 @@ attributes and operators are available to create a default filter criterion.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

@@ -1,6 +1,6 @@
 ---
-title: "Expire, Renew, and Change Group Expiry in Directory Manager"
-description: "Expire a group manually, change its expiry policy, attest an expiring group, and renew an expired group in the Directory Manager portal."
+title: "Expire, Renew, and Change Group Expiry in GroupID"
+description: "Expire a group manually, change its expiry policy, attest an expiring group, and renew an expired group in the GroupID portal."
 keywords:
   - expire group
   - renew expired group
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 120
 ---
 
-# Expire, Renew, and Change Group Expiry in Directory Manager
+# Expire, Renew, and Change Group Expiry in GroupID
 
-You can expire, renew, or delete a group using the Directory Manager portal. You can change the
+You can expire, renew, or delete a group using the GroupID portal. You can change the
 expiry policy of a group and attest an expiring group, if required.
 
 What do you want to do?
@@ -29,7 +29,7 @@ To expire a group manually:
 1. On the left navigation bar, click **Groups** and then select the **My Groups**, **My
    Memberships**, or **My Expiring Groups** tab.
 
-    You can also use [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+    You can also use [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
     to find the group you want to expire.
 
 2. On the page displayed, select the required group and click **Expire** on the toolbar.
@@ -42,21 +42,21 @@ Keep the following in mind:
   message is displayed, informing you that the group can't be expired.
 - When you manually expire a group with an expiry policy other than "Never Expire", the group
   expires and is moved to the
-  [View My Expired Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md) page.
+  [View My Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md) page.
 - A group without an expiry policy doesn't expire.
 
-    Directory groups that are created outside of Directory Manager don't have an expiry policy.
+    Directory groups that are created outside of GroupID don't have an expiry policy.
 
-    In Directory Manager, you can't distinguish groups with an expiry policy from groups without an
+    In GroupID, you can't distinguish groups with an expiry policy from groups without an
     expiry policy because groups without an expiry policy are displayed with "Never Expire" set as
     policy.
 
-If expired groups aren't renewed within a specific period (set by the Directory Manager
+If expired groups aren't renewed within a specific period (set by the GroupID
 administrator in the Group Lifecycle policy for the identity store), they are logically deleted when
 the period ends. See Group life cycle job.
 
 Logically deleted groups are moved to the
-[View My Deleted Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md) page with
+[View My Deleted Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md) page with
 the "Deleted\_" prefix added to their names.
 
 ## Change the expiry policy for a group
@@ -65,15 +65,15 @@ When a group is created, it has its expiry policy set to "Never Expire". You can
 as required.
 
 The Group Life Cycle job expires groups according to their respective expiry policies and moves them
-to the [View My Expired Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
+to the [View My Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
 page.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
    want to change the expiry policy for.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed with the **General** tab in view.
 
 3. From the **Expiration Policy** list, select the duration that the group remains active for,
@@ -89,16 +89,16 @@ page.
 4. Click **Save**.
 
 :::note
-If the Directory Manager administrator has specified this action for review, your changes don't take
+If the GroupID administrator has specified this action for review, your changes don't take
 effect until verified by an approver. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 
 :::
 
 ## Attest an expiring group
 
 See
-[Attest an Expiring Group in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/attestation.md).
+[Attest an Expiring Group in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/attestation.md).
 
 ## Renew an expired group
 
@@ -115,4 +115,4 @@ automatically deletes it from the directory.
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

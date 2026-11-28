@@ -1,16 +1,16 @@
 ---
-title: "Delete a Contact with the Directory Manager API"
+title: "Delete a Contact with the GroupID API"
 description: "Delete a single contact from an identity store by sending a DELETE request with the contact identity."
 keywords:
   - delete contact API
   - DELETE Contacts
   - contact identity
-  - Directory Manager API
+  - GroupID API
 sidebar_position: 20
 unlisted: true
 ---
 
-# Delete a Contact with the Directory Manager API
+# Delete a Contact with the GroupID API
 
 Use this API to delete a specified contact from the specified identity store.
 
@@ -46,5 +46,5 @@ DELETE
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

@@ -1,5 +1,5 @@
 ---
-title: "Set-Object Cmdlet in Directory Manager"
+title: "Set-Object Cmdlet in GroupID"
 description: "Use the Set-Object cmdlet to change attributes of a user, contact, group, or mailbox, such as department, description, or custom attributes."
 keywords:
   - Set-Object
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Set-Object Cmdlet in Directory Manager
+# Set-Object Cmdlet in GroupID
 
 The **Set-Object** cmdlet modifies any object, such as a user, contact, group (managed or
 unmanaged), or mailbox, in the directory.
@@ -66,6 +66,6 @@ Set-object -identity "Sonia Iqbal" -Description TestUser
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

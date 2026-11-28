@@ -1,6 +1,6 @@
 ---
-title: "Manage Group Membership in Directory Manager"
-description: "Add, remove, import, and export group members, set temporary membership, nest groups, and invite guest users in the Directory Manager portal."
+title: "Manage Group Membership in GroupID"
+description: "Add, remove, import, and export group members, set temporary membership, nest groups, and invite guest users in the GroupID portal."
 keywords:
   - group membership
   - temporary membership
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 80
 ---
 
-# Manage Group Membership in Directory Manager
+# Manage Group Membership in GroupID
 
 Groups let you apply a common set of policies to multiple users. Groups also guarantee consistency
 of permissions and privileges across the membership.
@@ -39,8 +39,8 @@ when membership exceeds this limit.
 count is less than 500, the objects are directly added as group members.
 
 **Scenario 2:** On the next update, 620 objects are fetched to be added to Group A’s membership.
-Since the count exceeds 500, Directory Manager breaks the membership into 2 child groups (Group 1
-with 500 members and Group 2 with 120 members) and nests them into Group A. Directory Manager
+Since the count exceeds 500, GroupID breaks the membership into 2 child groups (Group 1
+with 500 members and Group 2 with 120 members) and nests them into Group A. GroupID
 checks the member count and takes the necessary action before adding members to the group.
 
 :::note
@@ -66,7 +66,7 @@ What do you want to do?
 
 You can add one or more objects to the membership of one or more groups. These objects are
 added as permanent members. They are listed as members on the **Members** tab in
-[View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md).
+[View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md).
 
 :::note
 In a Microsoft Entra ID based identity store, only user objects can be added as members of an
@@ -78,31 +78,31 @@ Use any of the following methods to add members to groups.
 
 ### Method 1:
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the required
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the required
    objects.
 2. Select these objects on the **Search Results** page and click **Add to Group** on the toolbar.
-3. The [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed,
+3. The [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed,
    where you can search for and select the groups to add the objects to.
 
 ### Method 2:
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
    want to add members to.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, click **Add**.
 4. Enter a search string to locate the objects to add as members, or click **Advanced** to use the
-   [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+   [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
    search.
 5. Save the changes.
 
 :::note
 These methods for adding members are recommended for static (unmanaged) groups only. For Smart
-Groups, Directory Manager discards any manual membership changes when it updates the group through the
+Groups, GroupID discards any manual membership changes when it updates the group through the
 Smart Group Update job.
 
 :::
@@ -117,12 +117,12 @@ membership type of an object from permanent to temporary and vice versa.
 
 You can also add or remove an object from a group's membership for a temporary period.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
    change the membership type of its members.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed, where the **Members** tab lists the group members.
 
 3. To change the membership type of a member, click anywhere in the respective row to make it
@@ -150,7 +150,7 @@ You can also add or remove an object from a group's membership for a temporary p
         changes to ‘Temporary Member’ from May 20 to 30, 2019. Smith is also added to group
         membership in the provider.
 
-        After May 30, Smith is removed from Group A as a member in Directory Manager and in the provider.
+        After May 30, Smith is removed from Group A as a member in GroupID and in the provider.
 
     - **Removal Pending** - Indicates that the object is to be temporarily removed from group
       membership for a period in the future. Use the **Beginning** and **Ending** boxes to set a
@@ -164,10 +164,10 @@ You can also add or remove an object from a group's membership for a temporary p
         Smith is displayed in Group A’s membership with ‘Removal Pending’ as the membership type
         from May 15 to 19, 2019.
 
-        On May 20, Smith’s membership type in Directory Manager changes to ‘Temporary Removed’,
+        On May 20, Smith’s membership type in GroupID changes to ‘Temporary Removed’,
         lasting until May 30, 2019. Smith is also removed from Group A’s membership in the provider.
 
-        After May 30, Smith is added back to Group A as a permanent member in Directory Manager and in
+        After May 30, Smith is added back to Group A as a permanent member in GroupID and in
         the provider.
 
     - **Temporary Removed** - Indicates that the object is temporarily removed from group membership
@@ -188,12 +188,12 @@ days for temporary membership update.
 
 To remove members permanently from a group:
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
    want to remove members from.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, select the group members you want to remove and click **Remove**.
@@ -201,7 +201,7 @@ To remove members permanently from a group:
 
 :::note
 This method of removing members is recommended for static (unmanaged) groups only. For Smart
-Groups, Directory Manager discards any manual membership changes when it updates the group through the
+Groups, GroupID discards any manual membership changes when it updates the group through the
 Smart Group Update job.
 
 :::
@@ -213,11 +213,11 @@ To remove a member temporarily from a group, see
 
 To add a group to the membership of another group (nesting):
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 2. Select the **My Groups**, **My Memberships**, or **My Expiring Groups** tab.
 3. Select the groups to add to the membership of another group and click **Add to Group** on the
    toolbar.
-4. On the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), search for
+4. On the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), search for
    and select the group to add the members to, and click **OK**.
 
 ## Import members to a group
@@ -230,21 +230,21 @@ Office 365 group.
 
 :::
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
 2. Select the group you want to import members to, and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the
-   [Directory Manager group properties: Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md),
+   [GroupID group properties: Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md),
    click **Import** to launch the **Import Members** wizard.
 4. See
-   [Import group members in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/importmembers.md)
+   [Import group members in GroupID](/docs/directorymanager/11.0/welcome/group/properties/importmembers.md)
    for further information and instructions.
 5. Save the changes.
 
@@ -252,12 +252,12 @@ Office 365 group.
 
 You can export members of a group to an external file.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) a group to
    export its members to an external file.
 2. Select this group on the **Search Results** page and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Members** tab, click **Export** to launch the **Export Members** wizard.
@@ -285,17 +285,17 @@ You can export members of a group to an external file.
 For a Microsoft Entra ID based identity store, you can use the portal to invite a user from another
 Microsoft Entra ID tenant to the membership of a group in your domain.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
     want to invite a guest user to.
 
 2. Select the required group from the list and click **Properties** on the toolbar. The group's
-   [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
+   [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) page
    is displayed.
 3. On the **Members** tab, click the **Invite User** button.
 4. On the **Invite User** dialog box, provide the following information:
@@ -326,4 +326,4 @@ has the same rights and permissions as any other group member.
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

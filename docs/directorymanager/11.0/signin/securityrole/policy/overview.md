@@ -1,19 +1,19 @@
 ---
-title: "Security Role Policies in Directory Manager"
+title: "Security Role Policies in GroupID"
 description: "Learn which policies you can define for a security role to control what role members can do, and how policies apply to users with multiple roles."
 keywords:
   - security role policies
   - role members
   - policy priority
   - multiple roles
-  - Directory Manager policies
+  - GroupID policies
 sidebar_position: 60
 ---
 
-# Security Role Policies in Directory Manager
+# Security Role Policies in GroupID
 
 You can define policies for security roles. Along with role permissions, these policies also control
-what role members can do in Directory Manager.
+what role members can do in GroupID.
 
 You can define the following policies for a role:
 
@@ -39,15 +39,15 @@ a user, that user can search and view objects in both containers.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Create a Security Role in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/create.md)
-- [Manage Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/manage.md)
-- [Group Owners Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/groupowners.md)
-- [Configure Group Name Prefixes in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/prefixes.md)
-- [New Object Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/newobject.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Create a Security Role in GroupID](/docs/directorymanager/11.0/signin/securityrole/create.md)
+- [Manage Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/manage.md)
+- [Group Owners Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/groupowners.md)
+- [Configure Group Name Prefixes in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/prefixes.md)
+- [New Object Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/newobject.md)
 - [Configure a Search Policy for a Security Role](/docs/directorymanager/11.0/signin/securityrole/policy/search.md)
-- [Authentication Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
+- [Authentication Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
 - [Configure a Password Policy for a Security Role ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)
-- [Helpdesk Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
+- [Helpdesk Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
 - [Configure a Synchronize Policy for a Security Role](/docs/directorymanager/11.0/signin/securityrole/policy/synchronize.md)
 - [ Configure a Query Designer Policy for a Security Role](/docs/directorymanager/11.0/signin/securityrole/policy/querydesigner.md)

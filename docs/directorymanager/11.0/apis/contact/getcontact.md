@@ -1,16 +1,16 @@
 ---
-title: "Get a Contact with the Directory Manager API"
+title: "Get a Contact with the GroupID API"
 description: "Retrieve the attributes of a contact in an identity store by sending a GET request with the contact identity."
 keywords:
   - get contact API
   - GET Contacts
   - contact attributes
-  - Directory Manager API
+  - GroupID API
 sidebar_position: 40
 unlisted: true
 ---
 
-# Get a Contact with the Directory Manager API
+# Get a Contact with the GroupID API
 
 Use this API to retrieve information about a contact in a specified identity store.
 
@@ -148,5 +148,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

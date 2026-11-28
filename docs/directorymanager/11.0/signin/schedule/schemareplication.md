@@ -1,26 +1,26 @@
 ---
-title: "Update the Directory Manager Schema Replication Schedule"
-description: "Change the scheduler service and triggers of the schema replication schedule that copies identity provider schemas to the Directory Manager database."
+title: "Update the GroupID Schema Replication Schedule"
+description: "Change the scheduler service and triggers of the schema replication schedule that copies identity provider schemas to the GroupID database."
 keywords:
   - schema replication
-  - Directory Manager schedule
+  - GroupID schedule
   - identity store schema
   - scheduler service
   - Active Directory schema
 sidebar_position: 110
 ---
 
-# Update the Directory Manager Schema Replication Schedule
+# Update the GroupID Schema Replication Schedule
 
 An identity store is built on an identity provider, which can be Active Directory, Microsoft Entra
 ID, Google Workspace, or Generic LDAP. The Schema Replication schedule replicates the schema of
-these identity providers to the Directory Manager database.
+these identity providers to the GroupID database.
 
-Unlike other schedules that exist separately for each identity store, Directory Manager has only one
+Unlike other schedules that exist separately for each identity store, GroupID has only one
 Schema Replication schedule that serves all identity stores. Although the schedule is displayed
 separately for each identity store, it doesn't represent separate schedules. When you run the Schema
 Replication schedule for an identity store, it replicates the schema for all identity stores in
-Directory Manager. If you terminate it, the process is terminated for all identity stores. The
+GroupID. If you terminate it, the process is terminated for all identity stores. The
 schedule also runs every time it's triggered from any of the identity stores, whether manually or
 according to its triggers.
 
@@ -34,7 +34,7 @@ topic for details.
 For Microsoft Entra ID, schema is replicated from the schema file for Graph API v3.26.0.
 :::
 
-The Schema Replication schedule runs in the context of the super admin account in the Directory Manager
+The Schema Replication schedule runs in the context of the super admin account in the GroupID
 provider. You can't create or delete a Schema Replication schedule; only update the existing one.
 
 What do you want to do?
@@ -55,7 +55,7 @@ What do you want to do?
    responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 
     **CAUTION:** If you have multiple Scheduler services, you must bind the same service with the
@@ -78,4 +78,4 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

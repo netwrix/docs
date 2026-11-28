@@ -1,17 +1,17 @@
 ---
-title: "Update a Workflow Route in Directory Manager"
+title: "Update a Workflow Route in GroupID"
 description: "Update an existing workflow route in an identity store by sending a PATCH request to the Workflows Route endpoint."
 keywords:
   - update workflow route
   - workflow route approvers
-  - Directory Manager API
+  - GroupID API
   - Workflows/Route endpoint
   - PATCH request
 sidebar_position: 160
 unlisted: true
 ---
 
-# Update a Workflow Route in Directory Manager
+# Update a Workflow Route in GroupID
 
 Use this API to update a workflow route in a specified identity store.
 
@@ -118,5 +118,5 @@ PATCH
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

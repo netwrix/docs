@@ -1,23 +1,23 @@
 ---
 title: "Get Default Workflow Routes Using the API"
-description: "Retrieve the default system workflow routes that Directory Manager triggers for events such as group joins and password resets."
+description: "Retrieve the default system workflow routes that GroupID triggers for events such as group joins and password resets."
 keywords:
   - default workflow routes
   - system workflows
   - get default routes API
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 110
 unlisted: true
 ---
 
 # Get Default Workflow Routes Using the API
 
-Use this API to retrieve information about Directory Manager default workflows. These workflows are
-predefined in Directory Manager and trigger when their associated events occur.
+Use this API to retrieve information about GroupID default workflows. These workflows are
+predefined in GroupID and trigger when their associated events occur.
 
 See the
 [System Workflows](/docs/directorymanager/11.0/signin/workflow/overview.md#system-workflows)
-section of the [Directory Manager Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
+section of the [GroupID Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
 topic for more information.
 
 ## Endpoint
@@ -364,5 +364,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

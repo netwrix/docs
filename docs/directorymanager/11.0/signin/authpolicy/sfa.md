@@ -1,5 +1,5 @@
 ---
-title: "Configure Second Factor Authentication in Directory Manager"
+title: "Configure Second Factor Authentication in GroupID"
 description: "Require role members to enroll in authentication types and use them when signing in to Admin Center, the portal, or the mobile app."
 keywords:
   - second factor authentication
@@ -10,21 +10,21 @@ keywords:
 sidebar_position: 20
 ---
 
-# Configure Second Factor Authentication in Directory Manager
+# Configure Second Factor Authentication in GroupID
 
 You can enable second factor authentication (SFA) for a user role in an identity store. This policy
-requires role members to enroll their identity store accounts in Directory Manager using one or more
+requires role members to enroll their identity store accounts in GroupID using one or more
 authentication types. Supported authentication types are discussed in the
 [Authentication Policies - A Comparison](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
 topic.
 
 Once enrolled, role members must authenticate their accounts using an authentication type they
-enrolled with, while signing in to Admin Center, the Directory Manager portal, or the Directory
-Manager mobile app. Users enrolled with multiple authentication types can use any one type to
+enrolled with, while signing in to Admin Center, the GroupID portal, or the GroupID
+mobile app. Users enrolled with multiple authentication types can use any one type to
 authenticate.
 
 :::note
-Directory Manager SFA doesn't apply to Microsoft Entra ID MFA-enabled users.
+GroupID SFA doesn't apply to Microsoft Entra ID MFA-enabled users.
 :::
 
 What do you want to do?
@@ -50,7 +50,7 @@ topic for details.
 
 See Also
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Configure Multifactor Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/mfa.md)
-- [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
-- [Authenticate Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Configure Multifactor Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/mfa.md)
+- [Enroll Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
+- [Authenticate Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)

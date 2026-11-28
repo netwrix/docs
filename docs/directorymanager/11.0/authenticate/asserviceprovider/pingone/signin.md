@@ -1,42 +1,42 @@
 ---
-title: "Sign In to Directory Manager Using PingOne"
-description: "Sign in to Directory Manager with PingOne single sign-on, either from the Directory Manager portal or from the PingOne dashboard."
+title: "Sign In to GroupID Using PingOne"
+description: "Sign in to GroupID with PingOne single sign-on, either from the GroupID portal or from the PingOne dashboard."
 keywords:
-  - Directory Manager PingOne sign in
+  - GroupID PingOne sign in
   - PingOne SP-initiated single sign-on
   - PingOne IdP-initiated single sign-on
   - PingOne dashboard sign-in
 sidebar_position: 30
 ---
 
-# Sign In to Directory Manager Using PingOne
+# Sign In to GroupID Using PingOne
 
-PingOne is configured with a Directory Manager client, that is, the Directory Manager portal
+PingOne is configured with a GroupID client, that is, the GroupID portal
 _Wizard_. A user is also created in PingOne to sign in to the _Wizard_ portal using the PingOne
 single sign-on option.
 
 For single sign-on using PingOne, you can choose either of the following ways:
 
 - SP-initiated single sign-on - the SSO operation is initiated from the service provider (SP) end,
-  that is, from the Directory Manager portal, Wizard.
+  that is, from the GroupID portal, Wizard.
 - IdP-initiated single sign-on - the SSO operation is initiated from the identity provider (IdP)
   end, that is, from PingOne.
 
 ## SP-Initiated Single Sign-On
 
-1. Launch the Directory Manager portal _Wizard_.  
+1. Launch the GroupID portal _Wizard_.  
    The availability of the user name and password fields depends on whether you selected the
    **Disable GroupID Authentication** option (see step 10 in the
-   [Configure the Provider in Directory Manager](/docs/directorymanager/11.0/authenticate/asserviceprovider/pingone/configurepingoneindirectorymanager.md#configure-the-provider-in-directory-manager)
+   [Configure the Provider in GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/pingone/configurepingoneindirectorymanager.md#configure-the-provider-in-groupid)
    topic).
 2. Click the button for PingOne. The PingOne Sign In page appears.
-3. Enter your credentials and sign in. The system routes you to the main page of the Directory
-   Manager portal _Wizard_.  
-   Only users defined for the Directory Manager app in PingOne can sign in using PingOne single sign-on. See the
+3. Enter your credentials and sign in. The system routes you to the main page of the GroupID
+   portal _Wizard_.  
+   Only users defined for the GroupID app in PingOne can sign in using PingOne single sign-on. See the
    [Configure Users in PingOne](/docs/directorymanager/11.0/authenticate/asserviceprovider/pingone/configureinpingone.md#configure-users-in-pingone)
    topic.
 
-With single sign-on, you can now launch any Directory Manager client without having to sign in
+With single sign-on, you can now launch any GroupID client without having to sign in
 again.
 
 ## IdP-Initiated Single Sign-On

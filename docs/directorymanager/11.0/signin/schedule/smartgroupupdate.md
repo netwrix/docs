@@ -1,16 +1,16 @@
 ---
-title: "Create a Directory Manager Smart Group Update Schedule"
+title: "Create a GroupID Smart Group Update Schedule"
 description: "Create a schedule that refreshes Smart Group and Dynasty membership from their queries, and configure its targets, triggers, authentication, and notifications."
 keywords:
   - Smart Group update
   - Dynasty
   - group membership update
   - schedule notifications
-  - Directory Manager schedule
+  - GroupID schedule
 sidebar_position: 120
 ---
 
-# Create a Directory Manager Smart Group Update Schedule
+# Create a GroupID Smart Group Update Schedule
 
 You can create a Smart Group Update schedule and bind it to Smart Groups and Dynasties in an
 identity store. When the schedule runs, it updates the following:
@@ -42,13 +42,13 @@ What do you want to do?
 5. In the **Schedule Name** box, enter a name for the schedule.
 6. The **Name Preview** box displays the schedule name prefixed with \_SmartGroup\_\_; email
    notifications show the schedule with this name.
-7. Select a Directory Manager portal URL in the **Portal URL** dropdown list to include it in notifications
+7. Select a GroupID portal URL in the **Portal URL** dropdown list to include it in notifications
    generated for the schedule. Users are redirected to this portal to perform any necessary action.
 8. In the **Scheduler Service Name** dropdown list, select a Scheduler service that's
    responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 9. You can specify containers and groups as targets for the schedule. For a container, the schedule
    processes all groups in it and its sub-containers. For groups, the schedule processes the added
@@ -140,4 +140,4 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

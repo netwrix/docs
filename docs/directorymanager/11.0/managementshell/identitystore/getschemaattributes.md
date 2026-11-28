@@ -1,5 +1,5 @@
 ---
-title: "Get-SchemaAttributes Cmdlet in Directory Manager"
+title: "Get-SchemaAttributes Cmdlet in GroupID"
 description: "List the schema attributes available for an identity store, such as those required by identity store role cmdlets, with the Get-SchemaAttributes cmdlet."
 keywords:
   - Get-SchemaAttributes
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 100
 ---
 
-# Get-SchemaAttributes Cmdlet in Directory Manager
+# Get-SchemaAttributes Cmdlet in GroupID
 
 Use the Get-SchemaAttributes cmdlet to retrieve a list of the schema attributes available for an
 identity store.
@@ -41,6 +41,6 @@ Get-SchemaAttributes -IdentityStoreName AdStore9
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

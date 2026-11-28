@@ -1,6 +1,6 @@
 ---
-title: "View Your Workflow Requests in Directory Manager"
-description: "View the workflow requests you initiated in the Directory Manager portal, including pending, approved, and denied requests."
+title: "View Your Workflow Requests in GroupID"
+description: "View the workflow requests you initiated in the GroupID portal, including pending, approved, and denied requests."
 keywords:
   - My Requests
   - workflow requests
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# View Your Workflow Requests in Directory Manager
+# View Your Workflow Requests in GroupID
 
 To view the workflow requests that you initiated, expand the **Requests** node on the left
 navigation bar and select **My Requests**. You can view the requests pending approval as well as
@@ -24,6 +24,6 @@ view more details, such as the field changed along with its old and new values.
 
 **See Also**
 
-- [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
-- [Approve, Deny, and Filter Requests in Directory Manager](/docs/directorymanager/11.0/welcome/request/allrequest.md)
-- [Manage Your Request Inbox in Directory Manager](/docs/directorymanager/11.0/welcome/request/pending.md)
+- [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
+- [Approve, Deny, and Filter Requests in GroupID](/docs/directorymanager/11.0/welcome/request/allrequest.md)
+- [Manage Your Request Inbox in GroupID](/docs/directorymanager/11.0/welcome/request/pending.md)

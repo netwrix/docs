@@ -1,6 +1,6 @@
 ---
 title: "Set the $Credentials Variable in Management Shell"
-description: "Run Directory Manager Management Shell cmdlets under a different user account by setting the $Credentials environment variable."
+description: "Run GroupID Management Shell cmdlets under a different user account by setting the $Credentials environment variable."
 keywords:
   - $Credentials variable
   - Management Shell
@@ -12,7 +12,7 @@ sidebar_position: 30
 
 # Set the $Credentials Variable in Management Shell
 
-By default, the Directory Manager Management Shell uses the credentials of the signed-in user to
+By default, the GroupID Management Shell uses the credentials of the signed-in user to
 run cmdlets. If you need to use a different user account for some cmdlets, you must set the
 **$Credentials** environment variable to the credentials of that user. This user account must also
 be part of the same forest. Once set, the variable can be used as a value for the Credential
@@ -53,4 +53,4 @@ New-Container -ParentContainer "DC=HR,DC=Imanami,DC=US" -Name "Recruiting" -Cred
 
 See Also
 
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

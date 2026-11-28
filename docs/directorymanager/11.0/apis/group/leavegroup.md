@@ -1,16 +1,16 @@
 ---
-title: "Leave a Group API in Directory Manager"
+title: "Leave a Group API in GroupID"
 description: "Leave a group by specifying the membership type, start date, and end date in the request body."
 sidebar_position: 110
 keywords:
   - leave group API
   - group membership
-  - Directory Manager API
+  - GroupID API
   - membership type
 unlisted: true
 ---
 
-# Leave a Group API in Directory Manager
+# Leave a Group API in GroupID
 
 Use this API to leave a group according to the parameters specified in the body, such as
 membership type, start date, and end date.
@@ -71,5 +71,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

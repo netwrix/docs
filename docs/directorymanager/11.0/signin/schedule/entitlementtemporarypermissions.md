@@ -16,14 +16,14 @@ An Entitlement Temporary Permissions schedule is automatically created for an id
 
 - A server is added for permission analysis on the **Entitlement** page in an Active Directory
   identity store. See the
-  [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+  [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
   topic for additional information on adding a server.
 
     Or
 
 - A SharePoint site is added for permission analysis on the **Entitlement** page in a Microsoft
   Entra ID identity store. See the
-  [Manage SharePoint Sites for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
+  [Manage SharePoint Sites for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
   topic for additional information on adding a SharePoint site.
 
 The Entitlement Temporary Permissions schedule updates the temporary permissions granted to objects
@@ -86,7 +86,7 @@ Step 6 – In the **Scheduler Service Name** dropdown list, select a Scheduler s
 responsible for triggering this schedule. The number of services displayed in the list depends on the
 number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler service.
 See the
-[Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+[GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
 topic.
 
 Step 7 – The **Triggers** area displays the default triggering frequency for the schedule.
@@ -106,4 +106,4 @@ For general schedule info, see the
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

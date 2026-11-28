@@ -1,6 +1,6 @@
 ---
-title: "View Expiring Groups in Directory Manager"
-description: "View groups that expire within 30 days, learn how Directory Manager calculates expiry dates, and filter the list."
+title: "View Expiring Groups in GroupID"
+description: "View groups that expire within 30 days, learn how GroupID calculates expiry dates, and filter the list."
 keywords:
   - expiring groups
   - group expiry policy
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# View Expiring Groups in Directory Manager
+# View Expiring Groups in GroupID
 
 This page shows only the expiring groups in the connected identity store.
 
@@ -26,11 +26,11 @@ by clicking **Expiring Group Grid Filters**. All the expiring groups matching th
 
 **See Also**
 
-- [View and Manage All Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
-- [Join or Leave a Group in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [View and Manage All Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [How Group Expiry Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
+- [Join or Leave a Group in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

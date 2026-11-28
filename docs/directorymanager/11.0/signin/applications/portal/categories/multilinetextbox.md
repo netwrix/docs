@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager Multiline Textbox Display Type"
+title: "GroupID Multiline Textbox Display Type"
 description: "Define a multiline textbox display type so portal users can enter lengthy values that wrap and scroll across multiple rows."
 keywords:
   - multiline textbox
   - custom display type
-  - Directory Manager portal
+  - GroupID portal
   - Description field
   - Design Settings
 sidebar_position: 80
 ---
 
-# Directory Manager Multiline Textbox Display Type
+# GroupID Multiline Textbox Display Type
 
 A multiline textbox lets portal users type information into a box that supports word wrapping
 and vertical scrolling.
@@ -56,6 +56,6 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

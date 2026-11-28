@@ -1,8 +1,8 @@
 ---
-title: "Get Pending Workflow Requests in Directory Manager"
+title: "Get Pending Workflow Requests in GroupID"
 description: "Retrieve all workflow requests that have a pending status in an identity store by calling the Pending endpoint with a GET request."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - pending workflow requests
   - Workflows/Pending endpoint
   - approval requests
@@ -11,13 +11,13 @@ sidebar_position: 130
 unlisted: true
 ---
 
-# Get Pending Workflow Requests in Directory Manager
+# Get Pending Workflow Requests in GroupID
 
 Use this API to retrieve information about all requests with a pending status, provided you have the
 required permissions to manage all requests. See the
 [Miscellaneous](/docs/directorymanager/11.0/signin/securityrole/permissions.md#miscellaneous)
 section of the
-[Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.
 
 ## Endpoint
@@ -297,5 +297,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

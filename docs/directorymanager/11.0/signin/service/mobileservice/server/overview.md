@@ -1,5 +1,5 @@
 ---
-title: "Mobile Service Server Settings in Directory Manager"
+title: "Mobile Service Server Settings in GroupID"
 description: "See which general and deployment server settings you can manage for a Mobile service, by web server type."
 keywords:
   - Mobile service server settings
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# Mobile Service Server Settings in Directory Manager
+# Mobile Service Server Settings in GroupID
 
 Server settings for a Mobile service include:
 
@@ -29,6 +29,6 @@ Server settings for a Mobile service include:
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Manage General Mobile Service Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/general.md)
-- [Manage Mobile Service Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/deployment.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Manage General Mobile Service Settings in GroupID](/docs/directorymanager/11.0/signin/service/mobileservice/server/general.md)
+- [Manage Mobile Service Deployment Settings in GroupID](/docs/directorymanager/11.0/signin/service/mobileservice/server/deployment.md)

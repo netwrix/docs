@@ -1,18 +1,18 @@
 ---
-title: "Configure an AD FS Relying Party Trust for Directory Manager"
-description: "Add a relying party trust and claim rules in AD FS so users can sign in to a Directory Manager client with AD FS single sign-on."
+title: "Configure an AD FS Relying Party Trust for GroupID"
+description: "Add a relying party trust and claim rules in AD FS so users can sign in to a GroupID client with AD FS single sign-on."
 keywords:
   - AD FS relying party trust
   - AD FS claim rules
-  - Directory Manager consumer URL
+  - GroupID consumer URL
   - Issuance Transform Rules
   - SAML 2.0 Web SSO
 sidebar_position: 20
 ---
 
-# Configure an AD FS Relying Party Trust for Directory Manager
+# Configure an AD FS Relying Party Trust for GroupID
 
-In AD FS, configure the Directory Manager client with which you want to set up AD FS. You must also
+In AD FS, configure the GroupID client with which you want to set up AD FS. You must also
 specify the claim rules for authentication.
 
 ## Add the Relying Party Trust and Claim Rules
@@ -33,13 +33,13 @@ specify the claim rules for authentication.
 6. On the **Configure Certificate** page, click **Next**.
 7. On the **Configure URL** page, select the **Enable support for the SAML 2.0 Web SSO protocol**
    option button. Then in the **Relying party SAML 2.0 SSL service URL** box, provide the consumer
-   URL you generated for the Directory Manager client. See the
-   [Generate the Consumer URL for a GroupID Client](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md#generate-the-consumer-url-for-a-directory-manager-client)
+   URL you generated for the GroupID client. See the
+   [Generate the Consumer URL for a GroupID Client](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md#generate-the-consumer-url-for-a-groupid-client)
    topic.  
    AD FS uses the consumer URL, which is the relying party trust URL, to authenticate users. Click
    **Next**.
 8. On the **Configure Identifiers** page, use the **Relying party trust identifier** box to provide
-   the audience URL you generated for the Directory Manager client. Click **Add** next to this box and then
+   the audience URL you generated for the GroupID client. Click **Add** next to this box and then
    click **Next**.  
    See the
    [Generate Entity ID/Audience URL](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md#generate-entity-idaudience-url)
@@ -75,6 +75,6 @@ To specify claim rules for authentication:
     complete.
 19. Click the **Delegation Authorization Rules** tab. No delegation is needed, so click **Apply**
     and then **OK**. The AD FS console is displayed with the new relying party trust added.  
-    The next step is to configure the AD FS provider in Directory Manager. See the
+    The next step is to configure the AD FS provider in GroupID. See the
     [Configure the AD FS Provider In GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md)
     topic.

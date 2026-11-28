@@ -1,5 +1,5 @@
 ---
-title: "Job Collection Templates in Directory Manager Synchronize"
+title: "Job Collection Templates in GroupID Synchronize"
 description: "Create, import, export, rename, delete, and filter job collection templates, and create a job collection from a template."
 keywords:
   - job collection templates
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Job Collection Templates in Directory Manager Synchronize
+# Job Collection Templates in GroupID Synchronize
 
 You can create a job collection template either by converting an existing job collection into a job
 collection template or by importing a job collection template.
@@ -36,7 +36,7 @@ What do you want to do?
 
 ## Create a job collection template from a job collection
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collections**.
 3. In the **Job Collections** view, click
    ![Options (three vertical dots)](/images/directorymanager/11.0/portal/synchronize/manage/option.webp) on the
@@ -50,11 +50,11 @@ What do you want to do?
 ## Import a Job Collection Template
 
 You can also import job collection templates. Only job collection templates that were exported
-from Directory Manager Synchronize can be imported to other machines running Directory Manager Synchronize.
+from GroupID Synchronize can be imported to other machines running GroupID Synchronize.
 
 The import action only requires you to select the location where the exported template resides.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 3. Click **Import Jobs** to open the dialog box.
 4. Click the **Browse** button to browse to the location where the exported job collection templates
@@ -75,7 +75,7 @@ the template name to differentiate it from the existing template.
 
 To export a job collection template:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 3. On the **Job Collection Templates** page, click the **three vertical dots** icon on the template
    in the list that you want to export and click **Export**.
@@ -85,7 +85,7 @@ the top right corner.
 
 ## Create a Job Collection from a Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 
     For every template listed, the view provides its name, description, and the number of jobs it
@@ -99,13 +99,13 @@ the top right corner.
     Double-click the job collection template you want to use for the new job collection.
 
 4. This launches the
-   [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+   [Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
    wizard starting from the Job Collections page. Proceed to map the settings stored in the
    template on to the new job collection.
 
 ## Rename a Job Collection Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 3. On the **Job Collection Templates** page, click the **three vertical dots** icon on the template
    in the list, and click **Rename**.
@@ -114,7 +114,7 @@ the top right corner.
 
 ## Delete a Job Collection Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 3. On the **Job Collection Templates** page, click the **three vertical dots** icon on the template
    in the list that you want to delete and click **Delete**.
@@ -124,7 +124,7 @@ the top right corner.
 You can apply filters on the **Job Collection Templates** page to display only those job collection templates
 that match the criteria set in the **Search Filters** section.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Collection Templates**.
 3. In the **Search Filters** section, select one of the following attributes from the **Attributes**
    list to filter job collection templates:
@@ -143,6 +143,6 @@ that match the criteria set in the **Search Filters** section.
 
 **See Also**
 
-- [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
-- [Manage Job Collections in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
-- [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
+- [Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Manage Job Collections in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
+- [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)

@@ -2,7 +2,7 @@
 title: "Configure a Synchronize Policy for a Security Role"
 description: "Control which providers, identity stores, data sources, object types, and attributes security role members can use in Synchronize jobs."
 keywords:
-  - Directory Manager
+  - GroupID
   - Synchronize policy
   - Synchronize job
   - attribute mapping
@@ -12,7 +12,7 @@ sidebar_position: 80
 
 # Configure a Synchronize Policy for a Security Role
 
-Using Directory Manager, you can create identity stores for several identity providers (such as Active
+Using GroupID, you can create identity stores for several identity providers (such as Active
 Directory and Microsoft Entra ID) as well as create data sources for providers such as files and
 databases. These identity stores and data sources can be used as source and destination in
 Synchronize jobs. Moreover, all object types with all their attributes in an identity store or data
@@ -45,7 +45,7 @@ These granular controls let you restrict access from the provider level down to 
 ## Prevent Role Members from Using a Provider as Source or Destination
 
 When creating or modifying a Synchronize job, users can specify any identity store or data source in
-Directory Manager as a source and destination. You can prevent role members from using the identity stores and
+GroupID as a source and destination. You can prevent role members from using the identity stores and
 data sources built on specific providers in a job.
 
 **To disallow a provider:**
@@ -89,7 +89,7 @@ read-only for role members, and they can't run them.
 ## Prevent Role Members from Using an Identity Store or Data Source as Source or Destination
 
 When creating or modifying a Synchronize job, users can specify any identity store or data source in
-Directory Manager as a source and destination. You can prevent role members from using a specific identity
+GroupID as a source and destination. You can prevent role members from using a specific identity
 store or data source in a job.
 
 **To disallow an identity store or data source:**
@@ -103,7 +103,7 @@ store or data source in a job.
    **Policies** area.
 6. On the **Add Policies** pane, click the **Synchronize** tab.
 7. Click the plus sign for a provider to get a list of the identity stores or data sources created
-   for it in Directory Manager.
+   for it in GroupID.
 
     **To allow an identity store or data source to be used as source and destination:**
 
@@ -185,7 +185,7 @@ For data sources, you can disallow the following to role members as an alternati
    **Policies** area.
 6. On the **Add Policies** pane, click the **Synchronize** tab.
 7. Click the plus sign for a provider to get a list of the identity stores or data sources created
-   for it in Directory Manager.
+   for it in GroupID.
 8. Click **Edit Object Policies** for an identity store or data source. The next page displays the
    object types that can be created in the identity store. For data sources, it displays alternative
    options, such as sheets for Excel and tables for databases.
@@ -229,7 +229,7 @@ attributes:
    **Policies** area.
 6. On the **Add Policies** pane, click the **Synchronize** tab.
 7. Click the plus sign for a provider to get a list of the identity stores or data sources created
-   for it in Directory Manager.
+   for it in GroupID.
 8. Click **Edit Object Policies** for an identity store or data source.
 9. On the next page, click **Edit Attribute Selection** for an object type. This option is available
    for the "allowed" object types only.
@@ -246,5 +246,5 @@ attributes:
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

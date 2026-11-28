@@ -1,5 +1,5 @@
 ---
-title: "Import group members in Directory Manager"
+title: "Import group members in GroupID"
 description: "Add members to a group from a file, an external data source, or another group, permanently or for a set period."
 keywords:
   - "import group members"
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 150
 ---
 
-# Import group members in Directory Manager
+# Import group members in GroupID
 
 The **Import Members** wizard lets you add members to the group using an external file.
 
@@ -62,7 +62,7 @@ launch the **Import Members** wizard.
 
         1. On the **File** page, click **Browse** to locate and select the file containing the data
            to upload.
-        2. Click the **Up** arrow to upload the file to the Directory Manager server for processing.
+        2. Click the **Up** arrow to upload the file to the GroupID server for processing.
         3. The **File Options** section appears after uploading the file. Select the sheet from the
            dropdown list.
         4. Click **Read Data** to complete the selection process.
@@ -71,7 +71,7 @@ launch the **Import Members** wizard.
     - **External Data Source**
 
         1. On the **Providers** page, select
-           [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+           [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
            to create a query. The query fetches all members that match the set criteria.
 
             The Query Designer isn't working. After adding provider in the data source, it is
@@ -126,7 +126,7 @@ launch the **Import Members** wizard.
 1. On the **Lifecycle** page, select the **Import Members From Group(s)** option to add all members
    of another group or groups to the membership of this group.
 2. Click the **Search Groups** button; the
-   [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed, where
+   [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) is displayed, where
    you can search and select the groups whose members you want to import into the membership of
    this group.
 3. Click **Next**.
@@ -138,6 +138,6 @@ launch the **Import Members** wizard.
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

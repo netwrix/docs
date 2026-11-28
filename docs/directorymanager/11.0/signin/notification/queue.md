@@ -1,6 +1,6 @@
 ---
-title: "Manage the Directory Manager Notification Queue"
-description: "View, filter, send, and delete queued email notifications that Directory Manager generates for identity store events."
+title: "Manage the GroupID Notification Queue"
+description: "View, filter, send, and delete queued email notifications that GroupID generates for identity store events."
 keywords:
   - notification queue
   - Email service
@@ -10,22 +10,22 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage the Directory Manager Notification Queue
+# Manage the GroupID Notification Queue
 
-Directory Manager maintains a queue of the email notifications generated on events that occur in the
+GroupID maintains a queue of the email notifications generated on events that occur in the
 identity stores, and sends them one by one through the SMTP server configured for the respective
 identity store. Each new email notification is stacked at the top of the queue.
 
 When the SMTP server for an identity store is down and notifications in the queue can't be
-delivered, Directory Manager attempts to resend them until they're successfully delivered.
+delivered, GroupID attempts to resend them until they're successfully delivered.
 Successfully delivered notifications move out of the queue.
 
 The Email service is responsible for queuing and sending notifications. You can also manually send
 or delete notifications. Both actions are tracked in Admin Center history.
 
-Directory Manager also features a Notification Editor that lists the notification templates for all
-notifications that Directory Manager generates on various events. See the
-[Customize Directory Manager Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)
+GroupID also features a Notification Editor that lists the notification templates for all
+notifications that GroupID generates on various events. See the
+[Customize GroupID Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)
 topic for details.
 
 ## View the Notification Queue
@@ -45,7 +45,7 @@ following is displayed for a notification:
     - **True:** indicates that the notification is being processed for sending
     - **False:** indicates that the notification isn't being processed
 
-    As Directory Manager processes notifications in batches, all notifications in a batch have the
+    As GroupID processes notifications in batches, all notifications in a batch have the
     same status.
 
 ### Filter Notifications
@@ -69,7 +69,7 @@ In the **Categories** list on the **Filter** dialog box, select one of the follo
 - Click **Refresh** to refresh the notification queue.
 - Click **Notification Editor** to launch the Notification Editor, where you can view and modify
   notification templates. See the
-  [Customize Directory Manager Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)
+  [Customize GroupID Notification Templates](/docs/directorymanager/11.0/signin/notification/customize.md)
   topic for details.
 
 ## Send a Notification Urgently
@@ -89,7 +89,7 @@ In the **Categories** list on the **Filter** dialog box, select one of the follo
 
 ## Delete a Notification
 
-You can delete a notification in the queue to prevent Directory Manager from sending it. Deletion
+You can delete a notification in the queue to prevent GroupID from sending it. Deletion
 events are logged in Admin Center history.
 
 To delete a notification:
@@ -108,6 +108,6 @@ To delete a notification:
 
 **See Also**
 
-- [How Directory Manager Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)
-- [Directory Manager Email Service](/docs/directorymanager/11.0/signin/service/emailservice.md)
-- [View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history_1.md)
+- [How GroupID Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)
+- [GroupID Email Service](/docs/directorymanager/11.0/signin/service/emailservice.md)
+- [View and Export Admin Center History in GroupID](/docs/directorymanager/11.0/signin/concepts/history_1.md)

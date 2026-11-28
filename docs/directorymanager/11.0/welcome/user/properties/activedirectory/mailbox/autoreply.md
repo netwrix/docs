@@ -1,5 +1,5 @@
 ---
-title: "Mailbox Properties Auto Reply Tab in Directory Manager"
+title: "Mailbox Properties Auto Reply Tab in GroupID"
 description: "Turn on out-of-office replies for a mailbox and set the message and time period for internal and external senders."
 keywords:
   - mailbox auto reply
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Mailbox Properties Auto Reply Tab in Directory Manager
+# Mailbox Properties Auto Reply Tab in GroupID
 
 Use this tab to configure automatic replies for the emails sent to a mailbox object. You can:
 
@@ -59,4 +59,4 @@ to your organization.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

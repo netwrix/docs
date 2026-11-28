@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Portal Server Settings"
-description: "See which server settings you can manage for a Directory Manager portal, including its name, identity stores, advanced options, and deployment instances."
+title: "GroupID Portal Server Settings"
+description: "See which server settings you can manage for a GroupID portal, including its name, identity stores, advanced options, and deployment instances."
 keywords:
   - portal server settings
   - application name
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Directory Manager Portal Server Settings
+# GroupID Portal Server Settings
 
-A Directory Manager portal is deployed as a web application on a web server (native IIS or remote
+A GroupID portal is deployed as a web application on a web server (native IIS or remote
 IIS). You can manage the following server-related settings for a portal:
 
 - Change a portal’s name (the application name given to the portal).
@@ -36,10 +36,10 @@ out. When accessed again, the portal runs under the new configurations.
 
 **See Also**
 
-- [Create a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
-- [Manage General Portal Server Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/general.md)
-- [Manage Native IIS Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/nativeiis.md)
-- [Manage Remote IIS Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/remoteiis.md)
-- [Manage Portal Log Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/log.md)
+- [Create a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
+- [Manage General Portal Server Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/general.md)
+- [Manage Native IIS Deployment Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/nativeiis.md)
+- [Manage Remote IIS Deployment Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/remoteiis.md)
+- [Manage Portal Log Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/log.md)
 - [Configure Portal Support Email and Help URL](/docs/directorymanager/11.0/signin/applications/portal/server/support.md)
-- [Manage Advanced Portal Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
+- [Manage Advanced Portal Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)

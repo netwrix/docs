@@ -6,7 +6,7 @@ keywords:
   - retrieve groups
   - LDAP filter
   - SearchContainer
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 30
 ---
 
@@ -73,6 +73,6 @@ Get-Group -SmartFilter "(SecurityType = Private)" | Set-Group -AdditionalOwners 
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

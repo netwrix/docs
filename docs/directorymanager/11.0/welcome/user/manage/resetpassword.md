@@ -1,17 +1,17 @@
 ---
-title: "Reset a Password in Directory Manager"
-description: "Reset your own identity store password or, with the right permissions, another user's password from the Directory Manager portal."
+title: "Reset a Password in GroupID"
+description: "Reset your own identity store password or, with the right permissions, another user's password from the GroupID portal."
 keywords:
   - reset password
-  - Directory Manager portal
+  - GroupID portal
   - identity store password
   - password complexity
 sidebar_position: 30
 ---
 
-# Reset a Password in Directory Manager
+# Reset a Password in GroupID
 
-Use the Directory Manager portal to reset passwords for user accounts. You can reset your identity
+Use the GroupID portal to reset passwords for user accounts. You can reset your identity
 store password and, if you have the rights, the account passwords of other users in the connected
 identity store.
 
@@ -19,7 +19,7 @@ The new password must meet the complexity requirements specified for the identit
 
 1. Select the account from the list.
 2. Search for the user whose password you need to reset on the
-   [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) dialog box.
+   [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) dialog box.
 3. On the toolbar tab, select **Reset Password** and enter the information for the given fields:
 
     - **Identity Store** - Shows the name of the identity store the portal is connected to.
@@ -34,5 +34,5 @@ The new password must meet the complexity requirements specified for the identit
 
 **See Also**
 
-- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
-- [Directory Manager Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)
+- [Sign In to the GroupID Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [GroupID Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)

@@ -1,5 +1,5 @@
 ---
-title: "View Dynasties in Directory Manager"
+title: "View Dynasties in GroupID"
 description: "View the Dynasties in the connected identity store, see how parent and child Dynasties relate, and filter the list."
 keywords:
   - Dynasties
@@ -10,11 +10,11 @@ keywords:
 sidebar_position: 70
 ---
 
-# View Dynasties in Directory Manager
+# View Dynasties in GroupID
 
-A [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md) is a Smart Group
+A [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md) is a Smart Group
 that creates and manages other Smart Groups using information in the directory. This view lists only
-the Dynasties created in Directory Manager in the connected identity store. It doesn't include
+the Dynasties created in GroupID in the connected identity store. It doesn't include
 expired and deleted Dynasties.
 
 The **Type** column shows whether a Dynasty is a parent, middle, or leaf Dynasty. Both middle and
@@ -36,11 +36,11 @@ clicking **Dynasties Grid Filters**. All the Dynasties matching the filters appe
 
 **See Also**
 
-- [View and Manage All Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [Manage Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/dynastyfunction.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
-- [Join or Leave a Group in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [View and Manage All Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [Manage Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/dynastyfunction.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [How Group Expiry Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
+- [Join or Leave a Group in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

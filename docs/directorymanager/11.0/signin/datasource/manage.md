@@ -1,5 +1,5 @@
 ---
-title: "Manage Data Sources in Directory Manager"
+title: "Manage Data Sources in GroupID"
 description: "Search, update, and delete data sources in Admin Center, and learn what happens to Synchronize jobs and queries when you delete one."
 keywords:
   - search data source
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Data Sources in Directory Manager
+# Manage Data Sources in GroupID
 
-Directory Manager supports data sources for various data providers. You can create, update, and
+GroupID supports data sources for various data providers. You can create, update, and
 delete these data sources.
 
 What do you want to do?
@@ -43,7 +43,7 @@ credentials to connect to it, and any other information you provided while creat
 2. On the **Data Sources** page, click the tab for the provider the data source is built on.
 3. Click **Edit** for a data source. The **Update Data Source** page is displayed, which differs by
    provider. Refer to the steps for creating the respective data source to modify the information. See the
-   [Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md)
+   [Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md)
    topic for additional information.
 4. Click **Update Data Source**.
 

@@ -1,11 +1,11 @@
 ---
 title: "Generate Consumer and Audience URLs for Okta"
-description: "Generate the consumer URL and audience URL that Okta needs to configure single sign-on with a Directory Manager client."
+description: "Generate the consumer URL and audience URL that Okta needs to configure single sign-on with a GroupID client."
 keywords:
   - Okta consumer URL
   - Okta audience URL
   - Okta SAML URLs
-  - Directory Manager client URLs
+  - GroupID client URLs
 sidebar_position: 10
 ---
 

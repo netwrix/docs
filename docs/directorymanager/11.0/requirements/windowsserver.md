@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Requirements for Directory Manager"
-description: "See which Microsoft Windows Server 2016, 2019, and 2022 editions Directory Manager 11.0 supports."
+title: "Windows Server Requirements for GroupID"
+description: "See which Microsoft Windows Server 2016, 2019, and 2022 editions GroupID 11.0 supports."
 keywords:
   - Windows Server 2016
   - Windows Server 2019
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Windows Server Requirements for Directory Manager
+# Windows Server Requirements for GroupID
 
-Directory Manager supports the following Microsoft Windows Server versions:
+GroupID supports the following Microsoft Windows Server versions:
 
 **Microsoft Windows Server 2016 Family**
 
@@ -30,4 +30,4 @@ Directory Manager supports the following Microsoft Windows Server versions:
 
 **See Also**
 
-- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

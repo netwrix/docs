@@ -12,7 +12,7 @@ sidebar_position: 80
 
 # Set Import and Export Attributes for Group Members and Owners
 
-In the Directory Manager portal, users can:
+In the GroupID portal, users can:
 
 - Export members and additional owners of a group to a file, such as a CSV or XLS file
 - Import members and additional owners for a group from a file. Members can also be imported from an
@@ -95,4 +95,4 @@ attributes for a wizard.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

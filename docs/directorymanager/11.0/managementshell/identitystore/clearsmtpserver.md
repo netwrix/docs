@@ -1,6 +1,6 @@
 ---
-title: "Clear-SmtpServer Cmdlet in Directory Manager"
-description: "Remove the SMTP server configuration from a Directory Manager identity store with the Clear-SmtpServer cmdlet."
+title: "Clear-SmtpServer Cmdlet in GroupID"
+description: "Remove the SMTP server configuration from a GroupID identity store with the Clear-SmtpServer cmdlet."
 keywords:
   - Clear-SmtpServer
   - SMTP server
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Clear-SmtpServer Cmdlet in Directory Manager
+# Clear-SmtpServer Cmdlet in GroupID
 
 The Clear-SmtpServer cmdlet removes the SMTP server configuration from an identity store.
 
@@ -42,6 +42,6 @@ Clear-SmtpServer -IdentityStoreName AdStore9
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

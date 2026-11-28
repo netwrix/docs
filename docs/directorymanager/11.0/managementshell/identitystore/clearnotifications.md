@@ -1,6 +1,6 @@
 ---
-title: "Clear-Notifications Cmdlet in Directory Manager"
-description: "Remove notification settings from a Directory Manager identity store individually or in sets with the Clear-Notifications cmdlet."
+title: "Clear-Notifications Cmdlet in GroupID"
+description: "Remove notification settings from a GroupID identity store individually or in sets with the Clear-Notifications cmdlet."
 keywords:
   - Clear-Notifications
   - notification settings
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Clear-Notifications Cmdlet in Directory Manager
+# Clear-Notifications Cmdlet in GroupID
 
 The Clear-Notifications cmdlet removes notification settings from an identity store. You can remove
 the notification settings individually or in sets.
@@ -65,6 +65,6 @@ Clear-Notifications -IdentityStoreName AdStore9 -ClearSet Recipients
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,6 +1,6 @@
 ---
 title: "Preview Smart Group Membership Changes API"
-description: "Preview the membership changes a Smart Group query would make, using a GET request to the Directory Manager data service."
+description: "Preview the membership changes a Smart Group query would make, using a GET request to the GroupID data service."
 sidebar_position: 130
 keywords:
   - Smart Group preview API
@@ -262,5 +262,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

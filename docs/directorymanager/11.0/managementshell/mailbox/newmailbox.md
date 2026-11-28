@@ -1,5 +1,5 @@
 ---
-title: "New-Mailbox Cmdlet in Directory Manager"
+title: "New-Mailbox Cmdlet in GroupID"
 description: "Create a mailbox in a mailbox store and set its properties with the New-Mailbox cmdlet."
 keywords:
   - New-Mailbox
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# New-Mailbox Cmdlet in Directory Manager
+# New-Mailbox Cmdlet in GroupID
 
 Use the **New-Mailbox** cmdlet to create a new mailbox in the directory. You can add most mailbox
 properties directly by using the parameters of this cmdlet.
@@ -81,6 +81,6 @@ New-MailBox -MailBoxStore "SampleMailBoxDb120435" -Name "SampleMailBox" -Organiz
 
 **See Also**
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Mailbox Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

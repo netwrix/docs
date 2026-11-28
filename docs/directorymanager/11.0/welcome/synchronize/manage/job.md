@@ -1,5 +1,5 @@
 ---
-title: "Manage Synchronize Jobs in Directory Manager"
+title: "Manage Synchronize Jobs in GroupID"
 description: "Open, run, edit, schedule, preview, duplicate, export, import, rename, and delete Synchronize jobs from the All Jobs page."
 keywords:
   - manage synchronize jobs
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage Synchronize Jobs in Directory Manager
+# Manage Synchronize Jobs in GroupID
 
 After you create a job, you can open it to change its settings. You can also rename a job without
 changing its settings, or delete it. You can reach all of these actions from the Actions pane on the
@@ -38,7 +38,7 @@ What do you want to do?
 You can apply filters on the **All Jobs** page to display only those jobs that match the criteria
 set in the **Search Filters** section.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. In the **Search Filters** section, select one of the following attributes from the **Attributes**
    list to filter jobs:
@@ -65,9 +65,9 @@ set in the **Search Filters** section.
 
 When you open a job to view or change its settings, the **Edit Job** wizard opens, which is
 virtually identical to the
-[Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) wizard.
+[Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) wizard.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 
     Click the job name to launch the **Job Details** wizard.
@@ -77,7 +77,7 @@ virtually identical to the
 
 ## Run a Job
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the **Synchronize** portal, click **All Jobs**.
 3. In the jobs list, click
    ![Options (three vertical dots)](/images/directorymanager/11.0/portal/synchronize/manage/option.webp) on the
@@ -90,7 +90,7 @@ virtually identical to the
 
 ## Edit a Job
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. In the jobs list, click the **three vertical dots** icon on the job that you want to edit and
    click **Edit**.
@@ -102,7 +102,7 @@ virtually identical to the
 Deleting a job removes it from Synchronize. When you delete a job, you also lose any information about
 it, such as its run history.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the **three vertical dots** icon of the job that you want to delete and select **Delete**
    from the menu.
@@ -111,7 +111,7 @@ it, such as its run history.
 
 Before running a job, you can preview the results and check the job for errors.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the **three vertical dots** icon of the job and select **Preview** from the menu.
 
@@ -119,31 +119,31 @@ Before running a job, you can preview the results and check the job for errors.
 
 To add or update the schedule for a job:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the **three vertical dots** icon of the job and select **Schedule** from the menu.
 
     The **Schedule and Job Notifications** page of
-    [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) opens. Update
+    [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) opens. Update
     the schedule and click **Finish** to save the changes.
 
 ## Pin a Job
 
 To pin a job to the
-[Synchronize Dashboard in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md) under the pinned
+[Synchronize Dashboard in GroupID](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md) under the pinned
 job card:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the **three vertical dots** icon of the job and select **Pin Item** from the menu.
 4. The job appears on the **My Pinned Jobs** card on the
-   [Synchronize Dashboard in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md).
+   [Synchronize Dashboard in GroupID](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md).
 
 ## Save as Template
 
 You can save a job as a template to use it for future job creation.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the **three vertical dots** icon of the job and select **Save as Template** from the menu.
 4. On the **Template Name Description** wizard, update the name and description and click **Save**.
@@ -152,7 +152,7 @@ You can save a job as a template to use it for future job creation.
 
 ## Duplicate a Job
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the **Synchronize** portal, click **All Jobs**.
 3. In the **Jobs** list, click the **three vertical dots** icon on the job that you want to duplicate
    and click **Duplicate**.
@@ -163,19 +163,19 @@ You can save a job as a template to use it for future job creation.
 
 To view the details of a job:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the **Synchronize** portal, click **All Jobs**.
 3. In the **Jobs** list, click the **three vertical dots** icon on the job and click **Job
    Details**.
 
 ## Import a Job
 
-You can also import jobs. Only jobs that were exported from Directory Manager Synchronize can be imported
-to other machines running Directory Manager Synchronize.
+You can also import jobs. Only jobs that were exported from GroupID Synchronize can be imported
+to other machines running GroupID Synchronize.
 
 The import action only requires you to select the location where the exported job resides.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click **Import Jobs** to open the dialog box.
 4. Click the **Browse** button to browse to the location where the exported jobs are placed.
@@ -191,7 +191,7 @@ The import action only requires you to select the location where the exported jo
 
 To export a job:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. On the **All Jobs** page, click the **three vertical dots** icon on the job in the list that you
    want to export and click **Export**.
@@ -206,7 +206,7 @@ Renaming a job lets you save a job under a new name and a new description. Renam
 
 **Renaming a Job, using shortcut**
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. Click the job. The job creation pages open.
 4. Go to **Job Details** to rename the job.
@@ -218,7 +218,7 @@ Renaming a job lets you save a job under a new name and a new description. Renam
 
 **Rename a Job, using the Actions menu**
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **All Jobs**.
 3. From the list, select the job.
 4. On the **Actions** menu, click **Rename**.
@@ -231,5 +231,5 @@ Renaming a job lets you save a job under a new name and a new description. Renam
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)

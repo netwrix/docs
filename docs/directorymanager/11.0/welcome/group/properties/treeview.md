@@ -1,5 +1,5 @@
 ---
-title: "View a Group's Hierarchy as a Tree in Directory Manager"
+title: "View a Group's Hierarchy as a Tree in GroupID"
 description: "See a group's membership hierarchy as a tree on its properties page and export the graph as a PNG file."
 keywords:
   - group tree view
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 110
 ---
 
-# View a Group's Hierarchy as a Tree in Directory Manager
+# View a Group's Hierarchy as a Tree in GroupID
 
-Using the Directory Manager portal, you can view the hierarchy for a group. This hierarchy is
+Using the GroupID portal, you can view the hierarchy for a group. This hierarchy is
 displayed in the form of a tree. For example, if Group A is a member of Group B, the graph displays
 Group A and Group B in a hierarchical form in this tab.
 
@@ -21,4 +21,4 @@ You can also export the graphical representation of the group in the form of a P
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

@@ -15,10 +15,10 @@ sidebar_position: 30
 To view a detailed list of the actions that you have performed on the groups that you own using the
 following, click **History** on the left navigation bar:
 
-- Directory Manager portal
-- Directory Manager Management Shell cmdlets
-- Directory Manager mobile app
-- Directory Manager APIs
+- GroupID portal
+- GroupID Management Shell cmdlets
+- GroupID mobile app
+- GroupID APIs
 
 The History page opens with the **My History** tab in view. On the displayed page, click the **My Groups
 History** tab.
@@ -75,7 +75,7 @@ action along with their old and new values.
 
 ## Add notes to history items
 
-Directory Manager lets a user add notes to history items that were logged as a result of any change
+GroupID lets a user add notes to history items that were logged as a result of any change
 they made. A note may explain the reason for making a certain change, such as why they changed the
 security type for a group.
 
@@ -89,8 +89,8 @@ edit or add comments.
 ### Add a note
 
 The option to add a note is available on the My Account History card on the Dashboard and on all
-History pages: [View My History in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
-[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
+History pages: [View My History in the GroupID Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
+[View My Direct Reports' History in GroupID](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
 and My Groups' History.
 
 1. Click the **Add Note** button next to a history item to add a note to it.
@@ -141,5 +141,5 @@ The file is created at the download location specified in the browser settings.
 
 **See Also**
 
-- [Directory Manager Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [GroupID Portal History Tracking](/docs/directorymanager/11.0/welcome/history/overview.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

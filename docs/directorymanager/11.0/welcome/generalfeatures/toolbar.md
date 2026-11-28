@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Portal Toolbar Buttons"
-description: "Look up what each toolbar button does in the Directory Manager portal, such as expire, join, leave, renew, export, and reset password."
+title: "GroupID Portal Toolbar Buttons"
+description: "Look up what each toolbar button does in the GroupID portal, such as expire, join, leave, renew, export, and reset password."
 keywords:
   - portal toolbar
   - toolbar buttons
@@ -11,14 +11,14 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager Portal Toolbar Buttons
+# GroupID Portal Toolbar Buttons
 
 Use the toolbar to perform different actions on the portal pages. Buttons on the toolbar vary,
 depending on the page you are on. Toolbar buttons are listed in the following table.
 
 | Button | Description |
 | --- | --- |
-| ![Expire button](/images/directorymanager/11.0/portal/expire.webp) | The behavior of this button depends on the expiry policy of the selected group. <ul><li>When the group has its expiry policy set to ‘never expire’, clicking this button displays an error message that the group can't be expired.</li><li>When the group has an expiry policy other than ‘never expire’, clicking this button expires the group and moves it to the My Expired Groups page.</li><li>A group without an expiry policy doesn't expire. <br />Directory groups created outside of Directory Manager don't have an expiry policy.</li></ul> |
+| ![Expire button](/images/directorymanager/11.0/portal/expire.webp) | The behavior of this button depends on the expiry policy of the selected group. <ul><li>When the group has its expiry policy set to ‘never expire’, clicking this button displays an error message that the group can't be expired.</li><li>When the group has an expiry policy other than ‘never expire’, clicking this button expires the group and moves it to the My Expired Groups page.</li><li>A group without an expiry policy doesn't expire. <br />Directory groups created outside of GroupID don't have an expiry policy.</li></ul> |
 | ![Properties button](/images/directorymanager/11.0/portal/properties.webp) | View the properties of the selected object.   |
 | ![Update button](/images/directorymanager/11.0/portal/update.webp) | Use this button to manually update a Smart Group. <br />Clicking this button displays a dialog box showing the progress of the Smart Group Update job. To run this job in the background, click the **Run in Background** button. <br />Use the **Background Tasks** icon in the top right corner to view the status of the Smart Group Update jobs. |
 | ![Join button](/images/directorymanager/11.0/portal/join.webp) | Use this button to join groups. <ol><li>Click the arrow and select one of the following: <ul><li>**Join perpetually** - to join the selected groups permanently.</li><li>**Join temporarily** - to join the selected groups for a specified period. At the end of the period, you are automatically removed from the group membership.</li></ul></li><li>Click the **Join** button.</li></ol> The **Other** option is visible to users with the **Manage my Direct Reports** or **Join/Leave on behalf of Peer** permission in the identity store. It allows a user to join a group permanently or temporarily on behalf of a direct report or peer. |
@@ -46,4 +46,4 @@ depending on the page you are on. Toolbar buttons are listed in the following ta
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

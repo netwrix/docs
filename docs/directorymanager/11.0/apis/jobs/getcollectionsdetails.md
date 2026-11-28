@@ -15,7 +15,7 @@ unlisted: true
 Use this API to retrieve information about jobs within a job collection based on the criteria
 provided in the request syntax.
 
-See the [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
+See the [Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
 additional information on job collections.
 
 ## Endpoint
@@ -115,5 +115,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

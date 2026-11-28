@@ -1,17 +1,17 @@
 ---
-title: "Configure the AD FS Provider in Directory Manager"
-description: "Add AD FS as a SAML provider in Directory Manager by entering the issuer URL, login URL, token-signing certificate, and advanced settings."
+title: "Configure the AD FS Provider in GroupID"
+description: "Add AD FS as a SAML provider in GroupID by entering the issuer URL, login URL, token-signing certificate, and advanced settings."
 keywords:
-  - Directory Manager AD FS
+  - GroupID AD FS
   - SAML provider configuration
   - AD FS token-signing certificate
   - IdP login URL
-  - Directory Manager single sign-on
+  - GroupID single sign-on
 ---
 
-# Configure the AD FS Provider in Directory Manager
+# Configure the AD FS Provider in GroupID
 
-To configure a SAML provider in Directory Manager, you have to specify the following:
+To configure a SAML provider in GroupID, you have to specify the following:
 
 - Issuer URL
 - IDP Login URL
@@ -19,12 +19,12 @@ To configure a SAML provider in Directory Manager, you have to specify the follo
 - An image for the identity provider
 - Advanced configurations
 
-## Configure the AD FS Provider in Directory Manager
+## Configure the AD FS Provider in GroupID
 
-1. In Directory Manager Authenticate, click the **SAML Providers** tab.
+1. In GroupID Authenticate, click the **SAML Providers** tab.
 2. On the **SAML Providers** page, click **New Provider**.
 3. On the **Create New Provider** page, enter a name for the provider.
-4. Ensure the **Client** box displays the name of the Directory Manager client for which you
+4. Ensure the **Client** box displays the name of the GroupID client for which you
    generated the Entity ID/Audience URL and provided that in AD FS.
 
 Keep this page open while you copy configurations from AD FS and provide them here.
@@ -32,7 +32,7 @@ Keep this page open while you copy configurations from AD FS and provide them he
 ### Provide Issuer URL
 
 The issuer URL is provided by the federation service, that is, AD FS. Copy this URL from AD FS and
-provide it in Directory Manager.
+provide it in GroupID.
 
 To fetch and enter the issuer URL:
 
@@ -52,7 +52,7 @@ To fetch and enter the IDP Login URL:
 
 ### Get Token-Signing Certificate
 
-The next step is to get the token-signing certificate from AD FS and provide it in Directory Manager.
+The next step is to get the token-signing certificate from AD FS and provide it in GroupID.
 
 1. Go to the AD FS console and click **Certificates**. The certificates are displayed.
 2. Double-click the token-signing certificate to open its properties.
@@ -70,7 +70,7 @@ The next step is to get the token-signing certificate from AD FS and provide it 
 
 ### Upload an Image for the Identity Provider
 
-When AD FS is configured with a Directory Manager client, for example, the Directory Manager portal
+When AD FS is configured with a GroupID client, for example, the GroupID portal
 _Wizard_, it's available on the _Wizard_ login page for single sign-on. You can choose to display the AD FS option as
 an image or as a button.
 
@@ -86,7 +86,7 @@ Required image file dimensions: 210 x 60 pixels
 If you don't upload an image, AD FS authentication is shown as a button. This button has the same
 name as you entered in the **Name** box on the **Create New Provider** page.
 
-Users can click the AD FS image or the button on the login page of the Directory Manager portal
+Users can click the AD FS image or the button on the login page of the GroupID portal
 _Wizard_ for single sign-on.
 
 ### Specify Advanced Configurations
@@ -95,14 +95,14 @@ Next, specify some advanced configurations for the identity provider. Expand the
 section on the **Create New Provider** page.
 
 1. Ensure that _RSA-SHA-256_ is selected in the **Response Signing Method** box.
-2. The **Disable GroupID Authentication** option indicates whether to display the Directory Manager
-   authentication login on the Directory Manager client's login page (that is, the Wizard portal's
+2. The **Disable GroupID Authentication** option indicates whether to display the GroupID
+   authentication login on the GroupID client's login page (that is, the Wizard portal's
    login page in this example).
 
     - By default, "No" is selected, which means that when users access the Wizard portal's login
-      page, they are shown the Directory Manager login and password option along with the AD FS
+      page, they are shown the GroupID login and password option along with the AD FS
       identity provider's button.
-    - Selecting "Yes" means that the Directory Manager login and password option isn't available on
+    - Selecting "Yes" means that the GroupID login and password option isn't available on
       the Wizard portal's login page. Moreover, when a single identity store and a single SAML
       provider are configured, the login page for the provider is displayed rather than the Wizard
       portal's login page.
@@ -112,13 +112,13 @@ section on the **Create New Provider** page.
 
     1. In the AD FS console, click **Relying Party Trust** in the left pane. The middle pane
        displays the relying party trusts already configured.
-    2. Double-click the relying party trust that you created for the Directory Manager portal
+    2. Double-click the relying party trust that you created for the GroupID portal
        _Wizard_. This launches the **Properties** dialog box for the relying party trust.
     3. Click the **Endpoints** tab and confirm that the binding type is _POST_.
 
 4. In AD FS, you configured an Active Directory attribute that the identity provider uses to
    authenticate users (see step 16 in the
-   [Configure an AD FS Relying Party Trust for Directory Manager](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md)
+   [Configure an AD FS Relying Party Trust for GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md)
    topic). In this example, you used the UPN attribute that stores the user principal name. In the
    **Advanced** section, you must refer to this attribute.  
    In the **Identity Location** list, select the _Identity is an attribute element_ option.

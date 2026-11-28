@@ -1,5 +1,5 @@
 ---
-title: "View Microsoft Teams Groups in Directory Manager"
+title: "View Microsoft Teams Groups in GroupID"
 description: "List the Microsoft Teams groups in the connected identity store and narrow the list with grid filters."
 keywords:
   - Microsoft Teams groups
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 90
 ---
 
-# View Microsoft Teams Groups in Directory Manager
+# View Microsoft Teams Groups in GroupID
 
 This page lists all the Microsoft Teams groups.
 
@@ -19,10 +19,10 @@ the filters are displayed.
 
 **See Also**
 
-- [View and Manage All Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
-- [Join or Leave a Group in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [View and Manage All Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [How Group Expiry Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
+- [Join or Leave a Group in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupjoinleave.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

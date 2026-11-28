@@ -1,8 +1,8 @@
 ---
-title: "Get My Membership with the Directory Manager API"
+title: "Get My Membership with the GroupID API"
 description: "Retrieve the groups the authenticated user is a member of, with paging and sorting options."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - group membership
   - Groups/Membership endpoint
   - authenticated user
@@ -10,7 +10,7 @@ sidebar_position: 110
 unlisted: true
 ---
 
-# Get My Membership with the Directory Manager API
+# Get My Membership with the GroupID API
 
 Use this API to retrieve the membership information of the authenticated user.
 
@@ -183,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

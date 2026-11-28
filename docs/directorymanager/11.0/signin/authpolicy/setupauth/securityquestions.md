@@ -1,5 +1,5 @@
 ---
-title: "Set Up Security Question Authentication in Directory Manager"
+title: "Set Up Security Question Authentication in GroupID"
 description: "Manage the global and local question pools, enable and enforce security question authentication, and set answer policies for a role."
 keywords:
   - security questions
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 10
 ---
 
-# Set Up Security Question Authentication in Directory Manager
+# Set Up Security Question Authentication in GroupID
 
-Directory Manager provides a list of predefined security questions. This list is called the global
-question pool, because it's available to all identity stores in Directory Manager. You can add
+GroupID provides a list of predefined security questions. This list is called the global
+question pool, because it's available to all identity stores in GroupID. You can add
 questions to and remove questions from this pool.
 
 Use the questions from the global pool to create a local pool of security questions for each
@@ -71,5 +71,5 @@ See the
 
 See Also
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
 - [Manage the Local Security Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)

@@ -1,17 +1,17 @@
 ---
-title: "Create and Manage Workflows in Directory Manager"
+title: "Create and Manage Workflows in GroupID"
 description: "Create, edit, enable, disable, and delete identity store workflows, and set up objects, events, fields, filters, and approvers."
 keywords:
   - create workflow
   - workflow approvers
   - workflow filters
-  - Directory Manager workflows
+  - GroupID workflows
   - Power Automate link
   - mail approval
 sidebar_position: 10
 ---
 
-# Create and Manage Workflows in Directory Manager
+# Create and Manage Workflows in GroupID
 
 To create a workflow, you must specify the following:
 
@@ -39,8 +39,8 @@ Consider a workflow where:
 - Approver: Group owner
 
 This means that when a user edits the values stored in the _criteria_ attribute of a group,
-Directory Manager sends a workflow request to the group owner, who is the workflow approver.
-Directory Manager applies the changes after the approver approves the request.
+GroupID sends a workflow request to the group owner, who is the workflow approver.
+GroupID applies the changes after the approver approves the request.
 
 If you add the following filter:
 
@@ -97,10 +97,10 @@ attribute, it triggers the workflow.
 
 8. Select the **Mail Approval** checkbox to enable the approver to approve or deny a workflow
    request from within the workflow email notification. These notifications contain the **Accept**
-   and **Deny** buttons. When the approver clicks either button, Directory Manager redirects and auto-authenticates the approver
-   to the Directory Manager portal, where the approver can approve or deny the request.  
+   and **Deny** buttons. When the approver clicks either button, GroupID redirects and auto-authenticates the approver
+   to the GroupID portal, where the approver can approve or deny the request.  
    When this checkbox isn't selected, the **Accept** and **Deny** buttons aren't available in the
-   email notifications. Approvers have to sign in to the Directory Manager portal or the Directory Manager mobile app to
+   email notifications. Approvers have to sign in to the GroupID portal or the GroupID mobile app to
    manage workflow requests.
 9. The **Approver Acceleration** checkbox applies if approver acceleration is enabled for the
    identity store. See the
@@ -112,10 +112,10 @@ attribute, it triggers the workflow.
     - To exempt this workflow from approver acceleration, clear this checkbox.
 
 10. Enter a brief description for the workflow in the **Description** box.
-11. In the **Portal URL** dropdown list, select a Directory Manager portal URL to include in the workflow
+11. In the **Portal URL** dropdown list, select a GroupID portal URL to include in the workflow
     email notifications. The URL redirects the recipients to the portal to take action on a
     request, such as approving or denying it.  
-    The list contains URLs of Directory Manager portals linked with the identity store.
+    The list contains URLs of GroupID portals linked with the identity store.
 12. Click **Add Approver(s)** in the **Approver(s)** section to select the users and groups to
     approve the requests generated for this workflow. The **Add Approver(s)** dialog box is
     displayed.
@@ -191,10 +191,10 @@ flow.
 
 Use these settings to connect to Power Automate from within a workflow (for example, Workflow1) and
 create a basic flow template there. On providing the URL of the flow template in Workflow1, the two
-are linked. As a result, the flow triggers automatically when the Directory Manager workflow is triggered.
+are linked. As a result, the flow triggers automatically when the GroupID workflow is triggered.
 
 For details on linking a workflow to a flow, see the
-[Trigger a Flow from GroupID](/docs/directorymanager/11.0/signin/workflow/integrate.md#trigger-a-flow-from-directory-manager)
+[Trigger a Flow from GroupID](/docs/directorymanager/11.0/signin/workflow/integrate.md#trigger-a-flow-from-groupid)
 topic.
 
 ## Modify a Workflow
@@ -271,7 +271,7 @@ user-defined workflows; system workflows can't be deleted.
 
 **See Also**
 
-- [Directory Manager Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
-- [Manage Advanced Workflow Settings in Directory Manager](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
-- [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
-- [Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
+- [GroupID Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
+- [Manage Advanced Workflow Settings in GroupID](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
+- [Configure Workflow Approver Acceleration in GroupID](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
+- [Link GroupID Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)

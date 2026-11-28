@@ -1,8 +1,8 @@
 ---
-title: "Customize Search Results in the Directory Manager Portal"
-description: "Add, edit, remove, and rearrange the fields that display on the search results pages and column headers in the Directory Manager portal."
+title: "Customize Search Results in the GroupID Portal"
+description: "Add, edit, remove, and rearrange the fields that display on the search results pages and column headers in the GroupID portal."
 keywords:
-  - Directory Manager
+  - GroupID
   - search results
   - column headers
   - search results fields
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Customize Search Results in the Directory Manager Portal
+# Customize Search Results in the GroupID Portal
 
 You can customize the search result pages for a portal. You can:
 
@@ -115,7 +115,7 @@ You can change the following for a field on a search results page:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- Customize Search Results in the Directory Manager Portal
-- [Customize Quick Search in the Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/quicksearch.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- Customize Search Results in the GroupID Portal
+- [Customize Quick Search in the GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/quicksearch.md)

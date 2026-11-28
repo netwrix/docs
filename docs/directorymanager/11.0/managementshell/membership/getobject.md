@@ -1,16 +1,16 @@
 ---
-title: "Get-Object Cmdlet for Directory Manager"
+title: "Get-Object Cmdlet for GroupID"
 description: "Retrieve objects that match your criteria from one or more containers in a domain using the Get-Object cmdlet."
 keywords:
   - Get-Object
   - search directory objects
   - LDAP filter
   - search container
-  - Directory Manager cmdlets
+  - GroupID cmdlets
 sidebar_position: 30
 ---
 
-# Get-Object Cmdlet for Directory Manager
+# Get-Object Cmdlet for GroupID
 
 Use this cmdlet to retrieve objects from one or more containers in a domain that match the given
 criteria.
@@ -70,6 +70,6 @@ Get-Object -SearchContainer "OU=Recruiting,DC=HR,DC=Imanami,DC=US","OU=OutSourci
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

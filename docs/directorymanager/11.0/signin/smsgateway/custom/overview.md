@@ -1,12 +1,12 @@
 ---
 title: "ISMSGateway Members for Custom SMS Gateways"
-description: "Review the ISMSGateway, ShortMessage, and SendSmsMessageResult members that you implement to define a custom SMS gateway in Directory Manager."
+description: "Review the ISMSGateway, ShortMessage, and SendSmsMessageResult members that you implement to define a custom SMS gateway in GroupID."
 keywords:
   - ISMSGateway members
   - custom SMS gateway
   - ShortMessage class
   - SendSmsMessageResult class
-  - Directory Manager SMS gateway
+  - GroupID SMS gateway
 sidebar_position: 30
 ---
 
@@ -47,4 +47,4 @@ To define a custom gateway, you must implement the following ISMSGateway members
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

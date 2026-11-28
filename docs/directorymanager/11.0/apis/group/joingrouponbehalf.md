@@ -6,7 +6,7 @@ keywords:
   - join group on behalf
   - JoinOnBehalf API
   - group membership
-  - Directory Manager API
+  - GroupID API
 unlisted: true
 ---
 
@@ -73,5 +73,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

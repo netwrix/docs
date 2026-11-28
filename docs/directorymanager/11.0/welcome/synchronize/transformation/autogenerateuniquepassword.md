@@ -11,7 +11,7 @@ sidebar_position: 10
 
 # Auto-Generate Unique Passwords in Synchronize Jobs
 
-In the Directory Manager portal, you can auto-generate passwords based on password complexity rules through
+In the GroupID portal, you can auto-generate passwords based on password complexity rules through
 Synchronize.
 
 Common uses:
@@ -45,7 +45,7 @@ fields under any column labeled Password in the header.
 
 ## To auto-generate unique, complex passwords
 
-1. In the Directory Manager portal, click **Synchronize** to open the Synchronize portal.
+1. In the GroupID portal, click **Synchronize** to open the Synchronize portal.
 2. On the left navigation bar, click **Create New**, and select **Job** or open an existing job.
 3. Click **Next** until you reach the **Map Fields** section on the **Objects, Fields and Mappings**
    page.
@@ -127,7 +127,7 @@ fields under any column labeled Password in the header.
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Manage Synchronize Jobs in GroupID](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Map Objects and Fields in a Synchronize Job ](/docs/directorymanager/11.0/welcome/synchronize/create/objectfieldsandmapping.md)

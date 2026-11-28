@@ -1,16 +1,16 @@
 ---
-title: "Create a Contact with the Directory Manager API"
+title: "Create a Contact with the GroupID API"
 description: "Create a contact in an identity store by sending a POST request to the Contacts endpoint."
 keywords:
   - create contact API
   - POST Contacts
   - identity store contact
-  - Directory Manager API
+  - GroupID API
 sidebar_position: 10
 unlisted: true
 ---
 
-# Create a Contact with the Directory Manager API
+# Create a Contact with the GroupID API
 
 Use this API to create a contact in the specified identity store.
 
@@ -70,5 +70,5 @@ The contact object type isn't supported in a Microsoft Entra ID-based identity s
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

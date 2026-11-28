@@ -1,5 +1,5 @@
 ---
-title: "Transfer Group Ownership in Directory Manager"
+title: "Transfer Group Ownership in GroupID"
 description: "Use the Transfer Ownership wizard to assign owners to orphan groups or move group ownership from one recipient to another."
 keywords:
   - transfer ownership
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 100
 ---
 
-# Transfer Group Ownership in Directory Manager
+# Transfer Group Ownership in GroupID
 
 The Transfer Ownership wizard provides a convenient way to:
 
@@ -17,7 +17,7 @@ The Transfer Ownership wizard provides a convenient way to:
 - Transfer group ownership (including Exchange 2016/2019 additional ownerships) from one recipient
   to another.
 
-Depending on the number of groups and the amount of available bandwidth between Directory Manager
+Depending on the number of groups and the amount of available bandwidth between GroupID
 and the messaging system server (such as Exchange server) or directory server, this process can take
 several minutes.
 
@@ -25,7 +25,7 @@ several minutes.
 
 To transfer the ownership of a group:
 
-1. In the Directory Manager portal, from the left pane, select **All Groups** or **My Groups** under
+1. In the GroupID portal, from the left pane, select **All Groups** or **My Groups** under
    **Groups** and select the **Transfer Ownership** option in the top right corner.
 2. On the **Containers** page, click **Browse** to select an organizational unit, domain, or the
    entire directory.
@@ -87,4 +87,4 @@ To transfer the ownership of a group:
 
 **See Also**
 
-- [Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupownershipfunction.md)
+- [Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupownershipfunction.md)

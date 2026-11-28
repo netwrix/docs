@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Data Service"
-description: "Learn what the Directory Manager Data service does, how the default service is created, and why to create multiple Data services."
+title: "GroupID Data Service"
+description: "Learn what the GroupID Data service does, how the default service is created, and why to create multiple Data services."
 keywords:
-  - Directory Manager Data service
+  - GroupID Data service
   - default Data service
   - load balancing
   - native IIS
@@ -10,18 +10,18 @@ keywords:
 sidebar_position: 20
 ---
 
-# Directory Manager Data Service
+# GroupID Data Service
 
 Admin Center lets you quickly create and deploy a Data service. This service is responsible for core
-Directory Manager operations, such as communication with identity providers, communication with the
-Directory Manager database, object creation and update, and more.
+GroupID operations, such as communication with identity providers, communication with the
+GroupID database, object creation and update, and more.
 
-You can create multiple Data services. Directory Manager creates the default service while you
+You can create multiple Data services. GroupID creates the default service while you
 configure it.
 
 ## The Default Data Service
 
-While configuring Directory Manager with the Configuration Tool, the administrator can create a Data
+While configuring GroupID with the Configuration Tool, the administrator can create a Data
 service and a Security service in native IIS.
 
 To deploy these services in native IIS, the Configuration Tool creates and configures a new website
@@ -37,16 +37,16 @@ topic.
 
 ## Reasons to Create Multiple Data Services
 
-For load balancing and high availability, Directory Manager lets you create and maintain multiple
-Data services. When you create a Directory Manager portal or a Mobile service, you can choose a Data
+For load balancing and high availability, GroupID lets you create and maintain multiple
+Data services. When you create a GroupID portal or a Mobile service, you can choose a Data
 service to bind to it. In this way, different portals and Mobile services can use different Data
 services for improved response times and load balancing.
 
-Directory Manager lets you create and deploy a Data service in any of these web servers: native IIS,
+GroupID lets you create and deploy a Data service in any of these web servers: native IIS,
 remote IIS, and Docker.
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Create a Directory Manager Data Service in IIS](/docs/directorymanager/11.0/signin/service/dataservice/create.md)
-- [Manage Directory Manager Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [Create a GroupID Data Service in IIS](/docs/directorymanager/11.0/signin/service/dataservice/create.md)
+- [Manage GroupID Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)

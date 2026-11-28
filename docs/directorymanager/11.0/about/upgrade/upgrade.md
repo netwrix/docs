@@ -1,25 +1,25 @@
 ---
-title: "Upgrade to Directory Manager 11 with the Wizard"
-description: "Move identity stores, Synchronize jobs, schedules, and reports from GroupID 9 or 10 to Directory Manager 11 by following the Upgrade wizard pages."
+title: "Upgrade to GroupID 11 with the Wizard"
+description: "Move identity stores, Synchronize jobs, schedules, and reports from GroupID 9 or 10 to GroupID 11 by following the Upgrade wizard pages."
 keywords:
   - directory manager upgrade wizard
-  - upgrade to Directory Manager 11
+  - upgrade to GroupID 11
   - upgrade identity stores
   - upgrade Synchronize jobs
   - Microsoft Entra ID certificate upgrade
 sidebar_position: 10
 ---
 
-# Upgrade to Directory Manager 11 with the Wizard
+# Upgrade to GroupID 11 with the Wizard
 
 :::note
-Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+GroupID 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
 11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
 an upgrade, use the
 [Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
 :::
 
-This topic guides you through upgrading to Directory Manager 11 from GroupID 9 and 10.
+This topic guides you through upgrading to GroupID 11 from GroupID 9 and 10.
 
 1. To launch the Upgrade wizard, click **Next** on the **GroupID Successfully Configured** page of
    the Configuration Tool.
@@ -46,7 +46,7 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
 
     ![Select modules to upgrade page](/images/directorymanager/11.0/install/upgrade/3-select_modules.webp)
 
-    On the **Select Modules to upgrade** page, select the type of Directory Manager data to
+    On the **Select Modules to upgrade** page, select the type of GroupID data to
     upgrade. You can choose to upgrade all or selected data of the previous version. The options
     are:
 
@@ -65,10 +65,10 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
     Provide the following information:
 
     - **Registered Client Secret on EntraID** – Provide the client secret value generated against
-      the certificate uploaded to the Microsoft Entra admin center while registering the Directory
-      Manager application.
+      the certificate uploaded to the Microsoft Entra admin center while registering the GroupID
+      application.
     - **PFX Certificate** – Click **Browse** to navigate to the folder where the certificate is
-      saved. This certificate must be the same one uploaded for the registered Directory Manager
+      saved. This certificate must be the same one uploaded for the registered GroupID
       app in Microsoft Entra ID.
     - **PFX Certificate Password** – Provide the password of the PFX certificate.
 
@@ -82,10 +82,10 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
     Provide the following information:
 
     - **Client Secret** – Provide the client secret value generated against the certificate
-      uploaded to the Microsoft Entra admin center while registering the Directory Manager
+      uploaded to the Microsoft Entra admin center while registering the GroupID
       application.
     - **PFX Certificate** – Click **Browse** to navigate to the folder where the certificate is
-      saved. This certificate must be the same one uploaded for the registered Directory Manager
+      saved. This certificate must be the same one uploaded for the registered GroupID
       app in Microsoft Entra ID.
     - **PFX Certificate Password** – Provide the password of the PFX certificate.
 
@@ -95,7 +95,7 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
    messaging providers.
 
     - If an identity store already exists in GroupID 10 for the destination domains that
-      the jobs connect to, the jobs move to the respective identity stores in Directory Manager 11.
+      the jobs connect to, the jobs move to the respective identity stores in GroupID 11.
     - When no identity store exists in GroupID 10 for the destination domain that the
       jobs connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs
       and tries to create a forest structure. When it identifies one, it creates an identity store
@@ -124,11 +124,11 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
     Provide the following information:
 
     - **Certificate** – Click **Browse** to navigate to the folder where the certificate is saved.
-      This certificate must be the same one uploaded for the registered Directory Manager app in
+      This certificate must be the same one uploaded for the registered GroupID app in
       Microsoft Entra ID.
     - **Password** – Provide the password of the PFX certificate.
     - **Client Secret** – Provide the client secret value generated against the certificate
-      uploaded to the Microsoft Entra admin center while registering the Directory Manager
+      uploaded to the Microsoft Entra admin center while registering the GroupID
       application.
 
 11. Click **Next**.
@@ -137,10 +137,10 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
     store for that domain exists.
 
     - If an identity store for that domain exists, or if the upgrade process is creating one for a
-      Synchronize job, Directory Manager binds the reports to it.
+      Synchronize job, GroupID binds the reports to it.
     - If an identity store for that domain doesn't exist, you must create one for it. It must be an
       Active Directory identity store. The wizard binds the reports generated in GroupID
-      10 to the identity store, so you can view them in Directory Manager 11.
+      10 to the identity store, so you can view them in GroupID 11.
 
       ![Upgrade wizard page for binding reports to an identity store](/images/directorymanager/11.0/install/upgrade/reports_upgrade.webp)
 
@@ -178,7 +178,7 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
     options. You selected these options on the **Select modules to upgrade** page.
 
     :::note
-    Directory Manager doesn't upgrade disabled identity stores in the source version. However, the
+    GroupID doesn't upgrade disabled identity stores in the source version. However, the
     data of those identity stores remains intact in the source version.
     :::
 
@@ -186,7 +186,7 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
 
     ![Upgrade wizard Upgrade Progress page](/images/directorymanager/11.0/install/upgrade/6-upgrade_process_complete.webp)
 
-    The wizard upgrades Directory Manager while the Upgrade Process page displays the progress. When
+    The wizard upgrades GroupID while the Upgrade Process page displays the progress. When
     the upgrade succeeds, the **Upgrade Completed** message appears above the progress bar.
 
 16. Click **Next**.
@@ -198,12 +198,12 @@ This topic guides you through upgrading to Directory Manager 11 from GroupID 9 a
 17. You can click:
 
     - **View Details** – Opens the log file generated during the upgrade process.
-    - **Launch GroupID** – Starts Directory Manager 11.
+    - **Launch GroupID** – Starts GroupID 11.
     - **Close** – Closes the Upgrade wizard.
 
 See Also
 
-- [Install Directory Manager](/docs/directorymanager/11.0/about/installer/install.md)
-- [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
-- [Uninstall Directory Manager](/docs/directorymanager/11.0/about/installer/uninstall.md)
-- [Upgrade Notes and Limitations for Directory Manager 11](/docs/directorymanager/11.0/about/upgrade/notes.md)
+- [Install GroupID](/docs/directorymanager/11.0/about/installer/install.md)
+- [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [Uninstall GroupID](/docs/directorymanager/11.0/about/installer/uninstall.md)
+- [Upgrade Notes and Limitations for GroupID 11](/docs/directorymanager/11.0/about/upgrade/notes.md)

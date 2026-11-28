@@ -1,16 +1,16 @@
 ---
-title: "Get a Group with the Directory Manager API"
+title: "Get a Group with the GroupID API"
 description: "Use the Get Group API to retrieve the details and requested attributes of a single group in an identity store."
 sidebar_position: 70
 keywords:
-  - Directory Manager API
+  - GroupID API
   - get group API
   - GET group
   - group attributes
 unlisted: true
 ---
 
-# Get a Group with the Directory Manager API
+# Get a Group with the GroupID API
 
 This API retrieves details of a specified group.
 
@@ -129,5 +129,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

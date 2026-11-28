@@ -1,6 +1,6 @@
 ---
-title: "Create an Oracle Data Source with the Directory Manager API"
-description: "Send a POST request to the Directory Manager API to create a data source for an Oracle server or database, for use in queries and Synchronize jobs."
+title: "Create an Oracle Data Source with the GroupID API"
+description: "Send a POST request to the GroupID API to create a data source for an Oracle server or database, for use in queries and Synchronize jobs."
 keywords:
   - Oracle data source
   - create data source API
@@ -11,15 +11,15 @@ sidebar_position: 50
 unlisted: true
 ---
 
-# Create an Oracle Data Source with the Directory Manager API
+# Create an Oracle Data Source with the GroupID API
 
 Use this API to create a new data source.
 
 See the
 [Create a Data Source for Oracle](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-oracle)
 section of the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create an Oracle data source using Directory Manager.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create an Oracle data source using GroupID.
 
 ## Endpoint
 
@@ -86,5 +86,5 @@ installing the Oracle client.
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

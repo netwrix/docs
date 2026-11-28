@@ -1,5 +1,5 @@
 ---
-title: "Sample Transform Scripts for Directory Manager Synchronize"
+title: "Sample Transform Scripts for GroupID Synchronize"
 description: "Copy sample Visual Basic .NET transform scripts that build full names and user names and translate department codes during Synchronize jobs."
 keywords:
   - dtm transform script
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Sample Transform Scripts for Directory Manager Synchronize
+# Sample Transform Scripts for GroupID Synchronize
 
 ## Assembling a Full Name: `<last name>`, `<first name>`
 
@@ -109,6 +109,6 @@ End Select
 
 **See Also**
 
-- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
-- [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+- [Write Synchronize Scripts for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Visual Basic .NET Scripting for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
 - [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)

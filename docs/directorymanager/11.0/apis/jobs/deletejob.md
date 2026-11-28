@@ -1,6 +1,6 @@
 ---
 title: "Delete Synchronize Jobs API"
-description: "Delete one or more Synchronize jobs by ID with a DELETE request to the Directory Manager data service."
+description: "Delete one or more Synchronize jobs by ID with a DELETE request to the GroupID data service."
 keywords:
   - delete Synchronize job API
   - DataSyncJobs DELETE endpoint
@@ -18,7 +18,7 @@ the jobs specified in the endpoint URL.
 See the
 [Deleting a Job](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md#deleting-a-job)
 section of the
-[Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+[Manage Synchronize Jobs in GroupID](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
 topic for additional information.
 
 ## Endpoint
@@ -49,5 +49,5 @@ https://demomachine:4443/GroupIDDataService/api/DataSyncJobs?jobids=1&jobids=2
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

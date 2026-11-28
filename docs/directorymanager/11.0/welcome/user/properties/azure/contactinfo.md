@@ -1,6 +1,6 @@
 ---
 title: "Entra ID User Contact Info Tab"
-description: "View or update the address, office, and mobile phone details of a Microsoft Entra ID user or mailbox in Directory Manager."
+description: "View or update the address, office, and mobile phone details of a Microsoft Entra ID user or mailbox in GroupID."
 keywords:
   - Entra ID user contact info
   - user street address
@@ -31,4 +31,4 @@ The cell phone number of the user.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

@@ -1,8 +1,8 @@
 ---
-title: "Entitlement Management in Directory Manager"
-description: "Learn how Directory Manager Entitlement replicates and manages permissions on Active Directory file servers and SharePoint sites, and how its schedules work."
+title: "Entitlement Management in GroupID"
+description: "Learn how GroupID Entitlement replicates and manages permissions on Active Directory file servers and SharePoint sites, and how its schedules work."
 keywords:
-  - Directory Manager Entitlement
+  - GroupID Entitlement
   - NTFS permissions
   - SharePoint document library permissions
   - temporary permissions
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# Entitlement Management in Directory Manager
+# Entitlement Management in GroupID
 
-With Directory Manager Entitlement, you can stay informed on the permissions assigned to objects residing on
+With GroupID Entitlement, you can stay informed on the permissions assigned to objects residing on
 your Active Directory servers and SharePoint sites.
 
 ## Entitlement for Active Directory
@@ -31,13 +31,13 @@ Entitlement types include:
 - Explicit permissions
 - Inherited permissions from a folder
 
-To facilitate entitlement management for an Active Directory identity store in Directory Manager, do the
+To facilitate entitlement management for an Active Directory identity store in GroupID, do the
 following:
 
 - Specify one or more file servers in identity store configurations.
 - Compute the permissions assigned to directory objects on the shared files and folders on those
   one or more file servers, and replicate those permissions to Elasticsearch.
-- View and manage entitlements in the Entitlement section of the Directory Manager portal.
+- View and manage entitlements in the Entitlement section of the GroupID portal.
 
 ## Entitlement for SharePoint
 
@@ -55,24 +55,24 @@ Permission types include:
 - Explicit permissions
 - Inherited permissions from a document library
 
-To facilitate entitlement management for a Microsoft Entra ID identity store in Directory Manager, do the
+To facilitate entitlement management for a Microsoft Entra ID identity store in GroupID, do the
 following:
 
 - Specify the admin URL for SharePoint in identity store configurations to fetch the sites.
 - Compute the permissions assigned to directory objects on the document libraries in those sites,
   and replicate those permissions to Elasticsearch.
-- View and manage entitlements in the Entitlement section of the Directory Manager portal.
+- View and manage entitlements in the Entitlement section of the GroupID portal.
 
 ## Perpetual Entitlements vs Temporary Entitlements
 
-With Directory Manager, you can manage entitlements in the following ways:
+With GroupID, you can manage entitlements in the following ways:
 
 - **Assign and revoke permissions on a perpetual basis** - When a permission is assigned
   perpetually, it continues to apply until you choose to revoke it. Similarly, when a permission is
   revoked perpetually, it stays so until you choose to reapply it.
 - **Assign and revoke permissions on a temporary basis** - A temporary permission is one with a
-  start and end date specified. For temporary assignment, Directory Manager automatically assigns the permission
-  on the start date and revokes it on the end date. Similarly, for temporary removal, Directory Manager
+  start and end date specified. For temporary assignment, GroupID automatically assigns the permission
+  on the start date and revokes it on the end date. Similarly, for temporary removal, GroupID
   revokes the permission on the start date and reassigns it on the end date.
 
 ## Entitlement Schedules
@@ -80,11 +80,11 @@ With Directory Manager, you can manage entitlements in the following ways:
 When you add the first server or site for entitlement management, the following three schedules are
 automatically created in the identity store:
 
-- [Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md) -
+- [Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md) -
   replicates object permissions on file servers and SharePoint sites for an Active Directory and
   Microsoft Entra ID identity store respectively. It performs a complete replication.
-- [Edit the Directory Manager Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md) -
-  replicates changes made to object permissions on file servers and SharePoint sites using Directory Manager.
+- [Edit the GroupID Entitlement Scope Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementscope.md) -
+  replicates changes made to object permissions on file servers and SharePoint sites using GroupID.
 - [Edit the Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.0/signin/schedule/entitlementtemporarypermissions.md) -
   updates the temporary permissions for objects on file servers and SharePoint sites.
 
@@ -92,21 +92,21 @@ automatically created in the identity store:
 
 When a file server/SharePoint site is added for entitlement management, an essential task is to
 replicate object permissions from the file server or SharePoint site to the Elasticsearch
-repository. The Directory Manager Entitlement schedule for an identity store performs this replication, which
+repository. The GroupID Entitlement schedule for an identity store performs this replication, which
 involves the following:
 
-- Directory Manager first computes the effective NTFS permissions granted to directory objects on shared files
+- GroupID first computes the effective NTFS permissions granted to directory objects on shared files
   and folders at granular level. For SharePoint sites, it computes the permissions granted to
   objects on document libraries.
 - The Data service then replicates this data to Elasticsearch.
 
-The Directory Manager Entitlement schedule runs automatically at a set frequency, but you can also run it manually for
-a file server or SharePoint site. Directory Manager records a timestamp each time permissions are replicated.
+The GroupID Entitlement schedule runs automatically at a set frequency, but you can also run it manually for
+a file server or SharePoint site. GroupID records a timestamp each time permissions are replicated.
 
 ## Entitlement-related Permissions for Security Roles
 
 You can grant permissions to security roles in an identity store on the Entitlement section in the
-Directory Manager portal. Based on these permissions, role members can perform different actions, such as
+GroupID portal. Based on these permissions, role members can perform different actions, such as
 navigate file servers and SharePoint sites, grant permissions to objects on shared resources, revoke
 permissions, and more.
 
@@ -116,5 +116,5 @@ topic.
 
 See Also
 
-- [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
-- [Manage SharePoint Sites for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
+- [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+- [Manage SharePoint Sites for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)

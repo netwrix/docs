@@ -1,17 +1,17 @@
 ---
-title: "Update a Job Collection with the Directory Manager API"
+title: "Update a Job Collection with the GroupID API"
 description: "Update the details of an existing job collection, including its jobs, field mappings, and schedule, by sending a PATCH request to the Data Service API."
 keywords:
   - job collection API
   - Data Service API
   - PATCH job collection
   - synchronize job
-  - Directory Manager API
+  - GroupID API
 sidebar_position: 110
 unlisted: true
 ---
 
-# Update a Job Collection with the Directory Manager API
+# Update a Job Collection with the GroupID API
 
 Use this API to update information about a job collection.
 
@@ -459,5 +459,5 @@ PATCH
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

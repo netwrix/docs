@@ -1,5 +1,5 @@
 ---
-title: "Configure an SMTP Server in Directory Manager"
+title: "Configure an SMTP Server in GroupID"
 description: "Set up the SMTP server an identity store uses for email notifications, choose notification recipients, and manage life cycle notifications."
 keywords:
   - SMTP server
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Configure an SMTP Server in Directory Manager
+# Configure an SMTP Server in GroupID
 
 An identity store requires an SMTP server for sending email notifications. It can be an Exchange
 server deployed in your environment or an external SMTP server, such as Gmail or Office 365.
@@ -85,7 +85,7 @@ server.
     such as Exchange Online and Office 365.
 
     :::note
-    For OAuth to work, you must enable the Graph API's "SMTP.Send" permission for the Directory Manager
+    For OAuth to work, you must enable the Graph API's "SMTP.Send" permission for the GroupID
     app in Microsoft Entra Admin Center:
     :::
 
@@ -98,10 +98,10 @@ server.
         in the **Token Endpoint** box, for example, https://graph.microsoft.com/v1.0
         :::
 
-    3. In the **Client ID** box, provide the client ID assigned to the Directory Manager application when you
+    3. In the **Client ID** box, provide the client ID assigned to the GroupID application when you
        registered it in Microsoft Entra Admin Center.
     4. In the **Client Secret** box, provide the client secret value generated against the
-       certificate uploaded to Microsoft Entra Admin Center while registering the Directory Manager
+       certificate uploaded to Microsoft Entra Admin Center while registering the GroupID
        application.
     5. In the **Scope** box, provide the following URL:  
        https://outlook.office365.com/SMTP.Send
@@ -145,8 +145,8 @@ Step 5 – You can also select other recipients to send email notifications for 
 the **Also Notify** area, select the required checkboxes.
 
 - Logged in users for their actions – To send email notifications to the logged-on user for changes
-  they make to directory objects using Admin Center, Directory Manager portal, Directory Manager Management Shell, and
-  the Directory Manager mobile app. This setting applies to mail-enabled users only.
+  they make to directory objects using Admin Center, GroupID portal, GroupID Management Shell, and
+  the GroupID mobile app. This setting applies to mail-enabled users only.
 - Object being modified – To send email notifications to the object (group, user, contact) being
   modified. In case of a group, all members are notified.
 - Group owners for their groups – To send email notifications to the primary and additional owners
@@ -166,11 +166,11 @@ Step 6 – Click **Save** on the **Notifications** page.
 
 ## Specify a Portal URL for Password Expiry Group Notifications
 
-A password expiry Smart Group can be created using the Directory Manager portal. Its membership is limited to
+A password expiry Smart Group can be created using the GroupID portal. Its membership is limited to
 users whose identity store account passwords are approaching their expiry dates.
 
 You can apply a setting to send a password expiry warning email to group members every
-time group membership is updated. This email includes the URL of a Directory Manager portal to redirect users
+time group membership is updated. This email includes the URL of a GroupID portal to redirect users
 there for changing their passwords.
 
 Users who change their passwords are removed from group membership.
@@ -183,11 +183,11 @@ Step 2 – On the **Identity Stores** page, click the ellipsis button for an ide
 Step 3 – Click **Configurations** under **Settings** in the left pane. Then click **Notifications**. The
 **Notifications** page is displayed.
 
-Step 4 – In the **Password Expiry Group Notifications** section, select the URL of a Directory Manager portal in
+Step 4 – In the **Password Expiry Group Notifications** section, select the URL of a GroupID portal in
 the **GroupID Portal URL** dropdown list. This URL is included in password expiry warning
 emails to redirect users to the portal, where they can change their identity store account
 passwords.  
-The list contains URLs of all Directory Manager portals linked with the identity store.
+The list contains URLs of all GroupID portals linked with the identity store.
 
 Step 5 – Click **Save** on the **Notifications** page.
 
@@ -206,7 +206,7 @@ Membership lifecycle notifications are triggered on the following events:
   or removes them from group membership.
 - Users are also notified when they are temporarily added or removed from group membership according
   to membership lifecycle policies. See the
-  [Manage Directory Manager Membership Lifecycle Policies](/docs/directorymanager/11.0/signin/identitystore/configure/membershiplifecycle.md)
+  [Manage GroupID Membership Lifecycle Policies](/docs/directorymanager/11.0/signin/identitystore/configure/membershiplifecycle.md)
   topic.
 
 You can choose to send notification when users are temporarily added to groups, removed from groups,
@@ -273,6 +273,6 @@ Step 5 – Click **Save** on the **Notifications** page.
 
 **See Also**
 
-- [How Directory Manager Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)
-- [Membership Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/membershiplifecycle.md)
-- [Managed By Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/managedbylifecycle.md)
+- [How GroupID Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)
+- [Membership Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/membershiplifecycle.md)
+- [Managed By Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/managedbylifecycle.md)

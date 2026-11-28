@@ -1,28 +1,28 @@
 ---
-title: "Run the Directory Manager Preparation Tool"
-description: "Run the Preparation Tool to install the prerequisite software and Windows features that Directory Manager 11.0 requires on a server."
+title: "Run the GroupID Preparation Tool"
+description: "Run the Preparation Tool to install the prerequisite software and Windows features that GroupID 11.0 requires on a server."
 keywords:
-  - Directory Manager Preparation Tool
-  - Directory Manager prerequisites
+  - GroupID Preparation Tool
+  - GroupID prerequisites
   - install prerequisite software
   - run Preparation Tool on existing server
 sidebar_position: 10
 ---
 
-# Run the Directory Manager Preparation Tool
+# Run the GroupID Preparation Tool
 
-The Preparation Tool installs all prerequisite software on a machine to prepare it for Directory Manager.
+The Preparation Tool installs all prerequisite software on a machine to prepare it for GroupID.
 
 What do you want to do?
 
 - [Run the Preparation Tool for the First Time on a Fresh Machine](#run-the-preparation-tool-for-the-first-time-on-a-fresh-machine)
-- [Run the Preparation Tool on an Existing Directory Manager Server](#run-the-preparation-tool-on-an-existing-directory-manager-server)
+- [Run the Preparation Tool on an Existing GroupID Server](#run-the-preparation-tool-on-an-existing-groupid-server)
 
 ## Run the Preparation Tool for the First Time on a Fresh Machine
 
-To run the Directory Manager Preparation Tool:
+To run the GroupID Preparation Tool:
 
-1. Open the **GroupID 11 Prerequisites Tool** folder in the Directory Manager installation package.
+1. Open the **GroupID 11 Prerequisites Tool** folder in the GroupID installation package.
 2. Run the _directorymanagerPrereqTool.exe_ file. It launches the Preparation Tool.
 
     ![Preparation Tool Welcome page with the Next button](/images/directorymanager/11.0/install/installer/welcome.webp)
@@ -32,7 +32,7 @@ To run the Directory Manager Preparation Tool:
     ![Ready to Begin page listing the required software and Windows features](/images/directorymanager/11.0/install/installer/ready_to_begin.webp)
 
 4. The **Ready to begin** page lists the required software and Windows features that the Preparation
-   Tool has identified for Directory Manager.
+   Tool has identified for GroupID.
    Click **Install** to begin.
 
     ![Preparation page with a progress bar showing prerequisite installation](/images/directorymanager/11.0/install/installer/wearepreparing.webp)
@@ -60,9 +60,9 @@ To run the Directory Manager Preparation Tool:
     If you are installing the prerequisites for the first time, a message to restart the machine
     appears. Click **OK** to restart.
 
-## Run the Preparation Tool on an Existing Directory Manager Server
+## Run the Preparation Tool on an Existing GroupID Server
 
-If you have an earlier version of Directory Manager 11.0 installed on a machine, then before running the
+If you have an earlier version of GroupID 11.0 installed on a machine, then before running the
 Preparation Tool, ensure that no version other than the following prerequisite versions is installed.
 Otherwise, uninstall the other versions manually:
 
@@ -89,5 +89,5 @@ section.
 
 See Also
 
-- [Software the Directory Manager Preparation Tool Installs](/docs/directorymanager/11.0/about/installer/whatprepinstall.md)
-- [Directory Manager Installation Tools and Upgrade Cases](/docs/directorymanager/11.0/about/installer/installer.md)
+- [Software the GroupID Preparation Tool Installs](/docs/directorymanager/11.0/about/installer/whatprepinstall.md)
+- [GroupID Installation Tools and Upgrade Cases](/docs/directorymanager/11.0/about/installer/installer.md)

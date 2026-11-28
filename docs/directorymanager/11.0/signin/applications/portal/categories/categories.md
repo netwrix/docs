@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Display Type Categories"
-description: "Learn how basic and custom display types map to schema attributes so portal users can enter valid data in Directory Manager portal fields."
+title: "GroupID Display Type Categories"
+description: "Learn how basic and custom display types map to schema attributes so portal users can enter valid data in GroupID portal fields."
 keywords:
   - display types
   - basic display types
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Directory Manager Display Type Categories
+# GroupID Display Type Categories
 
-Using display types, you can publish fields in a Directory Manager portal to capture and view data.
+Using display types, you can publish fields in a GroupID portal to capture and view data.
 
 A field can be anything from a text box to a dropdown list to a checkbox, depending on the display
 type linked to it. You must also link each field to a schema attribute in the directory. Users can
@@ -55,7 +55,7 @@ You can link a basic display type to a schema attribute straight away. Basic dis
     schema attribute. However, to apply additional rules to it, such as assigning a default value or
     implementing a regular expression to validate the data entered, you must create a custom display
     type from this basic type. See the
-    [Directory Manager Text Box Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md)
+    [GroupID Text Box Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md)
     topic.
 
 - **Password**
@@ -124,7 +124,7 @@ Some applications of display type are:
   phone number and fax number.
 
 The default portal template uses several predefined custom display types. See the
-[Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+[Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
 topic to add more display types as needed.
 
 The **Custom Display Types** page in a portal’s design settings lists all the predefined custom
@@ -132,5 +132,5 @@ display types and any custom display types you added.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

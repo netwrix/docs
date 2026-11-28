@@ -1,20 +1,20 @@
 ---
-title: "Change Your Password in Directory Manager"
-description: "Change your identity store password in the Directory Manager portal by providing your current password and a new one that meets the password policy."
+title: "Change Your Password in GroupID"
+description: "Change your identity store password in the GroupID portal by providing your current password and a new one that meets the password policy."
 keywords:
   - change password
-  - Directory Manager portal
+  - GroupID portal
   - password policy
   - linked accounts
   - Microsoft Entra ID MFA
 sidebar_position: 50
 ---
 
-# Change Your Password in Directory Manager
+# Change Your Password in GroupID
 
 You can change the password of your identity store account provided that the administrator has
 granted you the required permissions. After you change it, use the new password to sign in to
-Directory Manager and any other application that uses your domain account.
+GroupID and any other application that uses your domain account.
 
 To do this, provide the existing password and then a new password to replace it. The new password
 must conform to the password policy the administrator has defined for your role in the connected
@@ -22,17 +22,17 @@ identity store.
 
 :::note
 Microsoft Entra ID users with multifactor authentication enabled can't change their passwords in
-Directory Manager. If they try, the following message appears:
+GroupID. If they try, the following message appears:
 :::
 
 ![Error message shown when a Microsoft Entra ID user with MFA tries to change a password](/images/directorymanager/11.0/portal/user/manage/changepasswordentraiduser.webp)
 
 If the user's account is a master account, the passwords of its child accounts also can't be
-changed in Directory Manager.
+changed in GroupID.
 
 **Follow these steps to change your password:**
 
-1. In the Directory Manager portal, click your profile info in the top right corner and select **Change Password**
+1. In the GroupID portal, click your profile info in the top right corner and select **Change Password**
    on the **My Account** panel.
 2. In the **Select the accounts to change their password** section, your account and its linked
    accounts, if any, are listed. Your signed-in account is selected.
@@ -42,7 +42,7 @@ changed in Directory Manager.
        Password** box.
     2. Enter your new password in the **New password** box. When you enter the new password, the
        **Password Acceptance** box appears. The new password must meet the password complexity
-       requirements and conform to the password complexity rules defined by the Directory Manager
+       requirements and conform to the password complexity rules defined by the GroupID
        administrator for the identity store.
 
         To meet the password complexity requirements, the password must:
@@ -67,5 +67,5 @@ changed in Directory Manager.
 
 **See Also**
 
-- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
-- [Directory Manager Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)
+- [Sign In to the GroupID Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [GroupID Portal Dashboard](/docs/directorymanager/11.0/welcome/dashboard.md)

@@ -24,7 +24,7 @@ Use this page to specify basic information about the group.
 
     :::note
     The prefix box is displayed if the administrator has defined the prefixes. See the
-    [Configure Group Name Prefixes in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/prefixes.md)
+    [Configure Group Name Prefixes in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/prefixes.md)
     topic.  
     These prefixes, when appended to group names, help standardize the group naming convention
     across the enterprise.
@@ -47,4 +47,4 @@ Use this page to specify basic information about the group.
 
 **See Also**
 
-- [Create Microsoft Entra ID Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)
+- [Create Microsoft Entra ID Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)

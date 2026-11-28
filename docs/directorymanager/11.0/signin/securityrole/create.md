@@ -1,5 +1,5 @@
 ---
-title: "Create a Security Role in Directory Manager"
+title: "Create a Security Role in GroupID"
 description: "Create a security role for an identity store, either manually or by copying an existing role, and set its criteria, priority, and permissions."
 keywords:
   - create security role
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create a Security Role in Directory Manager
+# Create a Security Role in GroupID
 
 To create a security role for an identity store, specify the following:
 
@@ -18,7 +18,7 @@ To create a security role for an identity store, specify the following:
 - **Priority** - See
   [Priority](/docs/directorymanager/11.0/signin/securityrole/manage.md).
 - **Permissions** - Permissions refer to the different actions that role members can perform using
-  Directory Manager, for example, creating directory objects, managing groups, managing scheduled
+  GroupID, for example, creating directory objects, managing groups, managing scheduled
   jobs, managing user profiles, and more.
 - **Policies** - Policies refer to settings that apply to role members. For example, the search
   policy limits role members to searching for objects in a particular container.
@@ -26,8 +26,8 @@ To create a security role for an identity store, specify the following:
 You can create a role manually or by copying an existing role.
 
 :::note
-You can disable a role to prevent its members from accessing Directory Manager. To prevent an
-individual role member from accessing Directory Manager, you must remove that member from the group
+You can disable a role to prevent its members from accessing GroupID. To prevent an
+individual role member from accessing GroupID, you must remove that member from the group
 or container specified as role criteria.
 :::
 
@@ -44,11 +44,11 @@ or container specified as role criteria.
 7. Type or select a value in the range 1-99 in the **Priority** box to set the role priority.
    This must be a unique value for each role in an identity store.
 8. In the **Criteria** area, specify a criterion to determine role members. For details, see the
-   [Set Security Role Criteria in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
+   [Set Security Role Criteria in GroupID](/docs/directorymanager/11.0/signin/securityrole/criteria.md)
    topic.
 9. Next, assign group management, user management, and other permissions to the security role. For
    details, see the
-   [Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+   [Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
    topic.
 10. Click **Create Security Role**.
 11. Click **Save** on the **Security Roles** page.
@@ -71,10 +71,10 @@ permissions, and policies of the template role are copied to the new role.
    information and click **Update Security Role**.
 6. On the **Security Roles** page, click **Save**.
 7. To update the policies for the new role, see the
-   [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+   [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
    topic.
 
 See Also
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Manage Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/manage.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Manage Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/manage.md)

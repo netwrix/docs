@@ -1,16 +1,16 @@
 ---
-title: "Manage Your Direct Reports in Directory Manager"
-description: "View, edit, delete, email, and export the users and contacts that report to you from the My Direct Reports page in the Directory Manager portal."
+title: "Manage Your Direct Reports in GroupID"
+description: "View, edit, delete, email, and export the users and contacts that report to you from the My Direct Reports page in the GroupID portal."
 keywords:
   - direct reports
   - My Direct Reports
-  - Directory Manager portal
+  - GroupID portal
   - manager vCard
   - export direct reports
 sidebar_position: 10
 ---
 
-# Manage Your Direct Reports in Directory Manager
+# Manage Your Direct Reports in GroupID
 
 To view the users and contacts that report directly to you, click **Users** on the left navigation
 bar and select **My Direct Reports**.
@@ -35,7 +35,7 @@ Reports** checkbox on the User Settings panel.
   report's email address to your email contact list.
 - Select a direct report and click **Add to Group** on the toolbar to add the direct report to the
   membership of a group. The
-  [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) appears, where
+  [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) appears, where
   you can search and select the groups to add the direct report as a member.
 - Select a direct report and click **Send email** on the toolbar to send an email to the direct
   report. This launches the default Windows email application for sending an email to the direct
@@ -55,12 +55,12 @@ to add or remove your direct reports. You can also transfer and terminate your d
 :::
 
 To view any changes made to your direct reports, see the
-[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md)
+[View My Direct Reports' History in GroupID](/docs/directorymanager/11.0/welcome/history/mydirectreport.md)
 topic.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
-- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Validate your profile in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Create an AD user in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Validate your profile in GroupID](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)

@@ -1,15 +1,15 @@
 ---
-title: "Get-UserEnrollment Cmdlet in Directory Manager"
+title: "Get-UserEnrollment Cmdlet in GroupID"
 description: "Check whether a user is enrolled and which authentication types they use with the Get-UserEnrollment cmdlet."
 keywords:
   - Get-UserEnrollment
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - user enrollment status
   - authentication enrollment types
 sidebar_position: 20
 ---
 
-# Get-UserEnrollment Cmdlet in Directory Manager
+# Get-UserEnrollment Cmdlet in GroupID
 
 The **Get-UserEnrollment** cmdlet retrieves enrollment information of a user.
 
@@ -52,6 +52,6 @@ This example gets user enrollment information through the pipeline operator.
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

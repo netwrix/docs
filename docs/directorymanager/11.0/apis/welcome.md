@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager APIs"
-description: "Learn how the Directory Manager REST APIs let you integrate applications, create groups, and run lifecycle operations over HTTP."
+title: "GroupID APIs"
+description: "Learn how the GroupID REST APIs let you integrate applications, create groups, and run lifecycle operations over HTTP."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - REST API
   - HTTP methods
   - JSON response
@@ -11,13 +11,13 @@ sidebar_position: 90
 unlisted: true
 ---
 
-# Directory Manager APIs
+# GroupID APIs
 
-Directory Manager APIs enable developers to quickly integrate their applications with Directory
-Manager to "perform actions" such as group creation and lifecycle operations by using a relevant
-Directory Manager API.
+GroupID APIs enable developers to quickly integrate their applications with GroupID
+to "perform actions" such as group creation and lifecycle operations by using a relevant
+GroupID API.
 
-You can perform various Directory Manager functions by using these APIs. The response can be
+You can perform various GroupID functions by using these APIs. The response can be
 returned in JSON format.
 
 These URLs represent various resources — any information or content accessed at that location, which
@@ -36,4 +36,4 @@ attributes that are supported in an Active Directory-based identity store.
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

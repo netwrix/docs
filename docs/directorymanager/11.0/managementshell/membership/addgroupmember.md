@@ -1,27 +1,27 @@
 ---
-title: "Add-GroupMember Cmdlet for Directory Manager"
+title: "Add-GroupMember Cmdlet for GroupID"
 description: "Add one or more users, contacts or groups to the perpetual or temporary membership of a group with the Add-GroupMember cmdlet."
 keywords:
   - Add-GroupMember
   - add group members
   - perpetual membership
   - temporary membership
-  - Directory Manager cmdlets
+  - GroupID cmdlets
 sidebar_position: 10
 ---
 
-# Add-GroupMember Cmdlet for Directory Manager
+# Add-GroupMember Cmdlet for GroupID
 
 The **Add-GroupMember** cmdlet adds one or more objects to the membership of a group in the
-directory. Directory Manager supports two types of membership:
+directory. GroupID supports two types of membership:
 
 - Perpetual membership
 - Temporary membership
 
 Modifying the membership of a Smart Group or Dynasty using this cmdlet isn't recommended, because
-Directory Manager discards your changes the next time it updates the group.
+GroupID discards your changes the next time it updates the group.
 
-Directory Manager maintains a history for this cmdlet, which you can view in the Directory Manager
+GroupID maintains a history for this cmdlet, which you can view in the GroupID
 portal, under the **History** node in the left panel.
 
 ## Syntax
@@ -60,7 +60,7 @@ Example 2:
 The following command gets all users from the **Local Recruiting** container and adds them to the
 membership of the **Event Management** group. For detailed information about the Get-Object
 cmdlet, see
-[Get-Object Cmdlet for Directory Manager](/docs/directorymanager/11.0/managementshell/membership/getobject.md). The
+[Get-Object Cmdlet for GroupID](/docs/directorymanager/11.0/managementshell/membership/getobject.md). The
 **OUT-NULL** cmdlet prevents the retrieved user information from appearing on the console.
 
 ```
@@ -69,6 +69,6 @@ Get-Object -SearchContainer "OU=Local Recruiting,OU=Recruiting,DC=HR,DC=Imanami,
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

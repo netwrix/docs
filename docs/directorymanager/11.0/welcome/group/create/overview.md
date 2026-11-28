@@ -1,6 +1,6 @@
 ---
-title: "Create groups in Directory Manager"
-description: "Learn about the static groups, Smart Groups, and Dynasties you can create in the Directory Manager portal."
+title: "Create groups in GroupID"
+description: "Learn about the static groups, Smart Groups, and Dynasties you can create in the GroupID portal."
 keywords:
   - create groups
   - managed vs unmanaged groups
@@ -9,15 +9,15 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create groups in Directory Manager
+# Create groups in GroupID
 
-Using the Directory Manager portal, you can create:
+Using the GroupID portal, you can create:
 
 - An unmanaged group or a static group.
 
     - A static group is a group you normally create in a directory (for example, by using the
       Active Directory Users and Computers snap-in). Though you can create such groups using the
-      Directory Manager portal, Directory Manager doesn't support dynamic updates to them. Any
+      GroupID portal, GroupID doesn't support dynamic updates to them. Any
       changes to the membership must be updated manually.
 
 - A managed group or a Smart Group or a Dynasty.
@@ -39,7 +39,7 @@ Using the Directory Manager portal, you can create:
 
 **See Also**
 
-- [Manage Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
-- [Create Active Directory Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
-- [Create Microsoft Entra ID Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [Manage Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/overview.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create Microsoft Entra ID Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group_1.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)

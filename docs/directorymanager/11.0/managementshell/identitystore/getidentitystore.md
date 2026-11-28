@@ -1,6 +1,6 @@
 ---
-title: "Get-IdentityStore Cmdlet in Directory Manager"
-description: "Get details about one or more Directory Manager identity stores, filtered by name, connection, or enabled state, with the Get-IdentityStore cmdlet."
+title: "Get-IdentityStore Cmdlet in GroupID"
+description: "Get details about one or more GroupID identity stores, filtered by name, connection, or enabled state, with the Get-IdentityStore cmdlet."
 keywords:
   - Get-IdentityStore
   - identity store information
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 60
 ---
 
-# Get-IdentityStore Cmdlet in Directory Manager
+# Get-IdentityStore Cmdlet in GroupID
 
 The Get-IdentityStore cmdlet retrieves information about the specified identity store or
 about identity stores that match the given switches, such as _All_, _Connected_,
@@ -114,7 +114,7 @@ pipeline operator.
 
 Example 3:
 
-This example retrieves information about all identity stores available on the Directory Manager
+This example retrieves information about all identity stores available on the GroupID
 machine.
 
 ```
@@ -124,7 +124,7 @@ Get-IdentityStore -All
 Example 4:
 
 This example retrieves information about the identity store connected to the current instance of the
-Directory Manager Management Shell.
+GroupID Management Shell.
 
 ```
 Get-IdentityStore -Connected
@@ -148,6 +148,6 @@ Get-IdentityStore -Disabled
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

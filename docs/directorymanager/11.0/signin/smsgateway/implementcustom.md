@@ -1,6 +1,6 @@
 ---
-title: "Implement and Deploy a Custom SMS Gateway in Directory Manager"
-description: "Implement the ISMSGateway interface, add MEF metadata, and register a custom SMS gateway so you can create accounts for it in Directory Manager."
+title: "Implement and Deploy a Custom SMS Gateway in GroupID"
+description: "Implement the ISMSGateway interface, add MEF metadata, and register a custom SMS gateway so you can create accounts for it in GroupID."
 keywords:
   - custom SMS gateway
   - ISMSGateway interface
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Implement and Deploy a Custom SMS Gateway in Directory Manager
+# Implement and Deploy a Custom SMS Gateway in GroupID
 
 You can integrate with additional SMS gateways using the Custom Gateway API. After creating a
 gateway, you can add an account for it. See
@@ -21,9 +21,9 @@ gateway, you can add an account for it. See
 1. Define a class that implements the **ISMSGateway interface**, which is defined in the
    **Imanami.PublicInterfaces** namespace (_Imanami.PublicInterfaces.dll_). The core method for
    dispatching text messages makes use of objects that are defined in the
-   **Imanami.directorymanager.DataTransferObjects.DataContracts.SMS** namespace
-   (_Imanami.directorymanager.DataTransferObjects.dll_).  
-   The DLLs for both the namespaces are available at the Directory Manager installation directory. The
+   **Imanami.GroupID.DataTransferObjects.DataContracts.SMS** namespace
+   (_Imanami.GroupID.DataTransferObjects.dll_).  
+   The DLLs for both the namespaces are available at the GroupID installation directory. The
    following table lists the **ISMSGateway members** that you must implement:
 
     | Member                                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -90,12 +90,12 @@ Class ClickatellCustomSMSGatewayBasic : ISMSGateway 
 
 ```
 
-### Register your Custom SMS Gateway with Directory Manager
+### Register your Custom SMS Gateway with GroupID
 
-1. On the Directory Manager server, go to:  
+1. On the GroupID server, go to:  
    X:\Program Files\Imanami\GroupID
    11.0\GroupIDDataService\Inetpub\GroupIDDataService\Web\SMSGateways\  
-   (X represents the Directory Manager installation drive).
+   (X represents the GroupID installation drive).
 2. Create a new folder here using the name specified for the **Name** SMS gateway metadata
    attribute.
 3. Compile and generate the DLL file for your custom SMS gateway.
@@ -107,5 +107,5 @@ the **Create SMS Gateway** page) for selection when you create an SMS gateway ac
 
 **See Also**
 
-- [SMS Gateway Support in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
+- [SMS Gateway Support in GroupID](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
 - [ISMSGateway Members for Custom SMS Gateways](/docs/directorymanager/11.0/signin/smsgateway/custom/overview.md)

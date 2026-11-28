@@ -1,5 +1,5 @@
 ---
-title: "Create an Identity Store in Directory Manager"
+title: "Create an Identity Store in GroupID"
 description: "Create an identity store for Active Directory, Microsoft Entra ID, Generic LDAP, or Google Workspace so you can manage groups and identities."
 keywords:
   - identity store
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create an Identity Store in Directory Manager
+# Create an Identity Store in GroupID
 
-To perform group and identity management operations in an identity provider using Directory Manager,
+To perform group and identity management operations in an identity provider using GroupID,
 first create an identity store for that provider.
 
 You can create identity stores for the following providers:
@@ -26,7 +26,7 @@ You can create identity stores for the following providers:
 To create an identity store, you must specify an identity provider and its connection details.
 
 After creating an identity store, you must configure certain settings for it. For details, see the
-[Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
+[Configure an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
 topic.
 
 What do you want to do?
@@ -56,15 +56,15 @@ In the **Service Account** box, enter the username of a service account or a gro
 account (gMSA) to connect to Active Directory.
 
 - **For a service account:** The service account must have sufficient privileges on the provider to
-  facilitate group and identity management operations using Directory Manager. For the minimum permissions the
+  facilitate group and identity management operations using GroupID. For the minimum permissions the
   service account requires for Active Directory, see the
-  [Set Up a Directory Manager Service Account for AD and Exchange](/docs/directorymanager/11.0/requirements/moreinfo/adserviceaccount.md)
+  [Set Up a GroupID Service Account for AD and Exchange](/docs/directorymanager/11.0/requirements/moreinfo/adserviceaccount.md)
   topic.
 - **For a gMSA:** If you provide a service account with
-  ‘$’ as its last character (as in MyAdminAccounts$), Directory Manager treats it as a Group Managed
+  ‘$’ as its last character (as in MyAdminAccounts$), GroupID treats it as a Group Managed
   Service Account (gMSA). To use a gMSA to connect an identity store to Active Directory, ensure
   you configure the gMSA properly and that it has sufficient permissions. See the
-  [Configure a gMSA for Directory Manager](/docs/directorymanager/11.0/requirements/moreinfo/gmsarequirements.md)
+  [Configure a gMSA for GroupID](/docs/directorymanager/11.0/requirements/moreinfo/gmsarequirements.md)
   topic.
 
 In the **Service Account Password** box, enter the service account password.  
@@ -73,7 +73,7 @@ Skip this box for a gMSA.
 Select the **SSL Enabled** checkbox if the directory server is LDAP over SSL enabled.
 
 :::note
-Directory Manager 11 supports LDAPS; however, the Replication Service still connects to the domain
+GroupID 11 supports LDAPS; however, the Replication Service still connects to the domain
 controller through the LDAP 389 port. Therefore, enable both the LDAP and LDAPS protocols on the domain
 controller.
 :::
@@ -106,17 +106,17 @@ to create the identity store for.
 
 Specify the path to the PFX certificate in the **PFX Certificate** box. For that, click **Choose
 File** and browse for the file. Select it and click **Open**.  
-As a prerequisite, you must generate the PFX certificate on the Directory Manager server and export it to this
+As a prerequisite, you must generate the PFX certificate on the GroupID server and export it to this
 machine for upload.
 
 In the **PFX Certificate Password** box, enter the password you created while exporting the PFX
 certificate.
 
 In the **Registered Application ID on Azure Active Directory** box, enter the application ID
-assigned to the Directory Manager application when you registered it in Microsoft Entra Admin Center.
+assigned to the GroupID application when you registered it in Microsoft Entra Admin Center.
 
 In the **Registered Client Secret on EntraID** box, provide the client secret value generated
-against the certificate uploaded to Microsoft Entra Admin Center while registering the Directory Manager
+against the certificate uploaded to Microsoft Entra Admin Center while registering the GroupID
 application.
 
 If you bind a custom domain with your Microsoft Entra ID tenant and create an identity store for
@@ -134,8 +134,8 @@ The identity store is available on the **Identity Stores** page. You can specify
 configurations for it.
 
 :::note
-Microsoft’s throttling policy restricts an application (such as Directory Manager) to a maximum
-of three concurrent sessions with Microsoft Entra ID. Therefore, Directory Manager allows only one active
+Microsoft’s throttling policy restricts an application (such as GroupID) to a maximum
+of three concurrent sessions with Microsoft Entra ID. Therefore, GroupID allows only one active
 session at any given time, which the Data service and the Replication service share.
 :::
 
@@ -160,7 +160,7 @@ Enter a name for the identity store in the **Name** box.
 In the **Hostname** box, enter the fully qualified domain name or IP address of the machine that
 hosts the generic LDAP server.
 
-In the **Port Number** box, enter the port on which LDAP is running. Directory Manager uses this port to
+In the **Port Number** box, enter the port on which LDAP is running. GroupID uses this port to
 communicate with the host machine.
 
 In the **Domain Name** box, enter the fully qualified name of the domain you want to create the
@@ -169,7 +169,7 @@ identity store for.
 In the **Service Account** box, enter the fully qualified username of a service account (for
 example, CN=Admin,CN=Users,DC=Imanami,DC=COM) to connect to _Generic LDAP_. The service account must
 have sufficient privileges on the provider to facilitate group and identity management operations
-using Directory Manager.
+using GroupID.
 
 In the **Service Account Password** box, enter the service account password.
 
@@ -200,7 +200,7 @@ Google Workspace account.
 In the **Admin Username** box, enter the username of an authorized user account to connect to the
 provider.  
 The account must have the _Super Admin_ role in Google Workspace to facilitate group and identity
-management operations using Directory Manager.
+management operations using GroupID.
 
 In the **API Key** box, enter the API key generated for your account in Google Workspace.  
 To generate the key, see
@@ -222,6 +222,6 @@ configurations for it.
 
 **See Also**
 
-- [Directory Manager Service Account Permissions](/docs/directorymanager/11.0/requirements/moreinfo/overview.md)
-- [Manage an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/manage.md)
-- [Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
+- [GroupID Service Account Permissions](/docs/directorymanager/11.0/requirements/moreinfo/overview.md)
+- [Manage an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/manage.md)
+- [Configure an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)

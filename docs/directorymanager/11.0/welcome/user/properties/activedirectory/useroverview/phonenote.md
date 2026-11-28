@@ -1,6 +1,6 @@
 ---
 title: "Phone / Notes Tab for Users and Contacts"
-description: "View or update the phone numbers, pager, and notes for a user or contact in Directory Manager."
+description: "View or update the phone numbers, pager, and notes for a user or contact in GroupID."
 keywords:
   - user phone numbers
   - contact phone properties
@@ -51,4 +51,4 @@ The pager number of the user or contact.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

@@ -1,8 +1,8 @@
 ---
 title: "Configure a Search Policy for a Security Role"
-description: "Limit the containers and objects that security role members can search in the Directory Manager portal and Management Shell."
+description: "Limit the containers and objects that security role members can search in the GroupID portal and Management Shell."
 keywords:
-  - Directory Manager
+  - GroupID
   - search policy
   - search scope
   - LDAP filter
@@ -12,8 +12,8 @@ sidebar_position: 40
 
 # Configure a Search Policy for a Security Role
 
-The Search policy sets the search scope for the Directory Manager portal, Management Shell, and the
-Directory Manager mobile app.
+The Search policy sets the search scope for the GroupID portal, Management Shell, and the
+GroupID mobile app.
 
 By default, any search performed by role members returns objects from all containers in the identity
 store. Use the Search policy to:
@@ -31,16 +31,16 @@ container-wise in a Microsoft Entra ID identity store.
 Assume you specify a container, localOU, and set the LDAP filter to (Country=United States\*)
 for an Active Directory identity store. Consider these scenarios:
 
-- When a role member performs a search, Directory Manager looks up the localOU container and displays objects
+- When a role member performs a search, GroupID looks up the localOU container and displays objects
   with the _Country_ attribute set to _United States_.
 - If you specify a container only, a search performed by role members returns all matching objects
   residing in that container.
 - If you specify an LDAP filter only, a search performed by role members displays objects with the
   _Country_ attribute set to _United States_ from all containers in the identity store.
 
-## Impact of the Search Policy on the Directory Manager Portal
+## Impact of the Search Policy on the GroupID Portal
 
-The Search policy has the following impact on the Directory Manager portal:
+The Search policy has the following impact on the GroupID portal:
 
 - It determines the groups to display in all group listings, such as those on the **All Groups** and
   **My Groups** pages.
@@ -67,10 +67,10 @@ The Search policy has the following impact on the Directory Manager portal:
 11. On the **Security Roles** page, click **Save**.
 
 :::note
-An advanced setting for the Directory Manager portal, _Search Default_, controls the search scope of the
+An advanced setting for the GroupID portal, _Search Default_, controls the search scope of the
 portal. If its value is "Global Catalog", the container specified here is ignored and the portal
 shows objects from the entire directory. See the
-[Manage Advanced Portal Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
+[Manage Advanced Portal Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
 topic.
 :::
 
@@ -155,5 +155,5 @@ them.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

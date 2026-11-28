@@ -1,6 +1,6 @@
 ---
-title: "Manage Dynasty Settings in Directory Manager"
-description: "Control how Directory Manager updates Dynasty child groups, deletes empty and orphan children, and passes attributes from parent to child Dynasties."
+title: "Manage Dynasty Settings in GroupID"
+description: "Control how GroupID updates Dynasty child groups, deletes empty and orphan children, and passes attributes from parent to child Dynasties."
 keywords:
   - Dynasty settings
   - child Dynasties
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 60
 ---
 
-# Manage Dynasty Settings in Directory Manager
+# Manage Dynasty Settings in GroupID
 
 A Dynasty is a Smart Group that creates and manages other Smart Groups using information in the
 directory. The Smart Groups that a Dynasty creates are called child groups, and they become members of
@@ -20,23 +20,23 @@ A Dynasty retrieves data from the directory on the same pattern as a Smart Group
 its own mechanism of dividing the query results into child groups. For more information, see the
 [Dynasties](/docs/directorymanager/11.0/signin/concepts/concepts.md#dynasties) topic.
 
-You can control how Directory Manager processes Dynasties through the following settings:
+You can control how GroupID processes Dynasties through the following settings:
 
 - Auto update Dynasty children when parent changes
 - Auto delete empty and orphan child Dynasties
 - Specify attributes for inheritance
 
-**How does Directory Manager update Dynasties?**
+**How does GroupID update Dynasties?**
 
 Each Smart Group and Dynasty has a query defined for it. On update, this query is executed to update
 membership.
 
-The Directory Manager portal provides two methods to update Smart Groups and Dynasties:
+The GroupID portal provides two methods to update Smart Groups and Dynasties:
 
 - **Manual update:** You can manually run the query for a Dynasty or Smart Group at any time.
 - **Scheduled update:** Scheduled updates, powered by a Smart Group Update schedule, run automatically at a
   specified frequency to update the target groups and Dynasties. See the
-  [Create a Directory Manager Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md) topic.
+  [Create a GroupID Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md) topic.
 
 **What happens on Dynasty update?**
 
@@ -76,7 +76,7 @@ like a single Smart Group.
 An empty child Dynasty is one with no members, and an orphan child Dynasty is one whose parent Dynasty
 has been removed.
 
-Directory Manager deletes empty and orphan Dynasty children from the identity store automatically by default. However, you
+GroupID deletes empty and orphan Dynasty children from the identity store automatically by default. However, you
 can disable this setting to retain empty and orphan Dynasty children in the identity store.
 
 **To auto delete empty and orphan Dynasty children:**
@@ -143,4 +143,4 @@ that child Dynasty.
 
 **See Also**
 
-- [Create a Directory Manager Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md)
+- [Create a GroupID Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md)

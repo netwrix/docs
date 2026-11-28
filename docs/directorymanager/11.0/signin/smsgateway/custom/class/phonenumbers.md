@@ -1,10 +1,10 @@
 ---
 title: "ShortMessage.PhoneNumbers Property (SMS Gateway API)"
-description: "Get or set the list of mobile phone numbers that a custom SMS gateway sends a Directory Manager text message to."
+description: "Get or set the list of mobile phone numbers that a custom SMS gateway sends a GroupID text message to."
 keywords:
   - ShortMessage.PhoneNumbers
   - custom SMS gateway
-  - Directory Manager SMS API
+  - GroupID SMS API
   - recipient phone numbers
 sidebar_position: 40
 ---
@@ -13,9 +13,9 @@ sidebar_position: 40
 
 Gets or sets the list of mobile phone numbers to send the message to.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

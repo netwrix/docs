@@ -1,5 +1,5 @@
 ---
-title: "Mailbox Properties Advanced Tab in Directory Manager"
+title: "Mailbox Properties Advanced Tab in GroupID"
 description: "Set the home page, alternate recipient, and other advanced settings for a user or mailbox."
 keywords:
   - mailbox advanced tab
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Mailbox Properties Advanced Tab in Directory Manager
+# Mailbox Properties Advanced Tab in GroupID
 
 Use this tab to configure advanced settings for a user.
 
@@ -36,7 +36,7 @@ If selected, the user isn't visible in the address book.
 Specify an alternate recipient to receive the emails sent to this user.
 
 Click the ellipsis button to open the
-[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can search
+[Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can search
 and select the required recipient.
 
 To remove the alternate recipient, click the **Remove** button.
@@ -61,4 +61,4 @@ Indicates whether to send every email for this user to the alternate recipient a
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

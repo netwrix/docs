@@ -1,6 +1,6 @@
 ---
-title: "Create a Reports Schedule in Directory Manager"
-description: "Create a schedule that automatically generates Directory Manager portal reports for an identity store and emails them to recipients."
+title: "Create a Reports Schedule in GroupID"
+description: "Create a schedule that automatically generates GroupID portal reports for an identity store and emails them to recipients."
 keywords:
   - Reports schedule
   - scheduled reports
@@ -9,11 +9,11 @@ keywords:
 sidebar_position: 100
 ---
 
-# Create a Reports Schedule in Directory Manager
+# Create a Reports Schedule in GroupID
 
-Directory Manager can generate reports for an identity store on a scheduled basis.
+GroupID can generate reports for an identity store on a scheduled basis.
 
-You can create a Reports schedule and add reports to it. When the schedule runs, Directory Manager
+You can create a Reports schedule and add reports to it. When the schedule runs, GroupID
 automatically generates all added reports. The Reports schedule also sends email notifications to
 the designated recipients.
 
@@ -36,29 +36,29 @@ What do you want to do?
    responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 8. To add reports to the schedule, click **Add Report(s)** in the **Reports** area. The **Add
    Reports to Schedule** dialog box appears.
 
     :::note
-    You can only add reports that were generated in the Directory Manager portal, because the
+    You can only add reports that were generated in the GroupID portal, because the
     schedule uses the settings provided there to generate the report. You also can't change the
     settings here, such as the container and filter settings.
     :::
 
     1. In the **Object Category** dropdown list, select a report category. Available categories are:
-       _All Categories, Users, Groups, Contacts, and Computers_. In the Directory Manager portal,
+       _All Categories, Users, Groups, Contacts, and Computers_. In the GroupID portal,
        reports are classified under these categories.
     2. The **Reports** dropdown list shows all reports in the selected category. When you select a
        report, one of the following happens:
 
         - The report is displayed in the grid on the dialog box. This means you previously added it,
           and you don't need to add it again. If the report has been generated multiple times in the
-          Directory Manager portal, all instances are displayed, since each instance has its own
+          GroupID portal, all instances are displayed, since each instance has its own
           _title_, _container_, and _filter_ settings.
         - If the report isn't displayed in the grid, you must add it using the **Add** button. (The
-          **Add** button is enabled if the report was generated in the Directory Manager portal.)
+          **Add** button is enabled if the report was generated in the GroupID portal.)
 
         When you select a category, a report might be listed in the grid. This is because the first
         report in the category is automatically selected in the **Reports** dropdown list. If that
@@ -67,7 +67,7 @@ What do you want to do?
     3. The report is listed in the grid on the dialog box with the following information:
 
         - **Report Title** - the name given to the report by the user while generating it.
-        - **Report Name** - the name of the report in Directory Manager.
+        - **Report Name** - the name of the report in GroupID.
         - **Container** - the container the report fetches results from. This container was
           specified by the user while generating the report.
         - **Filter** - the criteria applied to get the results.
@@ -102,4 +102,4 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

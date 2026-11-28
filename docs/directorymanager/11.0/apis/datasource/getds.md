@@ -1,6 +1,6 @@
 ---
-title: "Get a Data Source API in Directory Manager"
-description: "Retrieve the details of one Directory Manager data source by passing its ID in the endpoint URL."
+title: "Get a Data Source API in GroupID"
+description: "Retrieve the details of one GroupID data source by passing its ID in the endpoint URL."
 keywords:
   - get data source by ID
   - retrieve data source by dataSourceId
@@ -10,7 +10,7 @@ sidebar_position: 30
 unlisted: true
 ---
 
-# Get a Data Source API in Directory Manager
+# Get a Data Source API in GroupID
 
 Use this API to retrieve information about the data source specified in the endpoint
 URL.
@@ -63,5 +63,5 @@ true
 
 ## See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

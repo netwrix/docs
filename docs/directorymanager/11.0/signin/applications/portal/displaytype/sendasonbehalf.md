@@ -1,8 +1,8 @@
 ---
 title: "Delegate Send on Behalf and Send As Permissions"
-description: "Let portal users delegate the Send on Behalf and Send As permissions by adding the fields to mailbox and group properties in the Directory Manager portal."
+description: "Let portal users delegate the Send on Behalf and Send As permissions by adding the fields to mailbox and group properties in the GroupID portal."
 keywords:
-  - Directory Manager
+  - GroupID
   - Send on Behalf
   - Send As
   - mail delegation
@@ -133,7 +133,7 @@ enables the object to delegate the Send As permission to users.
     - DNs
     - Custom display types created with the Grid type
 
-    When you select any of these display types, Directory Manager identifies that the value for the _Send As_
+    When you select any of these display types, GroupID identifies that the value for the _Send As_
     field has to be searched using the Find dialog box. The **Search Object Types** area is
     displayed, where you can select the required object types. For example, if you select User,
     only user objects can be searched and selected as value for the field.
@@ -228,7 +228,7 @@ This enables the object to delegate the Send on Behalf permission to users.
     - DNs
     - Custom display types created with the Grid type
 
-    When you select any of these display types, Directory Manager identifies that the value for the _Send on
+    When you select any of these display types, GroupID identifies that the value for the _Send on
     Behalf_ field has to be searched using the Find dialog box. The **Search Object Types** area is
     displayed, where you can select the required object types. For example, if you select _User_,
     only user objects can be searched and selected as value for the field.
@@ -253,4 +253,4 @@ functionality.
 
 **See Also**
 
-- [Customize Properties Pages in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectproperties.md)
+- [Customize Properties Pages in GroupID](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectproperties.md)

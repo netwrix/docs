@@ -12,7 +12,7 @@ sidebar_position: 10
 # Sync Exchange Subscriptions in a Synchronize Job
 
 While creating or editing mail-enabled objects through a Synchronize job, you can use
-Directory Manager to sync or deprovision subscriptions from the Exchange messaging provider.
+GroupID to sync or deprovision subscriptions from the Exchange messaging provider.
 
 ## Sync Exchange subscriptions
 
@@ -29,7 +29,7 @@ On the **Object, Fields and Mapping** page:
 4. Set Exchange server priority.
 
     With Microsoft Exchange as the messaging provider, the **Server Name** column in the **Server
-    Status & Priority** area lists the mail servers in the environment. By default, Directory Manager randomly
+    Status & Priority** area lists the mail servers in the environment. By default, GroupID randomly
     assigns the highest priority to a server. You can change its priority level and set the priority
     for other servers.
 
@@ -38,7 +38,7 @@ On the **Object, Fields and Mapping** page:
     1. In the **Server Status and Priority** section, select the checkbox for the server you want
        to specify or change the priority for.
 
-        Directory Manager checks the availability of the server and displays its status as _Online_
+        GroupID checks the availability of the server and displays its status as _Online_
         (available) or _Offline_ (unavailable) in the **Status** column.
 
     2. In the **Priority** box, select a priority level for the server, with "1" representing the
@@ -48,7 +48,7 @@ On the **Object, Fields and Mapping** page:
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)

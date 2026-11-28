@@ -1,5 +1,5 @@
 ---
-title: "Choose a Job Template in Directory Manager Synchronize"
+title: "Choose a Job Template in GroupID Synchronize"
 description: "Name a new Synchronize job, assign owners, and start from a blank job or a predefined template such as Move Objects in Active Directory."
 keywords:
   - Synchronize job template
@@ -9,14 +9,14 @@ keywords:
 sidebar_position: 20
 ---
 
-# Choose a Job Template in Directory Manager Synchronize
+# Choose a Job Template in GroupID Synchronize
 
-To create a job, use Directory Manager Synchronize to create a new job based on your settings and
+To create a job, use GroupID Synchronize to create a new job based on your settings and
 criteria. You can also choose from multiple templates to directly create a job.
 
 **Follow these steps:**
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Create New** and then click **Job**.
 3. On the **Choose Your Job Template** page, enter the following job details:
 
@@ -33,4 +33,4 @@ criteria. You can also choose from multiple templates to directly create a job.
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)

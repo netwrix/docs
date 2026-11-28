@@ -1,8 +1,8 @@
 ---
-title: "Create Active Directory user objects in Directory Manager"
-description: "Learn which user object types you can create in an Active Directory identity store from the Directory Manager portal: user, mailbox, and contact."
+title: "Create Active Directory user objects in GroupID"
+description: "Learn which user object types you can create in an Active Directory identity store from the GroupID portal: user, mailbox, and contact."
 keywords:
-  - Directory Manager
+  - GroupID
   - Active Directory user objects
   - create user
   - create mailbox
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create Active Directory user objects in Directory Manager
+# Create Active Directory user objects in GroupID
 
 In an Active Directory identity store, you can create the following types of users:
 
@@ -20,4 +20,4 @@ In an Active Directory identity store, you can create the following types of use
 
 **See Also**
 
-- [Manage users in Directory Manager](/docs/directorymanager/11.0/welcome/user/overview.md)
+- [Manage users in GroupID](/docs/directorymanager/11.0/welcome/user/overview.md)

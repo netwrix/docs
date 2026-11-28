@@ -1,19 +1,19 @@
 ---
-title: "View and Edit Group Properties in Directory Manager"
-description: "Learn what you can do on a group's properties page in the Directory Manager portal and find the page for each properties tab."
+title: "View and Edit Group Properties in GroupID"
+description: "Learn what you can do on a group's properties page in the GroupID portal and find the page for each properties tab."
 keywords:
  - group properties
- - Directory Manager portal
+ - GroupID portal
  - join or leave a group
  - upgrade to Smart Group
  - group vCard
 sidebar_position: 90
 ---
 
-# View and Edit Group Properties in Directory Manager
+# View and Edit Group Properties in GroupID
 
 You can view and change the properties of groups in the connected identity store, depending on
-the permissions the Directory Manager administrator has granted you.
+the permissions the GroupID administrator has granted you.
 
 Select the required object and click **Properties** on the toolbar. The portal displays the object's properties page.
 
@@ -56,18 +56,18 @@ Select the required object and click **Properties** on the toolbar. The portal d
 
 ## Group properties tabs
 
-- [Directory Manager group properties: General tab](/docs/directorymanager/11.0/welcome/group/properties/general.md)
-- [Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/owner.md)
-- [Directory Manager group properties: Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md)
-- [Directory Manager group properties: Member Of tab](/docs/directorymanager/11.0/welcome/group/properties/memberof.md)
-- [Restrict who can email a Directory Manager group](/docs/directorymanager/11.0/welcome/group/properties/deliveryrestrictions.md)
+- [GroupID group properties: General tab](/docs/directorymanager/11.0/welcome/group/properties/general.md)
+- [Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/owner.md)
+- [GroupID group properties: Members tab](/docs/directorymanager/11.0/welcome/group/properties/members.md)
+- [GroupID group properties: Member Of tab](/docs/directorymanager/11.0/welcome/group/properties/memberof.md)
+- [Restrict who can email a GroupID group](/docs/directorymanager/11.0/welcome/group/properties/deliveryrestrictions.md)
 - [Group properties Attributes tab](/docs/directorymanager/11.0/welcome/group/properties/attributes.md)
 - [Group Email tab and Exchange additional owners](/docs/directorymanager/11.0/welcome/group/properties/email.md)
-- [Group Advanced Settings in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/advanced.md)
-- [View a Group's Hierarchy as a Tree in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/treeview.md)
+- [Group Advanced Settings in GroupID](/docs/directorymanager/11.0/welcome/group/properties/advanced.md)
+- [View a Group's Hierarchy as a Tree in GroupID](/docs/directorymanager/11.0/welcome/group/properties/treeview.md)
 - [View group NTFS permissions on the Entitlement tab](/docs/directorymanager/11.0/welcome/group/properties/entitlements.md)
-- [Find Similar Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/similargroups.md)
-- [Directory Manager object properties: History tab](/docs/directorymanager/11.0/welcome/group/properties/history.md)
+- [Find Similar Groups in GroupID](/docs/directorymanager/11.0/welcome/group/properties/similargroups.md)
+- [GroupID object properties: History tab](/docs/directorymanager/11.0/welcome/group/properties/history.md)
 - [Add and remove channels in a Teams group](/docs/directorymanager/11.0/welcome/group/properties/channels.md)
   (For Teams only)
 - [Edit a Smart Group Query and Update Schedule](/docs/directorymanager/11.0/welcome/group/properties/smartgroup.md)
@@ -82,7 +82,7 @@ available for groups in a Microsoft Entra ID based identity store.
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
 - Group Properties
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

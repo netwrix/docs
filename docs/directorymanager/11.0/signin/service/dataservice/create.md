@@ -1,8 +1,8 @@
 ---
-title: "Create a Directory Manager Data Service in IIS"
-description: "Deploy a Directory Manager Data service in native or remote IIS and bind it to Elasticsearch, Replication, and Scheduler services."
+title: "Create a GroupID Data Service in IIS"
+description: "Deploy a GroupID Data service in native or remote IIS and bind it to Elasticsearch, Replication, and Scheduler services."
 keywords:
-  - Directory Manager
+  - GroupID
   - Data service
   - IIS
   - Elasticsearch service
@@ -10,18 +10,18 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create a Directory Manager Data Service in IIS
+# Create a GroupID Data Service in IIS
 
 You can create a Data service in native IIS and remote IIS.
 
 ## Create a Data Service in Native IIS
 
-When you deploy a Data service in native IIS, Directory Manager does the following:
+When you deploy a Data service in native IIS, GroupID does the following:
 
-- It creates a directory with the Data service's name at the following physical path on the Directory Manager
+- It creates a directory with the Data service's name at the following physical path on the GroupID
   server and copies the service files from its template directory to the new service directory:
   X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\
-  (X represents the Directory Manager installation drive)
+  (X represents the GroupID installation drive)
 - It also creates a virtual directory for the service in your desired IIS site.
 
 The Data service runs within a virtual directory in IIS while the service files are physically
@@ -34,7 +34,7 @@ located on disk.
 3. On the next page, select **Data Service** and click **Next step**.
 4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a unique name for the service or use the default name. The
-   service is displayed with this name in Directory Manager.
+   service is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the service.
    The application name and deployment name are displayed on the service card. It looks like this:
 
@@ -43,9 +43,9 @@ located on disk.
 7. In the **IIS Application Name** box, enter an IIS deployment name for the service. The name
    should be unique for each Data service deployed in IIS.
    The IIS application name is used to name the service's directory in IIS and its physical
-   directory under X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\ on the Directory Manager
+   directory under X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\ on the GroupID
    server.
-   (X represents the Directory Manager installation drive)
+   (X represents the GroupID installation drive)
 8. In the **IIS Site** dropdown list, select a website to host the service files.
    The list displays the websites defined on the local IIS server. `GroupIDSite11` is the default
    selection.
@@ -64,7 +64,7 @@ located on disk.
        store), a request is sent to the Data service, which is then passed on to the Replication
        service bound to that Data service.
     3. In the **Scheduler Service** dropdown list, select a scheduler service to bind to this Data
-       service. The number of services displayed in the list depends on the number of Directory Manager
+       service. The number of services displayed in the list depends on the number of GroupID
        clusters, as each cluster has its own Scheduler service.
        This Data service sends requests to the selected Scheduler service to trigger schedule
        runs.
@@ -77,7 +77,7 @@ located on disk.
 You can deploy a Data service within a site in remote IIS. For this, you need to connect with the
 Microsoft IIS Administration API running on the remote IIS machine.
 
-When you create a Data service in remote IIS, Directory Manager does the following:
+When you create a Data service in remote IIS, GroupID does the following:
 
 - It creates a virtual directory for the service in a preconfigured site in remote IIS.
 - It creates a physical directory for the service in the folder that is mapped to this preconfigured
@@ -87,7 +87,7 @@ The Data service runs within a virtual directory in remote IIS while the service
 physically located on disk.
 
 To learn about the remote IIS settings and configurations before deploying a service there, see the
-[Prerequisites for Deploying Directory Manager in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
+[Prerequisites for Deploying GroupID in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
 topic.
 
 **To create a Data service:**
@@ -97,7 +97,7 @@ topic.
 3. On the next page, select **Data Service** and click **Next step**.
 4. On the **Create GroupID Application** page, select the **Remote IIS** tile.
 5. In the **Application Name** box, enter a unique name for the Data service or use the default
-   name. The Data service is displayed in Directory Manager with this name.
+   name. The Data service is displayed in GroupID with this name.
 6. In the **Deployment Name** box, enter a deployment name for the service. The application name and
    deployment name are displayed on the service card.
 7. To enter information for **API URL**, **Access Token**, **Username**, **Password**, **IIS
@@ -111,6 +111,6 @@ topic.
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
-- [Manage Directory Manager Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
+- [Manage GroupID Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)

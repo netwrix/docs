@@ -1,6 +1,6 @@
 ---
-title: "Manage Property Validation in the Directory Manager Mobile App"
-description: "Add, edit, or remove the fields users and group owners see during profile validation and group attestation in the Directory Manager mobile app."
+title: "Manage Property Validation in the GroupID Mobile App"
+description: "Add, edit, or remove the fields users and group owners see during profile validation and group attestation in the GroupID mobile app."
 keywords:
   - mobile app property validation
   - add profile validation attribute
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 50
 ---
 
-# Manage Property Validation in the Directory Manager Mobile App
+# Manage Property Validation in the GroupID Mobile App
 
-In Directory Manager, property validation applies to:
+In GroupID, property validation applies to:
 
 - Users
 - Groups
@@ -125,5 +125,5 @@ validation:
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

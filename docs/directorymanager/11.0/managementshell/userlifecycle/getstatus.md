@@ -1,5 +1,5 @@
 ---
-title: "Get-Status Cmdlet for Directory Manager"
+title: "Get-Status Cmdlet for GroupID"
 description: "Check a user's status against the identity store's profile validation criteria and see the days left to validate with the Get-Status cmdlet."
 keywords:
   - Get-Status
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Get-Status Cmdlet for Directory Manager
+# Get-Status Cmdlet for GroupID
 
 Use the **Get-Status** cmdlet to check the status of a specified user according to the profile
 validation criteria defined for the identity store.
@@ -42,6 +42,6 @@ Get-Status –Manager "Richard"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for GroupID ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

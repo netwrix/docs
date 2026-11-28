@@ -1,6 +1,6 @@
 ---
-title: "Install Directory Manager Credential Provider"
-description: "Install Directory Manager Credential Provider on a workstation manually or deploy it to many workstations with a Group Policy Object and an Orca transform."
+title: "Install GroupID Credential Provider"
+description: "Install GroupID Credential Provider on a workstation manually or deploy it to many workstations with a Group Policy Object and an Orca transform."
 keywords:
   - install Credential Provider
   - Group Policy deployment
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Install Directory Manager Credential Provider
+# Install GroupID Credential Provider
 
-You can install Directory Manager Credential Provider in one of the following ways:
+You can install GroupID Credential Provider in one of the following ways:
 
 - [Install Credential Provider Manually](#install-credential-provider-manually)
 - [Install Credential Provider via a Group Policy Object (GPO)](#install-credential-provider-via-a-group-policy-object-gpo)
@@ -187,5 +187,5 @@ Object when they next restart. The Windows logon screen appears as follows:
 
 See Also
 
-- [Directory Manager Credential Provider](/docs/directorymanager/11.0/credentialprovider/credentialprovider.md)
-- [Uninstall Directory Manager Credential Provider](/docs/directorymanager/11.0/credentialprovider/uninstallcp.md)
+- [GroupID Credential Provider](/docs/directorymanager/11.0/credentialprovider/credentialprovider.md)
+- [Uninstall GroupID Credential Provider](/docs/directorymanager/11.0/credentialprovider/uninstallcp.md)

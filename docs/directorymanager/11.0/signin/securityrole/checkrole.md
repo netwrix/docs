@@ -1,6 +1,6 @@
 ---
-title: "Check a User's Security Role in Directory Manager"
-description: "Find out which security role takes precedence for a user in a Directory Manager client by checking the highest priority role in Admin Center."
+title: "Check a User's Security Role in GroupID"
+description: "Find out which security role takes precedence for a user in a GroupID client by checking the highest priority role in Admin Center."
 keywords:
   - check security role
   - highest priority role
@@ -10,20 +10,20 @@ keywords:
 sidebar_position: 50
 ---
 
-# Check a User's Security Role in Directory Manager
+# Check a User's Security Role in GroupID
 
 As discussed in the
-[Assign Distinct Roles to a User in Directory Manager Clients](/docs/directorymanager/11.0/signin/securityrole/overview.md#assign-distinct-roles-to-a-user-in-directory-manager-clients)
+[Assign Distinct Roles to a User in GroupID Clients](/docs/directorymanager/11.0/signin/securityrole/overview.md#assign-distinct-roles-to-a-user-in-groupid-clients)
 topic, a user in an identity store can have different security roles assigned to it in different
-Directory Manager clients. Moreover, a user can also have multiple roles in a client, in which case the
+GroupID clients. Moreover, a user can also have multiple roles in a client, in which case the
 highest priority role takes precedence when the user signs in to that specific client. See
 [Priority](/docs/directorymanager/11.0/signin/securityrole/manage.md).
 
-Use Directory Manager to view the highest priority role of a user in a client. This role identifies
-the access level of that user in the client. Select a client and specify a user. Directory Manager
+Use GroupID to view the highest priority role of a user in a client. This role identifies
+the access level of that user in the client. Select a client and specify a user. GroupID
 retrieves the highest priority role of the user for that client.
 
-## View the Highest Priority Role of a User in a Directory Manager Client
+## View the Highest Priority Role of a User in a GroupID Client
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
@@ -31,11 +31,11 @@ retrieves the highest priority role of the user for that client.
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Check Security Roles**. The **Check Security Roles**
    dialog box is displayed.
-5. In the **Client name** dropdown list, select a Directory Manager client to view the highest priority role
-   of a user within it. For example, select a Directory Manager portal to view the highest priority role that
+5. In the **Client name** dropdown list, select a GroupID client to view the highest priority role
+   of a user within it. For example, select a GroupID portal to view the highest priority role that
    a user has in the portal.  
-   This list displays the names of the deployed clients only. If a client, such as the Directory
-   Manager mobile app, isn't deployed for the identity store, it isn't listed.  
+   This list displays the names of the deployed clients only. If a client, such as the GroupID
+   mobile app, isn't deployed for the identity store, it isn't listed.  
    To view the highest privileged role that a user has in the identity store, select _None_ in the
    **Client Name** list.
 6. In the box below, specify a user.
@@ -59,5 +59,5 @@ retrieves the highest priority role of the user for that client.
 
 See Also
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Manage Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/manage.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Manage Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/manage.md)

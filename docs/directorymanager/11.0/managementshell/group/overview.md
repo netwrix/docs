@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager Group Cmdlets"
+title: "GroupID Group Cmdlets"
 description: "Find the Management Shell cmdlets that create, convert, move, expire, renew, modify, retrieve, and delete managed and unmanaged groups."
 keywords:
   - group cmdlets
   - Management Shell
   - managed groups
   - unmanaged groups
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 70
 ---
 
-# Directory Manager Group Cmdlets
+# GroupID Group Cmdlets
 
 This section covers cmdlets for performing tasks related to managed and unmanaged groups.
 
@@ -34,5 +34,5 @@ This section covers cmdlets for performing tasks related to managed and unmanage
 See Also
 
 - [GroupID Management Shell](/docs/directorymanager/11.0/managementshell/overview.md)
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,8 +1,8 @@
 ---
-title: "Delete a User with the Directory Manager API"
+title: "Delete a User with the GroupID API"
 description: "Delete a single user from an identity store by sending a DELETE request with the user identity."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - delete user
   - DELETE Users endpoint
   - identity store
@@ -10,7 +10,7 @@ sidebar_position: 20
 unlisted: true
 ---
 
-# Delete a User with the Directory Manager API
+# Delete a User with the GroupID API
 
 Using this API, you can delete a single user.
 
@@ -43,5 +43,5 @@ DELETE
 ## See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

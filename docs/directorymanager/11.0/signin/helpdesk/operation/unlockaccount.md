@@ -1,5 +1,5 @@
 ---
-title: "Unlock User Accounts in Directory Manager Helpdesk"
+title: "Unlock User Accounts in GroupID Helpdesk"
 description: "Unlock locked user accounts in an identity store from Admin Center Helpdesk, in restricted or unrestricted mode."
 keywords:
   - unlock account
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Unlock User Accounts in Directory Manager Helpdesk
+# Unlock User Accounts in GroupID Helpdesk
 
 Administrators can enforce an account lockout policy for a domain that locks a user account after a
 certain number of failed sign-in attempts. This secures a machine from unauthorized access. However,
@@ -29,7 +29,7 @@ granted to your role and (b) the Helpdesk policy for your role is set to the unr
 :::
 
 :::note
-Directory Manager doesn't support account unlock in a Microsoft Entra ID identity store.
+GroupID doesn't support account unlock in a Microsoft Entra ID identity store.
 :::
 
 ## Unlock User Accounts in Unrestricted Mode
@@ -37,7 +37,7 @@ Directory Manager doesn't support account unlock in a Microsoft Entra ID identit
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. Locate your required user. To
    search for a user, see
-   the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   the [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Click the ellipsis button for the user and select **Unlock Account**. For enrolled users, the
    **Unlock Account** dialog box has two pages: **Authenticate** and **Unlock**. Under the
@@ -45,7 +45,7 @@ Directory Manager doesn't support account unlock in a Microsoft Entra ID identit
    only the **Unlock** page is available.  
    Use the **History** button to view user history, which lists the actions performed on the user and by
    the user. This history is specific to helpdesk functions, as listed in the
-   [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+   [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md)
    topic.
 4. The **Unlock** page displays the user name, the identity store where this user resides, the last
    time the user changed their password, and the lock status of the account. In case the user
@@ -58,13 +58,13 @@ Directory Manager doesn't support account unlock in a Microsoft Entra ID identit
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. Locate your required user. To
    search for a user, see
-   the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   the [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Click the ellipsis button for the user and select **Unlock Account**. The **Unlock Account**
    dialog box has two pages: **Authenticate** and **Unlock**.  
    Use the **History** button to view user history, which lists the actions performed on the user and by
    the user. This history is specific to helpdesk functions, as listed in the
-   [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+   [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md)
    topic.
 4. The **Authenticate** page displays the authentication types the user's account is enrolled
    with. To authenticate the user, follow step 4 in the
@@ -79,5 +79,5 @@ Directory Manager doesn't support account unlock in a Microsoft Entra ID identit
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

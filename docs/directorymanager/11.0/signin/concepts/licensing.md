@@ -1,25 +1,25 @@
 ---
-title: "Manage Directory Manager Licenses"
-description: "Learn about Directory Manager license types and add-ons, and how to add, update, or remove a license in Admin Center."
+title: "Manage GroupID Licenses"
+description: "Learn about GroupID license types and add-ons, and how to add, update, or remove a license in Admin Center."
 keywords:
-  - Directory Manager licensing
+  - GroupID licensing
   - license types
   - add a license
   - license expiration
 sidebar_position: 80
 ---
 
-# Manage Directory Manager Licenses
+# Manage GroupID Licenses
 
-You can license Directory Manager under one or more of these license types:
+You can license GroupID under one or more of these license types:
 
-- **Suite** - enables access to all Directory Manager functionality and its clients, including the Directory Manager
+- **Suite** - enables access to all GroupID functionality and its clients, including the GroupID
   portal, mobile app, Management Shell, and APIs.
-- **Group Management** - enables access to all the group management features in Directory Manager, except
+- **Group Management** - enables access to all the group management features in GroupID, except
   those licensed under add-ons.
-- **User Management** - enables access to all the user management features in Directory Manager, except those
+- **User Management** - enables access to all the user management features in GroupID, except those
   licensed under add-ons.
-- **Password Management** - enables access to password management functions in Directory Manager, namely:
+- **Password Management** - enables access to password management functions in GroupID, namely:
 
     - Account unlock and password reset by both end users and helpdesk
     - Multifactor authentication
@@ -39,15 +39,15 @@ You can license Directory Manager under one or more of these license types:
     - **Synchronize Jobs** - separate licenses are required for user-specific and group-specific
       Synchronize jobs.
     - **Group Lifecycle** - required to run the Group Lifecycle schedule in the identity stores.
-    - **Dynamic Groups** - required to create and manage Smart Groups and Dynasties in Directory Manager.
-    - **Power Automate** - integrate Directory Manager workflows with Power Automate flows.
+    - **Dynamic Groups** - required to create and manage Smart Groups and Dynasties in GroupID.
+    - **Power Automate** - integrate GroupID workflows with Power Automate flows.
       Separate licenses are required for integrating user-specific and group-specific workflows.
     - **Group Usage Service** - required to run the Group Usage Service schedule in the identity
       stores.
     - **Group Attestation** - required to enable the group attestation function in the identity
       stores.
     - **Linked Identity Stores** - required to manage identical user objects and identical group
-      objects in the identity stores. It works as follows with other Directory Manager licenses:
+      objects in the identity stores. It works as follows with other GroupID licenses:
 
         - **Suite License**: the linked identity stores feature is fully functional. You can
           manage your linked identities. For a link between an Active Directory identity store and a Microsoft
@@ -78,7 +78,7 @@ settings, such as creating identity stores, creating data sources, and defining 
 Unlicensed functions are displayed with a yellow icon next to them. When you hover over the icon, a message is displayed with two buttons: **Learn more** and **Upgrade**. Both buttons
 redirect you to the
 [Group and User Management Software from Netwrix](https://www.netwrix.com/group_and_user_management_software.html)
-page, where you can review available Directory Manager licenses and purchase or renew your licenses.
+page, where you can review available GroupID licenses and purchase or renew your licenses.
 
 What do you want to do?
 
@@ -104,7 +104,7 @@ What do you want to do?
     - **Actions:** displays the _Edit_ and _Delete_ icons, enabling you to update or remove the
       license accordingly.
 
-5. If you have multiple Directory Manager licenses, repeat steps 2 through 4 for each license.
+5. If you have multiple GroupID licenses, repeat steps 2 through 4 for each license.
 
 ## Update a License
 

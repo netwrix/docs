@@ -1,5 +1,5 @@
 ---
-title: "Contact Properties Advanced Tab in Directory Manager"
+title: "Contact Properties Advanced Tab in GroupID"
 description: "Set a contact's home page URL, employee type, employee ID, and administrator notes on the Advanced tab."
 keywords:
   - contact properties
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Contact Properties Advanced Tab in Directory Manager
+# Contact Properties Advanced Tab in GroupID
 
 Use this tab to specify advanced settings for a contact.
 
@@ -34,4 +34,4 @@ Notes by the administrator.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

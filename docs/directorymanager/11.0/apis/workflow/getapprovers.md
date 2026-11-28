@@ -1,11 +1,11 @@
 ---
 title: "Get Workflow Request Approvers Using the API"
-description: "Retrieve the approvers of a workflow request, with paging and filtering, by sending a GET request to the Directory Manager API."
+description: "Retrieve the approvers of a workflow request, with paging and filtering, by sending a GET request to the GroupID API."
 keywords:
   - workflow request approvers
   - get approvers API
   - approver filter criteria
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 100
 unlisted: true
 ---
@@ -81,5 +81,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

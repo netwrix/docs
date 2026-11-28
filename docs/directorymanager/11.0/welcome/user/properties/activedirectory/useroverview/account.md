@@ -1,5 +1,5 @@
 ---
-title: "Set User Account Expiry and Lockout in Directory Manager"
+title: "Set User Account Expiry and Lockout in GroupID"
 description: "Set when a user account expires, disable the account, or unlock it from the Account tab of the user properties."
 keywords:
   - user account expiry
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Set User Account Expiry and Lockout in Directory Manager
+# Set User Account Expiry and Lockout in GroupID
 
 This tab enables administrators to manage the account status and expiry policy of a user.
 
@@ -32,4 +32,4 @@ attempts. Clear this checkbox to unlock the account.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

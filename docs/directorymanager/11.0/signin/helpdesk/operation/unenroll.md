@@ -1,6 +1,6 @@
 ---
 title: "Unenroll a User from an Authentication Type"
-description: "Remove a user account's enrollment for one authentication type in Directory Manager Helpdesk while keeping its other enrollments."
+description: "Remove a user account's enrollment for one authentication type in GroupID Helpdesk while keeping its other enrollments."
 keywords:
   - unenroll user
   - authentication type
@@ -23,7 +23,7 @@ enrolled with Security Questions and Email.
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. Locate your required user. To
    search for a user, see
-   the [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   the [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Click the ellipsis button for the user and select **Unenroll Account**.  
    The **Unenroll Account** dialog box displays the authentication types the user account is
@@ -33,5 +33,5 @@ enrolled with Security Questions and Email.
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "Terminate-DirectReports Cmdlet for Directory Manager"
+title: "Terminate-DirectReports Cmdlet for GroupID"
 description: "Terminate the specified direct reports of a manager and send the manager a notification per the defined workflow with Terminate-DirectReports."
 keywords:
   - Terminate-DirectReports
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# Terminate-DirectReports Cmdlet for Directory Manager
+# Terminate-DirectReports Cmdlet for GroupID
 
 Use the Terminate-DirectReports cmdlet to terminate users. Specify the manager of the user you want
 to terminate.
@@ -48,6 +48,6 @@ Terminate-DirectReports -DirectReports "Irfan","Naeem" -Manager "Raja"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for GroupID ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

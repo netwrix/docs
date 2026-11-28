@@ -1,5 +1,5 @@
 ---
-title: "Extend-User Cmdlet for Directory Manager"
+title: "Extend-User Cmdlet for GroupID"
 description: "Extend the user lifecycle of an expired user for a specified period with the Extend-User cmdlet."
 keywords:
   - Extend-User
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Extend-User Cmdlet for Directory Manager
+# Extend-User Cmdlet for GroupID
 
 Use the **Extend-User** cmdlet to extend the user lifecycle of an expired user for a specified
 period of days.
@@ -42,6 +42,6 @@ Extend-User -Identity "CN=ImanamiUser100,OU=BulkUsers,DC=gid,DC=local"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Lifecycle Cmdlets for Directory Manager ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Lifecycle Cmdlets for GroupID ](/docs/directorymanager/11.0/managementshell/userlifecycle/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

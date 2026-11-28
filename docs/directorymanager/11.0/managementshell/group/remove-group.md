@@ -5,7 +5,7 @@ keywords:
   - Remove-Group
   - delete group
   - delete Dynasty
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 60
 ---
 
@@ -14,7 +14,7 @@ sidebar_position: 60
 Use this cmdlet to delete a group (managed or unmanaged) or Dynasty in the directory. Removing a
 parent Dynasty using this cmdlet removes all its children as well.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
+You can view events related to this cmdlet in the GroupID portal, under the History node
 in the left pane.
 
 ## Syntax
@@ -55,6 +55,6 @@ Remove-Group -identity "OU=Event Management,OU=Recruiting,DC=HR,DC=Imanami,DC=US
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

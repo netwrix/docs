@@ -1,5 +1,5 @@
 ---
-title: "Get Job Collections API in Directory Manager"
+title: "Get Job Collections API in GroupID"
 description: "Retrieve Synchronize job collections that match filter criteria, with paging and sorting options, using a GET request."
 keywords:
   - "get job collections API"
@@ -9,12 +9,12 @@ sidebar_position: 70
 unlisted: true
 ---
 
-# Get Job Collections API in Directory Manager
+# Get Job Collections API in GroupID
 
 Use this API to retrieve information about job collections based on the filters provided in the request
 syntax.
 
-See the [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
+See the [Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
 additional information on job collections.
 
 ## Endpoint
@@ -92,5 +92,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

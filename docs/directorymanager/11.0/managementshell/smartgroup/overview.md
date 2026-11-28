@@ -1,15 +1,15 @@
 ---
-title: "Smart Group Cmdlets in Directory Manager"
+title: "Smart Group Cmdlets in GroupID"
 description: "Find the Management Shell cmdlets that create, retrieve, modify, update, convert and upgrade Smart Groups and Dynasties."
 keywords:
   - Smart Group cmdlets
   - Dynasty cmdlets
   - Management Shell
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 140
 ---
 
-# Smart Group Cmdlets in Directory Manager
+# Smart Group Cmdlets in GroupID
 
 This section covers cmdlets for managing Smart Groups.
 
@@ -24,12 +24,12 @@ This section covers cmdlets for managing Smart Groups.
 - [Update-Group Cmdlet](/docs/directorymanager/11.0/managementshell/smartgroup/updategroup.md):
   modifies the membership of a Smart Group or Dynasty according to the results returned by the LDAP
   query.
-- [Upgrade-Group Cmdlet in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/upgradegroup.md):
+- [Upgrade-Group Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/upgradegroup.md):
   upgrades managed (Smart Groups and Dynasties) and non-managed groups from GroupID 9
-  and 10 to Directory Manager 11.
+  and 10 to GroupID 11.
 
 See Also
 
-- [Directory Manager Management Shell](/docs/directorymanager/11.0/managementshell/overview.md)
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell](/docs/directorymanager/11.0/managementshell/overview.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

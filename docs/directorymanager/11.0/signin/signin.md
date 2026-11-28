@@ -1,5 +1,5 @@
 ---
-title: "Sign In to Directory Manager Admin Center"
+title: "Sign In to GroupID Admin Center"
 description: "Sign in to Admin Center with an identity store account, a SAML provider, or a QR code, and pass second factor authentication."
 sidebar_position: 40
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - QR code sign-in
 ---
 
-# Sign In to Directory Manager Admin Center
+# Sign In to GroupID Admin Center
 
 Admin Center is a web-based application that users can access over the Internet and intranet. It
 comes with a default provider, _GroupID_, which primarily facilitates first-time sign-in to the
@@ -22,7 +22,7 @@ What do you want to do?
 
 - [Sign In](#sign-in)
 - [Sign Out](#sign-out)
-- [View the Directory Manager Version](#view-the-directory-manager-version)
+- [View the GroupID Version](#view-the-groupid-version)
 - [Modern Authentication Support](#modern-authentication-support)
 
 ## Sign In
@@ -37,7 +37,7 @@ Use any of the following methods to connect and sign in:
     To sign in using the GroupID provider, enter the username and password you specified for
     _GroupID Administrator_ on the **Service Account Settings** page of the Configuration Tool. See
     the
-    [Configure a Directory Manager Server and Database](/docs/directorymanager/11.0/about/configure/gidserver.md)
+    [Configure a GroupID Server and Database](/docs/directorymanager/11.0/about/configure/gidserver.md)
     topic.
     :::
 
@@ -45,8 +45,8 @@ Use any of the following methods to connect and sign in:
   (This option is available if the selected identity store has a SAML provider configured.)
 
     :::note
-    Users with Microsoft Entra ID MFA enabled can't sign in to Directory Manager using their username and
-    password. They authenticate through the SAML provider configured in Directory Manager.
+    Users with Microsoft Entra ID MFA enabled can't sign in to GroupID using their username and
+    password. They authenticate through the SAML provider configured in GroupID.
     :::
 
 - Scan the displayed QR code with the GroupID app installed on your smartphone.  
@@ -83,11 +83,11 @@ permissions in the identity store.
 
 ### With a SAML Provider
 
-You can use single sign-on across all Directory Manager clients if Directory Manager has a SAML
+You can use single sign-on across all GroupID clients if GroupID has a SAML
 provider configured. See the following topics for additional information on the SAML provider
 configuration:
 
-- [Configure Directory Manager in Microsoft Entra ID for SSO](/docs/directorymanager/11.0/authenticate/asserviceprovider/entrasso/configureinentra.md)
+- [Configure GroupID in Microsoft Entra ID for SSO](/docs/directorymanager/11.0/authenticate/asserviceprovider/entrasso/configureinentra.md)
 - [Configure the Microsoft Entra SSO Application in GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/entrasso/configureproviderindirectorymanager.md)
 
 On the **GroupID Authenticate** page, click the button or image for the provider and proceed to sign
@@ -95,7 +95,7 @@ in.
 
 :::note
 For users with Microsoft Entra ID MFA enabled, you must configure a SAML provider so that they can sign
-in to Directory Manager.
+in to GroupID.
 :::
 
 ### With QR Code
@@ -110,7 +110,7 @@ code too. Use the QR code to sign in to an identity store.
 3. Capture the QR code through the app on your phone. One of the following happens:
 
     - If the identity store that the app is connected to doesn't have the QR code option enabled,
-      Directory Manager displays an error message.
+      GroupID displays an error message.
     - If the identity store that the app is connected to has the QR code option enabled, Admin
       Center connects to this identity store.
 
@@ -123,36 +123,36 @@ signing in with any of the [sign-in methods](#sign-in).
 
 For second factor authentication, one of the following applies:
 
-- If you haven't enrolled your identity store account in Directory Manager, Directory Manager displays the
+- If you haven't enrolled your identity store account in GroupID, GroupID displays the
   **Enroll Account** page. You must enroll using at least one authentication type. See the
-  [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
+  [Enroll Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/enroll.md)
   topic.
-- If you have already enrolled your identity store account in Directory Manager, Directory Manager displays the
+- If you have already enrolled your identity store account in GroupID, GroupID displays the
   **Authenticate** page. It lists the authentication types your account is enrolled with. Select an
   authentication type to authenticate. See the
-  [Authenticate Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)
+  [Authenticate Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)
   topic.
 
 ## Sign Out
 
 In Admin Center, click your name in the top right corner and select **Sign Out**.
 
-## View the Directory Manager Version
+## View the GroupID Version
 
-You can view the Directory Manager 11 version deployed in your environment.
+You can view the GroupID 11 version deployed in your environment.
 
-In Admin Center, click your name in the top right corner. The menu displays the running Directory Manager
+In Admin Center, click your name in the top right corner. The menu displays the running GroupID
 version.
 
 ## Modern Authentication Support
 
-When you create the Directory Manager app in Microsoft Entra Admin Center, you have to bind a certificate to
+When you create the GroupID app in Microsoft Entra Admin Center, you have to bind a certificate to
 it. Export that certificate to PFX form.
 
-For modern authentication, Directory Manager requires this PFX certificate to communicate with the Directory Manager app
+For modern authentication, GroupID requires this PFX certificate to communicate with the GroupID app
 in Microsoft Entra Admin Center.
 
-In Directory Manager, you must provide this PFX certificate on the following pages:
+In GroupID, you must provide this PFX certificate on the following pages:
 
 - In the identity store connection settings while creating a Microsoft Entra ID identity store.
 - In the messaging provider settings, when you set Exchange Online / Office 365 as the messaging provider.
@@ -166,14 +166,14 @@ settings.
 
 ### Modern Authentication and gMSA Permissions
 
-To use a group Managed Service Account (gMSA) as the service account for Directory Manager services and the app pool, do the following:
+To use a group Managed Service Account (gMSA) as the service account for GroupID services and the app pool, do the following:
 
-1. Add the gMSA account to the membership of the _IIS_IUSRS_ group on the Directory Manager server.
+1. Add the gMSA account to the membership of the _IIS_IUSRS_ group on the GroupID server.
 2. Add the _IIS_IUSRS_ group in the ‘Manage Private Keys’ permission for the certificate that
-   Directory Manager uses for modern authentication.
+   GroupID uses for modern authentication.
 
 **See Also**
 
-- [Get Started with Directory Manager](/docs/directorymanager/11.0/gettingstarted.md)
-- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
-- [Navigate Admin Center in Directory Manager](/docs/directorymanager/11.0/signin/concepts/navigation.md)
+- [Get Started with GroupID](/docs/directorymanager/11.0/gettingstarted.md)
+- [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Navigate Admin Center in GroupID](/docs/directorymanager/11.0/signin/concepts/navigation.md)

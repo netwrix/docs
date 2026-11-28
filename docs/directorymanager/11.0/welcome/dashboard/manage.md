@@ -1,16 +1,16 @@
 ---
-title: "Manage Directory Manager Reports"
-description: "Run, edit, download, or delete a previously generated report from the Reports list in the Directory Manager portal."
+title: "Manage GroupID Reports"
+description: "Run, edit, download, or delete a previously generated report from the Reports list in the GroupID portal."
 sidebar_position: 20
 keywords:
-  - run a report in Directory Manager portal
+  - run a report in GroupID portal
   - edit a generated report
   - delete a generated report
   - download report Excel PDF HTML
   - portal Reports list
 ---
 
-# Manage Directory Manager Reports
+# Manage GroupID Reports
 
 After you generate a report, the report is listed under the template you used to create it. The
 Reports list displays the following for each report:
@@ -27,7 +27,7 @@ You can run, edit, download, and delete reports from the Reports list.
 
 You can run a previously generated report to view the latest data for it.
 
-1. In the Directory Manager portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
    generated and click the template that you used.
 
@@ -38,24 +38,24 @@ You can run a previously generated report to view the latest data for it.
 
 ## Edit a Report
 
-When you generate a report, the Directory Manager portal saves the settings provided in the respective report. You
+When you generate a report, the GroupID portal saves the settings provided in the respective report. You
 can launch this wizard again for a report and edit the settings.
 
-1. In the Directory Manager portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
    generated and click the template that you used.
 
     The template page lists the generated report.
 
 3. Click the **Edit** icon next to the report and follow the steps in
-   [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md). Make the
+   [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md). Make the
    relevant changes and click **Finish** to generate the report.
 
 ## Download a Report
 
 You can also download a report directly from the Reports list.
 
-1. In the Directory Manager portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
    generated and click the template that you used.
 
@@ -72,7 +72,7 @@ You can also download a report directly from the Reports list.
 
 When you delete a report, all its settings are removed.
 
-1. In the Directory Manager portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of object (User, Group, Computer, or Contact) whose report you
    generated and click the template that you used.
 
@@ -82,8 +82,8 @@ When you delete a report, all its settings are removed.
 
 **See Also:**
 
-- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

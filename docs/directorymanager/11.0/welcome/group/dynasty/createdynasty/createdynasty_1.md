@@ -1,5 +1,5 @@
 ---
-title: "Create a Microsoft Entra ID Dynasty in Directory Manager"
+title: "Create a Microsoft Entra ID Dynasty in GroupID"
 description: "Create an Organizational, Geographical, Managerial, or Custom Dynasty in a Microsoft Entra ID identity store and review the child Dynasty naming conventions."
 keywords:
   - Microsoft Entra ID Dynasty
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Create a Microsoft Entra ID Dynasty in Directory Manager
+# Create a Microsoft Entra ID Dynasty in GroupID
 
-The Directory Manager portal provides the following templates for creating Dynasties:
+The GroupID portal provides the following templates for creating Dynasties:
 
 - **Organizational:** Create a Smart Group for every distinct company, then for each department
   within a company, and finally for each title in a department.
@@ -60,11 +60,11 @@ To modify the display name template for child Dynasties, see
 [Modify alias and display name templates](/docs/directorymanager/11.0/welcome/group/workingwithgroups/dynastyfunction.md#modify-alias-and-display-name-templates).
 
 :::note
-In the Dynasty creation/update process, Directory Manager doesn't create a child Dynasty if it bears the
+In the Dynasty creation/update process, GroupID doesn't create a child Dynasty if it bears the
 same name as that of an existing object in the directory. For example, when you create a custom
 Dynasty, test1, on one attribute, SamAccountName, its child Dynasties are named as
 test1-Robert, test1-John, and so on. However, if test1-Robert already exists as a user object,
-Directory Manager skips the test1-Robert child Dynasty and continues to create the rest of the Dynasty.
+GroupID skips the test1-Robert child Dynasty and continues to create the rest of the Dynasty.
 :::
 
 To create a Dynasty, see:
@@ -74,7 +74,7 @@ To create a Dynasty, see:
 
 ## Create a Dynasty using the Organizational/Geographical/Custom template
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
+1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
@@ -83,14 +83,14 @@ To create a Dynasty, see:
     by adding or removing pages and fields.
     :::
 
-2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in GroupID](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Organizational Dynasty**, **Geographical Dynasty**, or **Custom Dynasty** option
    button and click **Next**.
 3. On the
    [Set Dynasty General Properties for Microsoft Entra ID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/general.md) page,
    specify basic information about the Dynasty.
 4. On the
-   [Configure Dynasty attributes in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md),
+   [Configure Dynasty attributes in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsorggeocus.md),
    view or change the attributes in the **Attributes** area and click **Next**.
 
     Dynasties create Smart Groups for each distinct value of each listed attribute. Depending on the
@@ -98,8 +98,8 @@ To create a Dynasty, see:
     the template; however, you can add and remove attributes. For the Custom template, no attribute
     is displayed.
 
-5. The [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
-   page displays the default query that Directory Manager uses to determine the Dynasty membership. The
+5. The [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+   page displays the default query that GroupID uses to determine the Dynasty membership. The
    default query returns all users with Exchange mailboxes, along with users and contacts with
    external email addresses, which are then grouped by the specified group-by attributes.
 
@@ -127,7 +127,7 @@ To create a Dynasty, see:
 
 ## Create a Dynasty using the Managerial template
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
+1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
@@ -136,23 +136,23 @@ To create a Dynasty, see:
     by adding or removing pages and fields.
     :::
 
-2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in GroupID](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Managerial Dynasty** option button and click **Next**.
 3. On the
    [Set Dynasty General Properties for Microsoft Entra ID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/general.md) page,
    specify basic information about the Dynasty.
 4. On the
-   [Set managerial Dynasty options in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md),
+   [Set managerial Dynasty options in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/dynastyoptionsmanagerial.md),
    specify a structure for the Dynasty and click **Next**.
 
-    By default, Directory Manager constructs a managerial Dynasty structure by first creating a Smart Group
+    By default, GroupID constructs a managerial Dynasty structure by first creating a Smart Group
     for all direct reports of the selected top-level manager and then continues down the Dynasty
     structure, creating separate Smart Groups for the direct reports to each sub-level manager.
     However, you can choose to create a single Smart Group for the direct reports of all levels of
     managers rather than creating separate groups.
 
-5. The [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
-   page displays the default query that Directory Manager uses to determine the Dynasty membership. This
+5. The [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+   page displays the default query that GroupID uses to determine the Dynasty membership. This
    query returns all users with Exchange mailboxes, along with users and contacts with external
    email addresses, which are then grouped as per the managerial Dynasty structure.
 
@@ -184,4 +184,4 @@ To create a Dynasty, see:
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

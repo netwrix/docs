@@ -1,6 +1,6 @@
 ---
-title: "Manage SMS Gateway Accounts in Directory Manager"
-description: "Create, edit, test, set as default, link, and delete SMS gateway accounts in Admin Center so Directory Manager can send text messages."
+title: "Manage SMS Gateway Accounts in GroupID"
+description: "Create, edit, test, set as default, link, and delete SMS gateway accounts in Admin Center so GroupID can send text messages."
 keywords:
   - SMS gateway account
   - Admin Center
@@ -10,13 +10,13 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage SMS Gateway Accounts in Directory Manager
+# Manage SMS Gateway Accounts in GroupID
 
-You can create one or more SMS gateway accounts in Directory Manager and link an account with an identity
+You can create one or more SMS gateway accounts in GroupID and link an account with an identity
 store. You can also set an account as the default account, so that it is automatically linked to an
 identity store created afterward.
 
-Directory Manager supports several SMS gateway providers. You can also use the Custom Gateway API to integrate
+GroupID supports several SMS gateway providers. You can also use the Custom Gateway API to integrate
 with an unsupported provider.
 
 ## Create an SMS Gateway Account
@@ -25,15 +25,15 @@ with an unsupported provider.
 2. On the **SMS Gateways** page, do either of the following:
 
     - Click **Setup SMS Gateway** - This button is displayed when no gateway account exists in
-      Directory Manager.
+      GroupID.
     - Click **Create SMS Gateway** - This button is displayed when one or more gateway accounts have
-      been created in Directory Manager.
+      been created in GroupID.
 
     The **Create SMS Gateway** page is displayed.
 
 3. Enter a name for the gateway account in the **Name** box.
 4. In the **Gateway Type** dropdown list, select an SMS gateway provider.  
-   The list includes the gateways that Directory Manager supports and any custom SMS gateways that you have
+   The list includes the gateways that GroupID supports and any custom SMS gateways that you have
    written. Selecting a gateway type displays the gateway URL, which is the web service address the
    SMS gateway uses for sending text messages.
 5. Enter an account ID for the gateway type in the **Account ID** box.
@@ -90,7 +90,7 @@ connect to the gateway.
 1. In Admin Center, click **SMS Gateway** at the bottom of the left navigation pane.  
    The **SMS Gateways** page is displayed with a list of the SMS gateway accounts that you have
    created.
-2. Click **Test Connection** for a gateway to test whether Directory Manager can successfully send text
+2. Click **Test Connection** for a gateway to test whether GroupID can successfully send text
    messages through it.
 3. In the **Test SMS Gateway Connection** dialog box, enter a mobile phone number for receiving a
    test message. Use international format, with no spaces or special characters. For example:
@@ -115,10 +115,10 @@ You can delete an SMS gateway account that isn't linked with any identity store.
 
     - If the gateway account isn't linked with an identity store, a message is displayed, asking
       you to confirm its deletion. Click **Delete** to delete the account.
-    - If the gateway account is linked with an identity store, Directory Manager doesn't let you delete
+    - If the gateway account is linked with an identity store, GroupID doesn't let you delete
       it.
 
 **See Also**
 
-- [SMS Gateway Support in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [SMS Gateway Support in GroupID](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

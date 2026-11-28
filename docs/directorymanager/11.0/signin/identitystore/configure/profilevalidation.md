@@ -1,9 +1,9 @@
 ---
-title: "Configure User Profile Validation in Directory Manager"
+title: "Configure User Profile Validation in GroupID"
 description: "Require group members to verify their directory profiles on a schedule, and set life cycle periods, extension periods, and reminders."
 keywords:
   - profile validation
-  - Directory Manager
+  - GroupID
   - User Life Cycle schedule
   - profile validation life cycle
   - reminder notifications
@@ -11,13 +11,13 @@ keywords:
 sidebar_position: 110
 ---
 
-# Configure User Profile Validation in Directory Manager
+# Configure User Profile Validation in GroupID
 
-Profile validation in Directory Manager ensures the accuracy of users’ information in the
+Profile validation in GroupID ensures the accuracy of users’ information in the
 directory.
 
 When you apply profile validation to a group, all group members must verify and update their profile
-information in the directory using the Directory Manager portal or the Directory Manager mobile app. You must also
+information in the directory using the GroupID portal or the GroupID mobile app. You must also
 specify a profile validation life cycle period (for example, 90 days), so that each member must
 validate their profile once during each 90-day cycle.
 
@@ -25,9 +25,9 @@ Additionally, you can choose to specify a different profile validation period fo
 new user validates their profile within this period, the regular profile validation cycle
 applies.
 
-By default, a few attributes (fields) are available in the Directory Manager portal and the mobile app for
+By default, a few attributes (fields) are available in the GroupID portal and the mobile app for
 profile validation. You can add and remove fields as required. See the
-[Manage Property Validation Attributes in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/displaytype/propertyvalidation.md)
+[Manage Property Validation Attributes in GroupID](/docs/directorymanager/11.0/signin/applications/portal/displaytype/propertyvalidation.md)
 topic.
 
 ## Actions Users Can Perform While Validating Profiles
@@ -66,13 +66,13 @@ topic.
 
 ## When Users Don't Validate Their Profiles
 
-Periodically, users receive reminder emails to validate their profile. Directory Manager expires the users who
+Periodically, users receive reminder emails to validate their profile. GroupID expires the users who
 ignore these reminders and don't validate their profiles within the required time. Consequently,
 their accounts get disabled.
 
 Expired users can request the administrator or helpdesk to unlock their accounts temporarily and
 grant an extension period. If they don't validate their profile within that extension period
-either, Directory Manager expires them again and notifies their managers by email. To reactivate these
+either, GroupID expires them again and notifies their managers by email. To reactivate these
 accounts, users’ managers must send a request to the helpdesk.
 
 To identify user accounts that are disabled for not validating their profiles, see the
@@ -81,7 +81,7 @@ topic.
 
 ## The User Life Cycle Schedule
 
-The User Life Cycle schedule monitors the profile validation function in Directory Manager. It:
+The User Life Cycle schedule monitors the profile validation function in GroupID. It:
 
 - Monitors the profile validation dates for users.
 - Generates reminder emails, if reminder notification settings are applied.
@@ -118,7 +118,7 @@ validate their profiles. Only one group can be specified at a time.
 4. On the **Profile Validation** page, use the **Search for the Criteria** box to search and specify
    a group.
 
-    - Enter a search string in the box. Directory Manager displays all groups with names that start with the
+    - Enter a search string in the box. GroupID displays all groups with names that start with the
       string. Click **Select** for a group to select it for profile validation.
 
         Or
@@ -159,7 +159,7 @@ don't validate their profiles within the given period.
 4. In the **User Profile Validation Lifecycle** box on the **Profile Validation** page, enter the
    number of days to set as the profile validation life cycle period.  
    If this number of days is less than the days set for any of the reminders configured in the
-   **Reminder Notification Settings** area, Directory Manager removes that reminder from the list.
+   **Reminder Notification Settings** area, GroupID removes that reminder from the list.
 5. Click **Save**.
 
 ## Specify a Profile Validation Period for New Users
@@ -188,9 +188,9 @@ they validate their profiles, the regular profile validation life cycle settings
 
 ## Specify a Duration for the Extension Period
 
-Using the Directory Manager portal, the administrator or helpdesk can grant an extension period to users who
+Using the GroupID portal, the administrator or helpdesk can grant an extension period to users who
 have been expired due to non-profile validation. If users don't validate their profile within the
-extended period, Directory Manager disables them again, and an email notification is sent to their managers.
+extended period, GroupID disables them again, and an email notification is sent to their managers.
 
 On the **Profile Validation** page, you can specify the duration of the extension period in days.
 
@@ -201,7 +201,7 @@ On the **Profile Validation** page, you can specify the duration of the extensio
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Profile Validation**.
 4. In the **Extension Period** box on the **Profile Validation** page, specify the number of days
-   that Directory Manager grants as the extension period to expired users.  
+   that GroupID grants as the extension period to expired users.  
    By default, the extension period is set to four days. You can extend it to seven days.
 5. Click **Save**.
 
@@ -215,7 +215,7 @@ You can change the number of reminders to be sent along with their _Before # of 
 User Life Cycle schedule sends reminder notifications to users according to the specified settings.
 
 For email notifications, an SMTP Server must be configured for the identity store. See the
-[Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+[Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
 topic.
 
 **To set a new reminder:**
@@ -228,7 +228,7 @@ topic.
 5. On the **Add Reminder** dialog box, provide a name for the reminder in the **Reminder Name** box.
 6. Enter a value in the **Before Number of Days** box. The reminder is sent to the user when x
    number of days are left for the profile validation period to end. For example, if you enter 5,
-   Directory Manager sends the reminder five days before the profile validation period ends.
+   GroupID sends the reminder five days before the profile validation period ends.
 7. Click **Add**.
 
     **Edit a reminder:**
@@ -289,7 +289,7 @@ users, x number of days after they are disabled’ setting. The User Life Cycle 
 disabled users and if x number of days have passed since the last validation date, it clears the
 validation date.
 
-This setting is required for a potential rehire scenario, in which case Directory Manager treats the user as
+This setting is required for a potential rehire scenario, in which case GroupID treats the user as
 a newly created object and the validation process for new users applies to it.
 
 **To apply the setting:**
@@ -309,8 +309,8 @@ a newly created object and the validation process for new users applies to it.
 
 **See Also**
 
-- [Create a Directory Manager User Life Cycle Schedule](/docs/directorymanager/11.0/signin/schedule/userlifecycle.md)
-- [Manage Property Validation Attributes in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/displaytype/propertyvalidation.md)
-  (for the Directory Manager portal)
-- [Manage Property Validation in the Directory Manager Mobile App](/docs/directorymanager/11.0/signin/service/mobileservice/design/propertyvalidation.md)
-  (for the Directory Manager mobile app)
+- [Create a GroupID User Life Cycle Schedule](/docs/directorymanager/11.0/signin/schedule/userlifecycle.md)
+- [Manage Property Validation Attributes in GroupID](/docs/directorymanager/11.0/signin/applications/portal/displaytype/propertyvalidation.md)
+  (for the GroupID portal)
+- [Manage Property Validation in the GroupID Mobile App](/docs/directorymanager/11.0/signin/service/mobileservice/design/propertyvalidation.md)
+  (for the GroupID mobile app)

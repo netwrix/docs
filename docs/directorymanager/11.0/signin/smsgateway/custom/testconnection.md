@@ -1,6 +1,6 @@
 ---
 title: "ISmsGateway.TestConnection Method (SMS Gateway API)"
-description: "Test the connection between Directory Manager and a custom SMS gateway by implementing the ISmsGateway.TestConnection method."
+description: "Test the connection between GroupID and a custom SMS gateway by implementing the ISmsGateway.TestConnection method."
 keywords:
   - ISmsGateway.TestConnection
   - SMS gateway connection test
@@ -31,4 +31,4 @@ True if a connection is established with the SMS gateway.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

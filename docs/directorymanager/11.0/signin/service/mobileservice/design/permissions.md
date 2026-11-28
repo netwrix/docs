@@ -1,6 +1,6 @@
 ---
 title: "Grant Security Role Permissions in the Mobile App"
-description: "Grant security roles permission to use the Directory Search and Workflow features of the Directory Manager mobile app in an identity store."
+description: "Grant security roles permission to use the Directory Search and Workflow features of the GroupID mobile app in an identity store."
 keywords:
   - mobile app security role permissions
   - mobile app directory search permission
@@ -11,14 +11,14 @@ sidebar_position: 40
 
 # Grant Security Role Permissions in the Mobile App
 
-In Directory Manager, three security roles are defined by default in an identity store:
+In GroupID, three security roles are defined by default in an identity store:
 Administrator, Helpdesk, and User. You can add more security roles as required.
 
 :::note
 In a Microsoft Entra ID identity store, the Helpdesk role isn't available by default.
 :::
 
-You can grant permissions on the Directory Manager app to security roles that exist in an identity
+You can grant permissions on the GroupID app to security roles that exist in an identity
 store associated with a Mobile service, so that role members can access only the allowed features.
 
 What do you want to do?
@@ -45,5 +45,5 @@ What do you want to do?
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

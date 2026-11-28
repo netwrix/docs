@@ -1,5 +1,5 @@
 ---
-title: "Work with Groups in the Directory Manager Portal"
+title: "Work with Groups in the GroupID Portal"
 description: "Find the portal topics for managing group membership, ownership, scheduled updates, Dynasties, expiry, deletion, and Query Designer policy."
 keywords:
   - manage groups
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Work with Groups in the Directory Manager Portal
+# Work with Groups in the GroupID Portal
 
-Use the Directory Manager portal to manage your directory groups in the identity store. You can do
+Use the GroupID portal to manage your directory groups in the identity store. You can do
 the following and more:
 
 - Add and remove members from your groups
@@ -73,12 +73,12 @@ the following and more:
 
 **Group Expiry and Deletion**
 
-- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
+- [How Group Expiry Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
 - [Expire a group manually ](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiryfunction.md#expire-a-group-manually)
 - [Change the expiry policy for a group](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiryfunction.md#change-the-expiry-policy-for-a-group)
 - [Attest an expiring group](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiryfunction.md#attest-an-expiring-group)
 - [Renew an expired group](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiryfunction.md#renew-an-expired-group)
-- [ How Group Deletion Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
+- [ How Group Deletion Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
 
 **Query Designer Policy for Groups**
 
@@ -88,6 +88,6 @@ the following and more:
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Manage Your Directory Manager User Account](/docs/directorymanager/11.0/welcome/generalfeatures/user.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Manage Your GroupID User Account](/docs/directorymanager/11.0/welcome/generalfeatures/user.md)

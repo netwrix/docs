@@ -1,5 +1,5 @@
 ---
-title: "Manage Global Replication Settings in Directory Manager"
+title: "Manage Global Replication Settings in GroupID"
 description: "Schedule and force-run the Replication service, monitor Elasticsearch health, restore object data, clear unused indices, and set error alerts."
 keywords:
   - global replication settings
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage Global Replication Settings in Directory Manager
+# Manage Global Replication Settings in GroupID
 
 The Replication service is responsible for replicating attributes of the group, user, contact,
 computer, and organizational unit objects from a provider (such as Active Directory) to
@@ -21,7 +21,7 @@ You can configure certain settings for the Replication service in Admin Center. 
 to run every x minutes, force run it at any time, set a threshold for triggering replication error
 notifications, and view the Elasticsearch health status.
 
-On every successful run of the Replication service, Directory Manager generates the replication status of
+On every successful run of the Replication service, GroupID generates the replication status of
 object types for each domain in an identity store and alerts you to any errors that occurred during
 the replication process.
 
@@ -58,7 +58,7 @@ What do you want to do?
 
 ## Monitor Elasticsearch Health Status
 
-Use Directory Manager to monitor the Elasticsearch service for the following:
+Use GroupID to monitor the Elasticsearch service for the following:
 
 - The status of the Elasticsearch service. See the
   [Elasticsearch Service](/docs/directorymanager/11.0/signin/concepts/dashboard.md#elasticsearch-service)
@@ -68,7 +68,7 @@ Use Directory Manager to monitor the Elasticsearch service for the following:
     - Cluster name, health status, node info and shards info
     - Cluster indices information, like health, number of documents, and status
 
-Directory Manager checks if the Elasticsearch service is running, if all nodes are working, and if the cluster
+GroupID checks if the Elasticsearch service is running, if all nodes are working, and if the cluster
 is intact. It also checks the health of each index.
 
 **To view Elasticsearch health status:**
@@ -188,7 +188,7 @@ and which ones failed to replicate.
     2. The ‘Never replicated’ status indicates that the particular object type isn't replicated
        yet. Similarly, a child domain that isn't being used has its status marked in red. To
        avoid these recurring errors, set the dates for these objects to a distant future date in the
-       Directory Manager database. You can also exclude a domain from replication. See the
+       GroupID database. You can also exclude a domain from replication. See the
        [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.0/signin/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
        topic.
 
@@ -220,7 +220,7 @@ directory anymore.
    To change the interval, click **Edit** next to **Service Interval** on the **Deleted Objects
    Replication Interval** card. Specify the interval (in minutes) between each run of the service
    and click the check mark. This Replication service interval applies to all identity stores in
-   Directory Manager.
+   GroupID.
 
 ## Force Run the Replication Service (for Deleting Objects)
 
@@ -234,11 +234,11 @@ directory anymore.
 ## Restore Object Data to Elasticsearch
 
 You may need to restore object data to Elasticsearch. The restore object data function restores the
-following for all identity stores in Directory Manager:
+following for all identity stores in GroupID:
 
 - the current attribute values of objects (groups, users, contacts, computers, and OUs) from the
   provider (for example, Active Directory)
-- the Directory Manager pseudo attributes of these objects from the Directory Manager database to Elasticsearch
+- the GroupID pseudo attributes of these objects from the GroupID database to Elasticsearch
 
 **To restore object data:**
 
@@ -248,9 +248,9 @@ following for all identity stores in Directory Manager:
 
 ## Clear Unused Indices
 
-Directory Manager stores object attributes and their values in Elasticsearch, where each object type in an
+GroupID stores object attributes and their values in Elasticsearch, where each object type in an
 identity store is distinctly indexed. In a situation where an identity store is deleted from
-Directory Manager, its indices aren't required anymore. So, you can clear them from Elasticsearch to avoid
+GroupID, its indices aren't required anymore. So, you can clear them from Elasticsearch to avoid
 clutter.
 
 **To clear unused indices:**
@@ -258,7 +258,7 @@ clutter.
 1. In Admin Center, click **Replication** in the left pane.
 2. On the **Replication** page, click **Clear Now** in the **Clear Unused Indices** area. The system
    checks if there exist any indices in Elasticsearch for an identity store that no longer exists in
-   Directory Manager.
+   GroupID.
 3. The **Delete Unused Indices** dialog box displays the indices to be deleted from
    Elasticsearch. Click **Delete** to proceed or click **Don't Delete** to close the dialog box
    without clearing the indices.
@@ -269,10 +269,10 @@ clutter.
 
 Search Guard is a security plugin used to add an authentication mechanism to Elasticsearch. The
 option to change the Search Guard password is available when you install and manage Elasticsearch
-with Directory Manager. Users who use their own instance of Elasticsearch can't change the Search Guard
-password using Directory Manager.
+with GroupID. Users who use their own instance of Elasticsearch can't change the Search Guard
+password using GroupID.
 
-You can change the password of the admin account that Directory Manager uses to access Elasticsearch.
+You can change the password of the admin account that GroupID uses to access Elasticsearch.
 
 **To change the password:**
 
@@ -289,7 +289,7 @@ The Replication service runs every x minutes to replicate objects in an identity
 fails to replicate during a run, a replication error is displayed, as discussed in the
 [View the Replication Status for Objects](#view-the-replication-status-for-objects) topic.
 
-Directory Manager generates notifications to alert administrators to replication errors. By default, the
+GroupID generates notifications to alert administrators to replication errors. By default, the
 triggering threshold is set to ‘3 attempts’, which means that notifications are sent when errors
 occur in three consecutive runs of the Replication service. You can change the threshold value as
 required.
@@ -312,6 +312,6 @@ topic.
 
 **See Also**
 
-- [Elasticsearch and Replication Service in Directory Manager ](/docs/directorymanager/11.0/signin/replication/overview.md)
+- [Elasticsearch and Replication Service in GroupID ](/docs/directorymanager/11.0/signin/replication/overview.md)
 - [Manage Identity Store Replication Settings](/docs/directorymanager/11.0/signin/identitystore/replication.md)
-- [Directory Manager Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)
+- [GroupID Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)

@@ -1,16 +1,16 @@
 ---
-title: "Image Display Type in Directory Manager Portal"
+title: "Image Display Type in GroupID Portal"
 description: "Create an image display type so portal users can upload photos to Active Directory attributes such as thumbnailPhoto and jpegPhoto."
 keywords:
   - image display type
   - custom display types
   - thumbnailPhoto attribute
   - jpegPhoto attribute
-  - Directory Manager Portal
+  - GroupID Portal
 sidebar_position: 50
 ---
 
-# Image Display Type in Directory Manager Portal
+# Image Display Type in GroupID Portal
 
 Use the image display type for schema attributes of the user object type that can store image data.
 The following table lists the supported attributes for Active Directory:
@@ -65,6 +65,6 @@ photos.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

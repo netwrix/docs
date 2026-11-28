@@ -1,15 +1,15 @@
 ---
-title: "New-Dynasty Cmdlet in Directory Manager"
+title: "New-Dynasty Cmdlet in GroupID"
 description: "Create a Dynasty that builds and maintains child Smart Groups from group-by field values by using the New-Dynasty cmdlet."
 keywords:
   - New-Dynasty
   - create Dynasty
   - Smart Group
-  - Directory Manager Management Shell
+  - GroupID Management Shell
 sidebar_position: 10
 ---
 
-# New-Dynasty Cmdlet in Directory Manager
+# New-Dynasty Cmdlet in GroupID
 
 The **New-Dynasty** cmdlet creates a Dynasty in the directory. A Dynasty is a Smart Group that can
 create and maintain the membership of other Smart Groups. A Dynasty retrieves data from the directory in
@@ -21,7 +21,7 @@ City, this cmdlet creates a group for every distinct country value, then for eac
 country, and finally for each city in that state. All created child groups inherit the attributes
 of the parent that are set in the **InheritedAttrs** option.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the **History** node in
+You can view events related to this cmdlet in the GroupID portal, under the **History** node in
 the left pane.
 
 ## Syntax
@@ -133,6 +133,6 @@ New-Dynasty -OrganizationalUnit "OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Name "Ma
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Dynasty Cmdlets](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Dynasty Cmdlets](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,17 +1,17 @@
 ---
-title: "Update Power Automate Settings in Directory Manager"
+title: "Update Power Automate Settings in GroupID"
 description: "Change the Power Automate settings of an identity store by sending a PATCH request to the MsFlow Settings endpoint."
 keywords:
   - update Power Automate settings
   - MsFlow Settings endpoint
-  - Directory Manager API
+  - GroupID API
   - PATCH request
   - identity store settings
 sidebar_position: 170
 unlisted: true
 ---
 
-# Update Power Automate Settings in Directory Manager
+# Update Power Automate Settings in GroupID
 
 If you have defined Power Automate settings for an identity store, you can use this API to update
 those settings.
@@ -47,5 +47,5 @@ true
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

@@ -1,15 +1,15 @@
 ---
-title: "Get My Membership Count with the Directory Manager API"
+title: "Get My Membership Count with the GroupID API"
 description: "Get the number of groups the authenticated user is a member of."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - membership count
   - Groups/Membership/count endpoint
 sidebar_position: 120
 unlisted: true
 ---
 
-# Get My Membership Count with the Directory Manager API
+# Get My Membership Count with the GroupID API
 
 Using this API, the authenticated user can get the number of groups the user is a member of.
 
@@ -41,5 +41,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

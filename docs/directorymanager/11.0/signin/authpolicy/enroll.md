@@ -1,5 +1,5 @@
 ---
-title: "Enroll Your Account in Directory Manager"
+title: "Enroll Your Account in GroupID"
 description: "Enroll your identity store account for multifactor and second factor authentication with security questions, SMS, email, an authenticator app, or a device."
 keywords:
   - enroll identity store account
@@ -11,16 +11,16 @@ keywords:
 sidebar_position: 30
 ---
 
-# Enroll Your Account in Directory Manager
+# Enroll Your Account in GroupID
 
 When the administrator has enabled multifactor authentication and second factor authentication for
-an identity store, users must enroll their identity store accounts in Directory Manager. Without enrolling,
-they can't sign in to Directory Manager.
+an identity store, users must enroll their identity store accounts in GroupID. Without enrolling,
+they can't sign in to GroupID.
 
-To enroll, a user must register their identity store account in Directory Manager using one or more
+To enroll, a user must register their identity store account in GroupID using one or more
 authentication types. When a user enrolls for multifactor authentication, it also counts for
 second factor authentication, and vice versa. See the
-[Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+[GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
 topic for a list of supported authentication types.
 
 Account enrollment is a one-time process. Enrolled users must authenticate their identity store
@@ -52,11 +52,11 @@ topic.
 
 **To enroll with security questions:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -71,8 +71,8 @@ topic.
 
 ## Enroll using Mobile
 
-To enroll your identity store account using Mobile, you must provide your mobile number. Directory Manager
-sends a verification code to this number by SMS and you must enter it in Directory Manager to enroll
+To enroll your identity store account using Mobile, you must provide your mobile number. GroupID
+sends a verification code to this number by SMS and you must enter it in GroupID to enroll
 successfully.
 
 To draft the SMS message text, see the
@@ -81,11 +81,11 @@ topic.
 
 **To enroll using mobile:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -101,8 +101,8 @@ again**.
 
 ## Enroll using Email
 
-To enroll your identity store account using Email, you must provide your email address. Directory Manager
-sends a verification code to this email address and you must enter it in Directory Manager to enroll
+To enroll your identity store account using Email, you must provide your email address. GroupID
+sends a verification code to this email address and you must enter it in GroupID to enroll
 successfully.
 
 To draft a subject line and body for the email, see the
@@ -111,11 +111,11 @@ topic.
 
 **To enroll using email:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -135,11 +135,11 @@ Google Authenticator or Microsoft Authenticator, on your phone.
 
 **To enroll with Authenticator:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -151,11 +151,11 @@ Google Authenticator or Microsoft Authenticator, on your phone.
 
 ## Enroll using YubiKey
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -170,15 +170,15 @@ Google Authenticator or Microsoft Authenticator, on your phone.
 Before enrolling your account with the Windows Hello authentication type, you must be registered on
 the device using the Windows Hello sign-in options.
 
-Directory Manager allows enrollment on one Windows Hello device only.
+GroupID allows enrollment on one Windows Hello device only.
 
 **To enroll using Windows Hello:**
 
-1. When you launch Admin Center, the Directory Manager portal, or the GroupID Mobile app, the
+1. When you launch Admin Center, the GroupID portal, or the GroupID Mobile app, the
    **GroupID Authenticate** page is displayed.
 2. When you sign in, unenrolled users are redirected to the **Your Enrollments** page. Tabs on this
    page represent the different authentication types the administrator has enabled for enrollment.  
-   You can also launch the **Your Enrollments** page from Admin Center and the Directory Manager portal. See
+   You can also launch the **Your Enrollments** page from Admin Center and the GroupID portal. See
    the
    [Enroll your Account](/docs/directorymanager/11.0/signin/concepts/accessapplications.md#enroll-your-account)
    topic.
@@ -188,7 +188,7 @@ Directory Manager allows enrollment on one Windows Hello device only.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
 - [Enable Authentication Types for an Identity Store](/docs/directorymanager/11.0/signin/identitystore/configure/authtypes.md)
-- [Authentication Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
-- [Authenticate Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)
+- [Authentication Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
+- [Authenticate Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/authenticate.md)

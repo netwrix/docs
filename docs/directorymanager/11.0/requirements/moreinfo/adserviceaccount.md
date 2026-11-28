@@ -1,8 +1,8 @@
 ---
-title: "Set Up a Directory Manager Service Account for AD and Exchange"
-description: "Create or reuse a service account with the Active Directory and Exchange permissions Directory Manager needs to manage identity store objects."
+title: "Set Up a GroupID Service Account for AD and Exchange"
+description: "Create or reuse a service account with the Active Directory and Exchange permissions GroupID needs to manage identity store objects."
 keywords:
-  - Directory Manager service account
+  - GroupID service account
   - delegate Active Directory permissions
   - Exchange Recipient Management
   - Active Directory Users and Computers
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 10
 ---
 
-# Set Up a Directory Manager Service Account for AD and Exchange
+# Set Up a GroupID Service Account for AD and Exchange
 
 You must have a service account to connect an identity store to an Active Directory domain.
-Directory Manager uses the account to access objects in Active Directory. If Microsoft Exchange is
+GroupID uses the account to access objects in Active Directory. If Microsoft Exchange is
 configured as the messaging provider for the identity store, you can also delegate permissions to
 this account to access Exchange objects.
 
@@ -23,7 +23,7 @@ recommended that you create a new service account rather than use an existing ac
 
 :::note
 You must add the service account to the Local Administrator group of the
-member server on which you installed Directory Manager.
+member server on which you installed GroupID.
 :::
 
 What do you want to do?
@@ -162,7 +162,7 @@ Add-RoleGroupMember "Recipient Management" -Member domain name\user
 
 ## SQL Server Account and Database Permissions
 
-See the [SQL Server Authentication Modes for Directory Manager](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
+See the [SQL Server Authentication Modes for GroupID](/docs/directorymanager/11.0/about/configure/setupauthentication.md)
 topic for information about the roles and permissions the SQL server and database accounts must have
 for
 [SQL Server Authentication](/docs/directorymanager/11.0/about/configure/setupauthentication.md#sql-server-authentication)
@@ -172,5 +172,5 @@ mode.
 
 **See Also**
 
-- [Create an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/create.md)
-- [Manage an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/manage.md)
+- [Create an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/create.md)
+- [Manage an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/manage.md)

@@ -1,5 +1,5 @@
 ---
-title: "Import additional group owners in Directory Manager"
+title: "Import additional group owners in GroupID"
 description: "Add additional owners to a group by importing a text, CSV, Excel, or XML file with the Import Additional Owners wizard."
 keywords:
   - "import additional owners"
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 160
 ---
 
-# Import additional group owners in Directory Manager
+# Import additional group owners in GroupID
 
 Use the **Import Additional Owners** wizard to specify additional owners for a group using an
 external file.
@@ -35,7 +35,7 @@ launch the **Import Additional Owners** wizard.
 
 1. On the **File** page, click **Browse** to locate and select the file containing the data to
    upload.
-2. Click the **Up** arrow to upload the file to the Directory Manager server for processing.
+2. Click the **Up** arrow to upload the file to the GroupID server for processing.
 3. Click **Next**.
 4. On the **Import** page, follow these steps:
 
@@ -73,6 +73,6 @@ launch the **Import Additional Owners** wizard.
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

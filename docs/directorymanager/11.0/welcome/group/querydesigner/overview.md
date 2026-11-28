@@ -1,5 +1,5 @@
 ---
-title: "Query Designer in the Directory Manager portal"
+title: "Query Designer in the GroupID portal"
 description: "Build queries for Smart Groups, Dynasties, and directory searches, preview results, and learn what each Query Designer tab does."
 keywords:
   - Query Designer
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 70
 ---
 
-# Query Designer in the Directory Manager portal
+# Query Designer in the GroupID portal
 
 Use the Query Designer to create queries for Smart Groups, Dynasties, and directory object
 searches. These queries provide a quick and consistent way to retrieve a common set of directory
@@ -102,7 +102,7 @@ View the provider query in the LDAP Query box.
 The Query Designer has the following tabs:
 
 - [Query Designer General tab](/docs/directorymanager/11.0/welcome/group/querydesigner/general.md)
-- [Query Designer Storage Tab in Directory Manager](/docs/directorymanager/11.0/welcome/group/querydesigner/storage.md)
+- [Query Designer Storage Tab in GroupID](/docs/directorymanager/11.0/welcome/group/querydesigner/storage.md)
 - [Query Designer Filter Criteria tab](/docs/directorymanager/11.0/welcome/group/querydesigner/filtercriteria.md)
 - [Query Designer Include/Exclude tab](/docs/directorymanager/11.0/welcome/group/querydesigner/includeexclude.md)
 - [Use an External Data Source in Query Designer](/docs/directorymanager/11.0/welcome/group/querydesigner/database.md)
@@ -117,5 +117,5 @@ identity store.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
 - [Edit a Smart Group Query and Update Schedule](/docs/directorymanager/11.0/welcome/group/properties/smartgroup.md)

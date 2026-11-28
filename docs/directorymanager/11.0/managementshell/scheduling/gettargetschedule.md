@@ -1,5 +1,5 @@
 ---
-title: "Get-TargetSchedules Cmdlet in Directory Manager"
+title: "Get-TargetSchedules Cmdlet in GroupID"
 description: "Use the Get-TargetSchedules cmdlet to list the scheduled jobs that run on a specific group or organizational unit."
 keywords:
   - Get-TargetSchedules
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Get-TargetSchedules Cmdlet in Directory Manager
+# Get-TargetSchedules Cmdlet in GroupID
 
 The **Get-TargetSchedules** cmdlet retrieves the scheduled jobs of the given target (group or OU).
 
@@ -62,6 +62,6 @@ targets through the pipeline operator.
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

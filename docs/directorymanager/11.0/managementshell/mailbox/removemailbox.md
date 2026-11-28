@@ -1,5 +1,5 @@
 ---
-title: "Remove-Mailbox Cmdlet in Directory Manager"
+title: "Remove-Mailbox Cmdlet in GroupID"
 description: "Delete a mailbox from the connected identity store with the Remove-Mailbox cmdlet."
 keywords:
   - Remove-Mailbox
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Remove-Mailbox Cmdlet in Directory Manager
+# Remove-Mailbox Cmdlet in GroupID
 
 Use the **Remove-Mailbox** cmdlet to delete a mailbox from the connected identity store.
 
@@ -38,6 +38,6 @@ Remove-MailBox -Identity "SampleMailBox"
 
 **See Also**
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Mailbox Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

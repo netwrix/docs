@@ -1,5 +1,5 @@
 ---
-title: "Manage Identity Store Links in Directory Manager"
+title: "Manage Identity Store Links in GroupID"
 description: "Link identical user and group objects across Active Directory and Microsoft Entra ID identity stores, then edit, disable, or delete the links."
 keywords:
   - identity store link
@@ -11,11 +11,11 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage Identity Store Links in Directory Manager
+# Manage Identity Store Links in GroupID
 
-You can link identity stores built on the supported identity providers in Directory Manager. In this
+You can link identity stores built on the supported identity providers in GroupID. In this
 way, identical user and group objects existing in multiple identity stores (domains) can be linked
-together and synced automatically. Directory Manager further lets you manage these linked identity
+together and synced automatically. GroupID further lets you manage these linked identity
 stores.
 
 What do you want to do?
@@ -33,7 +33,7 @@ What do you want to do?
    Links** area. In case a link already exists, the **Create Identity Store Link** button is
    available.
 3. On the **Link Identity Stores** page, click **Add**. The **Add Identity Stores** dialog box lists
-   all the Active Directory and Microsoft Entra ID identity stores created in Directory Manager.
+   all the Active Directory and Microsoft Entra ID identity stores created in GroupID.
 4. Select two identity stores and click **Add 2 Stores**. The selected identity stores are displayed
    on the **Link Identity Stores** page.
 5. Next, you must specify the attributes for linking user and group objects in the identity
@@ -87,14 +87,14 @@ What do you want to do?
           On the **Preview Results** dialog box, enter the name of an object (user or group) in the
           first box, select an identity store, and click **Preview**.
 
-            - For an Active Directory identity store, Directory Manager looks up the values of the
+            - For an Active Directory identity store, GroupID looks up the values of the
               name, sAMAccountName, objectGUID, and distinguishedName attributes to match the string
               using the _Is exactly_ operator.
-            - For a Microsoft Entra ID identity store, Directory Manager looks up the values of the
+            - For a Microsoft Entra ID identity store, GroupID looks up the values of the
               userPrincipalName, ObjectGUID, distinguishedName, and name (which is equivalent to
               display name) attributes to match the string using the _Is exactly_ operator.  
               Microsoft Entra ID doesn't contain the distinguishedName attribute; however,
-              it is available as a pseudo attribute in Directory Manager and its value is the same
+              it is available as a pseudo attribute in GroupID and its value is the same
               as that of the distinguishedName attribute in Active Directory.
 
             The **Preview Results** dialog box displays the user object found in the selected
@@ -120,8 +120,8 @@ What do you want to do?
 
         :::note
         If you have added multiple clauses but don't group them using the AND/OR operator,
-        Directory Manager groups them automatically using AND. Similarly, if you add two groups of clauses
-        but don't group them using the AND/OR operator, Directory Manager groups them automatically using
+        GroupID groups them automatically using AND. Similarly, if you add two groups of clauses
+        but don't group them using the AND/OR operator, GroupID groups them automatically using
         AND.
         :::
 
@@ -130,14 +130,14 @@ What do you want to do?
          You can specify one filter expression for the user object and one filter expression for the
         group object.
 
-    6. Click **Add Filter Scope** to specify a container for linked identities that Directory Manager
+    6. Click **Add Filter Scope** to specify a container for linked identities that GroupID
        links and syncs later when they are updated. New objects are also created in this container.
 
 7. Click **Create Link** to save the link.
 
     :::note
     An identity store link is effective when the two identity stores linked together are also
-    associated with a Directory Manager portal, say Portal A. If no portal exists with both
+    associated with a GroupID portal, say Portal A. If no portal exists with both
     identity stores associated with it, a message is displayed to alert you to it.
     :::
 
@@ -146,7 +146,7 @@ What do you want to do?
 
 ## View the Identity Store Links
 
-All identity store links created in Directory Manager are displayed under **Identity Store Links**
+All identity store links created in GroupID are displayed under **Identity Store Links**
 on the **Identity Stores** page.
 
 **To view the links:**
@@ -205,7 +205,7 @@ You can edit a link to:
       expression.  
       Modifying the filter expression for the user or group object breaks the link for the
       respective objects in the linked identity stores. Objects are relinked on the basis of the
-      new filter expression and are synced accordingly in the Directory Manager portal.
+      new filter expression and are synced accordingly in the GroupID portal.
     - **Delete a filter expression** - Click **Remove** on the filter card for a user or group
       object to delete it. Deleting the filter expression for the user or group object breaks the
       link for the respective objects in the linked identity stores.
@@ -221,7 +221,7 @@ You can edit a link to:
 ## Disable or Enable a Link
 
 When you disable a link between two identity stores, it becomes inactive and the objects in the
-identity stores aren't linked anymore in the Directory Manager portal.
+identity stores aren't linked anymore in the GroupID portal.
 
 A disabled link can be enabled again to relink objects in the identity stores.
 
@@ -236,7 +236,7 @@ A disabled link can be enabled again to relink objects in the identity stores.
 ## Delete a Link
 
 When you delete a link between two identity stores, the objects in the identity stores aren't
-linked anymore in the Directory Manager portal.
+linked anymore in the GroupID portal.
 
 **To delete a link:**
 
@@ -247,4 +247,4 @@ linked anymore in the Directory Manager portal.
 
 **See Also**
 
-- [Link Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/link/overview.md)
+- [Link Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/link/overview.md)

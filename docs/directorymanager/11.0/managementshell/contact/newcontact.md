@@ -1,15 +1,15 @@
 ---
-title: "New-Contact Cmdlet in Directory Manager"
-description: "Create a contact in the directory from the Directory Manager Management Shell and set its properties with cmdlet parameters."
+title: "New-Contact Cmdlet in GroupID"
+description: "Create a contact in the directory from the GroupID Management Shell and set its properties with cmdlet parameters."
 keywords:
   - New-Contact
   - create contact
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - contact cmdlet
 sidebar_position: 20
 ---
 
-# New-Contact Cmdlet in Directory Manager
+# New-Contact Cmdlet in GroupID
 
 Use the **New-Contact** cmdlet to create a contact in the directory. You can add most contact properties
 directly by using the parameters supported by this cmdlet.
@@ -71,6 +71,6 @@ New-Contact -Name "SampleContact" -OrganizationalUnit "OU=SalesOU,DC=example,DC=
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

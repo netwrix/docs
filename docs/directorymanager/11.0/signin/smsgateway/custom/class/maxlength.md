@@ -1,11 +1,11 @@
 ---
 title: "ShortMessage.MaxLength field"
-description: "Find the maximum length of an SMS message for a custom SMS gateway in Directory Manager and learn what happens when a message exceeds it."
+description: "Find the maximum length of an SMS message for a custom SMS gateway in GroupID and learn what happens when a message exceeds it."
 keywords:
   - ShortMessage.MaxLength
   - SMS message length
   - custom SMS gateway
-  - Directory Manager SMS API
+  - GroupID SMS API
 sidebar_position: 20
 ---
 
@@ -13,9 +13,9 @@ sidebar_position: 20
 
 Defines the maximum length of an SMS message.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

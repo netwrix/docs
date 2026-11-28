@@ -1,12 +1,12 @@
 ---
 title: "New-SmartGroup Cmdlet"
-description: "Create a Smart Group or Password Expiry group in Directory Manager whose membership is maintained dynamically by an LDAP query."
+description: "Create a Smart Group or Password Expiry group in GroupID whose membership is maintained dynamically by an LDAP query."
 keywords:
   - New-SmartGroup
   - create Smart Group
   - Password Expiry group
   - LDAP query membership
-  - Directory Manager cmdlet
+  - GroupID cmdlet
   - Management Shell
 sidebar_position: 30
 ---
@@ -25,7 +25,7 @@ cmdlet. When the LDAP query is changed, you must update the group once to modify
 according to the changes made to the query. For information about updating a group, see
 [Update-Group Cmdlet](/docs/directorymanager/11.0/managementshell/smartgroup/updategroup.md).
 
-You can view events related to this cmdlet in the Directory Manager portal, under the **History**
+You can view events related to this cmdlet in the GroupID portal, under the **History**
 node in the left panel.
 
 ## Syntax
@@ -129,6 +129,6 @@ New-SmartGroup -OrganizationalUnit "OU=Recruiting,OU=HR,DC=Imanami,DC=US" -Name 
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

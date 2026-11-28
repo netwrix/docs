@@ -1,5 +1,5 @@
 ---
-title: "Create a Synchronize Job in Directory Manager"
+title: "Create a Synchronize Job in GroupID"
 description: "Create a Synchronize job without a template or from one, map fields, schedule it, and review the run and any workflow request."
 keywords:
   - create Synchronize job
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Create a Synchronize Job in Directory Manager
+# Create a Synchronize Job in GroupID
 
 Synchronize lets you move data from one data source to another using a set of sequential
 commands that run in the background. The set of commands is called a job. You can create a job from
@@ -45,10 +45,10 @@ topic.
 
 ## Create a new job
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Create New** and then click **Job**.
 3. On the
-   [Choose a Job Template in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/chooseyourjobtemplate.md)
+   [Choose a Job Template in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/chooseyourjobtemplate.md)
    page, enter the job details and select whether to use a job template or create the job from
    scratch.
 4. Click **Next Step**.
@@ -74,7 +74,7 @@ topic.
 12. After you run the job, the job runs if no workflow is configured. If a workflow is configured,
     a request is generated.
 13. The generated workflow request appears in the
-    [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
+    [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
     workflow approvers. If the approver approves the workflow request, the job executes the
     results.
 14. The **Review Job Run** dialog box appears, providing access to run statistics, reports, and logs
@@ -82,11 +82,11 @@ topic.
 
 **See Also**
 
-- [Job Templates in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
-- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
+- [Job Templates in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
+- [Manage Synchronize Jobs in GroupID](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)
-- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
 - [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)
-- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Write Synchronize Scripts for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)

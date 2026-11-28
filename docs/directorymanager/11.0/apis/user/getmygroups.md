@@ -1,8 +1,8 @@
 ---
-title: "Get My Groups with the Directory Manager API"
+title: "Get My Groups with the GroupID API"
 description: "Retrieve the groups of the authenticated user, with options for nested ownership, additional groups, paging and sorting."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - my groups
   - Groups endpoint
   - authenticated user
@@ -10,7 +10,7 @@ sidebar_position: 90
 unlisted: true
 ---
 
-# Get My Groups with the Directory Manager API
+# Get My Groups with the GroupID API
 
 The Get My Groups API retrieves the groups of the authenticated user.
 
@@ -183,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

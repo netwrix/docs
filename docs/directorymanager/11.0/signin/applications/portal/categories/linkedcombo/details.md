@@ -1,16 +1,16 @@
 ---
-title: "Set the Linked Combo Data Source in Directory Manager"
+title: "Set the Linked Combo Data Source in GroupID"
 description: "Name a linked combo display type and choose or upload the XML or Excel file that supplies its data on the Details page of the wizard."
 keywords:
   - linked combo display type
   - linked combo data source
   - Excel data file
   - custom display types
-  - Directory Manager Portal
+  - GroupID Portal
 sidebar_position: 10
 ---
 
-# Set the Linked Combo Data Source in Directory Manager
+# Set the Linked Combo Data Source in GroupID
 
 Enter the following details about the linked combo on the **Details** page of the **Linked Combo
 Display Type** wizard:
@@ -31,7 +31,7 @@ Display Type** wizard:
       Microsoft Excel file containing the data to populate the linked combo and the display types
       linked to it.
 
-    If the source file is a Microsoft Excel (.xls or .xlsx) file, Directory Manager automatically creates an
+    If the source file is a Microsoft Excel (.xls or .xlsx) file, GroupID automatically creates an
     XML version to process it. To learn about the Excel file format, see the
     [Excel Data File Format for Linked Combos](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/fileformat.md)
     topic.
@@ -40,4 +40,4 @@ Display Type** wizard:
 
 See Also
 
-- [Linked Combo Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)
+- [Linked Combo Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)

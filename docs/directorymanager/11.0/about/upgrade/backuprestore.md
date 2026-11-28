@@ -1,5 +1,5 @@
 ---
-title: "Back Up and Restore Data for a Directory Manager Upgrade"
+title: "Back Up and Restore Data for a GroupID Upgrade"
 description: "Back up and restore the database, Elasticsearch data, portals, Synchronize jobs, and reports from GroupID 9 and 10 before you upgrade to 11.0."
 keywords:
   - directory manager upgrade backup
@@ -10,17 +10,17 @@ keywords:
 sidebar_position: 30
 ---
 
-# Back Up and Restore Data for a Directory Manager Upgrade
+# Back Up and Restore Data for a GroupID Upgrade
 
 :::note
-Directory Manager 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
+GroupID 11.0 supported upgrade from GroupID 9 and GroupID 10. As of Directory Manager
 11.2, you can upgrade only from GroupID 10 SR2. This page is kept for archive purposes. When you plan
 an upgrade, use the
 [Directory Manager 11.2 upgrade documentation](https://docs.netwrix.com/docs/directorymanager/11_2/install/upgrade/).
 :::
 
 This topic explains how to back up and restore data from previous versions of
-GroupID when you upgrade to Directory Manager 11.0.
+GroupID when you upgrade to GroupID 11.0.
 
 - [GroupID Database on SQL Server](#groupid-database-on-sql-server)
 - [Elasticsearch Data](#elasticsearch-data)
@@ -31,15 +31,15 @@ GroupID when you upgrade to Directory Manager 11.0.
 
 ## GroupID Database on SQL Server
 
-Back up the GroupID database that you use to upgrade to Directory Manager 11.0.
+Back up the GroupID database that you use to upgrade to GroupID 11.0.
 
 Follow Microsoft standards to back up this SQL Server database.
 
-If you restore this database, you lose any changes that you made using Directory Manager 11.
+If you restore this database, you lose any changes that you made using GroupID 11.
 
 ## Elasticsearch Data
 
-Before you upgrade from GroupID 10 to Directory Manager 11.0, back up the Elasticsearch data folder. The
+Before you upgrade from GroupID 10 to GroupID 11.0, back up the Elasticsearch data folder. The
 default folder location is:
 
 `C:/ProgramData/Imanami/GroupID 10.0/Replication/data/`
@@ -180,5 +180,5 @@ To restore GroupID 9 and 10 reports, follow these steps:
 
 See Also
 
-- [Uninstall Directory Manager](/docs/directorymanager/11.0/about/installer/uninstall.md)
-- [Install Directory Manager](/docs/directorymanager/11.0/about/installer/install.md)
+- [Uninstall GroupID](/docs/directorymanager/11.0/about/installer/uninstall.md)
+- [Install GroupID](/docs/directorymanager/11.0/about/installer/install.md)

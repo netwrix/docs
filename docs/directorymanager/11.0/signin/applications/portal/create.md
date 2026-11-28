@@ -1,8 +1,8 @@
 ---
-title: "Create a Directory Manager Portal"
-description: "Create, deploy, copy, and launch a Directory Manager portal in native or remote IIS, and import settings from earlier versions."
+title: "Create a GroupID Portal"
+description: "Create, deploy, copy, and launch a GroupID portal in native or remote IIS, and import settings from earlier versions."
 keywords:
-  - Directory Manager portal
+  - GroupID portal
   - native IIS
   - remote IIS
   - deployment instance
@@ -10,27 +10,27 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create a Directory Manager Portal
+# Create a GroupID Portal
 
 Admin Center lets you quickly build and deploy web-based portals for end users to carry out user,
 group, and entitlement management tasks. Users can also view detailed reports on the current state
 and health of the directory.
 
-You can create multiple Directory Manager portals as well as create multiple instances for a portal.
+You can create multiple GroupID portals as well as create multiple instances for a portal.
 
 ## Host a Portal
 
 A portal is hosted on a web server, with native IIS and remote IIS as the supported servers.
 
-- **IIS deployment** - Your Directory Manager portal is hosted within a site in IIS. To launch IIS,
+- **IIS deployment** - Your GroupID portal is hosted within a site in IIS. To launch IIS,
   see [Opening IIS Manager](https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525920(v=vs.90)).
 
-    ![IIS Manager showing the Directory Manager portal hosted in an IIS site](/images/directorymanager/11.0/admincenter/portal/in_iis.webp)
+    ![IIS Manager showing the GroupID portal hosted in an IIS site](/images/directorymanager/11.0/admincenter/portal/in_iis.webp)
 
 ## Deploy Multiple Instances of a Portal
 
-For load balancing and high availability, Directory Manager lets you create multiple Directory
-Manager portals, and even create multiple instances of the same portal. You can host different
+For load balancing and high availability, GroupID lets you create multiple GroupID
+portals, and even create multiple instances of the same portal. You can host different
 instances on different web servers. For example, you can create two instances of a portal while hosting one in
 native IIS and another in remote IIS.
 
@@ -38,7 +38,7 @@ Multiple instances of a portal share the same design settings and the same serve
 that each instance has its own deployment settings. A change to the shared settings propagates to
 all deployment instances.
 
-As you can create multiple Data services and Security services in Directory Manager, you can bind a
+As you can create multiple Data services and Security services in GroupID, you can bind a
 different Data service and Security service with each deployment instance of a portal. In this way, different
 instances use different services for improved response times and load balancing.
 
@@ -53,13 +53,13 @@ What do you want to do?
 
 ## Create a Portal in Native IIS
 
-When you create a portal in native IIS, Directory Manager does the following:
+When you create a portal in native IIS, GroupID does the following:
 
-- It creates a directory with the portal's name at the following physical path on the Directory
-  Manager server, and copies the portal files from its template directory to the new portal
+- It creates a directory with the portal's name at the following physical path on the GroupID
+  server, and copies the portal files from its template directory to the new portal
   directory:
   X:\Program Files\Imanami\GroupID 11.0\GroupIDPortal\Inetpub\
-  (X represents the Directory Manager installation drive)
+  (X represents the GroupID installation drive)
 - It also creates a virtual directory for the portal in your desired IIS site.
 
 The portal runs within a virtual directory in native IIS while the portal files are physically
@@ -72,9 +72,9 @@ located on disk.
 3. On the next page, select **GroupID Portal** and click **Next step**.
 4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a unique name for the portal or use the default name. The
-   portal is displayed with this name in Directory Manager.
+   portal is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
-   indicate the deployment instance for the portal in Directory Manager.
+   indicate the deployment instance for the portal in GroupID.
    A portal can have multiple deployments, such as one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
@@ -86,8 +86,8 @@ located on disk.
 
     - The IIS application name is used to name the portal's directory in IIS and its physical
       directory under **X:\Program Files\Imanami\GroupID 11.0\GroupIDPortal\Inetpub** on the
-      Directory Manager server.
-      (X represents the Directory Manager installation drive)
+      GroupID server.
+      (X represents the GroupID installation drive)
     - This IIS application name is also appended to the web server address to construct the URL that
       users click to access this deployment instance of the portal. For example:
       `https://<web-server-name>:<port>/<IIS-application-name>`
@@ -98,9 +98,9 @@ located on disk.
 9. In the **Service Endpoints** area, bind a Data service and a Security service with the portal.
 
     1. In the **Data Service** dropdown list, select a Data service for the portal to use. The list
-       contains all Data services defined in Directory Manager.
+       contains all Data services defined in GroupID.
     2. In the **Security Service** dropdown list, select a Security service for the portal to use.
-       The list contains all Security services defined in Directory Manager.
+       The list contains all Security services defined in GroupID.
 
 10. In the **Support Information** area, enter internal contact information and resource links for
     the portal's users to get help while using the portal.
@@ -125,9 +125,9 @@ located on disk.
 
     ![Message prompting you to associate the second identity store in a linked pair with the portal](/images/directorymanager/11.0/admincenter/portal/linked_message.webp)
 
-    This relates to the scenario when identity stores in Directory Manager have been linked, as
+    This relates to the scenario when identity stores in GroupID have been linked, as
     discussed in the
-    [Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
+    [Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-groupid-portal)
     topic. When two identity stores (IdentityStoreA and IdentityStoreB) are linked and you associate
     IdentityStoreA with the portal, this message is displayed. It alerts you to associate the second
     identity store in the linked pair (IdentityStoreB) with the portal too, to benefit from the
@@ -135,10 +135,10 @@ located on disk.
 
 12. Each identity store associated with a portal has its own set of design settings, as listed in
     the
-    [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+    [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
     topic.
 
-    If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
+    If you are upgrading to GroupID 11 from GroupID 9 or GroupID 10, you can import the
     design settings for an identity store from a Self-Service portal in a previous version, as an
     alternative to defining these settings manually. The following are the details of the file
     containing identity store design settings for a Self-Service portal in GroupID 9 and 10:
@@ -164,8 +164,8 @@ located on disk.
 
     **To import the design file and linked combo file(s), do the following:**
 
-    1. As a prerequisite to the Directory Manager 11 upgrade, the folder structure for the source
-       version was copied to the Directory Manager 11 server. In this case, the design and linked
+    1. As a prerequisite to the GroupID 11 upgrade, the folder structure for the source
+       version was copied to the GroupID 11 server. In this case, the design and linked
        combo files for all portals in the previous version are already available on the machine.
        Otherwise, copy the previously mentioned files for the respective identity stores associated
        with the Self-Service portal, and place them on your local machine or a shared network
@@ -184,9 +184,9 @@ located on disk.
        combos defined in the design settings.
 
 13. A portal has certain advanced settings defined for it, as discussed in the
-    [Manage Advanced Portal Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
+    [Manage Advanced Portal Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/advanced.md)
     topic.
-    If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
+    If you are upgrading to GroupID 11 from GroupID 9 or GroupID 10, you can import the
     advanced settings of a Self-Service portal from a previous version as an alternative to defining
     settings manually. The following are the details of the file containing advanced settings
     for a Self-Service portal in GroupID 9 and 10:
@@ -199,8 +199,8 @@ located on disk.
 
     **To import the file, do the following:**
 
-    1. As a prerequisite to the Directory Manager 11 upgrade, the folder structure for the source
-       version was copied to the Directory Manager 11 server. In this case, the server.xml file for
+    1. As a prerequisite to the GroupID 11 upgrade, the folder structure for the source
+       version was copied to the GroupID 11 server. In this case, the server.xml file for
        all portals in the previous version is already available on the machine. Otherwise, copy the
        server.xml file for the
        Self-Service portal whose advanced settings you want to import, and place it on your local
@@ -217,7 +217,7 @@ located on disk.
 You can host a portal within a site in remote IIS. For this, you need to connect with the Microsoft
 IIS Administration API running on the remote IIS machine.
 
-When you create a portal in remote IIS, Directory Manager does the following:
+When you create a portal in remote IIS, GroupID does the following:
 
 - It creates a virtual directory for the portal in a preconfigured site in remote IIS.
 - It creates a physical directory for the portal in the folder that is mapped to this preconfigured
@@ -227,7 +227,7 @@ The portal runs within a virtual directory in remote IIS while the portal files 
 located on disk.
 
 To learn about the remote IIS settings and configurations before hosting a portal, see
-the [Prerequisites for Deploying Directory Manager in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
+the [Prerequisites for Deploying GroupID in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
 topic.
 
 **To create a portal:**
@@ -237,9 +237,9 @@ topic.
 3. On the next page, select **GroupID Portal** and click **Next step**.
 4. On the **Create GroupID Application** page, select the **Remote IIS** tile.
 5. In the **Application Name** box, enter a unique name for the portal or use the default name. The
-   portal is displayed in Directory Manager with this name.
+   portal is displayed in GroupID with this name.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
-   indicate the deployment instance for the portal in Directory Manager. A portal can have multiple
+   indicate the deployment instance for the portal in GroupID. A portal can have multiple
    deployments, such as one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the portal card on the **GroupID
    Portal** tab.
@@ -268,7 +268,7 @@ topic.
 
 11. After you provide this information, the **Website** dropdown list displays the sites defined on
     the remote IIS server. Select the site that you configured with the appropriate permissions
-    for Directory Manager.
+    for GroupID.
 12. For entering information in the **Service Endpoints**, **Support Information**, **Select
     Identity Stores**, and **Advanced Settings** areas, follow steps 9-13 in the
     [Create a Portal in Native IIS](#create-a-portal-in-native-iis) topic.
@@ -342,14 +342,14 @@ you can choose to deploy the new portal in any of the supported web servers.
     | Name                 | The name given to the portal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
     | Identity Stores      | The names of the identity stores the portal serves.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
     | Deployment Instances | Displays the deployment instances of the portal as tiles. A tile shows the deployment name of the instance and the web server where it is deployed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-    | Status               | A portal has one of the following statuses: - **Running:** Indicates that the portal is running. - **Stopped:** Indicates that Directory Manager is unable to communicate with the portal. To troubleshoot, go to the web server where the portal is deployed and ensure the portal is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. In this case, contact your system administrator.                                                                                                                                                                                                          |
+    | Status               | A portal has one of the following statuses: - **Running:** Indicates that the portal is running. - **Stopped:** Indicates that GroupID is unable to communicate with the portal. To troubleshoot, go to the web server where the portal is deployed and ensure the portal is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. In this case, contact your system administrator.                                                                                                                                                                                                          |
     | Launch Application   | Click **Launch Application** to launch the portal. When multiple deployments of a portal are available, select the tile for a deployment instance and click **Launch Application** to launch that instance.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
     | Ellipsis             | Click it to open a shortcut menu with the following options: - **Settings:** Launches the portal settings page, where you can manage server and design settings. - **Server Settings:** Includes the deployment details of each portal instance, the help URL for the portal, the identity stores linked with the portal, and more. - **Design settings:** These settings relate to the portal's user interface. - **Deploy Another Instance:** Deploy another instance of the portal. - **Copy:** Create a new portal by copying the settings of this portal. - **Delete:** Deletes the portal. |
 
 You may notice a portal with an orange card and an orange icon on the card. When you hover the mouse
 over the icon, the tooltip says that _linked mode will not be allowed_. This relates to the scenario
-when identity stores in Directory Manager have been linked, as discussed in the
-[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
+when identity stores in GroupID have been linked, as discussed in the
+[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-groupid-portal)
 topic. When two identity stores (IdentityStoreA and IdentityStoreB) are linked and you associate
 IdentityStoreA with the portal, the portal card appears in orange. It informs you to associate the
 second identity store in the linked pair (IdentityStoreB) with the portal too, to benefit from the
@@ -370,6 +370,6 @@ linking.
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
-- [Delete a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/delete.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
+- [Delete a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/delete.md)

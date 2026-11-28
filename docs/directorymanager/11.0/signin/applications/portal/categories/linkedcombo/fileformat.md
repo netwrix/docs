@@ -6,7 +6,7 @@ keywords:
   - linked combo workbook
   - worksheet naming
   - foreign key column
-  - Directory Manager Portal
+  - GroupID Portal
 sidebar_position: 30
 ---
 
@@ -24,4 +24,4 @@ display type:
 
 See Also
 
-- [Linked Combo Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)
+- [Linked Combo Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "Approve a Directory Manager Workflow Request"
+title: "Approve a GroupID Workflow Request"
 description: "Use this POST endpoint to approve a pending workflow request by its request ID."
 keywords:
   - approve workflow request
@@ -10,7 +10,7 @@ sidebar_position: 20
 unlisted: true
 ---
 
-# Approve a Directory Manager Workflow Request
+# Approve a GroupID Workflow Request
 
 Use this API to approve a specified workflow request.
 
@@ -64,5 +64,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

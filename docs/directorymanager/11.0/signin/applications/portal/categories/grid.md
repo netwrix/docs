@@ -1,16 +1,16 @@
 ---
-title: "Grid Display Type in Directory Manager Portal"
+title: "Grid Display Type in GroupID Portal"
 description: "Create a grid display type to show multi-valued attributes, such as group members, in tabular form in the portal."
 keywords:
   - grid display type
   - custom display types
-  - Directory Manager Portal
+  - GroupID Portal
   - portal design settings
   - multi-valued attributes
 sidebar_position: 60
 ---
 
-# Grid Display Type in Directory Manager Portal
+# Grid Display Type in GroupID Portal
 
 Use a grid display type to display data in tabular form in the portal. This is especially helpful
 when you want to group together multiple attributes of an object.
@@ -120,6 +120,6 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

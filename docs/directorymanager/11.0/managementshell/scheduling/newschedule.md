@@ -1,5 +1,5 @@
 ---
-title: "New-Schedule Cmdlet for Directory Manager"
+title: "New-Schedule Cmdlet for GroupID"
 description: "Create a schedule in the connected identity store with the New-Schedule cmdlet, including its targets, job type, trigger, and notification settings."
 keywords:
   - New-Schedule
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# New-Schedule Cmdlet for Directory Manager
+# New-Schedule Cmdlet for GroupID
 
 The **New-Schedule** cmdlet creates a new schedule in the identity store connected to the
 current instance of Management Shell.
@@ -114,6 +114,6 @@ New-Schedule -ScheduleName GusTest3 -IncludeAllContainers -IncludeAllMessagingSy
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

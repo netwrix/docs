@@ -1,6 +1,6 @@
 ---
-title: "Second Factor Authentication in Directory Manager"
-description: "Learn how second factor authentication works in Directory Manager and how to enroll with and authenticate using each supported authentication type."
+title: "Second Factor Authentication in GroupID"
+description: "Learn how second factor authentication works in GroupID and how to enroll with and authenticate using each supported authentication type."
 keywords:
   - second factor authentication
   - authentication types
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Second Factor Authentication in Directory Manager
+# Second Factor Authentication in GroupID
 
-The Directory Manager administrator can enable second factor authentication for a user role in an identity
+The GroupID administrator can enable second factor authentication for a user role in an identity
 store.
 
 This means that, in addition to providing a valid user name and password to connect the portal to
@@ -21,23 +21,23 @@ an identity store, role members must authenticate using an authentication type.
 
 Second factor authentication works as follows:
 
-- An unenrolled user must enroll their identity store account in Directory Manager. See the
-  [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- An unenrolled user must enroll their identity store account in GroupID. See the
+  [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
   topic. Enrollment is a one-time process.
-- An enrolled user must authenticate on the Directory Manager portal using the authentication type
+- An enrolled user must authenticate on the GroupID portal using the authentication type
   they used to enroll their identity store account. See the
-  [Authenticate Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)
+  [Authenticate Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)
   topic.
 
     Authentication is required every time the user signs in to the portal.
 
-Directory Manager supports seven authentication types for second factor authentication. The
+GroupID supports seven authentication types for second factor authentication. The
 administrator can enable all or any of these for enrollment. Of the enabled authentication types,
 users must enroll and then authenticate with any one type.
 
 ## Supported Authentication Types
 
-Directory Manager supports the following authentication types:
+GroupID supports the following authentication types:
 
 - [Security Questions Authentication](#security-questions-authentication)
 - [SMS Verification](#sms-verification)
@@ -50,8 +50,8 @@ Directory Manager supports the following authentication types:
 ### Security Questions Authentication
 
 The administrator configures the security questions that users must answer to enroll their identity
-store accounts using the Directory Manager portal. Administrators can also enroll using Directory
-Manager Admin Center.
+store accounts using the GroupID portal. Administrators can also enroll using GroupID
+Admin Center.
 
 To authenticate using security questions, users must provide answers to the security questions they
 used to enroll their accounts.
@@ -69,7 +69,7 @@ authenticate.
   portal to authenticate.
 
 :::note
-The SMS authentication type is available if the Directory Manager administrator has linked an
+The SMS authentication type is available if the GroupID administrator has linked an
 SMS gateway account with the identity store.
 :::
 
@@ -107,8 +107,8 @@ and use it to enroll and authenticate their identity store accounts on the porta
 
 ### Link Account authentication
 
-The Directory Manager portal enables a user to link accounts that they may have in different
-identity stores. When the user enrolls any one of those linked accounts in Directory Manager, it
+The GroupID portal enables a user to link accounts that they may have in different
+identity stores. When the user enrolls any one of those linked accounts in GroupID, it
 suffices for the enrollment of all linked accounts.
 
 Users can then reset their account passwords and unlock accounts through a linked account. Suppose
@@ -164,5 +164,5 @@ Windows Hello supports the Microsoft Edge browser only.
 
 **See Also**
 
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [Authenticate Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Authenticate Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/authenticateaccount.md)

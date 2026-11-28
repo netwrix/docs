@@ -1,5 +1,5 @@
 ---
-title: "View Email Addresses and Subscriptions in Directory Manager"
+title: "View Email Addresses and Subscriptions in GroupID"
 description: "View the email addresses assigned to a mail-enabled object and assign Office 365 subscriptions to a mailbox from the Email tab."
 keywords:
   - Email tab
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# View Email Addresses and Subscriptions in Directory Manager
+# View Email Addresses and Subscriptions in GroupID
 
 Use this tab to view the addresses assigned to this object.
 
@@ -31,4 +31,4 @@ messaging provider for the identity store.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

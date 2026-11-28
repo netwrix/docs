@@ -1,8 +1,8 @@
 ---
-title: "Get My Smart Groups with the Directory Manager API"
+title: "Get My Smart Groups with the GroupID API"
 description: "Retrieve the Smart Groups of the authenticated user, with paging, sorting, and nested ownership options."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - Smart Groups
   - Groups/SmartGroups endpoint
   - authenticated user
@@ -10,7 +10,7 @@ sidebar_position: 130
 unlisted: true
 ---
 
-# Get My Smart Groups with the Directory Manager API
+# Get My Smart Groups with the GroupID API
 
 Use this API to retrieve information about the authenticated user's Smart Groups.
 
@@ -183,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

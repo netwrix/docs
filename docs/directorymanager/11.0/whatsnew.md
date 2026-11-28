@@ -1,6 +1,6 @@
 ---
-title: "What's New in Directory Manager 11.0"
-description: "Review the new and enhanced features in Directory Manager 11.0, including the web-based portal, Admin Center, Synchronize, and Entitlement."
+title: "What's New in GroupID 11.0"
+description: "Review the new and enhanced features in GroupID 11.0, including the web-based portal, Admin Center, Synchronize, and Entitlement."
 keywords:
   - directory manager 11.0 new features
   - admin center
@@ -10,51 +10,51 @@ keywords:
 sidebar_position: 2
 ---
 
-# What's New in Directory Manager 11.0
+# What's New in GroupID 11.0
 
 ## New Netwrix Community!
 
 All Netwrix product announcements have moved to the new Netwrix Community. See announcements for
-Netwrix Directory Manager in the [Directory Manager](https://community.netwrix.com/c/directorymanager/announcements/110)
+Netwrix GroupID in the [Directory Manager](https://community.netwrix.com/c/directorymanager/announcements/110)
 area of the new community.
 
-The following information highlights the new and enhanced features introduced in Netwrix Directory
-Manager version 11.0.
+The following information highlights the new and enhanced features introduced in Netwrix GroupID
+version 11.0.
 
-Here is a list of the new features in Directory Manager 11:
+Here is a list of the new features in GroupID 11:
 
 - [General](#general)
 - [Admin Center](#admin-center)
-- [Directory Manager Portal](#directory-manager-portal)
+- [GroupID Portal](#groupid-portal)
 - [Synchronize](#synchronize)
 - [Entitlement](#entitlement)
 
 ### General
 
-The following general features apply to all Directory Manager areas.
+The following general features apply to all GroupID areas.
 
 Web-based application
 
-Directory Manager 11 is a web-based application. It has two portals:
+GroupID 11 is a web-based application. It has two portals:
 
 - Admin Center - Has replaced the Microsoft Management Console (MMC)-based Windows application.
-- Directory Manager portal - A single portal that combines the Self-Service portal, Password Center user
+- GroupID portal - A single portal that combines the Self-Service portal, Password Center user
   portal, Password Center helpdesk portal, Insights portal, Automate, Synchronize, and Reports.
 
 Elasticsearch support
 
-Earlier, you could only use the Elasticsearch instance that Directory Manager deployed. Now you can
-use your own instance of Elasticsearch. Directory Manager 11 supports Elasticsearch v 8.0.0.
+Earlier, you could only use the Elasticsearch instance that GroupID deployed. Now you can
+use your own instance of Elasticsearch. GroupID 11 supports Elasticsearch v 8.0.0.
 
-Directory Manager as an identity provider
+GroupID as an identity provider
 
-Directory Manager 11 can serve as an identity provider. You can register a third-party application
-as a service provider in Directory Manager to authenticate users in that application through
-Directory Manager.
+GroupID 11 can serve as an identity provider. You can register a third-party application
+as a service provider in GroupID to authenticate users in that application through
+GroupID.
 
-Directory Manager Scheduler Service in IIS
+GroupID Scheduler Service in IIS
 
-Directory Manager now saves scheduled jobs in the Directory Manager database. The
+GroupID now saves scheduled jobs in the GroupID database. The
 GroupIDSchedulerService, created in the GroupIDSite11 site in native IIS, initiates schedule runs.
 
 Web-based Replication and Email services
@@ -65,12 +65,12 @@ services deployed in native IIS.
 Passwordless authentication with QR code
 
 With the QR code option enabled for an identity store, users can scan the QR code with the
-Directory Manager mobile app on their smartphones to connect Admin Center or the Directory Manager
+GroupID mobile app on their smartphones to connect Admin Center or the GroupID
 portal to an identity store and sign in, without providing a username and password.
 
 Core services deployment in Docker
 
-You can now deploy the core Directory Manager services, Data Service and Security Service, in
+You can now deploy the core GroupID services, Data Service and Security Service, in
 Docker (Preview).
 
 ### Admin Center
@@ -79,11 +79,11 @@ The Admin Center portal offers the following new features:
 
 Linked identity store
 
-You can link Active Directory and Microsoft Entra ID identity stores in Directory Manager. In this
+You can link Active Directory and Microsoft Entra ID identity stores in GroupID. In this
 way, you can link and auto-sync identical user and group objects that exist in these identity stores
 (domains).
 
-Deployment of services and Directory Manager portals in native IIS, remote IIS, and Docker
+Deployment of services and GroupID portals in native IIS, remote IIS, and Docker
 
 Earlier versions of GroupID supported deployments in native IIS only. Now, you can create
 as many portals, Data services, Security services, and Mobile services as needed, and deploy them on
@@ -100,33 +100,33 @@ You can monitor the Elasticsearch service for the following:
 
 Modern authentication support
 
-In addition to basic authentication, Directory Manager 11 also supports modern authentication.
+In addition to basic authentication, GroupID 11 also supports modern authentication.
 
 Power Automate integration
 
-Link a workflow in an identity store to a Power Automate flow. When the Directory Manager
-workflow starts, Directory Manager automatically triggers the linked flow.
+Link a workflow in an identity store to a Power Automate flow. When the GroupID
+workflow starts, GroupID automatically triggers the linked flow.
 
 Admin Center history tracking
 
 In earlier GroupID versions, GroupID partially tracked history for actions
-performed in the Management Console. In Directory Manager 11, history tracking also covers Admin
-Center. Directory Manager automatically tracks actions such as the creation and deletion of identity
+performed in the Management Console. In GroupID 11, history tracking also covers Admin
+Center. GroupID automatically tracks actions such as the creation and deletion of identity
 stores, the creation and deletion of SMS gateway accounts, changes to replication settings,
 modifications to notification templates, and much more.
 
 Circular reference in membership and direct reports
 
-Directory Manager checks for circular references when users update objects manually or when a
-Directory Manager schedule updates objects automatically. If a circular reference occurs, Directory
-Manager displays an error and prevents the user from saving the change.
+GroupID checks for circular references when users update objects manually or when a
+GroupID schedule updates objects automatically. If a circular reference occurs, GroupID
+displays an error and prevents the user from saving the change.
 
 Multiple deployments of applications
 
-For load balancing and high availability, Directory Manager lets you create multiple instances of
+For load balancing and high availability, GroupID lets you create multiple instances of
 the following applications:
 
-- Directory Manager portal
+- GroupID portal
 - Data Service
 - Security Service
 - Mobile Service
@@ -136,13 +136,13 @@ different web servers, such as native IIS, remote IIS, and Docker. All instances
 the same design settings and the same server settings, except that each instance has its own
 deployment settings.
 
-### Directory Manager Portal
+### GroupID Portal
 
-In the Directory Manager portal, end users can perform functions according to their roles.
+In the GroupID portal, end users can perform functions according to their roles.
 
 Single portal for end users
 
-The Directory Manager portal combines the following Directory Manager modules and portals into a
+The GroupID portal combines the following GroupID modules and portals into a
 single portal.
 
 | Modules/Nodes | Portals                         |
@@ -154,22 +154,22 @@ single portal.
 
 DL support in a Microsoft Entra ID identity store
 
-With Directory Manager 11, users can manage distribution lists in a Microsoft Entra ID identity store.
+With GroupID 11, users can manage distribution lists in a Microsoft Entra ID identity store.
 
-Query-based search in the Directory Manager portal
+Query-based search in the GroupID portal
 
 In addition to Advanced Search, users can use a Query Designer to define criteria for searching
 objects and save each query for later use.
 
-Dynasties in the Directory Manager portal
+Dynasties in the GroupID portal
 
-Dynasties, which only Automate previously managed, are now available in the Directory Manager
-portal. Users can create and manage Dynasties through the Directory Manager portal, just as they do Smart Groups and
+Dynasties, which only Automate previously managed, are now available in the GroupID
+portal. Users can create and manage Dynasties through the GroupID portal, just as they do Smart Groups and
 static groups.
 
 Upgrade a static group to a Managerial Dynasty
 
-Using the Directory Manager portal, you can upgrade a static group to a Managerial Dynasty. It’s a
+Using the GroupID portal, you can upgrade a static group to a Managerial Dynasty. It’s a
 one-step process that converts the static group to a Dynasty with all attributes intact.
 
 Specify new manager while transferring direct report
@@ -179,12 +179,12 @@ Portal users can transfer their direct reports and specify a new manager for the
 Membership preview for Smart Groups and Dynasties
 
 Use the membership preview option to preview the objects (along with their membership) that
-Directory Manager creates or adds when you update the membership of a Smart Group or Dynasty. If you specify
+GroupID creates or adds when you update the membership of a Smart Group or Dynasty. If you specify
 out-of-bounds configurations, the membership preview takes them into account as well.
 
 Microsoft Teams groups
 
-Use the Directory Manager portal to create teams and channels in Microsoft Teams. You can create static teams
+Use the GroupID portal to create teams and channels in Microsoft Teams. You can create static teams
 and smart teams, where queries define smart team memberships. Your teams can have
 temporary and permanent members as well as temporary and permanent owners. You can also set expiry
 dates for teams.
@@ -194,23 +194,23 @@ determines private channel membership.
 
 ### Synchronize
 
-Synchronize is now web-based and available in the Directory Manager portal. Synchronize jobs now use identity
+Synchronize is now web-based and available in the GroupID portal. Synchronize jobs now use identity
 stores and data sources defined in Admin Center as source and destination. Earlier, only IT admins
 could run Synchronize because it was part of the Management Console, but now end users can use it
 too. The Synchronize policy and Synchronize-related permissions control access.
 
 Support for Microsoft Entra ID and Google Workspace providers
 
-Directory Manager 11 now supports Microsoft Entra ID and Google Workspace as source and destination
+GroupID 11 now supports Microsoft Entra ID and Google Workspace as source and destination
 providers.
 You must create their identity stores in Admin Center to use them as source or destination providers
 in Synchronize jobs.
 
 Data sources for Synchronize
 
-Directory Manager 11 supports data sources (databases and files) as source and destination providers for
+GroupID 11 supports data sources (databases and files) as source and destination providers for
 Synchronize jobs. Users can create Synchronize jobs to provision, de-provision, or synchronize data
-using these data sources. Directory Manager 11 also supports System for Cross-domain Identity Management (SCIM), among other
+using these data sources. GroupID 11 also supports System for Cross-domain Identity Management (SCIM), among other
 providers.
 
 Data source for files on local server and OneDrive
@@ -237,13 +237,13 @@ _Create Job_ option isn't available to role members.
 Workflows support in Synchronize
 
 If a Synchronize job performs an operation in the destination identity store and a workflow exists
-for that operation in that identity store, then Directory Manager generates a
+for that operation in that identity store, then GroupID generates a
 workflow request when the job runs. If the approver approves the request, the job runs successfully.
 If the approver denies the request, you can’t run the job.
 
 Python scripting in Synchronize
 
-When you create a job, Directory Manager 11 lets you use Python scripting along with VB scripting. You can choose
+When you create a job, GroupID 11 lets you use Python scripting along with VB scripting. You can choose
 either of the two to modify the script for a job.
 
 Messaging provider of destination
@@ -262,7 +262,7 @@ job.
 ### Entitlement
 
 In earlier GroupID versions, you could only view the effective NTFS permissions that a
-user or group had on file server shares in your environment. With Directory Manager 11, you can now view and update permissions
+user or group had on file server shares in your environment. With GroupID 11, you can now view and update permissions
 for file server shares and SharePoint sites.
 
 Entitlement for SharePoint
@@ -272,7 +272,7 @@ You can assign and revoke permissions on:
 - A perpetual basis
 - A temporary basis
 
-For this, Directory Manager adds two new scheduled jobs:
+For this, GroupID adds two new scheduled jobs:
 
 - Entitlement Scope
 - Entitlement Temporary Permissions

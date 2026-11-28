@@ -1,5 +1,5 @@
 ---
-title: "Manage Directory Manager Membership Lifecycle Policies"
+title: "Manage GroupID Membership Lifecycle Policies"
 description: "Create, edit, reapply, and delete membership lifecycle policies that make group membership additions or removals temporary for a set period."
 keywords:
   - membership lifecycle policy
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Manage Directory Manager Membership Lifecycle Policies
+# Manage GroupID Membership Lifecycle Policies
 
 Use a membership lifecycle policy to specify a period so that all members added to or removed
 from groups during that period are treated as temporary additions or removals, respectively.
@@ -25,7 +25,7 @@ objects, Smart Groups, and Dynasties as target groups in a policy.
 :::
 
 :::note
-When Smart Groups and Dynasties reside in a target OU, Directory Manager doesn't process them.
+When Smart Groups and Dynasties reside in a target OU, GroupID doesn't process them.
 :::
 
 ## Types of Membership Lifecycle Policies
@@ -57,7 +57,7 @@ Membership lifecycle policies have these main features:
   group or OU can't be set as the target in more than one policy. If you apply a policy to an OU
   that contains a group with a different policy already applied to it, the group policy takes
   effect.
-- **Notifications** - Directory Manager generates notifications when users are temporarily added or
+- **Notifications** - GroupID generates notifications when users are temporarily added or
   removed from a group's membership. See the
   [Manage Membership Life Cycle Notifications](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md#manage-membership-life-cycle-notifications)
   topic.
@@ -123,8 +123,8 @@ certain period are temporary. When the period ends, they are removed from group 
     - Click **No** to apply the policy to new members only and exempt existing members.
 
 10. The policy is displayed on the **Group/OU Based Membership Life Cycle** page. Click **Save**.  
-    To view the impact of the policy, go to the properties of a target group in the Directory
-    Manager portal.
+    To view the impact of the policy, go to the properties of a target group in the GroupID
+    portal.
 
 ## Specify a 'Remove Temporary' Membership Policy
 
@@ -180,8 +180,8 @@ added back as permanent members.
     - Click **No** to apply the policy to new members only and exempt existing members.
 
 10. The policy is displayed on the **Group/OU Based Membership Life Cycle** page. Click **Save**.  
-    To view the impact of the policy, go to the properties of a target group in the Directory
-    Manager portal.
+    To view the impact of the policy, go to the properties of a target group in the GroupID
+    portal.
 
 ## Edit a Policy
 
@@ -223,10 +223,10 @@ Reapply a policy when:
 
 - A new group is created in the policy's target OU through the identity provider, such as Active
   Directory. To extend the policy to the new group, you must reapply it.
-- A group is moved to a target OU using Directory Manager or the identity provider.
+- A group is moved to a target OU using GroupID or the identity provider.
 
 You don't need to reapply a policy when a new group is created in the policy's target OU through
-Directory Manager. In this case, Directory Manager applies the policy automatically.
+GroupID. In this case, GroupID applies the policy automatically.
 
 Consider the following:
 
@@ -287,4 +287,4 @@ To delete a policy:
 
 **See Also**
 
-- [Membership Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/membershiplifecycle.md)
+- [Membership Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/membershiplifecycle.md)

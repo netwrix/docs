@@ -1,18 +1,18 @@
 ---
-title: "Directory Manager Synchronize Overview"
-description: "Learn what Directory Manager Synchronize does and what you must define in Admin Center before you create jobs."
+title: "GroupID Synchronize Overview"
+description: "Learn what GroupID Synchronize does and what you must define in Admin Center before you create jobs."
 keywords:
-  - Directory Manager Synchronize
+  - GroupID Synchronize
   - synchronization engine
   - Synchronize prerequisites
   - bidirectional synchronization
 sidebar_position: 90
 ---
 
-# Directory Manager Synchronize Overview
+# GroupID Synchronize Overview
 
-Directory Manager Synchronize is a web-based application that can be accessed using the Directory
-Manager portal. The application is a bidirectional synchronization engine for transferring data
+GroupID Synchronize is a web-based application that can be accessed using the GroupID
+portal. The application is a bidirectional synchronization engine for transferring data
 from one data source to another. The data sources may include directory servers, databases, or
 files. With an intuitive GUI, you can create Synchronize jobs to provision, de-provision, or
 synchronize multiple data sources.
@@ -23,12 +23,12 @@ at the destination.
 
 ## Prerequisites for Synchronize
 
-Using Directory Manager, you can create identity stores for several identity providers (such as
+Using GroupID, you can create identity stores for several identity providers (such as
 Active Directory and Microsoft Entra ID) as well as create data sources for providers such as files
-and databases. Directory Manager Synchronize uses user-defined identity stores (as source and
+and databases. GroupID Synchronize uses user-defined identity stores (as source and
 destination) built on databases, files, and other applications such as Oracle and SQL. To view the
 list of supported Synchronize providers, see the
-[Supported Synchronize Providers in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/provider.md)
+[Supported Synchronize Providers in GroupID](/docs/directorymanager/11.0/welcome/synchronize/provider.md)
 topic.
 
 The following must be defined before you can use Synchronize:
@@ -52,7 +52,7 @@ The following must be defined before you can use Synchronize:
   Synchronize job.
 - **History:** Synchronize can maintain a complete track of actions performed in a directory through
   a Synchronize job, provided that an identity store for the destination provider has been defined
-  in Directory Manager Admin Center and history tracking is enabled for that identity store. The
+  in GroupID Admin Center and history tracking is enabled for that identity store. The
   actions to be tracked for Synchronize are also specified in history settings of that identity
   store.
 - **Workflows:** Workflow requests can be enabled to run jobs or job collections. A workflow needs
@@ -71,17 +71,17 @@ The Synchronize dashboard displays performance widgets and cards with data about
 collections. On the navigation pane on the left side, you see the following tabs:
 
 - Create New
-  ([Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+  ([Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
   and
-  [Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md))
-- [Synchronize Dashboard in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md)
-- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Manage Job Collections in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
-- [Job Templates in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
-- [Job Collection Templates in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollectiontemplate.md)
+  [Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md))
+- [Synchronize Dashboard in GroupID](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md)
+- [Manage Synchronize Jobs in GroupID](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Manage Job Collections in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
+- [Job Templates in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobtemplate.md)
+- [Job Collection Templates in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollectiontemplate.md)
 
 **See Also**
 
-- [Synchronize Dashboard in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md)
-- [Supported Synchronize Providers in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/provider.md)
-- [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
+- [Synchronize Dashboard in GroupID](/docs/directorymanager/11.0/welcome/synchronize/dashboard.md)
+- [Supported Synchronize Providers in GroupID](/docs/directorymanager/11.0/welcome/synchronize/provider.md)
+- [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md)

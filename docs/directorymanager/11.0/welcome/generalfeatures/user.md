@@ -1,6 +1,6 @@
 ---
-title: "Manage Your Directory Manager User Account"
-description: "Update your profile, add a photo, and set a user account to expire, lock, unlock, enable, or disable in the Directory Manager portal."
+title: "Manage Your GroupID User Account"
+description: "Update your profile, add a photo, and set a user account to expire, lock, unlock, enable, or disable in the GroupID portal."
 keywords:
   - user account settings
   - My Profile
@@ -11,10 +11,10 @@ keywords:
 sidebar_position: 60
 ---
 
-# Manage Your Directory Manager User Account
+# Manage Your GroupID User Account
 
-In the Directory Manager portal, you can manage your profile information and change your password,
-provided that the Directory Manager administrator has granted you the required permissions. You can
+In the GroupID portal, you can manage your profile information and change your password,
+provided that the GroupID administrator has granted you the required permissions. You can
 also add your picture to your profile.
 
 Administrators can also reset the passwords of other user accounts in the identity store. They can
@@ -32,7 +32,7 @@ What do you want to do?
 
 ## Update your account information
 
-1. In the Directory Manager portal, click **Dashboard** in the left pane and click the **My Profile** card.
+1. In the GroupID portal, click **Dashboard** in the left pane and click the **My Profile** card.
 2. Make the required changes to your profile on the **My Profile** page.
 3. Click **Save**.
 
@@ -42,7 +42,7 @@ If the administrator has specified this action for review, your changes require 
 
 ## Add a photo to your profile
 
-1. In the Directory Manager portal, click **Dashboard** in the left pane and click the **My Profile** card.
+1. In the GroupID portal, click **Dashboard** in the left pane and click the **My Profile** card.
 2. Click the **General** tab.
 3. Click **Modify** next to the **Photo** box.
 
@@ -111,5 +111,5 @@ If the administrator has specified this action for review, your changes require 
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

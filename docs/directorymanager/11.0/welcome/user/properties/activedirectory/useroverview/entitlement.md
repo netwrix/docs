@@ -1,5 +1,5 @@
 ---
-title: "View User Entitlements in Directory Manager"
+title: "View User Entitlements in GroupID"
 description: "View the effective NTFS permissions a user has on shared files and folders, and learn how the Entitlement job computes them."
 keywords:
   - Entitlements tab
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# View User Entitlements in Directory Manager
+# View User Entitlements in GroupID
 
 Entitlement computes the effective NTFS permissions granted to objects on shared resources residing
 on a server in an Active Directory identity store. The Entitlement tab provides an interface for
@@ -24,7 +24,7 @@ Explicit permissions are assigned to a user. To facilitate permission viewing, d
 
 - Compute all permissions that directory objects have on the shared files and folders on those
   servers.
-- View these permissions in the Directory Manager portal.
+- View these permissions in the GroupID portal.
 
 ## Entitlement job
 
@@ -41,11 +41,11 @@ An Entitlement schedule is automatically created for an identity store when:
 By default, the schedule runs weekly to compute permissions on shared files and folders residing on
 the specified servers (for Active Directory), and the document libraries present in the specified
 sites (for SharePoint). It then replicates these permissions to Elasticsearch, enabling users to
-view, manage, and update these permissions in the Directory Manager portal.
+view, manage, and update these permissions in the GroupID portal.
 
 ## Permissions on the Entitlement portal
 
-You can grant permissions to security roles in the Entitlement section of the Directory Manager
+You can grant permissions to security roles in the Entitlement section of the GroupID
 portal. Based on these permissions, role members can perform different actions in the Entitlement section, such
 as navigate file servers and SharePoint sites, grant permissions to objects on shared resources,
 revoke permissions, and more.
@@ -56,4 +56,4 @@ section.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

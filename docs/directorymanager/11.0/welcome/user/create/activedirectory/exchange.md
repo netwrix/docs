@@ -1,8 +1,8 @@
 ---
 title: "Exchange page in the Create Mailbox wizard"
-description: "Set the alias, mailbox store, and Office 365 subscriptions for a new mailbox on the Exchange page of the Directory Manager Create Mailbox wizard."
+description: "Set the alias, mailbox store, and Office 365 subscriptions for a new mailbox on the Exchange page of the GroupID Create Mailbox wizard."
 keywords:
-  - Directory Manager
+  - GroupID
   - Create Mailbox wizard
   - mailbox store
   - Office 365 subscriptions
@@ -26,4 +26,4 @@ Use this page to provide the alias and subscriptions for a mailbox.
 
 **See Also**
 
-- [Create an Active Directory mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)
+- [Create an Active Directory mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)

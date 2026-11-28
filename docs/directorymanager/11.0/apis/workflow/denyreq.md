@@ -1,11 +1,11 @@
 ---
 title: "Deny a Workflow Request Using the API"
-description: "Deny a pending workflow request and record a reason by sending a POST request to the Directory Manager API."
+description: "Deny a pending workflow request and record a reason by sending a POST request to the GroupID API."
 keywords:
   - deny workflow request
   - workflow denial reason
   - workflow approval API
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 80
 unlisted: true
 ---
@@ -51,5 +51,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

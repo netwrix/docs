@@ -1,19 +1,19 @@
 ---
-title: "Get Power Automate Settings in Directory Manager"
+title: "Get Power Automate Settings in GroupID"
 description: "Retrieve the Power Automate settings of an identity store that is linked to Power Automate by calling the MsFlow Settings endpoint."
 keywords:
   - Power Automate settings
   - MsFlow Settings endpoint
-  - Directory Manager API
+  - GroupID API
   - identity store link
   - GET request
 sidebar_position: 140
 unlisted: true
 ---
 
-# Get Power Automate Settings in Directory Manager
+# Get Power Automate Settings in GroupID
 
-If you have linked an identity store to Power Automate in Directory Manager, you can retrieve the
+If you have linked an identity store to Power Automate in GroupID, you can retrieve the
 Power Automate settings using this API.
 
 ## Endpoint
@@ -41,5 +41,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

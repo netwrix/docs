@@ -1,8 +1,8 @@
 ---
-title: "Delete Multiple Groups with the Directory Manager API"
+title: "Delete Multiple Groups with the GroupID API"
 description: "Use the Delete Groups API to remove several groups from an identity store in one request by passing their identities in the request body."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - delete groups API
   - bulk delete groups
   - identity store groups
@@ -10,7 +10,7 @@ sidebar_position: 40
 unlisted: true
 ---
 
-# Delete Multiple Groups with the Directory Manager API
+# Delete Multiple Groups with the GroupID API
 
 The Delete Groups API deletes multiple groups from an identity store.
 
@@ -77,5 +77,5 @@ DELETE
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

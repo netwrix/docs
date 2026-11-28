@@ -1,5 +1,5 @@
 ---
-title: "Mailbox Properties Limits Tab in Directory Manager"
+title: "Mailbox Properties Limits Tab in GroupID"
 description: "Set the storage quota and the warning and send/receive limits for a user's mailbox."
 keywords:
   - mailbox limits
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Mailbox Properties Limits Tab in Directory Manager
+# Mailbox Properties Limits Tab in GroupID
 
 This tab applies to mailboxes only. Use it to set the storage quota for the object's mailbox,
 such as an Exchange mailbox.
@@ -36,4 +36,4 @@ ability to both send and receive emails.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

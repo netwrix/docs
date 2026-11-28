@@ -1,5 +1,5 @@
 ---
-title: "Visual Basic .NET Scripting for Directory Manager"
+title: "Visual Basic .NET Scripting for GroupID"
 description: "Learn the Visual Basic .NET syntax you need for DTM scripts in Synchronize: variables, string functions, decisions, and loops."
 keywords:
   - visual basic .net
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Visual Basic .NET Scripting for Directory Manager
+# Visual Basic .NET Scripting for GroupID
 
-This topic discusses some points of information relevant to DTM scripting in Directory Manager. See
+This topic discusses some points of information relevant to DTM scripting in GroupID. See
 the [Visual Basic Language Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/)
 article for additional information.
 
@@ -193,6 +193,6 @@ function of the .NET Char class.
 
 **See Also**
 
-- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
-- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Write Synchronize Scripts for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
 - [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)

@@ -1,5 +1,5 @@
 ---
-title: "Configure Second Way Authentication in Directory Manager"
+title: "Configure Second Way Authentication in GroupID"
 description: "Let unenrolled users unlock accounts and reset passwords with security questions, mobile, or email by linking each type to a directory attribute."
 keywords:
   - second way authentication
@@ -11,16 +11,16 @@ keywords:
 sidebar_position: 150
 ---
 
-# Configure Second Way Authentication in Directory Manager
+# Configure Second Way Authentication in GroupID
 
 You can configure second way authentication (SWA) to allow unenrolled users to access the following
-functions in the Directory Manager portal and the Directory Manager mobile app:
+functions in the GroupID portal and the GroupID mobile app:
 
 - Account unlock
 - Password reset
 
 SWA allows only one-time access to these functions. Users must enroll their identity store accounts
-in Directory Manager to use these functions again.
+in GroupID to use these functions again.
 
 SWA can authenticate unenrolled users through:
 
@@ -31,7 +31,7 @@ SWA can authenticate unenrolled users through:
 Configuring these types for second way authentication is different from configuring the same
 authentication types for multifactor and second factor authentication. For second way
 authentication, you must link an authentication type to a schema attribute. When resetting
-account passwords or unlocking accounts with the Directory Manager portal or the mobile app, the value
+account passwords or unlocking accounts with the GroupID portal or the mobile app, the value
 provided by the user for an authentication type is matched to the value of the linked attribute in
 the directory. If it matches, authentication is successful, and the user can perform the required
 action in the portal or the app.
@@ -95,7 +95,7 @@ What do you want to do?
 5. In the **Mobile Attribute** dropdown list, select an attribute that stores mobile numbers in the
    directory.  
    For authentication via mobile, a verification code is sent to the user's mobile number. The user
-   must enter the code in Directory Manager for authentication.
+   must enter the code in GroupID for authentication.
 6. Click **Save**.
 
 ## Enable Second Way Authentication via Email
@@ -112,14 +112,14 @@ What do you want to do?
     If an SMTP server isn't defined for the identity store, **Configure Now** is displayed in
     place of the toggle button. Click it to go to the **Notifications** page for configuring an SMTP
     server. See the
-    [Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+    [Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
     topic.
     :::
 
 5. In the **Email Attribute** dropdown list, select an attribute that stores email addresses in the
    directory.  
    For authentication via email, a verification code is sent to the user's email address. The user
-   must enter the code in Directory Manager for authentication.
+   must enter the code in GroupID for authentication.
 6. Click **Save**.
 
 ## Enforce Users to Authenticate Using x Number of SWA Types
@@ -144,6 +144,6 @@ types they want to use for authentication.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
-- [SMS Gateway Support in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/overview.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+- [SMS Gateway Support in GroupID](/docs/directorymanager/11.0/signin/smsgateway/overview.md)

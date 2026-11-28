@@ -1,8 +1,8 @@
 ---
-title: "Update a Contact API in Directory Manager"
-description: "Change a contact's attributes and values in an identity store with a PATCH request to the Directory Manager Contacts endpoint."
+title: "Update a Contact API in GroupID"
+description: "Change a contact's attributes and values in an identity store with a PATCH request to the GroupID Contacts endpoint."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - update contact
   - contact attributes
   - PATCH request
@@ -11,7 +11,7 @@ sidebar_position: 60
 unlisted: true
 ---
 
-# Update a Contact API in Directory Manager
+# Update a Contact API in GroupID
 
 Use this API to update a contact's attributes and their values in a specified identity store.
 
@@ -98,5 +98,5 @@ PATCH
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Contact APIs](/docs/directorymanager/11.0/apis/contact/contactapis.md)

@@ -1,5 +1,5 @@
 ---
-title: "Configure Dynasty attributes in Directory Manager"
+title: "Configure Dynasty attributes in GroupID"
 description: "Add, edit, or remove the group-by attributes, child container, filter, and separator for an Organizational, Geographical, or Custom Dynasty."
 keywords:
   - Dynasty attributes
@@ -10,14 +10,14 @@ keywords:
 sidebar_position: 20
 ---
 
-# Configure Dynasty attributes in Directory Manager
+# Configure Dynasty attributes in GroupID
 
 Dynasties create Smart Groups for each distinct value of each attribute listed in the **Attributes**
 area. Depending on the Dynasty template selected, the **Attributes** area displays the default
 attributes for the template; however, you can add and remove attributes. For the Custom template, no
 attribute is displayed.
 
-For example, if you specify the Country, State, and City attributes, Directory Manager creates a
+For example, if you specify the Country, State, and City attributes, GroupID creates a
 group for every distinct country value, then for each state within a country, and finally for each
 city in a state.
 
@@ -37,19 +37,19 @@ On the **Dynasty Options** page:
     An example is populating the Office field with the building/office number, thus conveniently
     storing two items of related data in the same field. Now, suppose you need a distribution list
     for each building. If the building name was in its own field (custom attribute 1), you could
-    create a Dynasty that groups by the custom attribute 1 field and Directory Manager then
+    create a Dynasty that groups by the custom attribute 1 field and GroupID then
     creates a group for each building value.
 
     Attribute value:
 
     Custom Attribute 1 = MacArthur Plaza
 
-    Sample groups created by Directory Manager:
+    Sample groups created by GroupID:
 
     Everyone in MacArthur Plaza
 
     However, if you were to create a Dynasty that groups by the Office field (which contains both
-    the building name and office number), Directory Manager creates a group for each distinct
+    the building name and office number), GroupID creates a group for each distinct
     building/office value. This strategy gives you a group for every office number, rather than for
     each building.
 
@@ -57,7 +57,7 @@ On the **Dynasty Options** page:
 
     Office = MacArthur Plaza/1256C
 
-    Sample groups created by Directory Manager:
+    Sample groups created by GroupID:
 
     Everyone in MacArthur Plaza/1256C
 
@@ -66,10 +66,10 @@ On the **Dynasty Options** page:
 
 1. Use the **Group items by** list to type or select the field for expanding the Dynasty.
 
-    Directory Manager creates a child group for each unique value of this field.
+    GroupID creates a child group for each unique value of this field.
 
-1. The **Child container** box displays the container where Directory Manager creates new child groups. If
-   this setting is blank, Directory Manager creates child groups in the same container as the
+1. The **Child container** box displays the container where GroupID creates new child groups. If
+   this setting is blank, GroupID creates child groups in the same container as the
    parent Dynasty.
 
     To change the container, click **Browse** and select a new container.
@@ -97,4 +97,4 @@ On the **Dynasty Options** page:
 
 **See Also**
 
-- [Create an Active Directory Dynasty in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
+- [Create an Active Directory Dynasty in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)

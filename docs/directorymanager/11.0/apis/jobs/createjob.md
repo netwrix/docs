@@ -1,6 +1,6 @@
 ---
 title: "Create a Synchronize Job API"
-description: "Create a Synchronize job that moves data from one data source to another with a POST request to the Directory Manager data service."
+description: "Create a Synchronize job that moves data from one data source to another with a POST request to the GroupID data service."
 keywords:
   - create Synchronize job API
   - DataSyncJobs POST endpoint
@@ -16,7 +16,7 @@ Use this API to create a new Synchronize job, which is a set of sequential comma
 background to move data from one data source to another.
 
 See the
-[Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+[Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
 topic for more information about creating a job.
 
 ## Endpoint
@@ -406,5 +406,5 @@ https://demomachine:4443/GroupIDDataService/api/DataSyncJobs
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

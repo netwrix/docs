@@ -62,4 +62,4 @@ What do you want to do?
 **See Also**
 
 - [Manage the Global Question Pool](/docs/directorymanager/11.0/signin/concepts/globalpool.md)
-- [Set Up Security Question Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
+- [Set Up Security Question Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)

@@ -1,9 +1,9 @@
 ---
 title: "Generate Consumer and Audience URLs for Microsoft Entra ID"
-description: "Generate the consumer URL and audience URL that Directory Manager needs for Microsoft Entra ID single sign-on."
+description: "Generate the consumer URL and audience URL that GroupID needs for Microsoft Entra ID single sign-on."
 keywords:
-  - Directory Manager consumer URL
-  - Directory Manager audience URL
+  - GroupID consumer URL
+  - GroupID audience URL
   - Microsoft Entra ID SSO URLs
   - generate SSO URLs
 sidebar_position: 10

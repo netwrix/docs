@@ -1,20 +1,20 @@
 ---
 title: "Manage the Global Question Pool"
-description: "Add or remove security questions in the global question pool that Directory Manager uses for user enrollment and authentication."
+description: "Add or remove security questions in the global question pool that GroupID uses for user enrollment and authentication."
 keywords:
   - global question pool
   - security questions
-  - Directory Manager enrollment
+  - GroupID enrollment
   - Admin Center settings
 sidebar_position: 90
 ---
 
 # Manage the Global Question Pool
 
-Directory Manager provides a list of predefined security questions for enrollment and authentication. You can
+GroupID provides a list of predefined security questions for enrollment and authentication. You can
 update this list by adding or removing questions.
 
-When you create an identity store, Directory Manager automatically adds four questions from this global pool to
+When you create an identity store, GroupID automatically adds four questions from this global pool to
 the identity store's local question pool. This pool isn't shared with other identity stores.
 
 What do you want to do?
@@ -47,6 +47,6 @@ To search for a security question in the list, enter a search string in the sear
 
 **See Also**
 
-- [Set Up Security Question Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
+- [Set Up Security Question Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/securityquestions.md)
 - [Configure a Password Policy for a Security Role ](/docs/directorymanager/11.0/signin/securityrole/policy/password.md)
 - [Manage the Local Security Question Pool](/docs/directorymanager/11.0/signin/identitystore/configure/securityquestions.md)

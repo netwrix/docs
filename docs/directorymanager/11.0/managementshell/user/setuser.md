@@ -1,5 +1,5 @@
 ---
-title: "Set-User Cmdlet for Directory Manager"
+title: "Set-User Cmdlet for GroupID"
 description: "Modify user properties in the directory with the Set-User cmdlet, including names, contact details, custom attributes, and display names."
 keywords:
   - Set-User
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Set-User Cmdlet for Directory Manager
+# Set-User Cmdlet for GroupID
 
 The **Set-User** cmdlet modifies a user in the directory. You can modify most user properties
 directly by using the parameters of this cmdlet.
@@ -82,6 +82,6 @@ Set-User -Identity "Sample" -DisplayName "Sample123"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

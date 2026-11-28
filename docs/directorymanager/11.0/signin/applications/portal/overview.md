@@ -1,18 +1,18 @@
 ---
-title: "Directory Manager Portal Overview"
-description: "Learn what users and administrators can do with a Directory Manager portal, including linked identity stores and email notifications."
+title: "GroupID Portal Overview"
+description: "Learn what users and administrators can do with a GroupID portal, including linked identity stores and email notifications."
 keywords:
-  - Directory Manager
-  - Directory Manager portal features
+  - GroupID
+  - GroupID portal features
   - self-service group management
   - linked identity stores
   - portal notifications
 sidebar_position: 20
 ---
 
-# Directory Manager Portal Overview
+# GroupID Portal Overview
 
-A Directory Manager portal represents a virtual link with the directory. Using it, users can do the
+A GroupID portal represents a virtual link with the directory. Using it, users can do the
 following in an identity store:
 
 - Search the directory.
@@ -27,7 +27,7 @@ following in an identity store:
 - Generate hundreds of reports on Active Directory, Microsoft Entra ID, Exchange, and
   Office 365 objects (groups, users, mailboxes, contacts, computers, and servers).
 - View history data for directory objects that are created, updated, or deleted in the directory
-  using Directory Manager.
+  using GroupID.
 
 Delegating group and user management tasks to end users reduces the workload on IT administrators
 and help desk, because users manage their groups and direct reports without assistance
@@ -35,26 +35,26 @@ from an administrator. Moreover, when users maintain and update their profile in
 more accurate and reliable.
 
 Administrators can maintain complete control over data integrity, as they can implement fine-grained
-controls and policies that determine what users can view and change using the Directory Manager
+controls and policies that determine what users can view and change using the GroupID
 portal. They can also define workflows for an identity store that serve as a built-in auditing
 system to verify that users enter correct data before changes are committed to the directory.
 
-You can link a Directory Manager portal with multiple identity stores, so you don't need to create a
+You can link a GroupID portal with multiple identity stores, so you don't need to create a
 separate portal for each identity store. Users can select an identity store while signing in.
 
-## Linked Identity Stores and the Directory Manager Portal
+## Linked Identity Stores and the GroupID Portal
 
-The administrator can link two or more identity stores in Directory Manager. As a prerequisite for
+The administrator can link two or more identity stores in GroupID. As a prerequisite for
 linking, the identity stores must be built on Active Directory or Microsoft Entra ID domains. The purpose is
 to link identical objects in different domains.
 
-To learn about linked identity stores and how they work in a Directory Manager portal, see the
-[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
+To learn about linked identity stores and how they work in a GroupID portal, see the
+[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-groupid-portal)
 topic.
 
 ## Notifications in the Portal
 
-A Directory Manager portal can send email notifications to designated recipients when a user makes
+A GroupID portal can send email notifications to designated recipients when a user makes
 a change to objects in an identity store. To specify notification recipients, see the
 [Specify Notification Recipients](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md#specify-notification-recipients)
 topic.
@@ -65,6 +65,6 @@ receive notifications in a supported language by personalizing the language sett
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Create a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
-- [Delete a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/delete.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [Create a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
+- [Delete a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/delete.md)

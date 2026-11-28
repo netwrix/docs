@@ -1,5 +1,5 @@
 ---
-title: "Manage Group Membership Limits in Directory Manager"
+title: "Manage Group Membership Limits in GroupID"
 description: "Set maximum group membership, handle orphan nested groups, and define out-of-bounds thresholds that stop large unexpected Smart Group and Dynasty changes."
 keywords:
   - group membership limit
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# Manage Group Membership Limits in Directory Manager
+# Manage Group Membership Limits in GroupID
 
-Use Directory Manager to update group membership in the following ways:
+Use GroupID to update group membership in the following ways:
 
 - Add members manually (recommended only for static groups)
 - Update Smart Groups and Dynasties automatically using a Smart Group Update schedule
@@ -35,7 +35,7 @@ What do you want to do?
 
 ## Set the Maximum Number of Group Members
 
-You can set the maximum membership limit for groups and set Directory Manager to do one of the
+You can set the maximum membership limit for groups and set GroupID to do one of the
 following when an update to a group exceeds this limit:
 
 - Not update the group membership, which retains the old membership.
@@ -52,16 +52,16 @@ Assume you set the maximum membership limit to 500 and opt for nested groups whe
 exceeds this limit.
 
 **Scenario 1**: On update, 485 objects are fetched to be added to Group A's membership. Because the
-count is less than 500, Directory Manager adds the objects directly as group members.
+count is less than 500, GroupID adds the objects directly as group members.
 
 **Scenario 2:** On the next update, 620 objects are fetched to be added to Group A's membership.
-Because the count exceeds 500, Directory Manager breaks the membership into two child groups
-(Group 1 with 500 members and Group 2 with 120 members) and nests them into Group A. Directory
-Manager checks the member count and takes necessary action before adding members to the group.
+Because the count exceeds 500, GroupID breaks the membership into two child groups
+(Group 1 with 500 members and Group 2 with 120 members) and nests them into Group A. GroupID
+checks the member count and takes necessary action before adding members to the group.
 
 :::note
 For an Office 365 group, the option to break the membership into child groups has the
-following impact: Directory Manager updates an Office 365 group (Group A) according to the Smart
+following impact: GroupID updates an Office 365 group (Group A) according to the Smart
 Group update process. However, when the maximum membership limit is reached, the update process
 creates child groups and tries to add them as members of Group A. Because an Office 365 group can't
 have groups as members, Group A's membership is empty. The child groups continue to exist but
@@ -82,7 +82,7 @@ without any link to Group A.
       As a result, the group isn't updated and retains its old membership.
     - **Nest into child groups:** to create nested child groups when the maximum membership limit is
       reached. Each nested group, in turn, can't have more than the maximum number of members
-      specified. Nested groups are displayed in Directory Manager as members of the parent group.
+      specified. Nested groups are displayed in GroupID as members of the parent group.
 
 6. Click **Save**.
 
@@ -111,16 +111,16 @@ You can choose to delete or retain the orphan nested groups in the identity stor
 ## Set a Group Update Threshold
 
 Out-of-bounds exceptions prevent large, unforeseen membership changes to groups. When an
-out-of-bounds exception occurs, Directory Manager doesn't update group membership and notifies the
+out-of-bounds exception occurs, GroupID doesn't update group membership and notifies the
 intended recipients by email. If they consider the change valid, they can update the group manually
-in the Directory Manager portal.
+in the GroupID portal.
 
 :::note
 1. Settings in the **Threshold** section apply in case of membership update through a Smart
 Group Update schedule. On manual update, these settings have no impact.  
 2. If the group isn't updated manually after an out-of-bounds exception, the changes remain
 pending and the group isn't updated when the Smart Group Update job runs.  
-3. Directory Manager sends out-of-bounds exception notifications according to the notification
+3. GroupID sends out-of-bounds exception notifications according to the notification
 settings configured for the Smart Group Update schedule responsible for updating the respective
 group.
 :::
@@ -140,38 +140,38 @@ group.
        that, when exceeded, raises an out-of-bounds exception.
 
         Membership change is the difference between new membership and the existing membership.
-        Directory Manager calculates the percentage change in membership with this formula:  
+        GroupID calculates the percentage change in membership with this formula:  
          (newMemberCount - oldMemberCount) x 100 / oldMemberCount
 
         Assume you specify 20 in this field. When group membership changes by 20% or more,
-        Directory Manager considers it an exception.
+        GroupID considers it an exception.
 
         So, if Group A has 500 members and 200 new members are to be added, the formula is  
          (newMemberCount - oldMemberCount) x 100 / oldMemberCount  
          (700-500) x 100 / 500 = 40
 
-        Since 40 is greater than 20, Directory Manager treats it as an out-of-bounds exception.
+        Since 40 is greater than 20, GroupID treats it as an out-of-bounds exception.
 
     2. In the **And either current or new membership exceeds** box, enter the number of current or
        new memberships. If the current or new membership of a group is equal to or less than the
-       specified number, Directory Manager doesn't raise an out-of-bounds exception for the group,
+       specified number, GroupID doesn't raise an out-of-bounds exception for the group,
        even when the change percentage is exceeded. You can ignore changes to small groups.
 
         For example, you set the change percentage to 20 and specify 25 in the **And either current
         or new membership exceeds** box. It works as follows:
 
         - For current (existing) membership - When the existing membership of a group is equal to or
-          less than 25, Directory Manager doesn't trigger out-of-bounds for this group when the
+          less than 25, GroupID doesn't trigger out-of-bounds for this group when the
           change percentage is exceeded (is greater than 20). For example, adding 3 new members to a
-          group of 10 members doesn't trigger an exception. Directory Manager ignores the
+          group of 10 members doesn't trigger an exception. GroupID ignores the
           change percentage and updates the group.
         - For new membership - When 12 new members are added to a group with 10 existing
           members, the new membership reaches 22, which is less than 25. Even though the change
-          percentage is exceeded, Directory Manager doesn't raise an exception and updates group membership.
+          percentage is exceeded, GroupID doesn't raise an exception and updates group membership.
 
 6. Click **Save**.
 
 **See Also**
 
-- [Manage Dynasty Settings in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/dynastysettings.md)
-- [Create a Directory Manager Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md)
+- [Manage Dynasty Settings in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/dynastysettings.md)
+- [Create a GroupID Smart Group Update Schedule](/docs/directorymanager/11.0/signin/schedule/smartgroupupdate.md)

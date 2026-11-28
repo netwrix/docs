@@ -122,8 +122,8 @@ On the **Objects, Fields and Mappings** page, map the attributes to source field
 3. In the **Script Language** section, specify the scripting language you want to use. Select one of
    the following languages:
 
-    - [Visual Basic .NET for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
-    - Python for Directory Manager
+    - [Visual Basic .NET for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+    - Python for GroupID
 
 4. The Global Script Editor lets the script author extend the functionality of Synchronize by
    authoring scripts in Visual Basic .NET and Python. Before saving a script, the code must be
@@ -223,7 +223,7 @@ On the **Objects, Fields and Mappings** page, map the attributes to source field
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)

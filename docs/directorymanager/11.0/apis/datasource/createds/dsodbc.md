@@ -1,8 +1,8 @@
 ---
 title: "Create an ODBC Data Source with the API"
-description: "Create a Directory Manager data source that connects through an ODBC system DSN to an ODBC-compatible provider such as Excel."
+description: "Create a GroupID data source that connects through an ODBC system DSN to an ODBC-compatible provider such as Excel."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - ODBC data source
   - system DSN
   - data source
@@ -17,8 +17,8 @@ Use this API to create a new data source for an ODBC provider.
 See the
 [Create a Data Source for ODBC](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-odbc)
 section of the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create an ODBC data source using Directory Manager.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create an ODBC data source using GroupID.
 
 ## Endpoint
 
@@ -75,5 +75,5 @@ an ODBC-compatible provider.
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

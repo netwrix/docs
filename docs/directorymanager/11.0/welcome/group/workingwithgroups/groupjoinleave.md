@@ -1,6 +1,6 @@
 ---
-title: "Join or Leave a Group in Directory Manager"
-description: "Join or leave a group permanently or temporarily, or do so on behalf of a direct report or peer, in the Directory Manager portal."
+title: "Join or Leave a Group in GroupID"
+description: "Join or leave a group permanently or temporarily, or do so on behalf of a direct report or peer, in the GroupID portal."
 keywords:
   - join group
   - leave group
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 110
 ---
 
-# Join or Leave a Group in Directory Manager
+# Join or Leave a Group in GroupID
 
-In Directory Manager, you can join or leave a group permanently, or temporarily for a specified
+In GroupID, you can join or leave a group permanently, or temporarily for a specified
 period.
 
 What do you want to do?
@@ -27,14 +27,14 @@ What do you want to do?
 
 You can join a semi-private or public group as a permanent member.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups you
    want to join.
 2. On the page displayed, select the groups to join.
 3. Point to the **Join** button on the toolbar, ensure that the **Join Perpetually** option is
    selected, and click **Join**.
 
     You can also join a group on the group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page by using the **Join** button on the toolbar.
 
 When a user joins a Smart Group or Dynasty, they are added to the **Include** list on the
@@ -45,7 +45,7 @@ the scope of the query.
 :::note
 For a semi-private group, the group owner must approve your _join_ request before you are
 added to group membership. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 
 :::
 
@@ -53,7 +53,7 @@ added to group membership. See
 
 The logged-in user can join a semi-private or public group as a temporary member.
 
-1. [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups you
+1. [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups you
    want to join.
 2. On the page displayed, select the groups to join.
 3. Point to the **Join** button on the toolbar and select the **Join Temporarily** option.
@@ -70,7 +70,7 @@ The logged-in user can join a semi-private or public group as a temporary member
 5. Click **Join**.
 
     You can also join a group on the group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page by using the **Join** button on the toolbar.
 
 When a user joins a Smart Group or Dynasty, they are added to the **Include** list on the
@@ -81,7 +81,7 @@ the scope of the query.
 :::note
 For a semi-private group, the group owner must approve your _join_ request before you are
 added to group membership. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 
 :::
 
@@ -89,13 +89,13 @@ added to group membership. See
 
 The logged-in user can permanently leave the membership of a semi-private or public group.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     Select the **My Groups**/**My Memberships** tab.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups
     you want to leave.
 
 2. On the page displayed, select the required groups.
@@ -103,7 +103,7 @@ The logged-in user can permanently leave the membership of a semi-private or pub
    selected, and click **Leave**.
 
     You can also leave a group on the group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page by using the **Leave** button on the toolbar.
 
 When a user leaves a Smart Group or Dynasty, they are added to the **Exclude** list on the
@@ -114,7 +114,7 @@ the scope of the query.
 :::note
 For a semi-private group, the group owner must approve your _leave_ request before you are
 removed from group membership. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 
 :::
 
@@ -122,13 +122,13 @@ removed from group membership. See
 
 The logged-in user can leave the membership of a semi-private or public group on a temporary basis.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **Groups**.
 
     Select the **My Groups**/**My Memberships** tab.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the groups
     you want to leave.
 
 2. On the page displayed, select the required groups.
@@ -146,7 +146,7 @@ The logged-in user can leave the membership of a semi-private or public group on
 5. Click **Leave**.
 
     You can also leave a group on the group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page by using the **Leave** button on the toolbar.
 
 When a user leaves a Smart Group or Dynasty, they are added to the **Exclude** list on the
@@ -157,13 +157,13 @@ the scope of the query.
 :::note
 For a semi-private group, the group owner must approve your _leave_ request before you are
 removed from group membership. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 
 :::
 
 ## Join or leave a group on behalf of a direct report or peer
 
-Using the Directory Manager portal, a user can join or leave a group on behalf of another user.
+Using the GroupID portal, a user can join or leave a group on behalf of another user.
 
 - If a user has the **Manage My Direct Reports** permission in the identity store, they can join
   or leave a group on behalf of any of their direct reports.
@@ -185,7 +185,7 @@ The logged-in user can join a group on behalf of a direct report or peer.
 1. On the left navigation bar, click **Groups** and then select the **My Groups**, **My
    Memberships**, or **My Expiring Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+    You can also [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
     the group you want to join on behalf of a direct report or peer.
 
 2. On the page displayed, select the group to join.
@@ -217,7 +217,7 @@ The logged-in user can leave a group on behalf of a direct report or peer.
 1. On the left navigation bar, click **Groups** and then select the **My Groups**, **My
    Memberships**, or **My Expiring Groups** tab.
 
-    You can also [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+    You can also [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
     the group you want to leave on behalf of a direct report or peer.
 
 2. On the page displayed, select the group to leave.
@@ -251,4 +251,4 @@ Otherwise, the request must be approved by an authorized user for changes to tak
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

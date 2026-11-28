@@ -12,13 +12,13 @@ sidebar_position: 30
 
 # Generate a Certificate for Modern Authentication
 
-When you configure the Directory Manager application in Microsoft Entra ID, you must provide a
+When you configure the GroupID application in Microsoft Entra ID, you must provide a
 certificate. You can generate this certificate using GroupID PowerShell or any other third-party
 application.
 
 To generate a certificate using GroupID PowerShell:
 
-1. Sign in to the Directory Manager server and run GroupID PowerShell as an administrator.
+1. Sign in to the GroupID server and run GroupID PowerShell as an administrator.
 2. Run the following command:
 
     ```
@@ -30,7 +30,7 @@ To generate a certificate using GroupID PowerShell:
 
     The generated certificate is saved at the root level of drive C:.
 
-    In the Microsoft Entra Admin Center, while configuring the Directory Manager application, upload
+    In the Microsoft Entra Admin Center, while configuring the GroupID application, upload
     this certificate using the Certificates & secrets node.
 
     ![Certificates and secrets page with the Upload certificate option](/images/directorymanager/11.0/configureentraid/register/certificates_n_secrets.webp)
@@ -58,7 +58,7 @@ To generate a certificate using GroupID PowerShell:
 ## Verify Modern Authentication
 
 You can test modern authentication from GroupID PowerShell in your tenant. First, verify that the
-Exchange Online module is installed on your Directory Manager server using the following cmdlet:
+Exchange Online module is installed on your GroupID server using the following cmdlet:
 
 ```
 Get-InstallModule -name exchangeonlinemanagement
@@ -80,8 +80,8 @@ To disconnect the Exchange Online session, use the following cmdlet:
 Disconnect-ExchangeOnline
 ```
 
-After this verification process, you can use the certificate thumbprint in Directory Manager.
+After this verification process, you can use the certificate thumbprint in GroupID.
 
 See Also
 
-- [Register Directory Manager in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)
+- [Register GroupID in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)

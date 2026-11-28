@@ -1,6 +1,6 @@
 ---
 title: "Get Filtered Data Sources API"
-description: "List the data sources your role policy allows, or all data sources, by setting the isSource parameter on the Directory Manager data service."
+description: "List the data sources your role policy allows, or all data sources, by setting the isSource parameter on the GroupID data service."
 keywords:
   - filtered data sources API
   - isSource parameter
@@ -93,5 +93,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)

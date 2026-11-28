@@ -1,6 +1,6 @@
 ---
-title: "Manage Native IIS Deployment Settings in Directory Manager"
-description: "Start, stop, rename, or move a Directory Manager portal instance deployed in native IIS, and view its launch URL and bound services."
+title: "Manage Native IIS Deployment Settings in GroupID"
+description: "Start, stop, rename, or move a GroupID portal instance deployed in native IIS, and view its launch URL and bound services."
 keywords:
   - native IIS deployment
   - portal instance
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Native IIS Deployment Settings in Directory Manager
+# Manage Native IIS Deployment Settings in GroupID
 
 You can manage settings for a portal instance deployed in native IIS.
 
@@ -20,9 +20,9 @@ You can manage settings for a portal instance deployed in native IIS.
 You can start and stop a portal instance deployed in native IIS, remote IIS, and Docker. When you
 stop an instance, the following happens:
 
-- For a native IIS deployment, Directory Manager stops the instance’s application pool.
-- For a remote IIS deployment, Directory Manager stops the site that hosts the instance.
-- For a Docker deployment, Directory Manager stops the container that hosts the instance.
+- For a native IIS deployment, GroupID stops the instance’s application pool.
+- For a remote IIS deployment, GroupID stops the site that hosts the instance.
+- For a Docker deployment, GroupID stops the container that hosts the instance.
 
 **To start or stop an instance:**
 
@@ -41,15 +41,15 @@ stop an instance, the following happens:
 ## Change the IIS Application Name for an Instance
 
 Each portal deployment instance in IIS has an IIS application name that represents that
-specific deployment. The name uniquely identifies the deployment in the IIS site. Directory Manager
+specific deployment. The name uniquely identifies the deployment in the IIS site. GroupID
 uses it to name:
 
 - The instance’s virtual directory in IIS.
 - Its physical directory under X:\Program Files\Imanami \GroupID 11.0\GroupIDPortal\Inetpub\ on the
-  Directory Manager server  
-  (X represents the Directory Manager installation drive)
+  GroupID server  
+  (X represents the GroupID installation drive)
 
-Directory Manager also appends this name to the web server address to construct the URL that users click to access
+GroupID also appends this name to the web server address to construct the URL that users click to access
 the portal instance. For example:  
 `https://<web-server-name>:<port>/<IIS-application-name>`
 
@@ -124,7 +124,7 @@ Use the URL for a portal’s deployment instance to launch that instance.
 ## Set File Logging and Windows Logging for an Instance
 
 To set file logging and Windows logging levels for a deployment instance, see the
-[Manage Portal Log Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/log.md) topic.
+[Manage Portal Log Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/log.md) topic.
 
 ## Delete an Instance
 
@@ -134,4 +134,4 @@ topic.
 
 **See Also**
 
-- [Directory Manager Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)
+- [GroupID Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)

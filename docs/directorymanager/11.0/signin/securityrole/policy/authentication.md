@@ -1,5 +1,5 @@
 ---
-title: "Authentication Policy for Security Roles in Directory Manager"
+title: "Authentication Policy for Security Roles in GroupID"
 description: "Enforce authentication types for multifactor authentication and enable second factor authentication for a security role in an identity store."
 keywords:
   - multifactor authentication
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Authentication Policy for Security Roles in Directory Manager
+# Authentication Policy for Security Roles in GroupID
 
 After you enable and configure authentication types for an identity store, you can:
 
@@ -75,8 +75,8 @@ You can enable second factor authentication for a security role in an identity s
 For second factor authentication, role members can enroll using any of the authentication types
 enabled and configured for the identity store.
 
-Users must pass second factor authentication when signing in to Admin Center, the Directory Manager portal, and the
-Directory Manager mobile app.
+Users must pass second factor authentication when signing in to Admin Center, the GroupID portal, and the
+GroupID mobile app.
 
 **To enable second factor authentication for a role:**
 
@@ -96,5 +96,5 @@ Directory Manager mobile app.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

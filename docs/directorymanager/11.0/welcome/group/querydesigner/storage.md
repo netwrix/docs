@@ -1,5 +1,5 @@
 ---
-title: "Query Designer Storage Tab in Directory Manager"
+title: "Query Designer Storage Tab in GroupID"
 description: "Filter messaging system recipient queries by Exchange server or mailbox store using the Storage tab in the Query Designer."
 keywords:
   - Query Designer
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 60
 ---
 
-# Query Designer Storage Tab in Directory Manager
+# Query Designer Storage Tab in GroupID
 
 Settings on the Storage tab are available when the 'Messaging System Recipients' option is selected
 in the **Find** list.
@@ -53,4 +53,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

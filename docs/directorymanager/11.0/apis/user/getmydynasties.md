@@ -1,8 +1,8 @@
 ---
-title: "Get My Dynasties with the Directory Manager API"
+title: "Get My Dynasties with the GroupID API"
 description: "Retrieve the dynasties of the authenticated user from an identity store, with paging and sorting options."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - get dynasties
   - GET Groups Dynasties endpoint
   - dynasty groups
@@ -10,7 +10,7 @@ sidebar_position: 50
 unlisted: true
 ---
 
-# Get My Dynasties with the Directory Manager API
+# Get My Dynasties with the GroupID API
 
 Use this API to retrieve the dynasties of the authenticated user.
 
@@ -114,5 +114,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

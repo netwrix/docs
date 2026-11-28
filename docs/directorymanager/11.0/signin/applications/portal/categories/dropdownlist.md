@@ -1,5 +1,5 @@
 ---
-title: "Create a Dropdown List Display Type in Directory Manager"
+title: "Create a Dropdown List Display Type in GroupID"
 description: "Define a custom dropdown list display type with values, display text, and visibility, and review the predefined dropdown lists in the default portal template."
 keywords:
   - dropdown list display type
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Create a Dropdown List Display Type in Directory Manager
+# Create a Dropdown List Display Type in GroupID
 
 Use the dropdown list display type to give portal users a list of options to select from.
 
@@ -79,6 +79,6 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

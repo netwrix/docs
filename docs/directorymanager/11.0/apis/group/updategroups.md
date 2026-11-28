@@ -1,6 +1,6 @@
 ---
 title: "Update Multiple Groups API"
-description: "Update attributes on several groups in one PATCH request to the Directory Manager data service."
+description: "Update attributes on several groups in one PATCH request to the GroupID data service."
 sidebar_position: 170
 keywords:
   - update multiple groups
@@ -155,5 +155,5 @@ PATCH
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

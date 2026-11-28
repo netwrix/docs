@@ -1,15 +1,15 @@
 ---
-title: "Set-Contact Cmdlet in Directory Manager"
-description: "Modify the properties of an existing contact in the directory by using the Set-Contact cmdlet in the Directory Manager Management Shell."
+title: "Set-Contact Cmdlet in GroupID"
+description: "Modify the properties of an existing contact in the directory by using the Set-Contact cmdlet in the GroupID Management Shell."
 keywords:
   - Set-Contact
   - modify contact
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - contact cmdlet
 sidebar_position: 40
 ---
 
-# Set-Contact Cmdlet in Directory Manager
+# Set-Contact Cmdlet in GroupID
 
 The _Set-Contact_ cmdlet modifies a contact in the directory. You can modify most contact
 properties directly by using the parameters supported by this cmdlet.
@@ -82,6 +82,6 @@ Set-Contact -Identity "SampleContact" -City "Islamabad"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Contact Cmdlets](/docs/directorymanager/11.0/managementshell/contact/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

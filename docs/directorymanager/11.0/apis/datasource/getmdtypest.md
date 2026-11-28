@@ -12,8 +12,8 @@ unlisted: true
 
 # Get Data Source Metadata by Server and Type API
 
-Use this API to retrieve metadata information about all data sources defined so far in Directory
-Manager by file server type (a local server or a cloud server) and by data source type (Microsoft
+Use this API to retrieve metadata information about all data sources defined so far in GroupID
+by file server type (a local server or a cloud server) and by data source type (Microsoft
 Excel, Text/CSV, Microsoft Access, or SQL Server).
 
 ## Endpoint
@@ -144,5 +144,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)

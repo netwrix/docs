@@ -12,11 +12,11 @@ sidebar_position: 40
 
 # Search Directory Objects With a Saved Query
 
-The Directory Manager portal lets you search directory objects (users, mailboxes, contacts, groups) in the
+The GroupID portal lets you search directory objects (users, mailboxes, contacts, groups) in the
 identity store based on a query. You can create queries and save them for future searches.
 
 The **Query Designer** option on the **Advanced Search** page opens the
-[Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md) dialog
+[Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md) dialog
 box, which is similar to the Query Designer dialog box used for creating queries for Smart Groups and
 Dynasties.
 
@@ -61,7 +61,7 @@ The Query Designer dialog box provides a visual interface for creating search qu
        [Query Designer General tab](/docs/directorymanager/11.0/welcome/group/querydesigner/general.md)
        topic for more information.
     2. **Storage tab**: lets you filter the mailboxes to return. See the
-       [Query Designer Storage Tab in Directory Manager](/docs/directorymanager/11.0/welcome/group/querydesigner/storage.md)
+       [Query Designer Storage Tab in GroupID](/docs/directorymanager/11.0/welcome/group/querydesigner/storage.md)
        topic for more information.
     3. **Filter Criteria tab**: lets you add more filter criteria. For example, you can add
        criteria to retrieve all directory users who live in Houston and have a fax number. You can
@@ -114,4 +114,4 @@ To delete a query, click the **Delete** icon. The portal removes the query from 
 
 **See Also**
 
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

@@ -1,6 +1,6 @@
 ---
 title: "ISmsGateway.TestCredentials Method (SMS Gateway API)"
-description: "Validate the credentials Directory Manager uses to communicate with a custom SMS gateway by implementing ISmsGateway.TestCredentials."
+description: "Validate the credentials GroupID uses to communicate with a custom SMS gateway by implementing ISmsGateway.TestCredentials."
 keywords:
   - ISmsGateway.TestCredentials
   - SMS gateway credentials
@@ -31,4 +31,4 @@ True if the credentials are valid.
 
 **See Also**
 
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

@@ -1,18 +1,18 @@
 ---
-title: "Create a Directory Manager User Life Cycle Schedule"
+title: "Create a GroupID User Life Cycle Schedule"
 description: "Create a schedule that tracks profile validation dates, sends reminder emails, and disables users who don't validate their profiles in time."
 keywords:
   - user life cycle
   - profile validation
   - reminder emails
   - disable users
-  - Directory Manager schedule
+  - GroupID schedule
 sidebar_position: 140
 ---
 
-# Create a Directory Manager User Life Cycle Schedule
+# Create a GroupID User Life Cycle Schedule
 
-The User Life Cycle schedule monitors the profile validation process in Directory Manager. It
+The User Life Cycle schedule monitors the profile validation process in GroupID. It
 performs the following main functions in keeping with the user profile validation settings for an
 identity store:
 
@@ -35,13 +35,13 @@ What do you want to do?
 5. In the **Schedule Name** box, enter a name for the schedule.
 6. The **Name Preview** box displays the schedule name prefixed with \_UserLifeCycle\_\_;
    email notifications show the schedule with this name.
-7. Select a Directory Manager portal URL in the **Portal URL** dropdown list to include it in notifications
+7. Select a GroupID portal URL in the **Portal URL** dropdown list to include it in notifications
    generated for the schedule. Users are redirected to this portal to perform any necessary action.
 8. In the **Scheduler Service Name** dropdown list, select a Scheduler service that's
    responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 9. Click **Add Triggers** in the **Triggers** area to specify a triggering criterion that,
    when met, starts the schedule. Follow step 11 in the
@@ -59,5 +59,5 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
-- [Configure User Profile Validation in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/profilevalidation.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Configure User Profile Validation in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/profilevalidation.md)

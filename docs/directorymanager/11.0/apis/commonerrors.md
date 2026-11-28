@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager API Common Errors"
-description: "Look up the HTTP error codes that every Directory Manager API can return and what each one means."
+title: "GroupID API Common Errors"
+description: "Look up the HTTP error codes that every GroupID API can return and what each one means."
 keywords:
   - API error codes
   - HTTP status codes
-  - Directory Manager API
+  - GroupID API
   - troubleshooting API requests
 sidebar_position: 90
 unlisted: true
 ---
 
-# Directory Manager API Common Errors
+# GroupID API Common Errors
 
 This section lists the errors common to all APIs. For errors specific to an API, see the topic for
 that API.
@@ -27,6 +27,6 @@ that API.
 
 See Also
 
-- Directory Manager APIs
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- GroupID APIs
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

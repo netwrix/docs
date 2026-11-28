@@ -30,7 +30,7 @@ To enable permission viewing, do the following:
    This must be a server in an Active Directory-based identity store.
 - Compute all permissions that directory objects have on the shared files and folders on those
   servers.
-- View these permissions in the Directory Manager portal.
+- View these permissions in the GroupID portal.
 
 ## Insights job
 
@@ -38,11 +38,11 @@ When you add the first server for permission analysis, an Insights job is automa
 that identity store and displayed against the Scheduling node. By default, this job runs daily to
 replicate permissions granted on shared files and folders on the servers.
 
-## Permissions on the Directory Manager Insights portal
+## Permissions on the GroupID Insights portal
 
 You can enable or restrict a security role from accessing the Insights portal. Use the Criteria tab
-in role properties to specify the Directory Manager clients that role members can or can't access.
+in role properties to specify the GroupID clients that role members can or can't access.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager Text Box Display Type"
+title: "GroupID Text Box Display Type"
 description: "Customize a text box display type with a default value, regular expression validation, and unique-value checks for portal fields."
 keywords:
   - text box display type
   - regular expression validation
   - unique value check
   - external validation URL
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 20
 ---
 
-# Directory Manager Text Box Display Type
+# GroupID Text Box Display Type
 
 A text box display type can be used without customization, but you must customize it to do any of the following:
 
@@ -73,7 +73,7 @@ What do you want to do?
 10. In the **Error Message** box, enter the text to be displayed as an error message when portal
     users enter data in the text box that doesn't conform to the regular expression.
 11. You can place a real-time validation check to ensure that users enter a unique value for the
-    field. Directory Manager can look up the value for uniqueness in the directory or an external
+    field. GroupID can look up the value for uniqueness in the directory or an external
     data source. The portal prevents users from proceeding unless a unique value is provided.
 
     - Select the **Unique** checkbox to force the user to enter a value that is unique for the
@@ -115,6 +115,6 @@ Data must be in JSON format.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

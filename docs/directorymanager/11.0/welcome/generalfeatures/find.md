@@ -1,16 +1,16 @@
 ---
-title: "Find Users, Groups, and Contacts in Directory Manager"
+title: "Find Users, Groups, and Contacts in GroupID"
 description: "Use the Find dialog box to search for and select users, groups, and contacts in the connected identity store, including wildcard and advanced searches."
 keywords:
   - Find dialog box
   - search users groups contacts
   - wildcard search
   - Advanced Search
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 20
 ---
 
-# Find Users, Groups, and Contacts in Directory Manager
+# Find Users, Groups, and Contacts in GroupID
 
 The **Find** dialog box lets you search **User**, **Group**, and **Contact** objects in the connected
 identity store.
@@ -68,4 +68,4 @@ box from.
 
 **See Also**
 
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

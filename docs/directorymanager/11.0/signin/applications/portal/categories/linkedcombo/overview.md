@@ -1,16 +1,16 @@
 ---
-title: "Linked Combo Display Type in Directory Manager Portal"
+title: "Linked Combo Display Type in GroupID Portal"
 description: "Create a linked combo display type that links country, state, and city fields on a portal page, and learn how to implement and reload its source data file."
 keywords:
   - linked combo display type
   - country state city fields
   - linked combo source data file
   - custom display types
-  - Directory Manager Portal
+  - GroupID Portal
 sidebar_position: 90
 ---
 
-# Linked Combo Display Type in Directory Manager Portal
+# Linked Combo Display Type in GroupID Portal
 
 A linked combo is a custom display type that you can link to other display types on a portal page.
 When a user selects a value from a linked combo, the values for the display types linked to it are
@@ -49,9 +49,9 @@ When defining a linked combo, consider the following:
 ## Linked Combo Data File
 
 The linked combo requires an XML file that contains the data for the display type itself and the
-other display types linked to it. Directory Manager also supports the Microsoft Excel
+other display types linked to it. GroupID also supports the Microsoft Excel
 file format (.xls or .xlsx), which it automatically converts to XML. The data in the Excel file must
-be in a specific format for Directory Manager to process it.
+be in a specific format for GroupID to process it.
 
 For information about the Excel file format, see the [Excel Data File Format for Linked Combos](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/fileformat.md) topic.
 
@@ -80,9 +80,9 @@ What do you want to do?
 7. Complete the pages of the **Linked Combo Display Type** wizard.
 
     1. On the **Details** page, provide the source data file. See the
-       [Set the Linked Combo Data Source in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/details.md) topic for more info.
+       [Set the Linked Combo Data Source in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/details.md) topic for more info.
     2. On the **Schema** page, define the parent-child relationship between fields. See the
-       [Define Linked Combo Field Relationships in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/schema.md) topic for details.
+       [Define Linked Combo Field Relationships in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/schema.md) topic for details.
 
 8. Click **OK**.
 9. Click **Save** on the **Custom Display Types** page.  
@@ -188,10 +188,10 @@ When you update data in the source file, you must also reload the file for chang
    Display Type** wizard is displayed.
 7. On the **Details** page, click **Browse** to select the file to load. Then click **Next**.
 8. On the **Schema** page, make changes to the relationships, if required, and click **OK**.  
-   See the [Define Linked Combo Field Relationships in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/schema.md) topic for details.
+   See the [Define Linked Combo Field Relationships in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/schema.md) topic for details.
 9. Click **Save** on the **Custom Display Types** page.
 
 **See Also**
 
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

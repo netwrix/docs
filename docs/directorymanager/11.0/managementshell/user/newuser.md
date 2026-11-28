@@ -1,15 +1,15 @@
 ---
-title: "New-User Cmdlet in Directory Manager"
+title: "New-User Cmdlet in GroupID"
 description: "Create a user in the directory and set properties such as name, password, and contact details with the New-User cmdlet."
 keywords:
   - New-User
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - create user
   - user properties
 sidebar_position: 30
 ---
 
-# New-User Cmdlet in Directory Manager
+# New-User Cmdlet in GroupID
 
 Use the **New-User** cmdlet to create a user in the directory. Most user properties can be
 directly added by using the parameters of this cmdlet.
@@ -78,6 +78,6 @@ New-User -Name "SampleUser" -OrganizationalUnit "OU=SalesOU,DC=example,DC=com" -
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

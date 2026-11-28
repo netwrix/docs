@@ -48,11 +48,11 @@ What do you want to do?
    example, the 'TreePicture' display type matches the 'thumbnailPhoto' attribute.  
    This list contains basic display types and custom display types defined on the **Custom Display
    Types** page. See the
-   [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+   [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
    topic.
 9. Click **OK**.
 10. Click **Save** on the **Organizational Hierarchy** page.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

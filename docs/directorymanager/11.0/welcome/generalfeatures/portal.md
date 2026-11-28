@@ -1,5 +1,5 @@
 ---
-title: "Configure Directory Manager Portal Settings"
+title: "Configure GroupID Portal Settings"
 description: "Customize your portal display options, such as identity store mode, notification language, time zone, start page, and group ownership views."
 keywords:
   - portal settings
@@ -11,13 +11,13 @@ keywords:
 sidebar_position: 50
 ---
 
-# Configure Directory Manager Portal Settings
+# Configure GroupID Portal Settings
 
 You can fine-tune your portal pages by customizing display options. With these options, you can
-personalize the Directory Manager portal.
+personalize the GroupID portal.
 
 The portal saves these settings for each user per identity store. When this user signs in to
-another Directory Manager portal for the same identity store, the settings apply there too.
+another GroupID portal for the same identity store, the settings apply there too.
 
 What do you want to do?
 
@@ -41,7 +41,7 @@ What do you want to do?
 
 ## Set Identity Store mode
 
-The Directory Manager portal works with a single identity store. However, Directory Manager also enables administrators to
+The GroupID portal works with a single identity store. However, GroupID also enables administrators to
 link different identity stores. If an administrator creates a portal and associates it with
 the linked identity stores, the portal users can view the data from the linked identity stores at
 the same time, rather than having to switch identity stores.
@@ -58,7 +58,7 @@ To choose a mode in portal settings:
 
 ## Set a language for notifications
 
-By default, Directory Manager sends notifications to users in English. However, a user can receive
+By default, GroupID sends notifications to users in English. However, a user can receive
 notifications in a different language by personalizing
 the language settings from the **User Settings** panel in the portal.
 
@@ -104,8 +104,8 @@ Set the number of history items to display on the History tab. This tab appears 
 the properties of a User, Group, Contact, or Mailbox.
 
 This setting also controls the number of history items that appear on the
-[View My History in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
-[View My Direct Reports' History in Directory Manager](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
+[View My History in the GroupID Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md),
+[View My Direct Reports' History in GroupID](/docs/directorymanager/11.0/welcome/history/mydirectreport.md),
 and [View and Filter History of Groups You Own](/docs/directorymanager/11.0/welcome/history/mydirectorygroup.md)
 pages.
 
@@ -118,7 +118,7 @@ The portal displays history if the administrator has enabled history tracking fo
 
 ## Set the number of recent objects to show
 
-The Directory Manager portal keeps a list of recently viewed objects on the left navigation bar. This provides
+The GroupID portal keeps a list of recently viewed objects on the left navigation bar. This provides
 a convenient way to navigate back to objects later. You can specify the number of recent objects to
 show on the navigation bar.
 
@@ -235,7 +235,7 @@ You can reset the settings on the **User Settings** panel to their default value
     | ---------------------------------------------- | ------------------------------------------------ |
     | Identity Store Mode                            | Stand-alone                                      |
     | Notification Language                          | English                                          |
-    | User Time Zone                                 | The time zone set on the Directory Manager server machine. |
+    | User Time Zone                                 | The time zone set on the GroupID server machine. |
     | Default Startup Page                           | Welcome                                          |
     | History items to display on home page          | 10                                               |
     | History items to display                       | 10                                               |
@@ -247,9 +247,9 @@ You can reset the settings on the **User Settings** panel to their default value
 
 **See Also**
 
-- [View My History in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md)
+- [View My History in the GroupID Portal](/docs/directorymanager/11.0/welcome/history/myhistory.md)
 - [View and Filter History of Groups You Own](/docs/directorymanager/11.0/welcome/history/mydirectorygroup.md)
-- [View and Manage My Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
-- [View My Expiring Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
-- [View My Expired Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
-- [View My Deleted Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)
+- [View and Manage My Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
+- [View My Expiring Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiringgroups.md)
+- [View My Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/myexpiredgroups.md)
+- [View My Deleted Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mydeletedgroups.md)

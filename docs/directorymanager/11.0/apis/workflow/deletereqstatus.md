@@ -1,5 +1,5 @@
 ---
-title: "Delete Old Directory Manager Workflow Requests by Status"
+title: "Delete Old GroupID Workflow Requests by Status"
 description: "Use this DELETE endpoint to remove workflow requests that have had a given status for longer than a set number of days."
 keywords:
   - delete workflow requests
@@ -10,7 +10,7 @@ sidebar_position: 70
 unlisted: true
 ---
 
-# Delete Old Directory Manager Workflow Requests by Status
+# Delete Old GroupID Workflow Requests by Status
 
 Use this API to delete requests that have had the specified status for more than the specified number of days. For
 example, if a request has the approved status and is more than 60 days old, you can delete it by using
@@ -44,5 +44,5 @@ DELETE
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

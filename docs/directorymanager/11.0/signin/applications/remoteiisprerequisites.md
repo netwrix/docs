@@ -1,6 +1,6 @@
 ---
-title: "Prerequisites for Deploying Directory Manager in Remote IIS"
-description: "Install the required software, create and secure an IIS site, and generate an access key to deploy Directory Manager in remote IIS."
+title: "Prerequisites for Deploying GroupID in Remote IIS"
+description: "Install the required software, create and secure an IIS site, and generate an access key to deploy GroupID in remote IIS."
 keywords:
   - remote IIS
   - ASP.NET Core Hosting Bundle
@@ -10,19 +10,19 @@ keywords:
 sidebar_position: 30
 ---
 
-# Prerequisites for Deploying Directory Manager in Remote IIS
+# Prerequisites for Deploying GroupID in Remote IIS
 
-To deploy Directory Manager portals and services (Data service, Security service, and Mobile service) in
+To deploy GroupID portals and services (Data service, Security service, and Mobile service) in
 remote IIS, you must set up the following prerequisites:
 
 - Install the required software
-- Create a site in remote IIS for deploying the Directory Manager portal and services, and assign
+- Create a site in remote IIS for deploying the GroupID portal and services, and assign
   permissions
 - Generate an access key for the Microsoft IIS Administration API
 
 ## Prerequisite Software
 
-Before you can deploy Directory Manager portals and services in remote IIS, ensure the following
+Before you can deploy GroupID portals and services in remote IIS, ensure the following
 prerequisite software is installed on the remote IIS machine. Install them in the following order:
 
 1. ASP.NET Core Runtime 6.0.30 (Hosting Bundle)
@@ -36,8 +36,8 @@ prerequisite software is installed on the remote IIS machine. Install them in th
 
 ## Create a Site in Remote IIS
 
-As a prerequisite to deploying a Directory Manager application in remote IIS, you must create a
-site there and assign appropriate permissions to it. Directory Manager portals and services should
+As a prerequisite to deploying a GroupID application in remote IIS, you must create a
+site there and assign appropriate permissions to it. GroupID portals and services should
 be created within this site.
 
 **To create a site in remote IIS:**
@@ -55,7 +55,7 @@ be created within this site.
     1. Enter a name for the site in the **Site name** box.
     2. Create a new folder on the remote machine and bind this site to that folder. Provide the
        physical path of the newly created folder in the **Physical path** box. When you create a
-       Directory Manager application in the site, Directory Manager creates a subfolder within this
+       GroupID application in the site, GroupID creates a subfolder within this
        folder and copies the application files to it.
     3. Provide binding information in the **Binding** section.
 
@@ -153,5 +153,5 @@ To connect to the API, an access key is required.
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)

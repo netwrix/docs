@@ -1,12 +1,12 @@
 ---
 title: "Set-SmartGroup Cmdlet"
-description: "Modify a Smart Group in Directory Manager, including its LDAP query, includes and excludes, Password Expiry settings and mail attributes."
+description: "Modify a Smart Group in GroupID, including its LDAP query, includes and excludes, Password Expiry settings and mail attributes."
 keywords:
   - Set-SmartGroup
   - modify Smart Group
   - Smart Group LDAP query
   - Password Expiry group
-  - Directory Manager cmdlet
+  - GroupID cmdlet
   - Management Shell
 sidebar_position: 40
 ---
@@ -17,7 +17,7 @@ The **Set-SmartGroup** cmdlet modifies a Smart Group in the directory. Attribute
 both Smart Groups and unmanaged groups can also be modified using the
 [Set-Group](/docs/directorymanager/11.0/managementshell/group/setgroup.md) cmdlet.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the **History**
+You can view events related to this cmdlet in the GroupID portal, under the **History**
 node in the left panel.
 
 ## Syntax
@@ -186,6 +186,6 @@ Set-SmartGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Imanami,DC=US
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Mobile Service Overview"
-description: "Learn how the Mobile service connects the Directory Manager mobile app to the server and what users can do in the app from a smartphone."
+title: "GroupID Mobile Service Overview"
+description: "Learn how the Mobile service connects the GroupID mobile app to the server and what users can do in the app from a smartphone."
 keywords:
   - directory manager mobile service
   - mobile service iis docker deployment
@@ -10,13 +10,13 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager Mobile Service Overview
+# GroupID Mobile Service Overview
 
-The Mobile service enables the Directory Manager mobile app to communicate with the Directory
-Manager server, so the app works on smartphones.
+The Mobile service enables the GroupID mobile app to communicate with the GroupID
+server, so the app works on smartphones.
 
 :::note
-The Directory Manager app can connect with the Mobile service over HTTP and HTTPS. For HTTPS, a security
+The GroupID app can connect with the Mobile service over HTTP and HTTPS. For HTTPS, a security
 certificate from a trusted certification authority is required.
 :::
 
@@ -34,7 +34,7 @@ The app lets users do the following in an identity store from their smartphones:
 - Unlock their identity store account
 
 Actions performed in the app are logged in Admin Center history. See the
-[History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history.md) topic.
+[History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md) topic.
 
 To secure access to the app, an administrator can enable the following for an identity store:
 
@@ -54,19 +54,19 @@ After creating a Mobile service, you can configure the following for it:
 
 **In Admin Center**
 
-- [Mobile Service Server Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md),
+- [Mobile Service Server Settings in GroupID](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md),
   which control deployment settings and file logging.
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md),
   which control what users can view and do in an identity store using the app.
 
 **On a smartphone**
 
-The Android, Windows, and iOS versions of the Directory Manager app are available on Google Play,
+The Android, Windows, and iOS versions of the GroupID app are available on Google Play,
 Windows Store, and App Store, respectively. To install and configure the app, see the
-[Install and Configure the Directory Manager Mobile App](/docs/directorymanager/11.0/signin/service/mobileservice/phonesetup.md)
+[Install and Configure the GroupID Mobile App](/docs/directorymanager/11.0/signin/service/mobileservice/phonesetup.md)
 topic.
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)

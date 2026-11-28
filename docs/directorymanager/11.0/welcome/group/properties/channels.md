@@ -41,7 +41,7 @@ Provide the following information:
 
     Click **Add** and enter a search string to locate the user to add as a member, or click
     **Advance** to use the
-    [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+    [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
     search.
 
     Click **Remove** to remove a member.
@@ -55,4 +55,4 @@ Teams group.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

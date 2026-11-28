@@ -1,5 +1,5 @@
 ---
-title: "Manage an Identity Store in Directory Manager"
+title: "Manage an Identity Store in GroupID"
 description: "View, enable, disable, update, and delete an identity store, exclude domains from replication, and set domain controller priority."
 keywords:
   - manage identity store
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage an Identity Store in Directory Manager
+# Manage an Identity Store in GroupID
 
 After you create and configure an identity store, you can perform group and identity management
-operations in the identity provider using Directory Manager.
+operations in the identity provider using GroupID.
 
 What do you want to do?
 
@@ -27,7 +27,7 @@ What do you want to do?
 ## View Identity Store Details
 
 In Admin Center, click **Identity Stores** in the left pane. The **Identity Stores** page displays
-the identity stores created in Directory Manager.
+the identity stores created in GroupID.
 
 The card for an identity store displays the following information:
 
@@ -35,14 +35,14 @@ The card for an identity store displays the following information:
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Basic info                     | The display name of the identity store and the identity provider it is built on, such as Active Directory.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Identity store status          | The status appears in the top right corner of the card. An identity store has one of the following statuses: - **Healthy:** Indicates that the identity store is fully functional. Hover over the status to view the factors used to determine health. - **Errors:** Indicates that the identity store has run into one or both of the following errors: - It can't connect to the identity provider using the service account provided on the **Identity Store Details** page. - Data from the provider isn't replicated to Elasticsearch within the required time interval. The last replication time and date appear at the bottom of the card. Hover over the status to view the reason for the _Errors_ status.                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| History                        | Indicates whether history tracking for the identity store is enabled or disabled. See the [Configure History Tracking in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md) topic to enable or disable history tracking.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| MFA                            | Indicates whether second factor authentication is enabled for security roles in the identity store. See the [Configure Second Factor Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/sfa.md) topic. One of the following is displayed for MFA: - **Available for x/x roles:** Indicates the number of security roles that second factor authentication is enabled for, out of the total security roles in the identity store. For example, 1/3 indicates that there are three security roles defined for the identity store and second factor authentication is enabled for one of those roles. - **Not Available:** Indicates that second factor authentication isn't enabled for any security role in the identity store.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| History                        | Indicates whether history tracking for the identity store is enabled or disabled. See the [Configure History Tracking in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md) topic to enable or disable history tracking.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| MFA                            | Indicates whether second factor authentication is enabled for security roles in the identity store. See the [Configure Second Factor Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/sfa.md) topic. One of the following is displayed for MFA: - **Available for x/x roles:** Indicates the number of security roles that second factor authentication is enabled for, out of the total security roles in the identity store. For example, 1/3 indicates that there are three security roles defined for the identity store and second factor authentication is enabled for one of those roles. - **Not Available:** Indicates that second factor authentication isn't enabled for any security role in the identity store.                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Last replication date and time | The last run date and time of the Replication service. If the service doesn't run at the specified interval, the identity store status changes to **Errors**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Ellipsis                       | Click it to launch a shortcut menu with the following options: - **Edit:** launches the identity store properties page, where you can manage identity store settings, workflows, security roles, replication attributes, and more. See the [Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md) topic. - **Disable:** disables the identity store. - **Replicate Objects:** runs the Replication service to replicate object data in the identity store. See the [Force Run the Replication Service (for Object Replication)](/docs/directorymanager/11.0/signin/identitystore/replication.md#force-run-the-replication-service-for-object-replication) topic. - **Replicate Deleted Objects:** runs the Replication service to remove those objects from Elasticsearch that have been deleted from the identity provider. See the [Force Run the Replication Service (for Deleting Objects)](/docs/directorymanager/11.0/signin/identitystore/replication.md#force-run-the-replication-service-for-deleting-objects) topic. - **Delete:** deletes the identity store from Directory Manager. |
+| Ellipsis                       | Click it to launch a shortcut menu with the following options: - **Edit:** launches the identity store properties page, where you can manage identity store settings, workflows, security roles, replication attributes, and more. See the [Configure an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md) topic. - **Disable:** disables the identity store. - **Replicate Objects:** runs the Replication service to replicate object data in the identity store. See the [Force Run the Replication Service (for Object Replication)](/docs/directorymanager/11.0/signin/identitystore/replication.md#force-run-the-replication-service-for-object-replication) topic. - **Replicate Deleted Objects:** runs the Replication service to remove those objects from Elasticsearch that have been deleted from the identity provider. See the [Force Run the Replication Service (for Deleting Objects)](/docs/directorymanager/11.0/signin/identitystore/replication.md#force-run-the-replication-service-for-deleting-objects) topic. - **Delete:** deletes the identity store from GroupID. |
 
 ## Enable or Disable an Identity Store
 
-When you disable an identity store, all users signed in to Directory Manager with that store are signed out,
+When you disable an identity store, all users signed in to GroupID with that store are signed out,
 and the identity store is unavailable for operations.
 
 You can disable an identity store in either of the following ways. However, you can enable a disabled identity store
@@ -76,19 +76,19 @@ provided while creating it.
    **Edit**.
 3. On the **Identity Store Details** page, update the required information on the **General** tab.  
    This page differs by provider. For more information, see the steps for creating the respective provider in the
-   [Create an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/create.md)
+   [Create an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/create.md)
    topic.
 4. Click **Save**.
 
 ## Exclude an Active Directory Domain from Replication
 
-By default, Directory Manager replicates the domain specified for the identity store and its child domains.
+By default, GroupID replicates the domain specified for the identity store and its child domains.
 You can exclude a domain or a child domain from replication, in which case the Replication service
 doesn't replicate it. See the
-[Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.0/signin/replication/overview.md)
+[Elasticsearch and Replication Service in GroupID](/docs/directorymanager/11.0/signin/replication/overview.md)
 topic.
 
-You can still create and manage objects in an excluded domain using Directory Manager.
+You can still create and manage objects in an excluded domain using GroupID.
 
 **To exclude a domain:**
 
@@ -103,7 +103,7 @@ You can still create and manage objects in an excluded domain using Directory Ma
 
 ## Set DC Priority for an Active Directory Identity Store
 
-You can select a domain controller in an Active Directory domain to work with Directory Manager. The Data service
+You can select a domain controller in an Active Directory domain to work with GroupID. The Data service
 and Replication service connect to this domain controller to perform their respective
 operations in the domain. In this way, you can ensure that the selected domain controller is always
 available with minimum downtime.
@@ -146,7 +146,7 @@ When the Data service connects to a domain controller (say DC_E), it caches the 
 and uses it to create all subsequent sessions with the domain controller. Therefore, it doesn't iterate
 through the DC priority list every time it has to create a session.
 
-If DC_E is down, Directory Manager displays the "Server Not Operational" error. It indicates
+If DC_E is down, GroupID displays the "Server Not Operational" error. It indicates
 that the Data service has lost its connection with the domain and needs to re-establish it.
 
 To resolve the error, restart IIS. The Data service then makes a connection again using the
@@ -221,7 +221,7 @@ The Data service reestablishes a connection with a DC based on the new priority.
 
 ## Delete an Identity Store
 
-You can delete an identity store with all its configurations. As a result, you can't connect Directory Manager to that identity store or use it in a Synchronize job.
+You can delete an identity store with all its configurations. As a result, you can't connect GroupID to that identity store or use it in a Synchronize job.
 
 :::note
 You can't delete an identity store that is linked to another identity store. You must
@@ -236,6 +236,6 @@ first delete the links before deleting the identity store.
 
 **See Also**
 
-- [Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/overview.md)
-- [Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
-- [Directory Manager Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)
+- [Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/overview.md)
+- [Configure an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
+- [GroupID Replication Service](/docs/directorymanager/11.0/signin/service/replicationservice.md)

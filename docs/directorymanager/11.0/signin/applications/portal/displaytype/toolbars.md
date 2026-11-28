@@ -1,8 +1,8 @@
 ---
-title: "Customize Toolbars in the Directory Manager Portal"
-description: "Rename toolbar buttons, change their icons and visibility, and rearrange their order on the Directory Manager portal toolbars."
+title: "Customize Toolbars in the GroupID Portal"
+description: "Rename toolbar buttons, change their icons and visibility, and rearrange their order on the GroupID portal toolbars."
 keywords:
-  - Directory Manager
+  - GroupID
   - portal toolbars
   - toolbar buttons
   - button icons
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 50
 ---
 
-# Customize Toolbars in the Directory Manager Portal
+# Customize Toolbars in the GroupID Portal
 
-Toolbars are available on different pages of the Directory Manager portal, but not all of them are
+Toolbars are available on different pages of the GroupID portal, but not all of them are
 customizable.
 
 You can customize the following toolbars:
@@ -121,4 +121,4 @@ can update a few details for a button, such as its name and image.
 
 See Also
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

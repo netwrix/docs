@@ -1,6 +1,6 @@
 ---
-title: "View and Search Helpdesk History in Directory Manager"
-description: "View, search, sort, and export the history of end-user and helpdesk actions tracked in Directory Manager identity stores."
+title: "View and Search Helpdesk History in GroupID"
+description: "View, search, sort, and export the history of end-user and helpdesk actions tracked in GroupID identity stores."
 keywords:
   - helpdesk history
   - audit password resets
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# View and Search Helpdesk History in Directory Manager
+# View and Search Helpdesk History in GroupID
 
-Directory Manager tracks the following actions performed by end users and helpdesk users in an identity store
+GroupID tracks the following actions performed by end users and helpdesk users in an identity store
 and displays them as history to helpdesk users:
 
 - Unenroll account
@@ -40,7 +40,7 @@ What do you want to do?
 
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. On the **Helpdesk** page, click the **History** tab.  
-   This tab displays the tracked history actions for all identity stores in Directory Manager. Use the
+   This tab displays the tracked history actions for all identity stores in GroupID. Use the
    pagination options at the bottom of the listing to navigate through records.
 
     To search for specific records, see the [Search History](#search-history) topic.
@@ -81,7 +81,7 @@ following:
 - **Status:** whether the action was performed successfully or not.
 - **Date/Time:** the date and time the action was performed.
 - **Performed by:** the user who performed the action.
-- **Client name:** the name of the Directory Manager client the action was performed from.
+- **Client name:** the name of the GroupID client the action was performed from.
 - **Helpdesk action:** whether the action was performed through helpdesk or not.
 - **Machine name:** the name of the machine the action was performed from.
 - **IP:** the IP address of the machine the action was performed from.
@@ -98,7 +98,7 @@ page, click **Switch to Administrative View**.
 The following information is displayed for a record:
 
 - **Name:** the name of the user the action was performed on
-- **Client Name:** the name of the Directory Manager client the action was performed from.
+- **Client Name:** the name of the GroupID client the action was performed from.
 - **Identity Store:** the identity store the action was performed in
 - **Action:** the action performed
 - **Date:** the date and time the action was performed
@@ -138,7 +138,7 @@ To perform a search:
       click in the **Identity Store** box and select the check boxes for the identity stores you
       want to view the history for.
     - **Search box to search for records specific to a user** - In the _Search_ box, enter a user's
-      full name or part of a name and press _Enter_. Directory Manager displays all history actions that are
+      full name or part of a name and press _Enter_. GroupID displays all history actions that are
       performed by or performed on the user.
     - **Search filter** - Click **Filter**. On the **Filter(s)** dialog box, you can search the
       history data using the available filters individually or in combination.
@@ -170,6 +170,6 @@ To perform a search:
 
 **See Also**
 
-- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
-- [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
-- [History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history.md)
+- [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+- [History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md)

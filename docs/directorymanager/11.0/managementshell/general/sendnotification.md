@@ -6,13 +6,13 @@ keywords:
   - email notification
   - notification templates
   - SMTP server
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 110
 ---
 
 # Send-Notification
 
-Use the **Send-Notification** commandlet to send notifications to a group or a user. Directory Manager
+Use the **Send-Notification** commandlet to send notifications to a group or a user. GroupID
 modules automatically generate email notifications when certain events occur, such as group expiry,
 job execution, and workflow request generation. The modules use template files to generate the
 contents of the notification emails. These template files are located at:
@@ -21,7 +21,7 @@ contents of the notification emails. These template files are located at:
 X:\Program Files\Imanami\GroupID 8.0\Automate\Templates\Notifications
 ```
 
-Where X is the drive where the Directory Manager installation directory resides.
+Where X is the drive where the GroupID installation directory resides.
 
 The **Send-Notification** commandlet also requires a template file to generate an email
 notification. You can use one of the available templates or create your own. The commandlet also
@@ -78,6 +78,6 @@ Send-Notification -Identity "CN=New Arrivals,CN=Users,DC=HR,DC=Imanami,DC=US" -S
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

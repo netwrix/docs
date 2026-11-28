@@ -1,6 +1,6 @@
 ---
-title: "Manage Search Attributes in the Directory Manager Mobile App"
-description: "Choose the schema attributes and the search operator that the Directory Manager mobile app uses to match a search string and return results."
+title: "Manage Search Attributes in the GroupID Mobile App"
+description: "Choose the schema attributes and the search operator that the GroupID mobile app uses to match a search string and return results."
 keywords:
   - mobile app quick search attributes tab
   - quick search attributes
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage Search Attributes in the Directory Manager Mobile App
+# Manage Search Attributes in the GroupID Mobile App
 
-In the Directory Manager mobile app, users can search for directory objects (groups, users, contacts) in an
+In the GroupID mobile app, users can search for directory objects (groups, users, contacts) in an
 identity store. You can specify the schema attributes that search is performed on. When a user
 enters a search string, the values of the specified attributes are matched to return the results.
 
@@ -59,5 +59,5 @@ To specify an operator:
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

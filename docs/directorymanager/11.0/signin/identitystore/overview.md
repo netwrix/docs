@@ -1,6 +1,6 @@
 ---
-title: "Identity Stores in Directory Manager"
-description: "Learn what an identity store is, which identity providers Directory Manager supports, and the tasks you can perform through one."
+title: "Identity Stores in GroupID"
+description: "Learn what an identity store is, which identity providers GroupID supports, and the tasks you can perform through one."
 keywords:
   - identity store
   - identity provider
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Identity Stores in Directory Manager
+# Identity Stores in GroupID
 
-Use Directory Manager to create an identity store on an identity provider and perform
+Use GroupID to create an identity store on an identity provider and perform
 different functions in that provider through the identity store. These functions include:
 
 - Group management tasks, such as creating and expiring groups and scheduling group updates.
@@ -24,7 +24,7 @@ different functions in that provider through the identity store. These functions
   a file server.
 - Reporting and analytics.
 
-Directory Manager supports the following identity providers for creating an identity store, to
+GroupID supports the following identity providers for creating an identity store, to
 perform identity and access management tasks:
 
 - Active Directory
@@ -39,13 +39,13 @@ You can also link Active Directory and Microsoft Entra ID identity stores to syn
 between them.
 
 :::note
-You can define a custom identity store for unsupported identity providers in Directory
-Manager. Contact Netwrix Client Services for support.
+You can define a custom identity store for unsupported identity providers in GroupID.
+Contact Netwrix Client Services for support.
 :::
 
 **See Also**
 
-- [Create an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/create.md)
-- [Manage an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/manage.md)
-- [Configure an Identity Store in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
-- [Link Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/link/overview.md)
+- [Create an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/create.md)
+- [Manage an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/manage.md)
+- [Configure an Identity Store in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/configure.md)
+- [Link Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/link/overview.md)

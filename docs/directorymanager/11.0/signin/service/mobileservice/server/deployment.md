@@ -1,5 +1,5 @@
 ---
-title: "Manage Mobile Service Deployment Settings in Directory Manager"
+title: "Manage Mobile Service Deployment Settings in GroupID"
 description: "Start or stop a Mobile service instance, change its IIS application name or site, and view its launch URL and logging settings."
 keywords:
   - Mobile service deployment
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Mobile Service Deployment Settings in Directory Manager
+# Manage Mobile Service Deployment Settings in GroupID
 
 You can manage various deployment settings for a Mobile service on either type of web server: native
 IIS or remote IIS.
@@ -45,7 +45,7 @@ certain settings for each deployment instance of a service.
       the instance, and logging levels.
     - The **Remote IIS** tab is available when one or more service instances are deployed in remote
       IIS. Select an instance to view the Microsoft IIS Administration API URL and access token that
-      Directory Manager uses to communicate with the remote IIS server, the credentials used to communicate
+      GroupID uses to communicate with the remote IIS server, the credentials used to communicate
       with the API, the site that hosts the instance, the Data service and Security service
       associated with the instance, and logging levels.
 
@@ -87,9 +87,9 @@ An instance of a Mobile service is assigned an IIS application name to represent
 IIS. The name uniquely identifies the deployment in the IIS site and is used to name:
 
 - The instance’s directory in IIS.
-- Its physical directory at the following path on the Directory Manager server:
+- Its physical directory at the following path on the GroupID server:
   `X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\`
-  (X represents the Directory Manager installation drive).
+  (X represents the GroupID installation drive).
 
 This name is also appended to the web server address to construct the URL that users click to launch
 the GroupIDMobileService page. For example:
@@ -147,5 +147,5 @@ configure the GroupID app with this deployment instance of the Mobile service.
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Mobile Service Server Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Mobile Service Server Settings in GroupID](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md)

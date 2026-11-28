@@ -1,5 +1,5 @@
 ---
-title: "Directory Manager Computer Reports"
+title: "GroupID Computer Reports"
 description: "Browse the report templates for computer objects, such as operating system, inactivity, and delegation reports, and generate them from the portal."
 keywords:
   - computer reports
@@ -9,13 +9,13 @@ keywords:
 sidebar_position: 50
 ---
 
-# Directory Manager Computer Reports
+# GroupID Computer Reports
 
 Computer Reports contains reports for the Computer objects in the directory. Search a specific
 report by typing its name in the **Search Reports** box.
 
 Click any report template in the list to
-[Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
+[Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
 
 The following reports are in this category:
 
@@ -46,8 +46,8 @@ The following reports are in this category:
 
 **See Also:**
 
-- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

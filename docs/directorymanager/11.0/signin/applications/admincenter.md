@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Admin Center Application"
+title: "GroupID Admin Center Application"
 description: "View the hosting and deployment details of Admin Center, launch it, rename it, and configure its event logging."
 keywords:
-  - Directory Manager Admin Center
+  - GroupID Admin Center
   - Admin Center deployment settings
   - launch Admin Center
   - Admin Center event logging
@@ -10,12 +10,12 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager Admin Center Application
+# GroupID Admin Center Application
 
-Admin Center enables administrators to manage Directory Manager clients and configure settings
+Admin Center enables administrators to manage GroupID clients and configure settings
 that different functions of the application use.
 
-When multiple instances of Directory Manager are deployed, a separate Admin Center application is created for
+When multiple instances of GroupID are deployed, a separate Admin Center application is created for
 each instance in native IIS.
 
 What do you want to do?
@@ -30,7 +30,7 @@ What do you want to do?
 
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Admin Center** tab.  
-   The tab displays Admin Center hosted in native IIS. When multiple Directory Manager instances are
+   The tab displays Admin Center hosted in native IIS. When multiple GroupID instances are
    deployed, this tab page shows multiple Admin Center cards, each representing a separate
    instance. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
@@ -77,5 +77,5 @@ topic.
 
 **See Also**
 
-- [Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)

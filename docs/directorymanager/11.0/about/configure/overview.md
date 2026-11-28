@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Configuration Tool Overview"
-description: "Learn what the Directory Manager Configuration Tool sets up on a new server, including the license, services, database, and Admin Center."
+title: "GroupID Configuration Tool Overview"
+description: "Learn what the GroupID Configuration Tool sets up on a new server, including the license, services, database, and Admin Center."
 keywords:
   - directory manager configuration tool
   - configure directory manager server
@@ -9,14 +9,14 @@ keywords:
 sidebar_position: 20
 ---
 
-# Directory Manager Configuration Tool Overview
+# GroupID Configuration Tool Overview
 
-Use the Configuration Tool to configure a new Directory Manager server. The tool configures the following:
+Use the Configuration Tool to configure a new GroupID server. The tool configures the following:
 
-- A valid Directory Manager license
+- A valid GroupID license
 - Scheduling, Email, and Replication services
 - Elasticsearch settings
-- An encryption key to encrypt Directory Manager data
+- An encryption key to encrypt GroupID data
 - A SQL Server and database
 - The service account for the GroupID App Pool
 - Admin Center
@@ -24,4 +24,4 @@ Use the Configuration Tool to configure a new Directory Manager server. The tool
 
 See Also
 
-- [Run the Directory Manager Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)
+- [Run the GroupID Configuration Tool](/docs/directorymanager/11.0/about/configure/configure.md)

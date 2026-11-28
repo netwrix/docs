@@ -1,8 +1,8 @@
 ---
-title: "Create a Smart Group with the Directory Manager API"
+title: "Create a Smart Group with the GroupID API"
 description: "Create a Smart Group in an identity store by sending a POST request with the group name, container, query criteria, and other mandatory attributes."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - create Smart Group
   - DynamicGroup endpoint
   - Smart Group criteria
@@ -11,7 +11,7 @@ sidebar_position: 10
 unlisted: true
 ---
 
-# Create a Smart Group with the Directory Manager API
+# Create a Smart Group with the GroupID API
 
 Use this API to create a Smart Group in the identity store specified in the endpoint URL. You must
 provide the mandatory information for creating a Smart Group in the request syntax.
@@ -195,4 +195,4 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

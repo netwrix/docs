@@ -1,20 +1,20 @@
 ---
-title: "Uninstall Directory Manager"
-description: "Uninstall Directory Manager from a server, then remove leftover folders, registry keys, IIS sites, application pools, and certificates for a complete removal."
+title: "Uninstall GroupID"
+description: "Uninstall GroupID from a server, then remove leftover folders, registry keys, IIS sites, application pools, and certificates for a complete removal."
 keywords:
-  - uninstall Directory Manager
-  - remove Directory Manager registry keys
-  - Directory Manager complete uninstall
-  - Directory Manager IIS cleanup
+  - uninstall GroupID
+  - remove GroupID registry keys
+  - GroupID complete uninstall
+  - GroupID IIS cleanup
 sidebar_position: 40
 ---
 
-# Uninstall Directory Manager
+# Uninstall GroupID
 
-Before you uninstall Directory Manager, ensure that the signed-in user is a member of the local
+Before you uninstall GroupID, ensure that the signed-in user is a member of the local
 Administrators group on that machine.
 
-To uninstall the current Directory Manager version to upgrade to a newer version, follow these steps:
+To uninstall the current GroupID version to upgrade to a newer version, follow these steps:
 
 1. Click **Start**.
 2. Type **Control Panel** and select it.
@@ -22,29 +22,29 @@ To uninstall the current Directory Manager version to upgrade to a newer version
 4. From the **Name** column, right-click **Imanami GroupID `<version>`** and select **Uninstall**.
 5. On the **User Account Control** window, click **Yes**.
 
-This uninstalls Directory Manager from your machine.
+This uninstalls GroupID from your machine.
 
 ## Complete Uninstall
 
-To uninstall Directory Manager completely, remove the Directory Manager folders and registry keys from your machine.
-After you do this, you can no longer upgrade to a newer version of Directory Manager.
+To uninstall GroupID completely, remove the GroupID folders and registry keys from your machine.
+After you do this, you can no longer upgrade to a newer version of GroupID.
 
 First, complete the uninstall steps at the start of this topic.
 
-Next, to completely uninstall Directory Manager from your machine, remove:
+Next, to completely uninstall GroupID from your machine, remove:
 
-- The Directory Manager installation directory
+- The GroupID installation directory
 - Other relevant directories
 - Registry keys
-- The Directory Manager site
-- Directory Manager application pools
-- Directory Manager certificates
+- The GroupID site
+- GroupID application pools
+- GroupID certificates
 
-**Remove the Directory Manager installation directory**
+**Remove the GroupID installation directory**
 
 1. Go to the location:  
    X:\Program Files\Imanami  
-   (X represents the Directory Manager installation drive).
+   (X represents the GroupID installation drive).
 2. Delete the directory named GroupID 11.0.
 
 **Remove other relevant directories**
@@ -66,28 +66,28 @@ Next, to completely uninstall Directory Manager from your machine, remove:
        HKEY_LOCAL_MACHINE\SOFTWARE\Imanami\GroupID\Version 11.0
     ```
 
-**Remove the Directory Manager site**
+**Remove the GroupID site**
 
-To remove the Directory Manager site from IIS:
+To remove the GroupID site from IIS:
 
 1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
    box.
 2. Expand the `<machine name>` node in the console tree and click **Sites**.
 3. On the **Sites** page, delete _GroupIDSite11_.
 
-**Remove the Directory Manager application pools**
+**Remove the GroupID application pools**
 
-To remove the Directory Manager Admin Center, application pools, services, and portals from IIS:
+To remove the GroupID Admin Center, application pools, services, and portals from IIS:
 
 1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
    box.
 2. Expand the `<machine name>` node in the console tree and click **Application Pools**.
-3. On the **Application Pools** page, delete all application pools for Directory Manager Admin Center, applications,
+3. On the **Application Pools** page, delete all application pools for GroupID Admin Center, applications,
    portals, and services.
 
-**Remove Directory Manager certificates**
+**Remove GroupID certificates**
 
-To remove Directory Manager certificates from IIS:
+To remove GroupID certificates from IIS:
 
 1. Open the Internet Information Services (IIS) console by typing _inetmgr_ in the Windows **Run** dialog
    box.
@@ -99,9 +99,9 @@ To remove Directory Manager certificates from IIS:
     - Imanami GroupID Certificate
 
 :::note
-Don't remove these certificates if another Directory Manager version is installed on the machine.
+Don't remove these certificates if another GroupID version is installed on the machine.
 :::
 
 See Also
 
-- [Back Up and Restore Data for a Directory Manager Upgrade](/docs/directorymanager/11.0/about/upgrade/backuprestore.md)
+- [Back Up and Restore Data for a GroupID Upgrade](/docs/directorymanager/11.0/about/upgrade/backuprestore.md)

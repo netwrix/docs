@@ -1,8 +1,8 @@
 ---
 title: "Account page in the Create User and Create Mailbox wizards"
-description: "Enter the container, name, logon name, and UPN suffix for a new user or mailbox on the Account page of the Directory Manager portal wizards."
+description: "Enter the container, name, logon name, and UPN suffix for a new user or mailbox on the Account page of the GroupID portal wizards."
 keywords:
-  - Directory Manager
+  - GroupID
   - Account page
   - Create User wizard
   - UPN suffix
@@ -41,5 +41,5 @@ the UPN suffix.
 
 **See Also**
 
-- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Create an Active Directory mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)
+- [Create an AD user in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Create an Active Directory mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)

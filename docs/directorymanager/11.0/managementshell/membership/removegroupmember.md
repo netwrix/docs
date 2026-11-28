@@ -1,19 +1,19 @@
 ---
-title: "Remove-GroupMember Cmdlet for Directory Manager"
+title: "Remove-GroupMember Cmdlet for GroupID"
 description: "Remove one or more members from the membership of a group using the Remove-GroupMember cmdlet."
 keywords:
   - Remove-GroupMember
   - remove group members
   - group membership
-  - Directory Manager cmdlets
+  - GroupID cmdlets
 sidebar_position: 40
 ---
 
-# Remove-GroupMember Cmdlet for Directory Manager
+# Remove-GroupMember Cmdlet for GroupID
 
 Use this cmdlet to remove one or more members from the membership of a group.
 
-Directory Manager maintains a history for this cmdlet, which you can view in the Directory Manager
+GroupID maintains a history for this cmdlet, which you can view in the GroupID
 portal, under the **History** node in the left panel.
 
 ## Syntax
@@ -49,6 +49,6 @@ Remove-GroupMember -GroupIdentity "CN=Event Management,OU=Local Recruiting,OU=Re
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Membership Cmdlets](/docs/directorymanager/11.0/managementshell/membership/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

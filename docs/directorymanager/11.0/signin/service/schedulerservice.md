@@ -1,17 +1,17 @@
 ---
-title: "Directory Manager Scheduler Service"
+title: "GroupID Scheduler Service"
 description: "View the Scheduler service, which triggers identity store schedules at their set frequency, and find the settings you can manage."
 keywords:
-  - Directory Manager Scheduler service
+  - GroupID Scheduler service
   - scheduled jobs
   - identity store schedules
   - service settings
 sidebar_position: 60
 ---
 
-# Directory Manager Scheduler Service
+# GroupID Scheduler Service
 
-In Directory Manager, schedules perform different tasks in an identity store. They run at a
+In GroupID, schedules perform different tasks in an identity store. They run at a
 specified frequency to automatically run their respective functions. The Scheduler service is responsible for
 triggering these schedules at their respective frequency.
 
@@ -47,5 +47,5 @@ You can manage the following settings for the Scheduler service:
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)

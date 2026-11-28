@@ -1,8 +1,8 @@
 ---
 title: "Create an MS Excel Data Source with the API"
-description: "Create a Directory Manager data source that connects to a Microsoft Excel workbook on a local server or OneDrive."
+description: "Create a GroupID data source that connects to a Microsoft Excel workbook on a local server or OneDrive."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - Microsoft Excel
   - data source
   - xls file
@@ -18,8 +18,8 @@ Use this API to create a new data source for a Microsoft Excel file.
 See the
 [Create a Data Source for MS Excel](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-ms-excel)
 section of the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-for additional information on creating an Excel data source using Directory Manager.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+for additional information on creating an Excel data source using GroupID.
 
 ## Endpoint
 
@@ -70,5 +70,5 @@ The following syntax shows how to create an Excel data source.
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

@@ -1,5 +1,5 @@
 ---
-title: "Get Jobs API in Directory Manager"
+title: "Get Jobs API in GroupID"
 description: "Retrieve Synchronize jobs that match filter criteria, with paging and sorting options, using a GET request."
 keywords:
   - "get jobs API"
@@ -9,7 +9,7 @@ sidebar_position: 80
 unlisted: true
 ---
 
-# Get Jobs API in Directory Manager
+# Get Jobs API in GroupID
 
 Use this API to get information about jobs based on the filters provided in the request syntax.
 
@@ -96,5 +96,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

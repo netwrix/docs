@@ -1,8 +1,8 @@
 ---
-title: "Create a User with the Directory Manager API"
+title: "Create a User with the GroupID API"
 description: "Create a user in an identity store by sending a POST request with the container, name, and other required attributes."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - create user
   - POST Users endpoint
   - identity store
@@ -10,7 +10,7 @@ sidebar_position: 10
 unlisted: true
 ---
 
-# Create a User with the Directory Manager API
+# Create a User with the GroupID API
 
 This API creates a user in the identity store specified in the endpoint URL. Provide mandatory
 information for the user being created in the request syntax, such as the container in which the user is
@@ -112,5 +112,5 @@ POST
 ## See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

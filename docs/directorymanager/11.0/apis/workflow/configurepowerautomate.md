@@ -1,6 +1,6 @@
 ---
-title: "Connect Directory Manager to Power Automate"
-description: "Use this POST endpoint to link a Directory Manager identity store to Microsoft Power Automate so workflows can trigger flows."
+title: "Connect GroupID to Power Automate"
+description: "Use this POST endpoint to link a GroupID identity store to Microsoft Power Automate so workflows can trigger flows."
 keywords:
   - Power Automate
   - Microsoft Flow settings
@@ -11,10 +11,10 @@ sidebar_position: 30
 unlisted: true
 ---
 
-# Connect Directory Manager to Power Automate
+# Connect GroupID to Power Automate
 
-You can link an identity store in Directory Manager to Power Automate to trigger a flow from
-Directory Manager. Use this API to connect an identity store to Power Automate.
+You can link an identity store in GroupID to Power Automate to trigger a flow from
+GroupID. Use this API to connect an identity store to Power Automate.
 
 ## Endpoint
 
@@ -56,5 +56,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

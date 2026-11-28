@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager Linked Field Dropdown List Display Type"
+title: "GroupID Linked Field Dropdown List Display Type"
 description: "Define a linked field dropdown list display type so that selecting a key value in the portal auto-populates other linked fields."
 keywords:
   - linked field dropdown list
   - custom display type
   - key value
-  - Directory Manager portal
+  - GroupID portal
   - Design Settings
 sidebar_position: 40
 ---
 
-# Directory Manager Linked Field Dropdown List Display Type
+# GroupID Linked Field Dropdown List Display Type
 
 A linked field dropdown list is displayed in the portal as a dropdown list with multiple values.
 When a user selects a value, all fields linked to that value are auto-populated. Because these fields
@@ -85,6 +85,6 @@ field with the predefined value.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

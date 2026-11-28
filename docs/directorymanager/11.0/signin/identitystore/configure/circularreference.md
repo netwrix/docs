@@ -1,5 +1,5 @@
 ---
-title: "Manage Circular Reference in Directory Manager"
+title: "Manage Circular Reference in GroupID"
 description: "Allow or prevent circular references when objects are updated, and skip replicating members of dynamic groups in Microsoft Entra ID."
 keywords:
   - circular reference
@@ -9,11 +9,11 @@ keywords:
 sidebar_position: 120
 ---
 
-# Manage Circular Reference in Directory Manager
+# Manage Circular Reference in GroupID
 
-By default, Directory Manager checks for circular reference and doesn't allow it when users update
-objects manually or when a Directory Manager schedule updates objects automatically. If a circular
-reference occurs, Directory Manager displays an error and prevents the user from saving the change.
+By default, GroupID checks for circular reference and doesn't allow it when users update
+objects manually or when a GroupID schedule updates objects automatically. If a circular
+reference occurs, GroupID displays an error and prevents the user from saving the change.
 
 Examples of circular reference are:
 
@@ -24,7 +24,7 @@ Examples of circular reference are:
 - When GroupA is a member of GroupB, GroupB is a member of GroupC, a circular reference occurs
   when you try to add GroupC as a member of GroupA.
 
-You can change the default setting to allow Directory Manager to save updates to objects even when a
+You can change the default setting to allow GroupID to save updates to objects even when a
 circular reference occurs.
 
 What do you want to do?
@@ -39,8 +39,8 @@ What do you want to do?
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Miscellaneous**.
 4. On the **Miscellaneous** page, clear the **Check for Circular Reference** checkbox to allow
-   Directory Manager to save changes to objects that involve a circular reference.  
-   The checkbox is selected by default, indicating that Directory Manager prevents circular
+   GroupID to save changes to objects that involve a circular reference.  
+   The checkbox is selected by default, indicating that GroupID prevents circular
    references in objects.
 5. Click **Save**.
 

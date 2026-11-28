@@ -1,8 +1,8 @@
 ---
-title: "Validate a Data Source Connection in Directory Manager"
-description: "Check that a data source can connect to its provider or source file by calling the ValidateServerConnectivity endpoint of the Directory Manager API."
+title: "Validate a Data Source Connection in GroupID"
+description: "Check that a data source can connect to its provider or source file by calling the ValidateServerConnectivity endpoint of the GroupID API."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - validate data source
   - ValidateServerConnectivity endpoint
   - data source connectivity
@@ -11,7 +11,7 @@ sidebar_position: 170
 unlisted: true
 ---
 
-# Validate a Data Source Connection in Directory Manager
+# Validate a Data Source Connection in GroupID
 
 Use this API to validate the connection of a data source with the provider or with a source file.
 
@@ -62,5 +62,5 @@ GET
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

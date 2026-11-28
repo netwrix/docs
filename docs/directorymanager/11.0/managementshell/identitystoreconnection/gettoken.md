@@ -1,5 +1,5 @@
 ---
-title: "Get-Token Cmdlet in Directory Manager"
+title: "Get-Token Cmdlet in GroupID"
 description: "Get a valid security token for an identity store, or renew an expired token in a Management Shell session, with the Get-Token cmdlet."
 keywords:
   - Get-Token
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Get-Token Cmdlet in Directory Manager
+# Get-Token Cmdlet in GroupID
 
 When Management Shell is connected to an identity store, a token is passed with the cmdlet,
 enabling the user to perform the required functions in the directory.
@@ -51,6 +51,6 @@ Get-Token -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Cred
 
 ## See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Connection Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/identitystoreconnection/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Identity Store Connection Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/identitystoreconnection/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

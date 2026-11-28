@@ -1,6 +1,6 @@
 ---
-title: "View SharePoint Site Permissions in Directory Manager"
-description: "Explore replicated SharePoint sites in Directory Manager Entitlement to view, search, and update permissions on document libraries, files, and folders."
+title: "View SharePoint Site Permissions in GroupID"
+description: "Explore replicated SharePoint sites in GroupID Entitlement to view, search, and update permissions on document libraries, files, and folders."
 keywords:
   - SharePoint site permissions
   - document libraries
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# View SharePoint Site Permissions in Directory Manager
+# View SharePoint Site Permissions in GroupID
 
 The **SharePoint Sites** page lists the sites specified for permission analysis in the identity
 store, displaying granular-level permissions granted to objects on document libraries. This data is
@@ -40,7 +40,7 @@ What do you want to do?
 - Explore a Site Card View
 - View levels and permissions on a library
 - Search document libraries, files, and folders in a site
-- How Directory Manager Entitlement displays permissions
+- How GroupID Entitlement displays permissions
 
 ## Explore a Site Card View
 
@@ -123,7 +123,7 @@ your criterion.
 - In the **Permission** box, select one or more permissions.
 - Click **Apply filters**.
 
-Directory Manager Entitlement displays folders and files on which the user/group has the specific access type
+GroupID Entitlement displays folders and files on which the user/group has the specific access type
 with respect to the specified permissions.
 
 **Example:**
@@ -140,9 +140,9 @@ WriteAttributes, ExecuteFile, and Read - set to 'Allow'.
 You can apply multiple search filters. Click **Add new filter** to insert a filter row. Each filter
 row is taken as a separate criterion; the results display any file or folder that matches all of these criteria.
 
-## How Directory Manager Entitlement displays permissions
+## How GroupID Entitlement displays permissions
 
-| Level                                                                  | Access level displayed in Directory Manager Entitlement SharePoint                                               |
+| Level                                                                  | Access level displayed in GroupID Entitlement SharePoint                                               |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | User/Group has the 'Full Control' permission level on a file/folder.   | 'Allow' for all list permissions.                                                                                  |
 | User/Group has the 'Limited Access' permission level on a file/folder. | 'Allow' only for the View Application Pages list permission.                                                       |
@@ -151,4 +151,4 @@ row is taken as a separate criterion; the results display any file or folder tha
 
 **See Also**
 
-- [ Directory Manager Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)
+- [ GroupID Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)

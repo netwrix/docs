@@ -1,5 +1,5 @@
 ---
-title: "Create a Microsoft Entra ID Identity Store in Directory Manager"
+title: "Create a Microsoft Entra ID Identity Store in GroupID"
 description: "Create a Microsoft Entra ID identity store and assign the User Account Administrator role when the service account isn't a Global Administrator."
 keywords:
   - Microsoft Entra ID identity store
@@ -9,12 +9,12 @@ keywords:
 sidebar_position: 20
 ---
 
-# Create a Microsoft Entra ID Identity Store in Directory Manager
+# Create a Microsoft Entra ID Identity Store in GroupID
 
-After you register Directory Manager and create a user with the required directory role in Microsoft
-Entra ID, you can create a Microsoft Entra ID identity store in Directory Manager. This topic walks
+After you register GroupID and create a user with the required directory role in Microsoft
+Entra ID, you can create a Microsoft Entra ID identity store in GroupID. This topic walks
 you through the steps to create a Microsoft Entra ID identity store and assign a role to the
-Microsoft Entra ID user in Directory Manager.
+Microsoft Entra ID user in GroupID.
 
 ## Create a Microsoft Entra ID Identity Store
 
@@ -24,17 +24,17 @@ topic.
 
 :::note
 If you intend to use a service account user with the Global Administrator directory role, no change
-is required in the default Directory Manager security role settings of the Microsoft Entra ID
+is required in the default GroupID security role settings of the Microsoft Entra ID
 identity store. If you intend to use a service account user with any role other than the Global
 Administrator directory role (that is, User Administrator + Exchange Administrator), change the
-Directory Manager Administrator security role criteria group to User Account Administrator.
+GroupID Administrator security role criteria group to User Account Administrator.
 :::
 
-## Directory Manager Security Role Setting
+## GroupID Security Role Setting
 
 If you want to use a service account user with a role other than the Global Administrator role for
 the Microsoft Entra ID identity store, assign it the _User Account Administrator_ role in
-Directory Manager.
+GroupID.
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for the Microsoft Entra ID identity
@@ -52,12 +52,12 @@ Directory Manager.
 If you use a service account with minimum directory role assignments, the following limitations
 apply:
 
-- You can assign only the User role to newly created users and mailbox objects from Directory
-  Manager. The same applies to existing users and mailboxes, because you can't change directory
+- You can assign only the User role to newly created users and mailbox objects from GroupID.
+  The same applies to existing users and mailboxes, because you can't change directory
   roles using a service account with minimum directory role assignments.
 - Password reset functionality is limited to objects in the User role, User Administrator role, and
   Helpdesk role.
 
 See Also
 
-- [Register Directory Manager in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)
+- [Register GroupID in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)

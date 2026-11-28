@@ -1,5 +1,5 @@
 ---
-title: "Set Up Windows Hello Authentication in Directory Manager"
+title: "Set Up Windows Hello Authentication in GroupID"
 description: "Enable Windows Hello on a device, then enable and enforce Windows Hello authentication for an identity store and security role."
 keywords:
   - Windows Hello
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Set Up Windows Hello Authentication in Directory Manager
+# Set Up Windows Hello Authentication in GroupID
 
 The Windows Hello authentication type works on Windows 10 devices only, and only with specialized
 hardware installed, such as a fingerprint reader or 3D camera.
@@ -55,4 +55,4 @@ and authentication.
 
 See Also
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

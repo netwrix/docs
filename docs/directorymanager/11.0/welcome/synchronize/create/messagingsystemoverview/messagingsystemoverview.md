@@ -11,7 +11,7 @@ sidebar_position: 70
 
 # Sync Messaging System Subscriptions in Synchronize
 
-Use Directory Manager to configure messaging systems and create or edit mail-enabled
+Use GroupID to configure messaging systems and create or edit mail-enabled
 objects through a Synchronize job. You can sync or deprovision subscriptions from the following
 messaging systems:
 

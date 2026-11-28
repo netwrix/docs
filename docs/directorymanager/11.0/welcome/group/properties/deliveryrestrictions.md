@@ -1,5 +1,5 @@
 ---
-title: "Restrict who can email a Directory Manager group"
+title: "Restrict who can email a GroupID group"
 description: "Control which users, contacts, and groups can or can't send email to a group by using the Accept from and Reject from lists."
 keywords:
   - delivery restrictions
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Restrict who can email a Directory Manager group
+# Restrict who can email a GroupID group
 
 Use this tab to apply email restrictions to this group. You can manage the list of objects (users,
 contacts, groups) from whom this group can and can't receive emails.
@@ -35,7 +35,7 @@ Shows the objects whose emails aren't delivered to the group.
 
 To add an object to a list, click **Add** in the respective area. Enter a search string to locate
 the required object, or click **Advance** to use the
-[Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+[Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
 search.
 
 **Remove**
@@ -44,4 +44,4 @@ To remove an object from a list, select it and click **Remove** in the respectiv
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

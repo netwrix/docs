@@ -1,5 +1,5 @@
 ---
-title: "Get Job Names API in Directory Manager"
+title: "Get Job Names API in GroupID"
 description: "Retrieve the names and types of all predefined and user-created Synchronize jobs with a GET request."
 keywords:
   - "get job names API"
@@ -9,7 +9,7 @@ sidebar_position: 100
 unlisted: true
 ---
 
-# Get Job Names API in Directory Manager
+# Get Job Names API in GroupID
 
 Use this API to get a list of job names, both predefined and user-created.
 
@@ -54,5 +54,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

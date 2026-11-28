@@ -1,8 +1,8 @@
 ---
-title: "Get an Access Token for the Directory Manager API"
-description: "Request an access token, or a new one after expiry, to authenticate calls to the Directory Manager APIs through the connect/token endpoint."
+title: "Get an Access Token for the GroupID API"
+description: "Request an access token, or a new one after expiry, to authenticate calls to the GroupID APIs through the connect/token endpoint."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - access token
   - authentication token
   - connect/token endpoint
@@ -11,9 +11,9 @@ sidebar_position: 80
 unlisted: true
 ---
 
-# Get an Access Token for the Directory Manager API
+# Get an Access Token for the GroupID API
 
-This API generates a token for a user to access the Directory Manager APIs. You can also use this API to get a valid token if the token expires during a session.
+This API generates a token for a user to access the GroupID APIs. You can also use this API to get a valid token if the token expires during a session.
 
 ## Endpoint
 
@@ -36,8 +36,8 @@ application/x-www-form-urlencoded
 | grant_type        | password                                                                                                                            |
 | username          | Send the username against this parameter to access APIs                                                                             |
 | password          | Password of the user                                                                                                                |
-| client_Id         | Secret of Directory Manager API from the SVC.Client database table                                                                            |
-| client_secret     | Secret of Directory Manager API from the SVC.Client database table                                                                            |
+| client_Id         | Secret of GroupID API from the SVC.Client database table                                                                            |
+| client_secret     | Secret of GroupID API from the SVC.Client database table                                                                            |
 | identity_store_id | The ID of the identity store in which the user exists. You can get the identity store ID from the SVC.Identitystore database table. |
 
 ### Sample Response Syntax
@@ -54,7 +54,7 @@ application/x-www-form-urlencoded
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
 - Get Token
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

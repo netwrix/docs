@@ -31,14 +31,14 @@ The **Managed by** section is displayed when Microsoft Exchange Server 2013/2016
 the messaging provider for the identity store your portal is connected to. This list shows Exchange
 additional owners specified for the group.
 
-Directory Manager sends group expiry, deletion, and renewal notifications to all Exchange additional owners
+GroupID sends group expiry, deletion, and renewal notifications to all Exchange additional owners
 along with the group’s primary owner and additional owners. See
-[Manage Group Owners in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/owner.md)
+[Manage Group Owners in GroupID](/docs/directorymanager/11.0/welcome/group/properties/owner.md)
 in group properties.
 
 - Click **Add** to add an Exchange additional owner. Enter a search string to locate the required
   object, or click **Advance** to use the
-  [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
+  [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing a
   search.
 - To remove an Exchange additional owner, select it and click **Remove**.
 
@@ -49,4 +49,4 @@ Only mail-enabled users can be designated as Exchange additional owners.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Workflows Overview"
+title: "GroupID Workflows Overview"
 description: "Learn how workflows add approval to directory changes, which system workflows exist, and how requests, approvers, and Synchronize jobs behave."
 keywords:
-  - Directory Manager workflows
+  - GroupID workflows
   - system workflows
   - workflow requests
   - Synchronize jobs
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 80
 ---
 
-# Directory Manager Workflows Overview
+# GroupID Workflows Overview
 
-A workflow is a set of rules that Directory Manager uses as a built-in auditing system to ensure
+A workflow is a set of rules that GroupID uses as a built-in auditing system to ensure
 that an authorized user approves changes made to an object before they are committed to the
 directory.
 
@@ -21,18 +21,18 @@ Workflows are defined for an identity store and apply to operations such as grou
 creation and expiry.
 
 A workflow triggers when a certain operation, performed by a user, meets the criteria defined for
-that workflow. Designated users can approve or deny workflow requests in the Directory Manager portal or
-the Directory Manager mobile app.
+that workflow. Designated users can approve or deny workflow requests in the GroupID portal or
+the GroupID mobile app.
 
 :::note
 Workflows require an SMTP server configured for the identity store. See the
-[Configure an SMTP Server in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
+[Configure an SMTP Server in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/smtpserver.md)
 topic.
 :::
 
 ## System Workflows
 
-Directory Manager provides the following predefined workflows (also called system workflows). They
+GroupID provides the following predefined workflows (also called system workflows). They
 trigger when their associated events occur:
 
 |     | Workflow Name                              | Description                                                                                                                                                         | Default Approver                                     |
@@ -57,7 +57,7 @@ limited extent.
 
 Workflows apply to Synchronize jobs as follows:
 
-- When you manually run a Synchronize job, Directory Manager evaluates whether the task it
+- When you manually run a Synchronize job, GroupID evaluates whether the task it
   performs falls under the scope of a workflow. If so, a workflow request is triggered. The job
   runs when the request is approved.  
   Workflows don't apply to Synchronize jobs that run automatically through a Synchronize schedule.  
@@ -93,7 +93,7 @@ Workflows apply to Synchronize jobs as follows:
 
 When a workflow is triggered, an approval request is generated and sent to the designated
 approvers, informing them of the actions that a user wants to perform in an identity store. The
-approver can view these requests in the Directory Manager portal and the Directory Manager mobile app.
+approver can view these requests in the GroupID portal and the GroupID mobile app.
 
 - If the approver is satisfied with the requested actions, they can approve the request and the
   changes are committed to the directory.
@@ -116,11 +116,11 @@ The following scenarios are valid when workflow approver acceleration settings a
 
 ## Integration with Microsoft Power Automate
 
-To automate everyday tasks, you can also link your Directory Manager workflows to Power Automate flows.
+To automate everyday tasks, you can also link your GroupID workflows to Power Automate flows.
 
 **See Also**
 
-- [Create and Manage Workflows in Directory Manager](/docs/directorymanager/11.0/signin/workflow/implement.md)
-- [Manage Advanced Workflow Settings in Directory Manager](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
-- [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
-- [Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
+- [Create and Manage Workflows in GroupID](/docs/directorymanager/11.0/signin/workflow/implement.md)
+- [Manage Advanced Workflow Settings in GroupID](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
+- [Configure Workflow Approver Acceleration in GroupID](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
+- [Link GroupID Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)

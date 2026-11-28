@@ -1,26 +1,26 @@
 ---
-title: "Set Directory Manager Default Issuer URL and Certificate"
-description: "Set the default issuer URL and signing certificate that Directory Manager provides to service providers for single sign-on."
+title: "Set GroupID Default Issuer URL and Certificate"
+description: "Set the default issuer URL and signing certificate that GroupID provides to service providers for single sign-on."
 keywords:
-  - Directory Manager issuer URL
+  - GroupID issuer URL
   - SAML signing certificate
   - identity provider metadata
-  - Directory Manager Authenticate settings
+  - GroupID Authenticate settings
   - PFX certificate upload
   - load balancer base URL
 sidebar_position: 20
 ---
 
-# Set Directory Manager Default Issuer URL and Certificate
+# Set GroupID Default Issuer URL and Certificate
 
-You can specify default values for the following Directory Manager metadata:
+You can specify default values for the following GroupID metadata:
 
 - Issuer URL
 - Signing certificate
 
 ## Specify the Default Issuer URL
 
-1. In Directory Manager Authenticate, go to the **Settings** tab.
+1. In GroupID Authenticate, go to the **Settings** tab.
 2. On the **Settings** page, the **Base URL** box displays the default issuer URL, which is
    also displayed in the **Provider Issuer** box on the **Create Application** page. See the
    [GroupID Metadata for Service Provider Configurations](/docs/directorymanager/11.0/authenticate/asidentityprovider/register.md#groupid-metadata-for-service-provider-configurations)
@@ -31,8 +31,8 @@ You can specify default values for the following Directory Manager metadata:
 
 ## Update the Default Signing Certificate
 
-1. In Directory Manager Authenticate, go to the **Settings** tab.
-2. On the **Settings** page, the **Signing Certificate** box displays the Directory Manager
+1. In GroupID Authenticate, go to the **Settings** tab.
+2. On the **Settings** page, the **Signing Certificate** box displays the GroupID
    certificate created in IIS. It displays the certificate along with the private key. This
    certificate is also displayed in the **Provider Signing Certificate** box on the **Create Application** page, though
    without the private key. See the

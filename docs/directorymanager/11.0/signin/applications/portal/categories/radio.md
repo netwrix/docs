@@ -1,16 +1,16 @@
 ---
-title: "Directory Manager Radio Button Display Type"
+title: "GroupID Radio Button Display Type"
 description: "Define a radio button display type that gives portal users a set of mutually exclusive options and a default selection."
 keywords:
   - radio button display type
   - custom display type
-  - Directory Manager portal
+  - GroupID portal
   - default selection
   - Design Settings
 sidebar_position: 70
 ---
 
-# Directory Manager Radio Button Display Type
+# GroupID Radio Button Display Type
 
 Use a radio display type to present portal users with a predefined set of mutually exclusive
 options, of which they can choose one. Usually, radio buttons in a set are grouped together under a
@@ -78,6 +78,6 @@ What do you want to do?
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
-- [Define Custom Display Types in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Define Custom Display Types in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/custom.md)

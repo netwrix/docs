@@ -1,6 +1,6 @@
 ---
 title: "Query Designer Password Expiry Options tab"
-description: "Set the password age policy, expiration range, and warning emails for a Directory Manager password expiry group."
+description: "Set the password age policy, expiration range, and warning emails for a GroupID password expiry group."
 keywords:
   - password expiry group
   - Query Designer
@@ -17,15 +17,15 @@ password expiry group by selecting the **Password Expiry** group option on the W
 **Create Group** wizard.
 
 A password expiry group is a Smart Group whose membership contains users whose identity store
-account passwords are approaching their expiry dates. Directory Manager notifies members of this
-group by email to reset their passwords. When they reset their passwords, Directory Manager
+account passwords are approaching their expiry dates. GroupID notifies members of this
+group by email to reset their passwords. When they reset their passwords, GroupID
 automatically removes them from group membership.
 
 On the **Password Expiry Options** tab of the Query Designer, you can define the password expiry
-policy for the group. Based on this policy and the users' PWDLASTSET attribute, Directory Manager
+policy for the group. Based on this policy and the users' PWDLASTSET attribute, GroupID
 creates this group with users whose passwords are about to expire.
 
-When the group is updated, Directory Manager adds or removes users from the group and sends email
+When the group is updated, GroupID adds or removes users from the group and sends email
 notifications to all members.
 
 You can also include disabled users and users whose passwords never expire to the password expiry
@@ -120,4 +120,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

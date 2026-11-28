@@ -1,16 +1,16 @@
 ---
-title: "Configure AD FS SAML SSO for Directory Manager"
-description: "Set up Active Directory Federation Services (AD FS) as a SAML single sign-on provider so users can sign in to Directory Manager."
+title: "Configure AD FS SAML SSO for GroupID"
+description: "Set up Active Directory Federation Services (AD FS) as a SAML single sign-on provider so users can sign in to GroupID."
 keywords:
   - Active Directory Federation Services
   - AD FS single sign-on
   - AD FS console
   - AD FS federation service
-  - Directory Manager SAML provider
+  - GroupID SAML provider
 sidebar_position: 10
 ---
 
-# Configure AD FS SAML SSO for Directory Manager
+# Configure AD FS SAML SSO for GroupID
 
 Active Directory Federation Services (AD FS) provides users with single sign-on (SSO) access to
 systems and applications across organizational boundaries.
@@ -38,19 +38,19 @@ For more information about the AD FS console, see the Microsoft documentation on
 
 ## Configuration Steps
 
-To set up AD FS as an SSO solution for Directory Manager:
+To set up AD FS as an SSO solution for GroupID:
 
-- Generate the consumer URL and audience URL for the Directory Manager client with which you want to configure
+- Generate the consumer URL and audience URL for the GroupID client with which you want to configure
   AD FS.
 - Configure a relying party trust in AD FS. As part of the process, provide the consumer URL and
   audience URL in AD FS. You must also specify the claim rules for authentication.
-- Configure the AD FS provider in Directory Manager.
+- Configure the AD FS provider in GroupID.
 
-After you complete these steps, you can sign in to Directory Manager using AD FS.
+After you complete these steps, you can sign in to GroupID using AD FS.
 
 See Also
 
 - [Generate Consumer and Audience URLs for AD FS](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/generateurls.md)
-- [Configure an AD FS Relying Party Trust for Directory Manager](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md)
+- [Configure an AD FS Relying Party Trust for GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configurerelayingpartytrust.md)
 - [Configure the AD FS Provider In GroupID](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md)
-- [Sign In to Directory Manager Using AD FS](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/signin.md)
+- [Sign In to GroupID Using AD FS](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/signin.md)

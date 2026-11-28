@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Helpdesk Overview"
+title: "GroupID Helpdesk Overview"
 description: "Learn how Admin Center Helpdesk lets administrators and helpdesk users unlock accounts, reset passwords, and manage enrollment."
 keywords:
-  - Directory Manager helpdesk
+  - GroupID helpdesk
   - helpdesk permissions
   - helpdesk policy
   - desktop notifications
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 100
 ---
 
-# Directory Manager Helpdesk Overview
+# GroupID Helpdesk Overview
 
 The Admin Center Helpdesk section enables administrators and helpdesk users to perform
 helpdesk-specific tasks, such as:
@@ -33,7 +33,7 @@ helpdesk-specific functions:
 See
 [Password Management](/docs/directorymanager/11.0/signin/securityrole/permissions.md#password-management)
 in the
-[Security Role Permissions in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
+[Security Role Permissions in GroupID](/docs/directorymanager/11.0/signin/securityrole/permissions.md)
 topic.
 
 ## Helpdesk Policy
@@ -48,7 +48,7 @@ unenrolled users. In restricted mode, helpdesk can perform these functions for e
 :::
 
 See the
-[Helpdesk Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
+[Helpdesk Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/helpdesk.md)
 topic.
 
 ## Helpdesk Analytics
@@ -69,9 +69,9 @@ The dashboard displays the following helpdesk-specific cards:
 
 ## Desktop Notifications
 
-You can enable desktop notifications for Directory Manager in browser settings. A user who is signed
+You can enable desktop notifications for GroupID in browser settings. A user who is signed
 in to Admin Center on the respective machine receives desktop notifications when an end user
-performs any of the following actions in the Directory Manager portal:
+performs any of the following actions in the GroupID portal:
 
 - Resets account password
 - Changes account password
@@ -85,5 +85,5 @@ These actions are also logged in helpdesk history.
 
 **See Also**
 
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
-- [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md)

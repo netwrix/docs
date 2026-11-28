@@ -1,11 +1,11 @@
 ---
 title: "SendSmsMessageResult.Success property"
-description: "Check whether a text message was sent to the target mobile numbers when you implement a custom SMS gateway in Directory Manager."
+description: "Check whether a text message was sent to the target mobile numbers when you implement a custom SMS gateway in GroupID."
 keywords:
   - SendSmsMessageResult.Success
   - custom SMS gateway
   - SMS delivery status
-  - Directory Manager SMS API
+  - GroupID SMS API
 sidebar_position: 30
 ---
 
@@ -14,9 +14,9 @@ sidebar_position: 30
 Returns a Boolean value indicating whether the text message was sent successfully to the target
 mobile phone numbers.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

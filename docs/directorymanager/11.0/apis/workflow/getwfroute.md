@@ -1,17 +1,17 @@
 ---
-title: "Get a Workflow Route in Directory Manager"
+title: "Get a Workflow Route in GroupID"
 description: "Retrieve the configuration of a workflow route by passing its route ID in the endpoint URL."
 keywords:
   - workflow route
   - workflow route ID
-  - Directory Manager API
+  - GroupID API
   - Workflows/Routes endpoint
   - route configuration
 sidebar_position: 90
 unlisted: true
 ---
 
-# Get a Workflow Route in Directory Manager
+# Get a Workflow Route in GroupID
 
 Use this API to get the workflow route that has the ID specified in the endpoint URL.
 
@@ -82,5 +82,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

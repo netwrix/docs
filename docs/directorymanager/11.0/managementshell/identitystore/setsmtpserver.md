@@ -1,5 +1,5 @@
 ---
-title: "Set-SmtpServer Cmdlet in Directory Manager"
+title: "Set-SmtpServer Cmdlet in GroupID"
 description: "Configure the SMTP server, sender and recipient addresses, port, and authentication for an identity store with the Set-SmtpServer cmdlet."
 keywords:
   - Set-SmtpServer
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 200
 ---
 
-# Set-SmtpServer Cmdlet in Directory Manager
+# Set-SmtpServer Cmdlet in GroupID
 
 The **Set-SmtpServer** cmdlet configures an SMTP server for an identity store.
 
@@ -59,6 +59,6 @@ Set-SmtpServer -IdentityStorename AdStore9 -SmtpServer smtp.office365.com -FromE
 
 ## See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,6 +1,6 @@
 ---
 title: "Update a Group API"
-description: "Update the attributes of a single group, such as its description or company, with a PATCH request to the Directory Manager data service."
+description: "Update the attributes of a single group, such as its description or company, with a PATCH request to the GroupID data service."
 sidebar_position: 160
 keywords:
   - update group API
@@ -104,5 +104,5 @@ PATCH
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

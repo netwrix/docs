@@ -1,18 +1,18 @@
 ---
-title: "View File Server Permissions in Directory Manager"
-description: "Explore replicated file servers in Directory Manager Entitlement to view, search, and update NTFS permissions on shared files and folders."
+title: "View File Server Permissions in GroupID"
+description: "Explore replicated file servers in GroupID Entitlement to view, search, and update NTFS permissions on shared files and folders."
 keywords:
   - file server permissions
   - NTFS permissions
-  - Directory Manager Entitlement file servers
+  - GroupID Entitlement file servers
   - shared folders
   - file server replication
 sidebar_position: 10
 ---
 
-# View File Server Permissions in Directory Manager
+# View File Server Permissions in GroupID
 
-The [Directory Manager Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md) page lists the servers specified for permission analysis in the
+The [GroupID Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md) page lists the servers specified for permission analysis in the
 identity store, displaying granular-level permissions granted to objects on shared files and folders.
 This data is subject to the date and time the permissions were last replicated.
 
@@ -118,7 +118,7 @@ your criterion.
 - In the **Permission** box, select one or more permissions.
 - Click **Apply filters**.
 
-Directory Manager Entitlement displays folders and files on which the user/group has the specific
+GroupID Entitlement displays folders and files on which the user/group has the specific
 access type with respect to the specified permissions.
 
 **Example:**
@@ -135,7 +135,7 @@ WriteAttributes, ExecuteFile, and Read - set to ‘Allow’.
 You can apply multiple search filters. Click **Add new filter** to insert a filter row. Each filter
 row is taken as a separate criterion; the results display any file or folder that matches all of these criteria.
 
-## How Directory Manager Entitlement displays permissions
+## How GroupID Entitlement displays permissions
 
 | Condition                                                                     | Access level displayed                                       |
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -147,4 +147,4 @@ row is taken as a separate criterion; the results display any file or folder tha
 
 **See Also:**
 
-- [Directory Manager Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)
+- [GroupID Entitlement Management](/docs/directorymanager/11.0/welcome/entitlement/overview.md)

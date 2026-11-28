@@ -1,17 +1,17 @@
 ---
-title: "Create an AD user in Directory Manager"
-description: "Create a mail-enabled or non-mail-enabled Active Directory user in the Directory Manager portal by using the Create User wizard."
+title: "Create an AD user in GroupID"
+description: "Create a mail-enabled or non-mail-enabled Active Directory user in the GroupID portal by using the Create User wizard."
 keywords:
-  - Directory Manager
+  - GroupID
   - create AD user
   - mail-enabled user
   - Create User wizard
 sidebar_position: 10
 ---
 
-# Create an AD user in Directory Manager
+# Create an AD user in GroupID
 
-In the Directory Manager portal, you can create mail-enabled and non-mail-enabled users.
+In the GroupID portal, you can create mail-enabled and non-mail-enabled users.
 
 :::note
 In a Microsoft Entra ID-based identity store, users can only be created as non-mail-enabled. Create a
@@ -30,7 +30,7 @@ What do you want to do?
 
 ## Create a mail-enabled user in Active Directory
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select
+1. In the GroupID portal, click the **Create New** button in the left pane and select
    **User**.
 
     The **Create User** wizard opens to the Account page.
@@ -50,14 +50,14 @@ What do you want to do?
    review the settings, and then click **Finish** to complete the wizard.
 
 :::note
-If the Directory Manager administrator has specified the user creation action for review, your
+If the GroupID administrator has specified the user creation action for review, your
 changes won't take effect until verified by an approver. See the
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
 :::
 
 ## Create a non-mail-enabled user in Active Directory
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select
+1. In the GroupID portal, click the **Create New** button in the left pane and select
    **User**.
 
     The **Create User** wizard opens to the Account page.
@@ -81,12 +81,12 @@ changes won't take effect until verified by an approver. See the
    review the settings, and then click **Finish** to complete the wizard.
 
 :::note
-If the Directory Manager administrator has specified the user creation action for review, your
+If the GroupID administrator has specified the user creation action for review, your
 changes won't take effect until verified by an approver. See the
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
 :::
 
 **See Also**
 
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

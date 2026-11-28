@@ -26,9 +26,9 @@ The supported external data providers are:
 
 Before using any of these external data providers, you must define a data source for the provider in
 Admin Center. See the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic.
 
-You configure a connection in a data source. The Directory Manager portal then connects to the
+You configure a connection in a data source. The GroupID portal then connects to the
 external database, retrieves the results, and queries the directory for matching records.
 
 You must map one column returned by the command on the Database tab with a directory attribute to
@@ -37,7 +37,7 @@ attributes and extracts objects with matching values to add to the group's membe
 
 For example, if you want to add to group membership all employees whose employee IDs are present in
 an external data source, you can select that data source and map a key attribute with a directory
-attribute. Use attributes that store the employee ID. When you update group membership, Directory Manager fetches
+attribute. Use attributes that store the employee ID. When you update group membership, GroupID fetches
 only those users from the directory whose employee IDs also exist in the data source.
 
 **External Data Provider**
@@ -101,4 +101,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

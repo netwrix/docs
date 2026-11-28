@@ -1,5 +1,5 @@
 ---
-title: "Get-RolePermissionNames Cmdlet in Directory Manager"
+title: "Get-RolePermissionNames Cmdlet in GroupID"
 description: "List the permission names you can assign to or revoke from a security role in an identity store with the Get-RolePermissionNames cmdlet."
 keywords:
   - Get-RolePermissionNames
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 90
 ---
 
-# Get-RolePermissionNames Cmdlet in Directory Manager
+# Get-RolePermissionNames Cmdlet in GroupID
 
 The Get-RolePermissionNames cmdlet helps you see the names of the permissions that you can assign to
 or revoke from a security role in an identity store.
@@ -45,6 +45,6 @@ Get-RolePermissionNames -IncludeEntityTypes
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

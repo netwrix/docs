@@ -2,7 +2,7 @@
 title: "Assign Directory Roles to an Entra ID User"
 description: "Assign a directory role and its privileges to a new Microsoft Entra ID user in the Create User wizard."
 keywords:
-  - Directory Manager
+  - GroupID
   - Entra ID directory roles
   - Global Administrator
   - role privileges
@@ -25,4 +25,4 @@ portal.
 
 **See Also**
 
-- [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
+- [Create a Microsoft Entra ID User in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)

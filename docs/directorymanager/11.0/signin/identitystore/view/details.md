@@ -19,7 +19,7 @@ attributes, the lists of added items and removed items are displayed.
 Information includes:
 
 - **Attribute Modified** – The name of the target attribute.
-- **Object Name** – The name of the Directory Manager function this history item pertains to. For
+- **Object Name** – The name of the GroupID function this history item pertains to. For
   example, if it pertains to a workflow, the name of the workflow is displayed here.
 - **Who** – The name of the user who performed the action.
 - **Where** – The name of the computer the action was performed on.
@@ -37,7 +37,7 @@ The following lists are available when the target attribute is single-valued:
 
 ## Annotate History Items
 
-Directory Manager lets a user add notes to history actions that the user performed. A note might
+GroupID lets a user add notes to history actions that the user performed. A note might
 explain the reason for an action, such as why the user changed the security type for a group. Only
 the user who added a note can update it. Other users can view it, but they can't edit it or add
 comments.
@@ -77,5 +77,5 @@ On the **History Details** dialog box, the **Note** box displays your note. Remo
 
 **See Also**
 
-- [View Identity Store History in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
-- [View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history_1.md)
+- [View Identity Store History in GroupID](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
+- [View and Export Admin Center History in GroupID](/docs/directorymanager/11.0/signin/concepts/history_1.md)

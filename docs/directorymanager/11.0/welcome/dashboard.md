@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Portal Dashboard"
-description: "Learn how to navigate the Directory Manager portal using Quick Search, the top-right options, the menu pane, and the dashboard cards."
+title: "GroupID Portal Dashboard"
+description: "Learn how to navigate the GroupID portal using Quick Search, the top-right options, the menu pane, and the dashboard cards."
 keywords:
-  - Directory Manager portal
+  - GroupID portal
   - portal dashboard
   - Quick Search
   - dashboard cards
@@ -10,13 +10,13 @@ keywords:
 sidebar_position: 20
 ---
 
-# Directory Manager Portal Dashboard
+# GroupID Portal Dashboard
 
 The portal interface lets you quickly access the main functions of the portal. These functions are available as links on the top and left navigation bars.
 
-When you sign in to the Directory Manager portal, you land on the dashboard.
+When you sign in to the GroupID portal, you land on the dashboard.
 
-![Directory Manager portal dashboard showing the top bar, menu pane, and dashboard cards](/images/directorymanager/11.0/portal/dashboard.webp)
+![GroupID portal dashboard showing the top bar, menu pane, and dashboard cards](/images/directorymanager/11.0/portal/dashboard.webp)
 
 Use the following to navigate within the application:
 
@@ -29,7 +29,7 @@ Use the following to navigate within the application:
 
 Look at the top of the page for **Search**. This element appears on every page. Use it to locate and
 display information for objects. See the
-[Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic.
+[Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) topic.
 
 - Use Quick Search to locate an object by its name.
 - Use Advanced Search to search an object using a range of attributes.
@@ -43,7 +43,7 @@ The top right corner of the application displays:
 | Background tasks icon | View the status of Smart Group update jobs. A Smart Group Update job updates the membership of a Smart Group based on a query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Portal Settings       | Personalize the portal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Help icon             | Launch the portal help.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| User profile icon     | Displays your profile picture with your name and the identity store that the Directory Manager portal is connected to. <br />Click it to launch the menu that displays the following: <ul><li>Directory Manager version you’re using</li><li>The security role assigned to you in Directory Manager.</li></ul>The menu also displays the following options: <ul><li>See full profile. See the [View and Update General User Information in Directory Manager](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/general.md) topic.</li><li>My Applications. See the [Access Your Applications in Directory Manager](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic.</li><li>Enroll your identity store account. See the [Enroll Your Account in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/enroll.md) topic.</li><li>Change Password. See the [Change Your Password in Directory Manager](/docs/directorymanager/11.0/signin/concepts/changepassword.md) topic.</li><li>Switch account. See the [Switch Accounts in Directory Manager](/docs/directorymanager/11.0/signin/concepts/switchaccount.md) topic.</li><li>Sign Out</li></ul> |
+| User profile icon     | Displays your profile picture with your name and the identity store that the GroupID portal is connected to. <br />Click it to launch the menu that displays the following: <ul><li>GroupID version you’re using</li><li>The security role assigned to you in GroupID.</li></ul>The menu also displays the following options: <ul><li>See full profile. See the [View and Update General User Information in GroupID](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/general.md) topic.</li><li>My Applications. See the [Access Your Applications in GroupID](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic.</li><li>Enroll your identity store account. See the [Enroll Your Account in GroupID](/docs/directorymanager/11.0/signin/authpolicy/enroll.md) topic.</li><li>Change Password. See the [Change Your Password in GroupID](/docs/directorymanager/11.0/signin/concepts/changepassword.md) topic.</li><li>Switch account. See the [Switch Accounts in GroupID](/docs/directorymanager/11.0/signin/concepts/switchaccount.md) topic.</li><li>Sign Out</li></ul> |
 
 ## Menu pane
 
@@ -76,8 +76,8 @@ The dashboard consists of a few cards.
 
 **See Also**
 
-- [Directory Manager Portal Overview](/docs/directorymanager/11.0/welcome/welcome.md)
-- [Sign In to the Directory Manager Portal](/docs/directorymanager/11.0/welcome/login.md)
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [Change Your Password in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [GroupID Portal Overview](/docs/directorymanager/11.0/welcome/welcome.md)
+- [Sign In to the GroupID Portal](/docs/directorymanager/11.0/welcome/login.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Change Your Password in GroupID](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

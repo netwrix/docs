@@ -1,5 +1,5 @@
 ---
-title: "Set Up YubiKey Authentication in Directory Manager"
+title: "Set Up YubiKey Authentication in GroupID"
 description: "Review YubiKey browser requirements, then enable and enforce YubiKey authentication for an identity store and security role."
 keywords:
   - YubiKey
@@ -10,11 +10,10 @@ keywords:
 sidebar_position: 60
 ---
 
-# Set Up YubiKey Authentication in Directory Manager
+# Set Up YubiKey Authentication in GroupID
 
 YubiKey is a key-sized device that users can plug into the computer's USB slot to verify their
-identity. They can use it to enroll and authenticate their identity store accounts in Directory
-Manager.
+identity. They can use it to enroll and authenticate their identity store accounts in GroupID.
 
 YubiKey can only be used on a physical machine. Virtual machines aren't supported.
 
@@ -50,4 +49,4 @@ and authentication.
 
 See Also
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

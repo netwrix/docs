@@ -5,7 +5,7 @@ keywords:
   - Renew-Group
   - reactivate expired group
   - group expiration
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 70
 ---
 
@@ -13,7 +13,7 @@ sidebar_position: 70
 
 The Renew-Group cmdlet reactivates an expired group.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
+You can view events related to this cmdlet in the GroupID portal, under the History node
 in the left pane.
 
 ## Syntax
@@ -41,6 +41,6 @@ Renew-Group -Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

@@ -1,5 +1,5 @@
 ---
-title: "Customize Properties Pages in Directory Manager"
+title: "Customize Properties Pages in GroupID"
 description: "Add, update, rearrange, or remove the tabs and fields on object properties pages in the portal."
 keywords:
   - properties pages
@@ -11,9 +11,9 @@ keywords:
 sidebar_position: 40
 ---
 
-# Customize Properties Pages in Directory Manager
+# Customize Properties Pages in GroupID
 
-Use Directory Manager to customize the property pages displayed in the portal for these directory
+Use GroupID to customize the property pages displayed in the portal for these directory
 objects:
 
 - User
@@ -31,7 +31,7 @@ objects:
 A Microsoft Entra ID identity store doesn't support the _computer_ and _contact_ object types.
 :::
 
-In the Directory Manager portal, the properties page of an object has multiple tabs, where each tab groups
+In the GroupID portal, the properties page of an object has multiple tabs, where each tab groups
 similar attributes. These tabs are referred to as categories.
 
 You can customize the following:
@@ -196,7 +196,7 @@ You can change the following for a tab:
     on the tab.  
     The list contains basic display types and custom display types defined on the **Custom Display
     Types** page. See the
-    [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+    [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
     topic.
 11. In the **Visibility Level** dropdown list, select a security role. The tab is visible to
     users of this role and roles with a priority value higher than this role. It isn't
@@ -281,7 +281,7 @@ You can change the following for a tab:
     - DNs
     - Custom display types created with the Grid type
 
-    When you select any of these display types, Directory Manager identifies that the value for the field has
+    When you select any of these display types, GroupID identifies that the value for the field has
     to be searched and selected using the _Find_ dialog box. The **Search Object Types** area is
     displayed, where you can select the required object types. For example, if you select _Group_,
     only groups can be searched and selected as value for the field.  
@@ -296,7 +296,7 @@ You can change the following for a tab:
     field.  
     A value entered for the field is checked against the words listed on the **Bad Words List**
     page. Matched values can't be saved. See the
-    [Manage the Bad Words List in a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
+    [Manage the Bad Words List in a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/badwords.md)
     topic.
 21. The **Image Attribute** list is available when 'DN' is selected as the display type. This list
     supports 'thumbnailPhoto' as its value.
@@ -387,4 +387,4 @@ The following field properties vary from field to field. You can:
 
 See Also
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

@@ -5,7 +5,7 @@ keywords:
   - Move-Group
   - move group
   - destination container
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 40
 ---
 
@@ -14,7 +14,7 @@ sidebar_position: 40
 The Move-Group cmdlet lets you move a group to a different container in the same domain or in a
 different domain within the same forest. You can't move groups across forests.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the History node
+You can view events related to this cmdlet in the GroupID portal, under the History node
 in the left pane.
 
 ## Syntax
@@ -57,6 +57,6 @@ Move-Group -Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US" -D
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

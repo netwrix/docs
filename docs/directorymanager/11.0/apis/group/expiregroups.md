@@ -1,8 +1,8 @@
 ---
-title: "Expire Multiple Groups with the Directory Manager API"
+title: "Expire Multiple Groups with the GroupID API"
 description: "Use the Expire Groups API to expire several groups in one request by passing their identities in the request body."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - expire groups API
   - bulk group expiration
   - identity store groups
@@ -10,7 +10,7 @@ sidebar_position: 60
 unlisted: true
 ---
 
-# Expire Multiple Groups with the Directory Manager API
+# Expire Multiple Groups with the GroupID API
 
 This API expires multiple groups whose identities are provided in the request body.
 
@@ -91,5 +91,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

@@ -1,20 +1,20 @@
 ---
-title: "Directory Manager Database Requirements"
-description: "Check the supported SQL Server versions and editions for the Directory Manager database, and learn about the SQL Server Browser service requirement."
+title: "GroupID Database Requirements"
+description: "Check the supported SQL Server versions and editions for the GroupID database, and learn about the SQL Server Browser service requirement."
 keywords:
   - SQL Server requirements
   - supported SQL Server versions
   - SQL Server Browser service
-  - Directory Manager database
+  - GroupID database
 sidebar_position: 40
 ---
 
-# Directory Manager Database Requirements
+# GroupID Database Requirements
 
-Directory Manager requires a SQL Server database to store and retrieve data. The SQL database may reside on
+GroupID requires a SQL Server database to store and retrieve data. The SQL database may reside on
 any SQL Server in your environment.
 
-Directory Manager supports the following versions of SQL Server:
+GroupID supports the following versions of SQL Server:
 
 | Database Servers          | Editions                                                                                                                                                       |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,4 +34,4 @@ To enable the SQL Server Browser service, see
 
 See Also
 
-- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

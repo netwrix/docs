@@ -1,8 +1,8 @@
 ---
-title: "Get All Groups of a User with the Directory Manager API"
+title: "Get All Groups of a User with the GroupID API"
 description: "Retrieve all groups for a specified user in an identity store, with paging and sorting options."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - get user groups
   - GET Groups All endpoint
   - user groups API
@@ -10,7 +10,7 @@ sidebar_position: 40
 unlisted: true
 ---
 
-# Get All Groups of a User with the Directory Manager API
+# Get All Groups of a User with the GroupID API
 
 Use this API to retrieve all groups in the directory for the user specified in the endpoint.
 
@@ -183,5 +183,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

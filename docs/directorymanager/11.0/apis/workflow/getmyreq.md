@@ -1,11 +1,11 @@
 ---
 title: "Get My Workflow Requests Using the API"
-description: "Retrieve the workflow requests that the signed-in user submitted by sending a GET request to the Directory Manager API."
+description: "Retrieve the workflow requests that the signed-in user submitted by sending a GET request to the GroupID API."
 keywords:
   - my workflow requests
   - get my requests API
   - requester workflow status
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 120
 unlisted: true
 ---
@@ -147,5 +147,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

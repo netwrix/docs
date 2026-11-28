@@ -1,6 +1,6 @@
 ---
-title: "Create a Directory Manager Mobile Service"
-description: "Create a Mobile service in native or remote IIS, deploy more instances, copy a service, and launch it in Directory Manager."
+title: "Create a GroupID Mobile Service"
+description: "Create a Mobile service in native or remote IIS, deploy more instances, copy a service, and launch it in GroupID."
 keywords:
   - create Mobile service
   - Mobile service deployment
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create a Directory Manager Mobile Service
+# Create a GroupID Mobile Service
 
 You can create a Mobile service in native IIS and remote IIS.
 
@@ -25,13 +25,13 @@ What do you want to do?
 
 ## Create a Mobile Service in Native IIS
 
-When you deploy a Mobile service in native IIS, Directory Manager does the following:
+When you deploy a Mobile service in native IIS, GroupID does the following:
 
 - It creates a directory with the Mobile service’s name at the following physical path on the
-  Directory Manager server, and copies the service files from its template directory to the new service
+  GroupID server, and copies the service files from its template directory to the new service
   directory:
   X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\
-  (X represents the Directory Manager installation drive).
+  (X represents the GroupID installation drive).
 - It also creates a virtual directory for the service in your desired IIS site.
 
 The Mobile service runs within a virtual directory in IIS, while the service files are physically
@@ -44,9 +44,9 @@ located on disk.
 3. On the next page, select **Mobile Service** and click **Next step**.
 4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a unique name for the Mobile service or use the default
-   name. The Mobile service is displayed with this name in Directory Manager.
+   name. The Mobile service is displayed with this name in GroupID.
 6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
-   indicate the deployment instance of the service in Directory Manager. A service can have multiple
+   indicate the deployment instance of the service in GroupID. A service can have multiple
    deployments, for example, one in native IIS and another in remote IIS. The application name and
    deployment name are displayed on the service card:
 
@@ -57,10 +57,10 @@ located on disk.
 
     - The IIS application name is used to name the service’s directory in IIS and its physical
       directory under X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\.
-      (X represents the Directory Manager installation drive.)
+      (X represents the GroupID installation drive.)
     - This IIS application name is also appended to the web server address to construct the URL that
       users click to access this deployment instance of the service. Users can then configure the
-      Directory Manager app with this instance. For example:
+      GroupID app with this instance. For example:
       `https://<web-server-name>:<port>/<IIS-application-name>`
       Therefore, a different URL is constructed for each deployment of a service in IIS.
 
@@ -71,14 +71,14 @@ located on disk.
    service.
 
     1. In the **Data Service** dropdown list, select a Data service. When users configure the
-       Directory Manager app using this deployment of the Mobile service, the app uses the Data
+       GroupID app using this deployment of the Mobile service, the app uses the Data
        service you select here.
     2. In the **Security Service** dropdown list, select a Security service. When users
-       configure the Directory Manager app using this deployment of the Mobile service, the app
+       configure the GroupID app using this deployment of the Mobile service, the app
        uses the Security service you select here.
 
 10. In the **Select Identity Stores** area, select the check boxes for the identity stores you want
-    to associate with the Mobile service. When users configure the Directory Manager app using this Mobile
+    to associate with the Mobile service. When users configure the GroupID app using this Mobile
     service, the app presents these identity stores for signing in.
 11. Click **Create Application**.
     The Mobile service is created and displayed on the **Mobile Service** tab.
@@ -88,7 +88,7 @@ located on disk.
 You can deploy a Mobile service within a site in remote IIS. For this, you need to connect with the
 Microsoft IIS Administration API running on the remote IIS machine.
 
-When you create a service in remote IIS, Directory Manager does the following:
+When you create a service in remote IIS, GroupID does the following:
 
 - It creates a virtual directory for the service in a preconfigured site in remote IIS.
 - It creates a physical directory for the service in the folder that is mapped to this preconfigured
@@ -98,7 +98,7 @@ The service runs within a virtual directory in remote IIS, while the service fil
 located on disk.
 
 To learn about the remote IIS settings and configurations before deploying a service there, see the
-[Prerequisites for Deploying Directory Manager in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
+[Prerequisites for Deploying GroupID in Remote IIS](/docs/directorymanager/11.0/signin/applications/remoteiisprerequisites.md)
 topic.
 
 **To create a service:**
@@ -108,9 +108,9 @@ topic.
 3. On the next page, select **Mobile Service** and click **Next step**.
 4. On the **Create GroupID Application** page, select the **Remote IIS** tile.
 5. In the **Application Name** box, enter a unique name for the Mobile service or use the default
-   name. The service is displayed in Directory Manager with this name.
+   name. The service is displayed in GroupID with this name.
 6. In the **Deployment Name** box, enter a deployment name for the service. This name is used to
-   indicate the deployment instance of the service in Directory Manager. A Mobile service can have multiple
+   indicate the deployment instance of the service in GroupID. A Mobile service can have multiple
    deployments, for example, one in native IIS and another in remote IIS.
    The application name and deployment name are displayed on the service card.
 7. To enter information for **API URL**, **Access Token**, **Username**, **Password**, **IIS
@@ -125,7 +125,7 @@ topic.
 
 ## Deploy Another Instance of a Mobile Service
 
-Directory Manager lets you deploy more than one instance of a Mobile service. Instances can be deployed
+GroupID lets you deploy more than one instance of a Mobile service. Instances can be deployed
 in different web servers, for example, one in native IIS and another in remote IIS.
 For more information on how instances work, see the
 [Deploy Multiple Instances of a Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md#deploy-multiple-instances-of-a-portal)
@@ -186,7 +186,7 @@ duplicated, so you can choose to deploy the new service in any of the supported 
 
 1. In Admin Center, select **Applications** in the left pane.
 2. On the **Applications** page, click the **Mobile Service** tab.
-   The tab displays the default Mobile service in Directory Manager and any other Mobile service that you have
+   The tab displays the default Mobile service in GroupID and any other Mobile service that you have
    created. For details displayed on a service card, see the table in the
    [View Data Service Details](/docs/directorymanager/11.0/signin/service/dataservice/manage.md#view-data-service-details)
    topic.
@@ -195,7 +195,7 @@ duplicated, so you can choose to deploy the new service in any of the supported 
 
 Launching a Mobile service or an instance of a service opens the
 **GroupIDMobileService** page in a web browser, which displays a server URL and a QR code. Users can
-use either one to configure the Directory Manager app on their phones. See the
+use either one to configure the GroupID app on their phones. See the
 [Configure the App](/docs/directorymanager/11.0/signin/service/mobileservice/phonesetup.md#configure-the-app)
 topic.
 
@@ -209,7 +209,7 @@ topic.
     ![GroupIDMobileService page with the server URL and QR code](/images/directorymanager/11.0/admincenter/mobileservice/mobileservice.webp)
 
 Provide the URL of the GroupIDMobileService page to your users so they can use the QR code or the
-server URL to set up the Directory Manager app on their mobile phone while binding it to the respective
+server URL to set up the GroupID app on their mobile phone while binding it to the respective
 deployment instance of the Mobile service.
 
 You can either copy the URL of the GroupIDMobileService page from the address bar or from a
@@ -219,4 +219,4 @@ topic.
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)

@@ -1,6 +1,6 @@
 ---
 title: "Get a Data Source by Type and Name API"
-description: "Retrieve a data source of a specific type, such as Text/CSV, by its name through the Directory Manager data service."
+description: "Retrieve a data source of a specific type, such as Text/CSV, by its name through the GroupID data service."
 keywords:
   - get data source by type and name
   - data source type filter
@@ -53,5 +53,5 @@ GET
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

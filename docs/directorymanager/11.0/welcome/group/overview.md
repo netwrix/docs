@@ -1,6 +1,6 @@
 ---
-title: "Manage Groups in the Directory Manager Portal"
-description: "Learn how the Directory Manager portal manages static groups, Smart Groups, and Dynasties, including ownership, expiry, and dynamic membership."
+title: "Manage Groups in the GroupID Portal"
+description: "Learn how the GroupID portal manages static groups, Smart Groups, and Dynasties, including ownership, expiry, and dynamic membership."
 keywords:
   - group management
   - Smart Groups
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 70
 ---
 
-# Manage Groups in the Directory Manager Portal
+# Manage Groups in the GroupID Portal
 
-Use the Directory Manager portal to manage directory groups, which include both static groups and
+Use the GroupID portal to manage directory groups, which include both static groups and
 Smart Groups. You can:
 
 - Create static groups, Smart Groups and Dynasties.
@@ -24,7 +24,7 @@ Smart Groups. You can:
 
 Examples of directory groups include distribution lists and security groups.
 
-The Directory Manager portal updates Smart Groups and Dynasties on the basis of user-defined
+The GroupID portal updates Smart Groups and Dynasties on the basis of user-defined
 queries. When directory information changes, the portal automatically updates the appropriate
 groups, so groups are never out of date.
 
@@ -44,5 +44,5 @@ identity stores.
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)

@@ -1,6 +1,6 @@
 ---
-title: "How Group Expiry Works in Directory Manager"
-description: "Learn what happens when a group expires in Directory Manager, how the Group Lifecycle policy controls expiry, and when expiry notifications are sent."
+title: "How Group Expiry Works in GroupID"
+description: "Learn what happens when a group expires in GroupID, how the Group Lifecycle policy controls expiry, and when expiry notifications are sent."
 keywords:
   - group expiry
   - Group Lifecycle policy
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 90
 ---
 
-# How Group Expiry Works in Directory Manager
+# How Group Expiry Works in GroupID
 
-You can expire a group in Directory Manager in two ways:
+You can expire a group in GroupID in two ways:
 
 - Use the **Expire** button on the Group Properties toolbar to expire a group manually.
 - Let the Group Lifecycle job expire groups automatically based on the expiry policy specified for each
@@ -28,12 +28,12 @@ The following events take place when a group expires:
 - A mail-enabled group is mail-disabled, which means that any emails sent to the group are
   bounced back with an expiration message.
 - For a security group, its member list is cleared and any permissions set for that group no longer
-  apply. However, Directory Manager keeps a backup of its membership in the database.
+  apply. However, GroupID keeps a backup of its membership in the database.
 
-Directory Manager moves an expired group to the Expired Groups tab; however, all group attributes
+GroupID moves an expired group to the Expired Groups tab; however, all group attributes
 remain intact. You can renew an expired group.
 
-When you expire an Office 365 group using Directory Manager, its member list is backed up in the database and
+When you expire an Office 365 group using GroupID, its member list is backed up in the database and
 cleared from Office 365.
 
 **Active Directory identity store with Office 365 as the messaging provider:**
@@ -56,7 +56,7 @@ On renewing an expired distribution group, the following happens:
 In a Microsoft Entra ID identity store with Office 365 as the messaging provider, the
 following happens when a distribution group is expired manually or by the Group Lifecycle job:
 
-- Directory Manager takes a backup of the group’s membership.
+- GroupID takes a backup of the group’s membership.
 - It empties out the group’s membership in Office 365.
 
 On renewing an expired distribution group, the following happens:
@@ -101,7 +101,7 @@ expiry, the job does the following:
 
 - When the **1 day before group expiration** option is selected for sending notifications and the
   Group Life Cycle schedule evaluates the group for the first time a day before its expiration date,
-  Directory Manager extends the group’s expiration date by 7 days.
+  GroupID extends the group’s expiration date by 7 days.
 
 Notifications are sent if an SMTP server is configured for the identity store. See the
 [Set Group Expiry Notifications](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md#set-group-expiry-notifications)
@@ -109,6 +109,6 @@ topic for additional information.
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
-- [ Group Expiry and Deletion in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/groupexpirydeletion.md)
-- [Manage Group Lifecycle Settings in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [ Group Expiry and Deletion in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/groupexpirydeletion.md)
+- [Manage Group Lifecycle Settings in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md)

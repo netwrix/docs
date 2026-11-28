@@ -1,6 +1,6 @@
 ---
-title: "Create a Microsoft Entra ID Mailbox in Directory Manager"
-description: "Create a mailbox for a user in a Microsoft Entra ID identity store by using the Create Mailbox wizard in the Directory Manager portal."
+title: "Create a Microsoft Entra ID Mailbox in GroupID"
+description: "Create a mailbox for a user in a Microsoft Entra ID identity store by using the Create Mailbox wizard in the GroupID portal."
 keywords:
   - Entra ID mailbox
   - Create Mailbox wizard
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Create a Microsoft Entra ID Mailbox in Directory Manager
+# Create a Microsoft Entra ID Mailbox in GroupID
 
-You can create a mailbox in the Directory Manager portal when a messaging provider is configured for
+You can create a mailbox in the GroupID portal when a messaging provider is configured for
 the identity store.
 
 A mailbox is a user with a mailbox, such as an Exchange mailbox.
@@ -28,7 +28,7 @@ What do you want to do?
 
 ## Create a mailbox in a Microsoft Entra ID identity store
 
-1. In the Directory Manager portal, click the **Create New** button and select **Mailbox**.
+1. In the GroupID portal, click the **Create New** button and select **Mailbox**.
 
     The **Create Mailbox** wizard opens to the Account page.
 
@@ -40,12 +40,12 @@ What do you want to do?
 5. On the **Summary** page, review the settings and then click **Finish** to complete the wizard.
 
 :::note
-If the Directory Manager administrator has specified the mailbox creation action for review,
+If the GroupID administrator has specified the mailbox creation action for review,
 your changes don't take effect until an approver verifies them. See the
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
 :::
 
 See Also
 
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

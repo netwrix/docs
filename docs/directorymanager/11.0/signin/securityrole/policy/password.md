@@ -1,8 +1,8 @@
 ---
 title: "Configure a Password Policy for a Security Role"
-description: "Set security question, authentication lockout, and password validation rules for security role members in Directory Manager."
+description: "Set security question, authentication lockout, and password validation rules for security role members in GroupID."
 keywords:
-  - Directory Manager
+  - GroupID
   - password policy
   - security role
   - authentication lockout
@@ -12,13 +12,13 @@ sidebar_position: 60
 
 # Configure a Password Policy for a Security Role
 
-Using Directory Manager, you can implement a Password policy (a) for an identity store, (b) for
+Using GroupID, you can implement a Password policy (a) for an identity store, (b) for
 security roles in an identity store, or (c) both at the identity store and role levels.
 
 - For an identity store, you can specify rules and restrictions for identity store account
   passwords.
 - For a security role, you can specify validation checks for passwords that role members create for
-  their identity store accounts using Directory Manager. Hence, password validation checks are
+  their identity store accounts using GroupID. Hence, password validation checks are
   role-specific.
 
 With the Password policy, you can manage settings related to security questions and account
@@ -27,7 +27,7 @@ lockout for security roles in an identity store.
 ## Set Password Restrictions and Rules for an Identity Store
 
 See the
-[Configure Password Options in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/passwordoptions.md)
+[Configure Password Options in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/passwordoptions.md)
 topic.
 
 ## Define Security Question Settings for a Security Role
@@ -35,7 +35,7 @@ topic.
 You can specify certain settings related to security questions for user roles in an identity store.
 As a result, different roles in an identity store can have different settings for the following:
 
-- the number of questions role members must select to enroll their account in Directory Manager
+- the number of questions role members must select to enroll their account in GroupID
 - the minimum number of characters an answer should contain
 
 **To specify settings for security questions:**
@@ -52,7 +52,7 @@ As a result, different roles in an identity store can have different settings fo
 
     | Setting               | Description                                                                                                                                                                                                                                                                                                                                               |
     | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Number of Questions   | The number of security questions role members must select while enrolling their accounts in Directory Manager for multifactor authentication or second factor authentication. The default number is 4. Changing the number of security questions for a role has no impact on already enrolled role members unless they update their security questions information. |
+    | Number of Questions   | The number of security questions role members must select while enrolling their accounts in GroupID for multifactor authentication or second factor authentication. The default number is 4. Changing the number of security questions for a role has no impact on already enrolled role members unless they update their security questions information. |
     | Minimum Answer Length | The minimum number of characters that a role member must type when saving the answer to a security question at the time of account enrollment. Answers with fewer than the specified number of characters aren't saved.                                                                                                                               |
 
 7. Click **OK**.
@@ -62,17 +62,17 @@ As a result, different roles in an identity store can have different settings fo
 ## Specify an Authentication Lockout Policy for a Security Role
 
 The authentication lockout policy comes into play when users authenticate for multifactor
-authentication and second factor authentication in Directory Manager. The policy controls the
+authentication and second factor authentication in GroupID. The policy controls the
 following:
 
 - The consecutive number of times a role member can provide a wrong value for an authentication type
-  in Directory Manager, after which authentication is disabled.
+  in GroupID, after which authentication is disabled.
 - The duration for authentication to remain disabled.
 
-With authentication disabled, role members can't sign in to Directory Manager.
+With authentication disabled, role members can't sign in to GroupID.
 
 :::note
-The authentication lockout policy only disables the user account in Directory Manager. It doesn't
+The authentication lockout policy only disables the user account in GroupID. It doesn't
 disable it in the provider, such as Active Directory.
 :::
 
@@ -91,7 +91,7 @@ disable it in the provider, such as Active Directory.
     |     | Setting                                  | Description                                                                                                                                                                                                                                                                                                                                                                                               |
     | --- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | 1.  | Failed Authentication Attempts Threshold | The number of consecutive attempts to provide a wrong value for an authentication type. Authentication is disabled for a user when the number of consecutive unsuccessful attempts by that user reaches the number given here.                                                                                                                                                                             |
-    | 2.  | Account Locked out Duration              | The number of minutes to disable authentication in Directory Manager after consecutive unsuccessful attempts to provide the right value for an authentication type. Note the following: - Authentication is automatically enabled after the specified duration. - Otherwise, it is enabled when, during the lockout period, the user correctly enters their identity store account credentials to sign in to Directory Manager. |
+    | 2.  | Account Locked out Duration              | The number of minutes to disable authentication in GroupID after consecutive unsuccessful attempts to provide the right value for an authentication type. Note the following: - Authentication is automatically enabled after the specified duration. - Otherwise, it is enabled when, during the lockout period, the user correctly enters their identity store account credentials to sign in to GroupID. |
 
 7. Click **OK**.
 8. On the **Edit Security Role** page, click **Update Security Role**.
@@ -100,17 +100,17 @@ disable it in the provider, such as Active Directory.
 ## Specify Password Validation Checks for a Security Role
 
 Identity providers have password validation and complexity policies defined, and users must follow
-them while creating passwords. You can extend these policies in Directory Manager.
+them while creating passwords. You can extend these policies in GroupID.
 
 You can specify password validation checks for a security role in an identity store. This extended
 policy applies when:
 
-- Role members change or reset their identity store account passwords using Directory Manager.
+- Role members change or reset their identity store account passwords using GroupID.
 - Administrators or helpdesk members reset the identity store account passwords of role members
   using the Helpdesk section in Admin Center.
 
 The policy doesn't apply when a password is reset using the **Reset Password** option in user
-properties in the Directory Manager portal.
+properties in the GroupID portal.
 
 **To specify password validation checks:**
 
@@ -142,5 +142,5 @@ properties in the Directory Manager portal.
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

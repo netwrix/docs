@@ -1,6 +1,6 @@
 ---
 title: "Customize Object Properties Pages in the Mobile App"
-description: "Add, edit, or remove the fields that the Directory Manager app shows on the properties page of a user, contact, or group."
+description: "Add, edit, or remove the fields that the GroupID app shows on the properties page of a user, contact, or group."
 keywords:
   - Mobile app object properties
   - properties page fields
@@ -11,7 +11,7 @@ sidebar_position: 30
 
 # Customize Object Properties Pages in the Mobile App
 
-Users can view basic information (properties) of the following directory objects in the Directory Manager app:
+Users can view basic information (properties) of the following directory objects in the GroupID app:
 
 - Users/Contacts
 - Groups
@@ -93,5 +93,5 @@ You can change the following for a field on a properties page:
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

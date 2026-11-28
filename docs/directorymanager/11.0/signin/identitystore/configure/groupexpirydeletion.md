@@ -1,6 +1,6 @@
 ---
-title: "Group Expiry and Deletion in Directory Manager"
-description: "Learn what happens when Directory Manager expires, renews, or deletes a group, and how physical and logical deletion differ."
+title: "Group Expiry and Deletion in GroupID"
+description: "Learn what happens when GroupID expires, renews, or deletes a group, and how physical and logical deletion differ."
 keywords:
   - group expiry
   - group deletion
@@ -10,18 +10,18 @@ keywords:
 sidebar_position: 40
 ---
 
-# Group Expiry and Deletion in Directory Manager
+# Group Expiry and Deletion in GroupID
 
-In Directory Manager, you can expire and delete groups in two ways:
+In GroupID, you can expire and delete groups in two ways:
 
 - Manually expire and delete groups
 - Automatically expire and delete groups using the Group Life Cycle schedule
 
 ## What Happens When a Group Expires
 
-Directory Manager provides two ways to expire a group:
+GroupID provides two ways to expire a group:
 
-- You can manually expire a group from the Directory Manager portal.
+- You can manually expire a group from the GroupID portal.
 - The Group Life Cycle schedule expires groups automatically based on the expiry policy specified
   for the respective group.
 
@@ -32,7 +32,7 @@ The following events occur when a group expires:
 - The group becomes inactive and is locked for all activities.
 - "EXPIRED\_" is added as a prefix to the group name.
 - A mail-enabled distribution group is mail-disabled.
-- For a security group, its member list is cleared. However, Directory Manager keeps a backup of its
+- For a security group, its member list is cleared. However, GroupID keeps a backup of its
   membership in the database.
 
 **In an Active Directory identity store with Office 365 as the messaging provider:**
@@ -54,7 +54,7 @@ On renewing an expired distribution group, the following happens:
 The following happens when a distribution group is expired manually or by the Group Life Cycle
 schedule:
 
-- Directory Manager takes a backup of the group's membership.
+- GroupID takes a backup of the group's membership.
 - It empties the group's membership in Office 365.
 
     :::note
@@ -73,8 +73,8 @@ its expiry policy is re-applied to it, starting from the date of renewal.
 
 ## What Happens When a Group Is Deleted
 
-Using Directory Manager, groups can be deleted physically or logically. Deleted groups can be viewed
-in the Directory Manager portal. You can distinguish physically deleted groups from logically
+Using GroupID, groups can be deleted physically or logically. Deleted groups can be viewed
+in the GroupID portal. You can distinguish physically deleted groups from logically
 deleted groups as follows:
 
 - Physically deleted groups are listed under _Tombstone Groups_.
@@ -85,7 +85,7 @@ deleted groups as follows:
 Both types are locked for further operations until restored.
 
 :::note
-Elasticsearch serves all searches in Directory Manager, except the Recycle Bin, which
+Elasticsearch serves all searches in GroupID, except the Recycle Bin, which
 fetches data from the directory.
 :::
 
@@ -95,8 +95,8 @@ The Recycle Bin doesn't display data for a Microsoft Entra ID identity store.
 
 ### Physical Deletion
 
-Physical group deletion refers to manually deleting groups from the Directory Manager portal.
-Directory Manager moves a physically deleted group to the Recycle Bin while stripping it of most of
+Physical group deletion refers to manually deleting groups from the GroupID portal.
+GroupID moves a physically deleted group to the Recycle Bin while stripping it of most of
 its properties. You can't delete a group from the Recycle Bin; however, you can restore it. The
 restoration process restores the group to its original container and also reinstates
 the home container for the group, if deleted.
@@ -128,6 +128,6 @@ topic.
 
 **See Also**
 
-- [Manage Group Lifecycle Settings in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md)
-- [Create a Group Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md)
+- [Manage Group Lifecycle Settings in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md)
+- [Create a Group Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md)
 - [Specify a Default Approver](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md#specify-a-default-approver)

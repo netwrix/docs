@@ -1,8 +1,8 @@
 ---
-title: "Get My Expiring Groups with the Directory Manager API"
+title: "Get My Expiring Groups with the GroupID API"
 description: "Retrieve the groups of the authenticated user that are about to expire, with paging and sorting options."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - expiring groups
   - Groups/Expiring endpoint
   - GET request
@@ -10,7 +10,7 @@ sidebar_position: 70
 unlisted: true
 ---
 
-# Get My Expiring Groups with the Directory Manager API
+# Get My Expiring Groups with the GroupID API
 
 Use this API to retrieve the expiring groups of the authenticated user.
 
@@ -114,5 +114,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

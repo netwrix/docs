@@ -2,7 +2,7 @@
 title: "Set password options for a new AD user"
 description: "Set the password and security options for a new Active Directory user account in the Create User wizard."
 keywords:
-  - Directory Manager
+  - GroupID
   - AD user password
   - password never expires
   - Create User wizard
@@ -23,5 +23,5 @@ Provide a password for the user account and set other password-specific options.
 
 **See Also**
 
-- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Create an Active Directory mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)
+- [Create an AD user in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Create an Active Directory mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/mailbox.md)

@@ -1,5 +1,5 @@
 ---
-title: "Export the Helpdesk Users List in Directory Manager"
+title: "Export the Helpdesk Users List in GroupID"
 description: "Export user information from Helpdesk Operations to an Excel, XML, or CSV file."
 keywords:
   - export users
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# Export the Helpdesk Users List in Directory Manager
+# Export the Helpdesk Users List in GroupID
 
 You can export user information to an Excel, XML, or CSV file.
 
@@ -24,7 +24,7 @@ What do you want to do?
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. You can export all users in all
    identity stores to a file or filter the listing to export specific users only. To filter the
    list, see the
-   [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+   [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
    topic.
 3. Select the checkboxes for the users you want to export or click the checkbox in the header row
    to select all users. Then click **Export**.
@@ -33,5 +33,5 @@ What do you want to do?
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "View and Update General User Information in Directory Manager"
+title: "View and Update General User Information in GroupID"
 description: "View or update a user, mailbox, or contact's name, address, job, and photo details on the General tab."
 keywords:
   - General tab
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# View and Update General User Information in Directory Manager
+# View and Update General User Information in GroupID
 
 Use this tab to view or update the general information for a user, mailbox, or contact.
 
@@ -85,7 +85,7 @@ The name of the Exchange assistant for the mailbox/contact. Any email sent to th
 also forwarded to this assistant.
 
 Enter a search string to locate the object to add as an Exchange assistant, or click **Browse** to
-use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing
+use the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing
 a search.
 
 This field isn't available for a user.
@@ -103,4 +103,4 @@ also provides image editing options, including rotate, crop, flip, and resize.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

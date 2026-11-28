@@ -1,8 +1,8 @@
 ---
-title: "Update a User with the Directory Manager API"
+title: "Update a User with the GroupID API"
 description: "Update the attributes of a user in an identity store with a PATCH request."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - update user
   - PATCH Users endpoint
   - AttributesToUpdate
@@ -10,7 +10,7 @@ sidebar_position: 160
 unlisted: true
 ---
 
-# Update a User with the Directory Manager API
+# Update a User with the GroupID API
 
 This API updates a user's information in the specified identity store.
 
@@ -75,5 +75,5 @@ PATCH
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

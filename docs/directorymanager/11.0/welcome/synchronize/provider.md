@@ -1,5 +1,5 @@
 ---
-title: "Supported Synchronize Providers in Directory Manager"
+title: "Supported Synchronize Providers in GroupID"
 description: "See which identity store and data source providers Synchronize supports as a source or destination, with prerequisites and known issues."
 keywords:
   - Synchronize providers
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Supported Synchronize Providers in Directory Manager
+# Supported Synchronize Providers in GroupID
 
 You can create identity stores for several identity providers (such as Active Directory and
 Microsoft Entra ID) as well as create data sources for providers such as files and databases. These
@@ -57,7 +57,7 @@ source and destination.
     Use Google Workspace to connect to Google Workspace plans. You can use it as a source and
     destination provider.
 
-For more information on identity stores, see the [Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/overview.md) topic.
+For more information on identity stores, see the [Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/overview.md) topic.
 
 ## Data Sources
 
@@ -126,12 +126,12 @@ Create external data sources first on the Data Sources tab in Admin Center.
     files or tab-separated value (TSV) text files. This provider supports automatic schema detection
     if a header row is included in the file.
 
-For more information on data sources, see the [Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/overview.md) topic.
+For more information on data sources, see the [Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/overview.md) topic.
 
 **See Also**
 
-- [Directory Manager Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
-- [Manage Synchronize Jobs in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Manage Job Collections in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)
+- [GroupID Synchronize Overview](/docs/directorymanager/11.0/welcome/synchronize/overview.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Manage Synchronize Jobs in GroupID](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Manage Job Collections in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/manage/jobcollection.md)

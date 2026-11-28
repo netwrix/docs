@@ -1,6 +1,6 @@
 ---
 title: "Password Page of the Entra ID User and Mailbox Wizards"
-description: "Set the password and security options for a new Microsoft Entra ID user or mailbox on the Password page of the Directory Manager creation wizards."
+description: "Set the password and security options for a new Microsoft Entra ID user or mailbox on the Password page of the GroupID creation wizards."
 keywords:
   - Entra ID user password
   - Password page
@@ -27,5 +27,5 @@ Provide a password for the user account and set other password-specific options.
 
 **See Also**
 
-- [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
-- [Create a Microsoft Entra ID Mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)
+- [Create a Microsoft Entra ID User in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
+- [Create a Microsoft Entra ID Mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)

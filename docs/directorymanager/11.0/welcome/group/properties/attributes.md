@@ -1,11 +1,11 @@
 ---
 title: "Group properties Attributes tab"
-description: "Store extra information about a group in Directory Manager by setting its custom attribute values on the Attributes tab."
+description: "Store extra information about a group in GroupID by setting its custom attribute values on the Attributes tab."
 keywords:
   - custom attributes
   - group properties
   - Attributes tab
-  - Directory Manager group
+  - GroupID group
 sidebar_position: 60
 ---
 
@@ -73,4 +73,4 @@ The value of the custom attribute 14.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

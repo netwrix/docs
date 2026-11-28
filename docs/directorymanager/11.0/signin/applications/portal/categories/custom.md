@@ -1,28 +1,28 @@
 ---
-title: "Define Custom Display Types in Directory Manager"
+title: "Define Custom Display Types in GroupID"
 description: "Choose a custom display type for portal fields, learn how display types link to schema attributes, and delete a custom display type you no longer need."
 keywords:
   - custom display types
-  - Directory Manager portal design
+  - GroupID portal design
   - delete custom display type
   - linked combo
   - portal template
 sidebar_position: 10
 ---
 
-# Define Custom Display Types in Directory Manager
+# Define Custom Display Types in GroupID
 
-In Directory Manager, several predefined custom display types are used in the default portal template. To
+In GroupID, several predefined custom display types are used in the default portal template. To
 customize the portal, you can use the predefined custom display types as well as define new ones.
 
-- [Directory Manager Text Box Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md)
-- [Create a Dropdown List Display Type in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/categories/dropdownlist.md)
-- [Directory Manager Linked Field Dropdown List Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/linkeddropdown.md)
-- [Image Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/image.md)
-- [Grid Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/grid.md)
-- [Directory Manager Radio Button Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/radio.md)
-- [Directory Manager Multiline Textbox Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/multilinetextbox.md)
-- [Linked Combo Display Type in Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)
+- [GroupID Text Box Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/textbox.md)
+- [Create a Dropdown List Display Type in GroupID](/docs/directorymanager/11.0/signin/applications/portal/categories/dropdownlist.md)
+- [GroupID Linked Field Dropdown List Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/linkeddropdown.md)
+- [Image Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/image.md)
+- [Grid Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/grid.md)
+- [GroupID Radio Button Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/radio.md)
+- [GroupID Multiline Textbox Display Type](/docs/directorymanager/11.0/signin/applications/portal/categories/multilinetextbox.md)
+- [Linked Combo Display Type in GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/categories/linkedcombo/overview.md)
 
 ## How to Implement Display Types
 
@@ -57,5 +57,5 @@ To delete a custom display type:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)

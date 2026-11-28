@@ -1,6 +1,6 @@
 ---
 title: "Query Designer Filter Criteria tab"
-description: "Add custom filter criteria with attributes, conditions, and AND/OR operators to refine the objects a Directory Manager query returns."
+description: "Add custom filter criteria with attributes, conditions, and AND/OR operators to refine the objects a GroupID query returns."
 keywords:
   - Query Designer
   - filter criteria
@@ -25,7 +25,7 @@ section of the
 [Configure a Query Designer Policy for a Security Role](/docs/directorymanager/11.0/signin/securityrole/policy/querydesigner.md)
 topic.
 
-The default criteria is part of the policy; therefore, in the Directory Manager portal it's visible to
+The default criteria is part of the policy; therefore, in the GroupID portal it's visible to
 role members only.
 
 Suppose the administrator has defined the following default criteria in the policy:
@@ -37,7 +37,7 @@ You can add another row of filter criteria in the portal Query Designer window i
 **Select Attribute**
 
 By default, this is the only list displayed on the tab. It displays all or specific schema and
-Exchange attributes, depending on what the Directory Manager administrator has configured.
+Exchange attributes, depending on what the GroupID administrator has configured.
 
 Select an attribute to be searched. For example, to search for users who live in the city of
 Houston, select the City attribute from this list.
@@ -48,7 +48,7 @@ From here, select the condition that identifies search results. The following ta
 available conditions:
 
 :::note
-Depending on the configuration the Directory Manager administrator made for the portal, the list
+Depending on the configuration the GroupID administrator made for the portal, the list
 displays all of the following conditions or only specific ones.
 :::
 
@@ -119,4 +119,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

@@ -1,6 +1,6 @@
 ---
-title: "Delete a Directory Manager Mobile Service"
-description: "Delete a Mobile service or one of its deployment instances in Admin Center, and see what Directory Manager removes from IIS or Docker."
+title: "Delete a GroupID Mobile Service"
+description: "Delete a Mobile service or one of its deployment instances in Admin Center, and see what GroupID removes from IIS or Docker."
 keywords:
   - delete Mobile service
   - Mobile service deployment instance
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Delete a Directory Manager Mobile Service
+# Delete a GroupID Mobile Service
 
-You can delete a Mobile service or an instance of a service. When you delete a service, Directory Manager also deletes all its
+You can delete a Mobile service or an instance of a service. When you delete a service, GroupID also deletes all its
 instances.
 
 What do you want to do?
@@ -27,9 +27,9 @@ removed:
 
 - **For an instance in native IIS:**
 
-    - The service directory under the following location on the Directory Manager server:  
+    - The service directory under the following location on the GroupID server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDMobileService\Inetpub\  
-      (X represents the Directory Manager installation drive)
+      (X represents the GroupID installation drive)
     - The service directory in the IIS site
 
 - **For an instance in remote IIS:**
@@ -61,7 +61,7 @@ removed:
 
 ## Delete a Service
 
-Deleting a Mobile service removes all its deployments and configurations from Directory Manager.
+Deleting a Mobile service removes all its deployments and configurations from GroupID.
 
 **To delete a service:**
 

@@ -1,6 +1,6 @@
 ---
-title: "Uninstall Directory Manager Credential Provider"
-description: "Remove Directory Manager Credential Provider from client workstations using Windows Control Panel or by removing its package from a Group Policy Object."
+title: "Uninstall GroupID Credential Provider"
+description: "Remove GroupID Credential Provider from client workstations using Windows Control Panel or by removing its package from a Group Policy Object."
 keywords:
   - uninstall Credential Provider
   - remove Credential Provider
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Uninstall Directory Manager Credential Provider
+# Uninstall GroupID Credential Provider
 
-You can uninstall Directory Manager Credential Provider using one of the following:
+You can uninstall GroupID Credential Provider using one of the following:
 
 - Windows Control Panel: If you installed Credential Provider manually, you can uninstall it using
   Windows Control Panel.
@@ -36,5 +36,5 @@ You can uninstall Directory Manager Credential Provider using one of the followi
 
 See Also
 
-- [Install Directory Manager Credential Provider](/docs/directorymanager/11.0/credentialprovider/installcp.md)
-- [Directory Manager Credential Provider](/docs/directorymanager/11.0/credentialprovider/credentialprovider.md)
+- [Install GroupID Credential Provider](/docs/directorymanager/11.0/credentialprovider/installcp.md)
+- [GroupID Credential Provider](/docs/directorymanager/11.0/credentialprovider/credentialprovider.md)

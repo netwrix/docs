@@ -1,5 +1,5 @@
 ---
-title: "Validate your profile in Directory Manager"
+title: "Validate your profile in GroupID"
 description: "Verify and update your directory profile, change your primary manager, and transfer or terminate direct reports during profile validation."
 keywords:
   - profile validation
@@ -7,17 +7,17 @@ keywords:
   - primary manager
   - direct reports
   - User Life Cycle job
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 80
 ---
 
-# Validate your profile in Directory Manager
+# Validate your profile in GroupID
 
-The profile validation process in Directory Manager ensures the accuracy of users' information in
+The profile validation process in GroupID ensures the accuracy of users' information in
 the directory.
 
 When the administrator applies profile validation to a group in an identity store, all group members
-must verify and update their profile information in the directory using the Directory Manager portal. The
+must verify and update their profile information in the directory using the GroupID portal. The
 administrator also specifies a profile validation life cycle period (for example, 90 days), so that
 each member must validate their profile once during each 90-day cycle.
 
@@ -28,16 +28,16 @@ While validating the profile, a user can:
 - Transfer their direct reports to another manager.
 - Terminate their direct reports.
 
-Periodically, users receive reminder emails to validate their profile information. Directory Manager expires
+Periodically, users receive reminder emails to validate their profile information. GroupID expires
 users who ignore these reminders and don't validate their profiles within the required time.
 Expired users get disabled in the directory.
 
 Such users can request the administrator or Helpdesk to unlock their accounts temporarily and grant
 an extension period. If they don't validate their profile information within that extension period
-either, Directory Manager expires them again and their managers are informed by email. To reactivate these
+either, GroupID expires them again and their managers are informed by email. To reactivate these
 accounts, users' managers must send a request to the administrator or Helpdesk. The administrator or
 Helpdesk user can extend the profile validation period on the
-[View and Manage Disabled Users in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/disableduser.md) page of the
+[View and Manage Disabled Users in GroupID](/docs/directorymanager/11.0/welcome/user/manage/disableduser.md) page of the
 portal.
 
 :::note
@@ -55,7 +55,7 @@ profiles, the regular profile validation life cycle settings apply.
 
 ## The User Life Cycle job
 
-The profile validation feature in Directory Manager is monitored by the User Life Cycle job. This is a
+The profile validation feature in GroupID is monitored by the User Life Cycle job. This is a
 scheduled job that runs on a set frequency and does the following:
 
 - Monitors the profile validation dates of users.
@@ -96,7 +96,7 @@ profile window.
 The **Manager** field displays the name of your primary manager (if you have one); otherwise, it is blank.
 
 To add or change your primary manager, click the ellipsis button next to the field. This launches
-the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can
+the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md), where you can
 search and select your primary manager.
 
 When you change your primary manager (Manager A), Manager A is notified by email to accept or
@@ -106,7 +106,7 @@ you remain with Manager A and a notification is sent to you and Manager A.
 :::note
 This is the default flow of the "Workflow to Change Manager" workflow. If the
 administrator disables the workflow or changes the approver, the flow changes accordingly. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 :::
 
 ## Transfer your direct report
@@ -120,7 +120,7 @@ the old manager (you).
 This is the default flow of the "Workflow to Transfer a User" workflow, with the direct
 report set as the workflow approver. If the administrator disables the workflow or changes the
 approver, the flow changes accordingly. See
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md).
 :::
 
 ## Terminate your direct report
@@ -132,7 +132,7 @@ the manager (you).
 
 **See Also**
 
-- [Manage your Directory Manager profile](/docs/directorymanager/11.0/welcome/user/manage/viewprofile.md)
+- [Manage your GroupID profile](/docs/directorymanager/11.0/welcome/user/manage/viewprofile.md)
 - [Organization Tab for Users and Contacts](/docs/directorymanager/11.0/welcome/user/properties/activedirectory/useroverview/organization.md)
-- [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
-- [View and Manage Disabled Users in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/disableduser.md)
+- [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md)
+- [View and Manage Disabled Users in GroupID](/docs/directorymanager/11.0/welcome/user/manage/disableduser.md)

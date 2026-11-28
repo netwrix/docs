@@ -1,6 +1,6 @@
 ---
 title: "Create Microsoft Entra ID Users and Mailboxes"
-description: "Learn which user object types (users and mailboxes) you can create in a Microsoft Entra ID identity store in Directory Manager."
+description: "Learn which user object types (users and mailboxes) you can create in a Microsoft Entra ID identity store in GroupID."
 keywords:
   - Entra ID user objects
   - create Entra ID user
@@ -18,4 +18,4 @@ In a Microsoft Entra ID identity store, you can create the following types of us
 
 See Also
 
-- [Manage users in Directory Manager](/docs/directorymanager/11.0/welcome/user/overview.md)
+- [Manage users in GroupID](/docs/directorymanager/11.0/welcome/user/overview.md)

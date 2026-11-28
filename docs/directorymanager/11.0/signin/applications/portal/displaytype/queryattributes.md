@@ -1,5 +1,5 @@
 ---
-title: "Specify Smart Group Query Attributes in Directory Manager"
+title: "Specify Smart Group Query Attributes in GroupID"
 description: "Choose which schema attributes, operators, and display types the portal offers in Query Designers and the Group Items By field."
 keywords:
   - Smart Group query attributes
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 90
 ---
 
-# Specify Smart Group Query Attributes in Directory Manager
+# Specify Smart Group Query Attributes in GroupID
 
 For an identity store, you can choose whether all or specific schema attributes should be available
 on the following pages in the portal:
@@ -35,7 +35,7 @@ on the following pages in the portal:
 
 - The **Add Attributes** dialog box for Dynasties. The schema attributes you specify are
   available in the _Group Items By_ field, which is used to divide the query results into groups.
-  Directory Manager creates a new child group for each unique value of the attribute that users select in the
+  GroupID creates a new child group for each unique value of the attribute that users select in the
   _Group Items By_ field.
 
     ![Add Attributes dialog box with the Group Items By field](/images/directorymanager/11.0/admincenter/portal/design/add_attributes.webp)
@@ -114,7 +114,7 @@ You can also specify the following for an attribute:
     object as value for the attribute.
     The list contains basic display types and custom display types defined on the **Custom Display
     Types** page. See the
-    [Directory Manager Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
+    [GroupID Display Type Categories](/docs/directorymanager/11.0/signin/applications/portal/categories/categories.md)
     topic.
     When multiple attributes are selected in the **Fields** box, this display type applies to each
     of them. You can edit an attribute later to apply a different display type.
@@ -179,4 +179,4 @@ You can change the following for an attribute:
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "Manage Directory Manager Security Service Settings"
+title: "Manage GroupID Security Service Settings"
 description: "View, rename, start, stop, and delete a Security service from the Security Service tab in Admin Center."
 sidebar_position: 20
 keywords:
@@ -9,9 +9,9 @@ keywords:
   - Admin Center applications
 ---
 
-# Manage Directory Manager Security Service Settings
+# Manage GroupID Security Service Settings
 
-Security services in Directory Manager appear on the **Security Service** tab. A card for a service
+Security services in GroupID appear on the **Security Service** tab. A card for a service
 displays information such as its name and status.
 
 You can manage several settings for a service, such as:
@@ -31,8 +31,8 @@ What do you want to do?
 
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Security Service** tab.  
-   The tab displays the default Security service created while configuring Directory Manager and any other
-   Security service that you have created. When multiple Directory Manager instances are deployed,
+   The tab displays the default Security service created while configuring GroupID and any other
+   Security service that you have created. When multiple GroupID instances are deployed,
    this tab shows multiple default Security services, because each instance has its own
    default Security service. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
@@ -44,7 +44,7 @@ What do you want to do?
 ## Manage Security Service Settings
 
 See the
-[Manage Directory Manager Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
+[Manage GroupID Data Service Settings](/docs/directorymanager/11.0/signin/service/dataservice/manage.md)
 topic to manage settings for a Security service, such as deployment and log settings.
 
 ## Delete a Security Service
@@ -53,9 +53,9 @@ Deleting a Security service removes the following:
 
 - **For a native IIS deployment:**
 
-    - The Security service directory under the following location on the Directory Manager server:  
+    - The Security service directory under the following location on the GroupID server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDSecurityService\Inetpub\  
-      (X represents the Directory Manager installation drive)
+      (X represents the GroupID installation drive)
     - The Security service directory from the website in IIS
 
 - **For a remote IIS deployment:**
@@ -75,11 +75,11 @@ Deleting a Security service removes the following:
 
 :::note
 You can't delete the default Security service, and you can't delete a Security service that
-is linked with a Directory Manager client, such as the Directory Manager portal or a Mobile service.
+is linked with a GroupID client, such as the GroupID portal or a Mobile service.
 :::
 
 See Also
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)
-- [Create a Directory Manager Security Service](/docs/directorymanager/11.0/signin/service/securityservice/create.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Create a GroupID Security Service](/docs/directorymanager/11.0/signin/service/securityservice/create.md)

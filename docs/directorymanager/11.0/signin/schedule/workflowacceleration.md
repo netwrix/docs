@@ -1,21 +1,21 @@
 ---
-title: "Update the Directory Manager Workflow Acceleration Schedule"
+title: "Update the GroupID Workflow Acceleration Schedule"
 description: "Change the scheduler service, triggers, and authentication of the schedule that accelerates pending workflow requests to approvers."
 keywords:
   - workflow acceleration
   - approver acceleration
   - pending workflow requests
   - scheduler service
-  - Directory Manager schedule
+  - GroupID schedule
 sidebar_position: 150
 ---
 
-# Update the Directory Manager Workflow Acceleration Schedule
+# Update the GroupID Workflow Acceleration Schedule
 
 A Workflow Acceleration schedule facilitates the workflow approver acceleration process for workflow
 requests. This schedule is created automatically when approver acceleration is enabled for the identity
 store. See the
-[Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
+[Configure Workflow Approver Acceleration in GroupID](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
 topic.
 
 By default, the schedule runs daily to accelerate workflow requests to approvers, according to
@@ -39,7 +39,7 @@ You can't create or delete a Workflow Acceleration schedule. You can only update
    trigger this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 7. The **Triggers** area displays the default triggering frequency for the schedule.
 
@@ -62,4 +62,4 @@ You can't create or delete a Workflow Acceleration schedule. You can only update
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

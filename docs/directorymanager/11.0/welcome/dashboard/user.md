@@ -1,21 +1,21 @@
 ---
-title: "User Reports in Directory Manager"
-description: "Browse the user report templates in Directory Manager, including Exchange mailbox, user life cycle, and password reports, and generate one."
+title: "User Reports in GroupID"
+description: "Browse the user report templates in GroupID, including Exchange mailbox, user life cycle, and password reports, and generate one."
 sidebar_position: 30
 keywords:
-  - Directory Manager user reports
+  - GroupID user reports
   - user report templates
   - user life cycle report
   - Exchange mailbox user report
   - password expiration report
 ---
 
-# User Reports in Directory Manager
+# User Reports in GroupID
 
 User Reports include reports for the user objects in the directory. To find a specific report, type
 its name in the **Search Reports** box.
 
-Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
+Click any report template in the list to [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
 
 The following table lists the reports in this category:
 
@@ -48,7 +48,7 @@ The following table lists the reports in this category:
 | Non expiring user accounts                                                                       | Provides a list of user accounts that never expire.                                                                                                                                                                |
 | OUs created in X days                                                                            | Provides a list of organizational units (OUs) created in a specified number of days.                                                                                                                               |
 | OUs modified in X days                                                                           | Provides a list of organizational units (OUs) modified in a specified number of days.                                                                                                                                       |
-| Owners and objects they own Listed in [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md) category as well.                | Provides a list of owners and their direct reports.                                                                                                                                                                     |
+| Owners and objects they own Listed in [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md) category as well.                | Provides a list of owners and their direct reports.                                                                                                                                                                     |
 | Pending Terminate Users                                                                          | Provides a list of users that have been terminated by their managers, but their termination request is pending approval or rejection by an approver.                                                                   |
 | Recently expired users                                                                           | Provides a list of users expired in one day, seven days, or one month.                                                                                                                                                   |
 | Recipients and the groups they are a member of                                                   | Provides a list of users and each group that they are a member of.                                                                                                                                                      |
@@ -60,7 +60,7 @@ The following table lists the reports in this category:
 | User Life Cycle – Transfer Pending Users                                                         | Provides a list of direct reports that have been transferred but the transfer must still be accepted or rejected.                                                                                                       |
 | User Life Cycle – Transferred Users                                                              | Provides a list of transferred users in the selected container.                                                                                                                                                         |
 | User Life Cycle – Verified Users                                                                 | Provides a list of users who have validated their directory profiles.                                                                                                                                                   |
-| Users and contacts with a phone number Listed in [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md) category as well. | Provides a phone list of accounts within an organization.                                                                                                                                                               |
+| Users and contacts with a phone number Listed in [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md) category as well. | Provides a phone list of accounts within an organization.                                                                                                                                                               |
 | Users changed in X days                                                                          | Provides a list of users modified in one day, seven days, or one month.                                                                                                                                                  |
 | Users created in X days                                                                          | Provides a list of users created in one day, seven days, or one month.                                                                                                                                                   |
 | Users member of Built in Security Groups                                                         | Provides a list of users that are members of default security groups, such as the Domain Admins group.                                                                                                                   |
@@ -81,8 +81,8 @@ The following table lists the reports in this category:
 
 See Also:
 
-- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

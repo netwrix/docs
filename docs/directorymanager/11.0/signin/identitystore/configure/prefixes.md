@@ -1,23 +1,23 @@
 ---
-title: "Configure Group Name Prefixes in Directory Manager"
+title: "Configure Group Name Prefixes in GroupID"
 description: "Standardize group names by defining prefixes for an identity store or its security roles that users select when they create groups."
 keywords:
   - group name prefixes
-  - Directory Manager
+  - GroupID
   - identity store prefix
   - security role prefix
   - enforce prefix
 sidebar_position: 80
 ---
 
-# Configure Group Name Prefixes in Directory Manager
+# Configure Group Name Prefixes in GroupID
 
 You can standardize group names in the directory by defining prefixes. When users create groups
-using the Directory Manager portal, they must select a prefix, which is added to the group's name
+using the GroupID portal, they must select a prefix, which is added to the group's name
 and display name.
 
 :::note
-The Group Name Prefixes policy doesn't apply when a user creates a group using Directory Manager
+The Group Name Prefixes policy doesn't apply when a user creates a group using GroupID
 Management Shell.
 :::
 
@@ -51,7 +51,7 @@ Consider the following:
 - For managed groups (Smart Groups and Dynasties), prefixes can only be added while creating a group
   and can't be changed or removed later.
 
-A group naming policy defined in Microsoft Entra Admin Center has no impact in Directory Manager.
+A group naming policy defined in Microsoft Entra Admin Center has no impact in GroupID.
 For details, see the
 [Group Naming Policy](/docs/directorymanager/11.0/signin/identitystore/advsentraid.md#group-naming-policy)
 topic.
@@ -105,5 +105,5 @@ What do you want to do?
 
 **See Also**
 
-- [Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/overview.md)
-- [Security Role Policies in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)
+- [Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/overview.md)
+- [Security Role Policies in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/overview.md)

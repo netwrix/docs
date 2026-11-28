@@ -1,6 +1,6 @@
 ---
-title: "Manage Advanced Workflow Settings in Directory Manager"
-description: "Set a default approver, apply approver acceleration, and delete old workflow requests for an identity store in Directory Manager."
+title: "Manage Advanced Workflow Settings in GroupID"
+description: "Set a default approver, apply approver acceleration, and delete old workflow requests for an identity store in GroupID."
 keywords:
   - default approver
   - approver acceleration
@@ -10,14 +10,14 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Advanced Workflow Settings in Directory Manager
+# Manage Advanced Workflow Settings in GroupID
 
 You can specify advanced settings for workflow, such as a default approver for workflow requests
 and approver acceleration settings.
 
 :::note
 Functions discussed in this topic are licensed under different add-ons. See the
-[ Manage Directory Manager Licenses](/docs/directorymanager/11.0/signin/concepts/licensing.md) topic.
+[ Manage GroupID Licenses](/docs/directorymanager/11.0/signin/concepts/licensing.md) topic.
 :::
 
 ## Specify a Default Approver
@@ -68,7 +68,7 @@ owners.
 
 The workflow approver acceleration feature ensures that no workflow request remains undecided. To
 apply settings related to approver acceleration, see the
-[Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
+[Configure Workflow Approver Acceleration in GroupID](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
 topic.
 
 ## Delete Workflow Requests
@@ -84,7 +84,7 @@ example, you can delete the "denied" requests that are 30 or more days old.
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
    Requests** section.
-5. In the **Delete requests that are x or more days old** box, specify a number, such as 30. Directory Manager
+5. In the **Delete requests that are x or more days old** box, specify a number, such as 30. GroupID
    automatically deletes workflow requests that are at least 30 days old.
 6. Select the type of requests you want to delete.
 
@@ -92,19 +92,19 @@ example, you can delete the "denied" requests that are 30 or more days old.
     - **Approved:** to delete requests that have been approved.
     - **Denied:** to delete requests that have been denied.
 
-7. Click **Delete**. Directory Manager deletes requests of the selected type that are at least the
+7. Click **Delete**. GroupID deletes requests of the selected type that are at least the
    specified number of days old.
 8. Click **Save**.
 
 ## Integrate with Microsoft Power Automate
 
-You can link your Power Automate flows to Directory Manager workflows. For details, see the
-[Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
+You can link your Power Automate flows to GroupID workflows. For details, see the
+[Link GroupID Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
 topic.
 
 **See Also**
 
-- [Directory Manager Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
-- [Create and Manage Workflows in Directory Manager](/docs/directorymanager/11.0/signin/workflow/implement.md)
-- [Configure Workflow Approver Acceleration in Directory Manager](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
-- [Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
+- [GroupID Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
+- [Create and Manage Workflows in GroupID](/docs/directorymanager/11.0/signin/workflow/implement.md)
+- [Configure Workflow Approver Acceleration in GroupID](/docs/directorymanager/11.0/signin/workflow/approveracceleration.md)
+- [Link GroupID Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)

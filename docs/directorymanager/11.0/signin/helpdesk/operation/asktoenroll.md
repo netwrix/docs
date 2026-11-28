@@ -1,6 +1,6 @@
 ---
-title: "Notify Users to Enroll in Directory Manager"
-description: "Send email notifications that direct unenrolled users to enroll their identity store accounts in Directory Manager."
+title: "Notify Users to Enroll in GroupID"
+description: "Send email notifications that direct unenrolled users to enroll their identity store accounts in GroupID."
 keywords:
   - enrollment notification
   - notify users
@@ -10,12 +10,12 @@ keywords:
 sidebar_position: 50
 ---
 
-# Notify Users to Enroll in Directory Manager
+# Notify Users to Enroll in GroupID
 
 You can send email notifications to unenrolled users, directing them to enroll their identity store
-accounts in Directory Manager. Notifications can be sent to:
+accounts in GroupID. Notifications can be sent to:
 
-- All users in all identity stores created in Directory Manager
+- All users in all identity stores created in GroupID
 - All users in an identity store
 - Specific users
 
@@ -31,11 +31,11 @@ What do you want to do?
    On the **Helpdesk** page, the **Helpdesk Operations** tab is displayed by default.
 2. Do the following:
 
-    - To send enrollment notifications to all users in all identity stores in Directory Manager, ensure
+    - To send enrollment notifications to all users in all identity stores in GroupID, ensure
       _All_ is selected in the **Identity store** box. Then click **Notify All Users**.
     - To send the notification to specific recipients, search for the required users and click
       **Notify All Users**. See the
-      [Search Users in Directory Manager Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
+      [Search Users in GroupID Helpdesk](/docs/directorymanager/11.0/signin/helpdesk/operation/search.md)
       topic to perform a search.
 
     Notifications are sent to all users listed on the **Helpdesk Operations** tab, including those
@@ -58,5 +58,5 @@ What do you want to do?
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

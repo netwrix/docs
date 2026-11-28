@@ -1,5 +1,5 @@
 ---
-title: "Deleted Group General Tab in Directory Manager"
+title: "Deleted Group General Tab in GroupID"
 description: "View the general attributes of a deleted group, such as its last known parent, creation date, and deletion date."
 keywords:
   - deleted group attributes
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Deleted Group General Tab in Directory Manager
+# Deleted Group General Tab in GroupID
 
 This tab displays the general attributes of the deleted group, such as the group name, last known
 parent, creation date, and deletion date.
@@ -29,4 +29,4 @@ The tab displays the following general attributes:
 
 **See Also**
 
-- [Restore or Delete Groups in the Directory Manager Recycle Bin](/docs/directorymanager/11.0/welcome/group/recyclebin/overview.md)
+- [Restore or Delete Groups in the GroupID Recycle Bin](/docs/directorymanager/11.0/welcome/group/recyclebin/overview.md)

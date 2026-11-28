@@ -1,6 +1,6 @@
 ---
-title: "Reset Your Account Password in Directory Manager"
-description: "Reset your identity store account password in the Directory Manager portal as an enrolled or unenrolled user, using multifactor authentication."
+title: "Reset Your Account Password in GroupID"
+description: "Reset your identity store account password in the GroupID portal as an enrolled or unenrolled user, using multifactor authentication."
 keywords:
   - reset password
   - Forgot Password
@@ -11,20 +11,20 @@ keywords:
 sidebar_position: 30
 ---
 
-# Reset Your Account Password in Directory Manager
+# Reset Your Account Password in GroupID
 
-The Directory Manager portal enables enrolled users in an identity store to reset their account
+The GroupID portal enables enrolled users in an identity store to reset their account
 passwords securely. They can reset their passwords if they have forgotten or lost their existing passwords.
 Unenrolled users can reset their passwords if the administrator has enabled the Second Way
 Authentication option for their role.
 
-The Directory Manager portal provides an authentication mechanism, whereby users must authenticate
+The GroupID portal provides an authentication mechanism, whereby users must authenticate
 themselves with the multifactor authentication types they enrolled their accounts with.
 
 If the administrator has enabled multifactor authentication for the identity store, users must
 authenticate their accounts using the authentication types they enrolled their account with. After
 successful authentication, users can reset the account password in accordance with the password
-policies the Directory Manager administrator defined for their role in the identity store.
+policies the GroupID administrator defined for their role in the identity store.
 
 What do you want to do?
 
@@ -33,7 +33,7 @@ What do you want to do?
 
 ## Reset identity store account password (enrolled users)
 
-1. On the **Welcome to Directory Manager** page of the portal, click the **Forgot Password** card.
+1. On the **Welcome to GroupID** page of the portal, click the **Forgot Password** card.
 2. Select the identity store where your account exists from the identity store dropdown list.
 3. Enter your identity store account name in the user name box.
 4. Provide the displayed captcha code in the **Captcha** box.
@@ -120,7 +120,7 @@ What do you want to do?
    passwords** section. Select the checkboxes for the accounts to reset their passwords.
 8. Enter your new password in the **New password** box. On typing the new password, the **Password
    Acceptance** box appears. The new password must meet the password complexity requirements and
-   conform to the password complexity rules defined by the Directory Manager administrator for the
+   conform to the password complexity rules defined by the GroupID administrator for the
    identity store.
 
     To meet the password complexity requirements, the password must:
@@ -145,12 +145,12 @@ What do you want to do?
 
 ## Reset identity store account password (unenrolled users)
 
-1. On the **Welcome to Directory Manager** page, click the **Forgot Password** card.
+1. On the **Welcome to GroupID** page, click the **Forgot Password** card.
 2. Select the identity store your account resides in from the **Identity Store** list.
 3. Enter your user name in the **Username** box.
 4. Provide the displayed captcha code in the **Captcha** box.
 5. Click **Reset Password**. The portal directs you to a page that shows the second way
-   authentication types the Directory Manager administrator has enabled for your role.
+   authentication types the GroupID administrator has enabled for your role.
 6. Authenticate your account using the listed types.
 
     - Security Question
@@ -185,6 +185,6 @@ What do you want to do?
 
 **See Also**
 
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [ Change Your Password in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
-- [Unlock your Directory Manager account](/docs/directorymanager/11.0/welcome/user/manage/unlockaccount.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [ Change Your Password in GroupID](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
+- [Unlock your GroupID account](/docs/directorymanager/11.0/welcome/user/manage/unlockaccount.md)

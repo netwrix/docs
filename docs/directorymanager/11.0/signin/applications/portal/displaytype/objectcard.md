@@ -1,5 +1,5 @@
 ---
-title: "Specify Attributes for the Directory Manager Object Card"
+title: "Specify Attributes for the GroupID Object Card"
 description: "Choose the attributes, header details, and footer buttons that appear on the object card when portal users hover over an object name."
 keywords:
   - object card
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 130
 ---
 
-# Specify Attributes for the Directory Manager Object Card
+# Specify Attributes for the GroupID Object Card
 
 In the portal, the names of directory objects are displayed as links. When a user hovers the mouse
 over the name, a card is displayed with information about the object. For a user object, for
@@ -153,5 +153,5 @@ You can remove an attribute from the body of an object card.
 
 **See Also**
 
-- [Design a Directory Manager Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
-- [Specify Attributes for the Directory Manager Object List View](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectlist.md)
+- [Design a GroupID Portal with Display Types](/docs/directorymanager/11.0/signin/applications/portal/displaytype/overview.md)
+- [Specify Attributes for the GroupID Object List View](/docs/directorymanager/11.0/signin/applications/portal/displaytype/objectlist.md)

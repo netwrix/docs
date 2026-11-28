@@ -1,8 +1,8 @@
 ---
-title: "Create a Static Group with the Directory Manager API"
-description: "Create a normal directory group, also called an unmanaged or static group, in an identity store by sending a POST request to the Directory Manager API."
+title: "Create a Static Group with the GroupID API"
+description: "Create a normal directory group, also called an unmanaged or static group, in an identity store by sending a POST request to the GroupID API."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - create static group
   - unmanaged group
   - StaticGroup endpoint
@@ -11,7 +11,7 @@ sidebar_position: 20
 unlisted: true
 ---
 
-# Create a Static Group with the Directory Manager API
+# Create a Static Group with the GroupID API
 
 Use this API to create a normal directory group, also called an unmanaged or static group, in the
 given identity store.
@@ -102,5 +102,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

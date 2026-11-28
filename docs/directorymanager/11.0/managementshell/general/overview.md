@@ -1,5 +1,5 @@
 ---
-title: "Directory Manager General Management Shell Cmdlets"
+title: "GroupID General Management Shell Cmdlets"
 description: "Find the general Management Shell cmdlets for computers, replication, tombstone objects, containers, and notifications, with a short summary of each."
 keywords:
   - general cmdlets
@@ -10,20 +10,20 @@ keywords:
 sidebar_position: 60
 ---
 
-# Directory Manager General Management Shell Cmdlets
+# GroupID General Management Shell Cmdlets
 
 You can use the following Management Shell cmdlets to perform general tasks:
 
-- [Get-Computer Cmdlet in Directory Manager](/docs/directorymanager/11.0/managementshell/general/getcomputer.md):
+- [Get-Computer Cmdlet in GroupID](/docs/directorymanager/11.0/managementshell/general/getcomputer.md):
   provides information about a computer object.
 - [Get-ConnectedStoreInformation Cmdlet](/docs/directorymanager/11.0/managementshell/general/getconnectedstoreinformation.md):
   provides information about the connected identity store.
 - [Get-ConnectedUser Cmdlet](/docs/directorymanager/11.0/managementshell/general/getconnecteduser.md):
   provides information about the connected user.
 - [Get-GroupIdInformation](/docs/directorymanager/11.0/managementshell/general/getdirectorymanagerinformation.md):
-  provides information about Directory Manager.
+  provides information about GroupID.
 - [Get-ImanamiCommand Cmdlet](/docs/directorymanager/11.0/managementshell/general/getimanamicommand.md):
-  provides basic information about Directory Manager Management Shell cmdlets.
+  provides basic information about GroupID Management Shell cmdlets.
 - [Get-ReplicationStatus Cmdlet](/docs/directorymanager/11.0/managementshell/general/getreplicationstatus.md):
   provides the replication status of objects in an identity store.
 - [Get-TombStoneObject Cmdlet](/docs/directorymanager/11.0/managementshell/general/gettombstoneobject.md):
@@ -41,6 +41,6 @@ You can use the following Management Shell cmdlets to perform general tasks:
 
 See Also
 
-- [Directory Manager Management Shell Overview and Access](/docs/directorymanager/11.0/managementshell/overview.md)
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Overview and Access](/docs/directorymanager/11.0/managementshell/overview.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

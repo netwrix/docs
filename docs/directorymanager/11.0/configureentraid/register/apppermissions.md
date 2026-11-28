@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Entra ID Permissions for Directory Manager"
-description: "See the Microsoft Graph, Exchange Online, and SharePoint permissions that the Directory Manager app registration needs in Microsoft Entra ID."
+title: "Microsoft Entra ID Permissions for GroupID"
+description: "See the Microsoft Graph, Exchange Online, and SharePoint permissions that the GroupID app registration needs in Microsoft Entra ID."
 keywords:
   - Graph API permissions
   - application permissions
@@ -10,16 +10,16 @@ keywords:
 sidebar_position: 20
 ---
 
-# Microsoft Entra ID Permissions for Directory Manager
+# Microsoft Entra ID Permissions for GroupID
 
 When you use a Microsoft Entra ID identity store, the user must have certain role assignments
 and application permissions on the registered app in Microsoft Entra ID.
 
-This topic lists the roles and permissions Directory Manager needs to perform operations in a Microsoft
+This topic lists the roles and permissions GroupID needs to perform operations in a Microsoft
 Entra ID provider.
 
-See the [Manage Directory Manager Licenses](/docs/directorymanager/11.0/signin/concepts/licensing.md)
-topic for additional information on Directory Manager licensing.
+See the [Manage GroupID Licenses](/docs/directorymanager/11.0/signin/concepts/licensing.md)
+topic for additional information on GroupID licensing.
 
 ## Graph API Application Permissions
 

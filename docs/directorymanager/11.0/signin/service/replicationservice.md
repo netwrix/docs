@@ -1,15 +1,15 @@
 ---
-title: "Directory Manager Replication Service"
+title: "GroupID Replication Service"
 description: "View the Replication service, learn what it replicates to Elasticsearch, and enable or tune syncing between Elasticsearch clusters."
 keywords:
-  - Directory Manager Replication service
+  - GroupID Replication service
   - Elastic Cluster Syncing
   - Elasticsearch replication
   - cluster syncing interval
 sidebar_position: 50
 ---
 
-# Directory Manager Replication Service
+# GroupID Replication Service
 
 The Replication service replicates the attributes of the following objects from the provider (such
 as Active Directory) to the Elasticsearch repository.
@@ -21,7 +21,7 @@ as Active Directory) to the Elasticsearch repository.
 - Organizational Unit
 
 For more on the Replication service, see the
-[Elasticsearch and Replication Service in Directory Manager](/docs/directorymanager/11.0/signin/replication/overview.md) topic.
+[Elasticsearch and Replication Service in GroupID](/docs/directorymanager/11.0/signin/replication/overview.md) topic.
 
 The service is also responsible for syncing data between the Elasticsearch clusters in your
 environment.
@@ -36,7 +36,7 @@ What do you want to do?
 
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Service** tab.  
-   The tab displays the default Replication service hosted in native IIS. When multiple Directory Manager
+   The tab displays the default Replication service hosted in native IIS. When multiple GroupID
    instances have been deployed, you find multiple default Replication services on this tab
    page, as each instance has its own default Replication service. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
@@ -62,7 +62,7 @@ In an environment with multiple Elasticsearch clusters, you can choose to sync d
 clusters. You can also specify an interval for syncing.
 
 :::note
-In Directory Manager, a separate Replication service is created for each node in a cluster. To
+In GroupID, a separate Replication service is created for each node in a cluster. To
 enable data syncing between clusters, enable the sync option for one Replication service within
 each cluster.
 :::
@@ -87,5 +87,5 @@ To sync data between clusters:
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Services](/docs/directorymanager/11.0/signin/service/overview.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Services](/docs/directorymanager/11.0/signin/service/overview.md)

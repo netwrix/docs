@@ -1,26 +1,26 @@
 ---
-title: "Directory Manager Reports Dashboard"
-description: "Use the Reports Dashboard in Directory Manager to search reports, pin favorites, and review recent reports for your identity store."
+title: "GroupID Reports Dashboard"
+description: "Use the Reports Dashboard in GroupID to search reports, pin favorites, and review recent reports for your identity store."
 sidebar_position: 110
 keywords:
-  - Directory Manager Reports Dashboard
+  - GroupID Reports Dashboard
   - pinned reports
   - recent reports
   - web-based reports
   - report navigation pane
 ---
 
-# Directory Manager Reports Dashboard
+# GroupID Reports Dashboard
 
-Use Directory Manager Reports to generate web-based reports for an identity store. It offers a
+Use GroupID Reports to generate web-based reports for an identity store. It offers a
 wizard-guided report generation process.
 
-Directory Manager reports are organized into four categories:
+GroupID reports are organized into four categories:
 
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
 
 :::note
 A Microsoft Entra ID-based identity store doesn't support the computer and contact object
@@ -43,11 +43,11 @@ The following list describes the different elements of the Dashboard:
     - Your name also appears as an icon. Click it to see the following options:
 
         - Connected identity store.
-        - Directory Manager version.
+        - GroupID version.
         - See full profile.
         - My Applications
 
-            Displays Directory Manager and third-party applications that the user is connected to.
+            Displays GroupID and third-party applications that the user is connected to.
             Click **Add Apps** to add new applications.
 
         - Enroll your account.
@@ -73,16 +73,16 @@ The following list describes the different elements of the Dashboard:
 - The navigation pane on the left side of the page lists links to the following:
 
     - Dashboard
-    - [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-    - [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-    - [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-    - [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+    - [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+    - [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+    - [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+    - [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
 
 **See Also:**
 
-- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

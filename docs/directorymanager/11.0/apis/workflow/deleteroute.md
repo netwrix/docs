@@ -1,11 +1,11 @@
 ---
 title: "Delete a Workflow Route Using the API"
-description: "Delete a user-defined workflow route from an identity store by sending a DELETE request to the Directory Manager API."
+description: "Delete a user-defined workflow route from an identity store by sending a DELETE request to the GroupID API."
 keywords:
   - delete workflow route
   - workflow route API
   - DELETE request
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 50
 unlisted: true
 ---
@@ -60,5 +60,5 @@ DELETE
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

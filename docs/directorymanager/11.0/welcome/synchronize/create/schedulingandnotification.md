@@ -1,6 +1,6 @@
 ---
 title: "Schedule a Job Collection and Set Notifications"
-description: "Choose a schedule, a Smart Group Update job, and email notification triggers for a Synchronize job collection in Directory Manager."
+description: "Choose a schedule, a Smart Group Update job, and email notification triggers for a Synchronize job collection in GroupID."
 keywords:
   - job collection schedule
   - Synchronize notifications
@@ -26,7 +26,7 @@ and configure its notification settings.
 
         If you're modifying an existing job collection, you can also add a new schedule for the job
         collection. For details, see
-        [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md).
+        [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md).
 
 2. In the **Notifications** section, set up email notification of job collection run results. This
    feature requires Microsoft Exchange. Notifications are disabled by default. You can enable and
@@ -52,10 +52,10 @@ and configure its notification settings.
 7. Click **Finish** to exit the wizard and create the job collection.
 8. After you run the job collection, a workflow request is triggered.
 9. The generated workflow request appears in the
-   [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
+   [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
    workflow approvers. If the approver approves the workflow request, the job executes the
    results.
 
 **See Also**
 
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)

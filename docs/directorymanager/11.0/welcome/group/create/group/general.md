@@ -1,5 +1,5 @@
 ---
-title: "Specify Basic Group Information in Directory Manager"
+title: "Specify Basic Group Information in GroupID"
 description: "Set the container, name, alias, type, scope and security of a new group on the General page of the Create Group wizard."
 keywords:
   - Create Group wizard
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Specify Basic Group Information in Directory Manager
+# Specify Basic Group Information in GroupID
 
 Use this page to specify basic information about the group.
 
@@ -81,4 +81,4 @@ Use this page to specify basic information about the group.
 
 **See Also**
 
-- [Create Active Directory Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)

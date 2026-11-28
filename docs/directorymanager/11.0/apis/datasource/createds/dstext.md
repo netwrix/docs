@@ -1,6 +1,6 @@
 ---
-title: "Create a Text/CSV Data Source with the Directory Manager API"
-description: "Send a POST request to the Directory Manager API to create a data source from a CSV or text file on a local server or OneDrive."
+title: "Create a Text/CSV Data Source with the GroupID API"
+description: "Send a POST request to the GroupID API to create a data source from a CSV or text file on a local server or OneDrive."
 keywords:
   - Text/CSV data source
   - create data source API
@@ -11,15 +11,15 @@ sidebar_position: 10
 unlisted: true
 ---
 
-# Create a Text/CSV Data Source with the Directory Manager API
+# Create a Text/CSV Data Source with the GroupID API
 
 Use this API to create a new data source.
 
 See the
 [Create a Data Source for a Text/CSV File](/docs/directorymanager/11.0/signin/datasource/create.md#create-a-data-source-for-a-textcsv-file)
 section of the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-to create a Text/CSV data source using Directory Manager.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+to create a Text/CSV data source using GroupID.
 
 ## Endpoint
 
@@ -33,7 +33,7 @@ to create a Text/CSV data source using Directory Manager.
 
 The following syntax is for creating a data source for a comma-separated values (.csv) file or a
 text (.txt) file. You must also specify the delimiter used in the file to separate values. You can use this data
-source in queries and only as a source in Synchronize jobs. With Directory Manager, you can
+source in queries and only as a source in Synchronize jobs. With GroupID, you can
 connect to a text file that is on a local server or on OneDrive.
 
 ```
@@ -74,5 +74,5 @@ connect to a text file that is on a local server or on OneDrive.
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

@@ -1,6 +1,6 @@
 ---
-title: "Manage Schedules in Directory Manager"
-description: "View, search, enable, disable, update, run, terminate, and delete the schedules defined for a Directory Manager identity store."
+title: "Manage Schedules in GroupID"
+description: "View, search, enable, disable, update, run, terminate, and delete the schedules defined for a GroupID identity store."
 keywords:
   - manage schedules
   - enable or disable schedule
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 160
 ---
 
-# Manage Schedules in Directory Manager
+# Manage Schedules in GroupID
 
-Use Directory Manager to run, modify, disable, and delete the schedules defined for an identity store.
+Use GroupID to run, modify, disable, and delete the schedules defined for an identity store.
 
 What do you want to do?
 
@@ -37,7 +37,7 @@ What do you want to do?
 
     | Label     | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
     | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | Enable    | Shows whether a schedule is enabled or disabled. Use the toggle button next to a schedule to disable an enabled schedule and vice versa. Directory Manager doesn't run a disabled schedule.                                                                                                                                                                                                                             |
+    | Enable    | Shows whether a schedule is enabled or disabled. Use the toggle button next to a schedule to disable an enabled schedule and vice versa. GroupID doesn't run a disabled schedule.                                                                                                                                                                                                                             |
     | Job Name  | The name of a schedule.                                                                                                                                                                                                                                                                                                                                                                                            |
     | **Target(s)** | The groups and containers that a schedule processes.                                                                                                                                                                                                                                                                                                                                                           |
     | Last Run  | The date and time a schedule last ran.                                                                                                                                                                                                                                                                                                                                                                             |
@@ -75,7 +75,7 @@ Search for a schedule by attributes, such as job name, job target, last run time
 3. Click **Schedules** under **Settings** in the left pane.
 4. On the **Schedules** page, click the plus sign for a job to view the schedules defined for it.
 5. Use the **Enable** toggle button for a schedule to enable or disable it.  
-   Directory Manager doesn't run a disabled schedule in the identity store.
+   GroupID doesn't run a disabled schedule in the identity store.
 6. Click **Save**.
 
 ## Update Triggers for a Schedule
@@ -97,7 +97,7 @@ A trigger is a criterion that, when met, starts a schedule.
     - To remove a trigger, click **Remove** for it.
 
     Follow step 11 in the
-    [Create a Group Usage Service Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/groupusageservice.md) topic
+    [Create a Group Usage Service Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/groupusageservice.md) topic
     to manage triggers.
 
 7. Click **Update Schedule**.
@@ -139,7 +139,7 @@ Targets in a schedule are the objects processed by that schedule.
    for the schedule.  
    Notification settings differ for different schedule types. For example, a Smart Group Update
    schedule has a different set of notification options from a Group Lifecycle schedule. Other
-   schedules, such as the Directory Manager Entitlement and Workflow Acceleration schedules, don't have notification settings.  
+   schedules, such as the GroupID Entitlement and Workflow Acceleration schedules, don't have notification settings.  
    To manage the notification settings for a schedule, refer to the instructions for the respective
    schedule.
 7. Click **Update Schedule**.
@@ -156,7 +156,7 @@ Targets in a schedule are the objects processed by that schedule.
 
 ## Terminate a Running Schedule
 
-You can terminate a schedule that is running in an identity store. When you terminate a schedule, Directory Manager doesn't revert objects the schedule has already processed, and the remaining objects stay unprocessed.
+You can terminate a schedule that is running in an identity store. When you terminate a schedule, GroupID doesn't revert objects the schedule has already processed, and the remaining objects stay unprocessed.
 
 **To terminate a running schedule:**
 
@@ -182,4 +182,4 @@ You can terminate a schedule that is running in an identity store. When you term
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

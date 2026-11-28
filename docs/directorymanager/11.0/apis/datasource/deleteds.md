@@ -1,6 +1,6 @@
 ---
-title: "Delete a Data Source with the Directory Manager API"
-description: "Send a DELETE request to the Directory Manager API to remove a data source by its ID."
+title: "Delete a Data Source with the GroupID API"
+description: "Send a DELETE request to the GroupID API to remove a data source by its ID."
 keywords:
   - delete data source API
   - DataSource DELETE
@@ -10,7 +10,7 @@ sidebar_position: 20
 unlisted: true
 ---
 
-# Delete a Data Source with the Directory Manager API
+# Delete a Data Source with the GroupID API
 
 Use this API to delete a specified data source.
 
@@ -47,5 +47,5 @@ DELETE
 
 ## See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

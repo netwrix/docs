@@ -1,8 +1,8 @@
 ---
-title: "Customize Quick Search in the Directory Manager Portal"
-description: "Choose the attributes, search operator, and object types that the Directory Manager portal quick search box uses to return results."
+title: "Customize Quick Search in the GroupID Portal"
+description: "Choose the attributes, search operator, and object types that the GroupID portal quick search box uses to return results."
 keywords:
-  - Directory Manager
+  - GroupID
   - quick search
   - search operator
   - quick search attributes
@@ -10,11 +10,11 @@ keywords:
 sidebar_position: 30
 ---
 
-# Customize Quick Search in the Directory Manager Portal
+# Customize Quick Search in the GroupID Portal
 
-In a Directory Manager portal, the quick search box is available at the top of each page. You can specify the
+In a GroupID portal, the quick search box is available at the top of each page. You can specify the
 schema attributes that quick search runs on, and the objects (group, user, contact) that can be
-searched. When a user enters a search string, Directory Manager matches it against the values of all
+searched. When a user enters a search string, GroupID matches it against the values of all
 specified attributes to return the results (allowed objects).
 
 You can also specify a search operator that determines what part of the attribute value must match
@@ -83,5 +83,5 @@ the search string.
 
 **See Also**
 
-- [Customize Search Forms in the Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchforms.md)
-- [Customize Search Results in the Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchresults.md)
+- [Customize Search Forms in the GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchforms.md)
+- [Customize Search Results in the GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/displaytype/searchresults.md)

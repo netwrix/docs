@@ -28,13 +28,13 @@ SendSmsMessageResult SendShortMessage(ShortMessage shortMessage);
 
 **ShortMessage**
 
-Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.ShortMessage
+Type: Imanami.GroupID.DataTransferObjects.DataContracts.SMS.ShortMessage
 
 The object defining the message elements including the target mobile phone numbers.
 
 **Return Value**
 
-Type: Imanami.directorymanager.DataTransferObjects.DataContracts.SMS.SendSmsMessageResult
+Type: Imanami.GroupID.DataTransferObjects.DataContracts.SMS.SendSmsMessageResult
 
 The object containing the message delivery status and exception details.
 
@@ -42,4 +42,4 @@ The object containing the message delivery status and exception details.
 
 - [ShortMessage class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class.md)
 - [SendSmsMessageResult class](/docs/directorymanager/11.0/signin/smsgateway/custom/class/class_1.md)
-- [Implement and Deploy a Custom SMS Gateway in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)
+- [Implement and Deploy a Custom SMS Gateway in GroupID](/docs/directorymanager/11.0/signin/smsgateway/implementcustom.md)

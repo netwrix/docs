@@ -1,6 +1,6 @@
 ---
-title: "Delete a Directory Manager Portal"
-description: "Delete a portal or one of its deployment instances in Admin Center, and see what Directory Manager removes from IIS or Docker."
+title: "Delete a GroupID Portal"
+description: "Delete a portal or one of its deployment instances in Admin Center, and see what GroupID removes from IIS or Docker."
 keywords:
   - delete portal
   - portal deployment instance
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Delete a Directory Manager Portal
+# Delete a GroupID Portal
 
 You can delete a portal or a deployment instance of a portal. When you delete a portal, all its
 instances are deleted with it.
@@ -22,9 +22,9 @@ removed:
 
 - **For an instance in native IIS:**
 
-    - The portal directory under the following location on the Directory Manager server:  
+    - The portal directory under the following location on the GroupID server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDPortal\Inetpub\  
-      (X represents the Directory Manager installation drive)
+      (X represents the GroupID installation drive)
     - The portal's directory in the IIS site
 
 - **For an instance in remote IIS:**
@@ -56,7 +56,7 @@ removed:
 
 ## Delete a Portal
 
-Deleting a portal removes all its deployments and configurations from Directory Manager.
+Deleting a portal removes all its deployments and configurations from GroupID.
 
 **To delete a portal:**
 
@@ -65,6 +65,6 @@ Deleting a portal removes all its deployments and configurations from Directory 
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
-- [Create a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Portal Overview](/docs/directorymanager/11.0/signin/applications/portal/overview.md)
+- [Create a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)

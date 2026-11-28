@@ -1,5 +1,5 @@
 ---
-title: "Search Directory Objects in the Directory Manager Portal"
+title: "Search Directory Objects in the GroupID Portal"
 description: "Use Quick Search or Advanced Search to find users, groups, contacts, and mailboxes, and review the results on the Search Results page."
 keywords:
   - Quick Search
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Search Directory Objects in the Directory Manager Portal
+# Search Directory Objects in the GroupID Portal
 
-In the Directory Manager portal, you can search and manage different directory objects (users, groups,
+In the GroupID portal, you can search and manage different directory objects (users, groups,
 contacts, and mailboxes).
 
 :::note
@@ -43,7 +43,7 @@ role in the identity store.
 
 :::note
 The display name, first name, and email address are the default schema attributes for Quick Search.
-If the Directory Manager administrator specifies different attributes, you won't get the results you want
+If the GroupID administrator specifies different attributes, you won't get the results you want
 when you search with the display name, first name, or email address.
 :::
 
@@ -94,7 +94,7 @@ Generic LDAP store because these providers don't support the contact object.
 
 ## Search directory objects (Query Based Advanced Search)
 
-The Directory Manager portal lets you search directory objects (users, mailboxes, contacts, groups) in the
+The GroupID portal lets you search directory objects (users, mailboxes, contacts, groups) in the
 identity store based on a query. See the
 [Search Directory Objects With a Saved Query](/docs/directorymanager/11.0/welcome/generalfeatures/querysearch.md)
 topic.
@@ -139,11 +139,11 @@ name of the identity store in which the object resides.
 :::important
 To search in a customized portal in Linked mode, bind the customized portal fields that you use to
 create filter expressions for user and group objects to similar attributes across the linked
-stores. Otherwise, Directory Manager can't link identities correctly.
+stores. Otherwise, GroupID can't link identities correctly.
 :::
 
 You can perform multiple actions on objects. See the
-[Directory Manager Portal Toolbar Buttons](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md) topic for more information.
+[GroupID Portal Toolbar Buttons](/docs/directorymanager/11.0/welcome/generalfeatures/toolbar.md) topic for more information.
 
 To move through search results, use the page numbers given at the bottom of the listing. You can
 also control the number of results per page by modifying the **Search results per page** setting in
@@ -151,4 +151,4 @@ the **User Settings** panel.
 
 **See Also**
 
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

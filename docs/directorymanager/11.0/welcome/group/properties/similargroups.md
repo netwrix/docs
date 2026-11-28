@@ -1,5 +1,5 @@
 ---
-title: "Find Similar Groups in Directory Manager"
+title: "Find Similar Groups in GroupID"
 description: "Compare a group with others by type and membership to find the groups most similar to it, ranked by strength of match."
 keywords:
  - similar groups
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 130
 ---
 
-# Find Similar Groups in Directory Manager
+# Find Similar Groups in GroupID
 
-Use Directory Manager to compare groups for similarity on the basis of:
+Use GroupID to compare groups for similarity on the basis of:
 
 - Group type
 - Membership
@@ -28,4 +28,4 @@ dialog box displays the common type and common members that both groups have.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

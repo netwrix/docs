@@ -1,5 +1,5 @@
 ---
-title: "Stop-Schedule Cmdlet for Directory Manager"
+title: "Stop-Schedule Cmdlet for GroupID"
 description: "Stop a running schedule by name or job ID with the Stop-Schedule cmdlet."
 keywords:
   - Stop-Schedule
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 70
 ---
 
-# Stop-Schedule Cmdlet for Directory Manager
+# Stop-Schedule Cmdlet for GroupID
 
 The **Stop-Schedule** cmdlet stops a specified schedule if it is already running.
 
@@ -61,6 +61,6 @@ Get-Schedule -JobType GUS -TriggerType RunDaily -MatchingCriteria And | Select-O
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

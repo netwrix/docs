@@ -2,7 +2,7 @@
 title: "Account Page in the Entra ID User and Mailbox Wizards"
 description: "Specify the container, name, logon name and UPN suffix for a new Microsoft Entra ID user or mailbox."
 keywords:
-  - Directory Manager
+  - GroupID
   - Microsoft Entra ID user
   - UPN suffix
   - user logon name
@@ -31,5 +31,5 @@ the UPN suffix.
 
 **See Also**
 
-- [Create a Microsoft Entra ID User in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
-- [Create a Microsoft Entra ID Mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)
+- [Create a Microsoft Entra ID User in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/user.md)
+- [Create a Microsoft Entra ID Mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)

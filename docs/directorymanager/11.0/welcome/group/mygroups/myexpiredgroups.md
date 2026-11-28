@@ -1,16 +1,16 @@
 ---
-title: "View My Expired Groups in Directory Manager"
+title: "View My Expired Groups in GroupID"
 description: "Learn what happens when a group expires and how to view and filter your expired groups on the My Expired Groups tab."
 keywords:
   - My Expired Groups
   - group expiry
   - Group Lifecycle job
   - expired groups
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 20
 ---
 
-# View My Expired Groups in Directory Manager
+# View My Expired Groups in GroupID
 
 To view a list of your expired groups in the identity store, click **Groups** on the left navigation
 pane and select **My Groups**. On the My Groups page, click the **My Expired Groups** tab.
@@ -23,7 +23,7 @@ The following events occur when a group expires:
   are bounced back with an expiry message.
 - For an Office 365 group, its member list is backed up in the database and cleared from Office 365.
 - For a security group, its member list is cleared and any permissions set for that group no longer
-  apply. However, Directory Manager keeps a backup of its membership in the database.
+  apply. However, GroupID keeps a backup of its membership in the database.
 
 All groups that are expired by the Group Lifecycle job are available on the **My Expired Groups**
 page. When you manually expire a group that has an expiry policy other than ‘Never
@@ -31,12 +31,12 @@ expire’, it is also moved to this page.
 
 The Group Lifecycle job is responsible for logically deleting expired groups, but you can also
 physically delete a group. See
-[How Group Deletion Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md).
+[How Group Deletion Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md).
 
 By default, the **My Expired Groups** tab lists the groups that you are the primary owner of. To
 include the groups for which you are an additional owner, select the **Display additional group
 ownership in My Expired Groups** checkbox on the
-[Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
 
 You can
 [Modify Search Directory](/docs/directorymanager/11.0/welcome/group/allgroups/allgroups.md#modify-search-directory)
@@ -46,9 +46,9 @@ clicking **My Expired Group Grid Filters**. All the expired groups matching the 
 
 **See Also**
 
-- [View and Manage My Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [How Group Expiry Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
-- [How Group Deletion Works in Directory Manager](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [View and Manage My Groups in GroupID](/docs/directorymanager/11.0/welcome/group/mygroups/mygroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [How Group Expiry Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiry.md)
+- [How Group Deletion Works in GroupID](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupdeletion.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

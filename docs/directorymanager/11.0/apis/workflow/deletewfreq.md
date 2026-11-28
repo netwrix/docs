@@ -1,11 +1,11 @@
 ---
 title: "Delete a Workflow Request Using the API"
-description: "Delete a workflow request from an identity store by sending a DELETE request with the request ID to the Directory Manager API."
+description: "Delete a workflow request from an identity store by sending a DELETE request with the request ID to the GroupID API."
 keywords:
   - delete workflow request
   - workflow request ID
   - workflow request API
-  - Directory Manager REST API
+  - GroupID REST API
 sidebar_position: 60
 unlisted: true
 ---
@@ -30,5 +30,5 @@ true
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

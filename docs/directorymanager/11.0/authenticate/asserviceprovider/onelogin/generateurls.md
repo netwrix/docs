@@ -1,10 +1,10 @@
 ---
 title: "Generate Consumer and Audience URLs for OneLogin"
-description: "Find out how to generate the consumer and audience URLs that OneLogin needs for single sign-on with a Directory Manager client."
+description: "Find out how to generate the consumer and audience URLs that OneLogin needs for single sign-on with a GroupID client."
 keywords:
   - OneLogin consumer URL
   - OneLogin audience URL
-  - Directory Manager client URLs
+  - GroupID client URLs
   - generate OneLogin SSO URLs
 sidebar_position: 10
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Get Data Source Metadata API"
-description: "Retrieve metadata, such as name, type, and icon, for the data sources defined in Directory Manager."
+description: "Retrieve metadata, such as name, type, and icon, for the data sources defined in GroupID."
 keywords:
   - data source metadata API
   - GetMetaData endpoint
@@ -12,12 +12,11 @@ unlisted: true
 
 # Get Data Source Metadata API
 
-Use this API to get metadata information about the data sources defined so far in Directory
-Manager.
+Use this API to get metadata information about the data sources defined so far in GroupID.
 
 See the
-[Create Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/create.md) topic
-for creating a data source using Directory Manager.
+[Create Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/create.md) topic
+for creating a data source using GroupID.
 
 ## Endpoint
 
@@ -44,5 +43,5 @@ GET
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

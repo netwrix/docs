@@ -2,7 +2,7 @@
 title: "Exchange Page in the Entra ID Create Mailbox Wizard"
 description: "Set the alias, usage location, mailbox store, directory roles and Office 365 subscriptions for a new Microsoft Entra ID mailbox."
 keywords:
-  - Directory Manager
+  - GroupID
   - Entra ID mailbox
   - Office 365 subscriptions
   - usage location
@@ -36,4 +36,4 @@ sidebar_position: 60
 
 **See Also**
 
-- [Create a Microsoft Entra ID Mailbox in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)
+- [Create a Microsoft Entra ID Mailbox in GroupID](/docs/directorymanager/11.0/welcome/user/create/azure/mailbox.md)

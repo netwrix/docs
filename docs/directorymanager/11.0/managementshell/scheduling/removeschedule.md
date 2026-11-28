@@ -1,5 +1,5 @@
 ---
-title: "Remove-Schedule Cmdlet for Directory Manager"
+title: "Remove-Schedule Cmdlet for GroupID"
 description: "Delete a schedule by name or ID from the connected identity store with the Remove-Schedule cmdlet."
 keywords:
   - Remove-Schedule
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 50
 ---
 
-# Remove-Schedule Cmdlet for Directory Manager
+# Remove-Schedule Cmdlet for GroupID
 
 The **Remove-Schedule** cmdlet removes a schedule (by its name or ID) from the identity store
 connected to the current instance of the Management Shell.
@@ -61,6 +61,6 @@ Get-Schedule -JobType Glm | Select-Object -Property Name | Remove-Schedule
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

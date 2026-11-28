@@ -1,5 +1,5 @@
 ---
-title: "Directory Manager History Retention Schedule"
+title: "GroupID History Retention Schedule"
 description: "Learn how the History Retention schedule moves expired history records to .csv files and how to update its Scheduler service and triggers."
 keywords:
   - History Retention schedule
@@ -10,34 +10,34 @@ keywords:
 sidebar_position: 30
 ---
 
-# Directory Manager History Retention Schedule
+# GroupID History Retention Schedule
 
 While configuring history tracking for an identity store, you can choose to keep history records
-forever in the Directory Manager database or retain history for a specific period (see the [Configure History Tracking in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md) topic). If you select the latter option, the History Retention schedule is created automatically for the identity store. This schedule runs on a specified frequency to check if the retention period is over
-for any history records, and if so, moves them from the Directory Manager database to the following .csv files:
+forever in the GroupID database or retain history for a specific period (see the [Configure History Tracking in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/historytracking.md) topic). If you select the latter option, the History Retention schedule is created automatically for the identity store. This schedule runs on a specified frequency to check if the retention period is over
+for any history records, and if so, moves them from the GroupID database to the following .csv files:
 
-- **History** - Contains history data of the Directory Manager portal, Synchronize, Management Shell, scheduled jobs, and the Directory Manager mobile app. It also contains history data for the identity store,
+- **History** - Contains history data of the GroupID portal, Synchronize, Management Shell, scheduled jobs, and the GroupID mobile app. It also contains history data for the identity store,
   security roles, and workflow configurations.
-- **AuditingHistory** - Contains history data of all authentication actions performed in Directory Manager, as
+- **AuditingHistory** - Contains history data of all authentication actions performed in GroupID, as
   logged in Helpdesk history. See the
-  [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md) topic.
+  [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md) topic.
 - **PasswordCenterHistory** - Contains history data of all actions tracked in Helpdesk, except the
   authentication action. See the
-  [View and Search Helpdesk History in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/history.md) topic.
+  [View and Search Helpdesk History in GroupID](/docs/directorymanager/11.0/signin/helpdesk/history.md) topic.
 - **AdminCenterHistory** - Contains Admin Center history data. See the
-  [View and Export Admin Center History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic.
+  [View and Export Admin Center History in GroupID](/docs/directorymanager/11.0/signin/concepts/history_1.md) topic.
 
-These files are available at the following location on the Directory Manager server:
+These files are available at the following location on the GroupID server:
 
 `X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\GroupIDDataService\Web\HistoryBin\`
 
-(X is the Directory Manager installation drive)
+(X is the GroupID installation drive)
 
-History data moved to these files no longer appears in Directory Manager.
+History data moved to these files no longer appears in GroupID.
 
 :::note
 Admin Center history doesn't fall in a specific identity store, so its retention mechanism is
-different. Directory Manager checks the identity store of the user who performed an action logged in Admin
+different. GroupID checks the identity store of the user who performed an action logged in Admin
 Center history, and archives that record according to the history retention setting of the identity
 store that user belongs to.
 :::
@@ -66,7 +66,7 @@ What do you want to do?
 7. In the **Scheduler Service Name** dropdown list, select a Scheduler service that's responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 8. The **Triggers** area displays the default triggering frequency for the schedule.
 
@@ -85,4 +85,4 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

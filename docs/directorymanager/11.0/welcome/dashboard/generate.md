@@ -1,6 +1,6 @@
 ---
-title: "Generate Reports in Directory Manager"
-description: "Generate a report from a template in the Directory Manager portal, choose the container, filters, and fields, and download it as Excel, PDF, or HTML."
+title: "Generate Reports in GroupID"
+description: "Generate a report from a template in the GroupID portal, choose the container, filters, and fields, and download it as Excel, PDF, or HTML."
 sidebar_position: 10
 keywords:
   - generate reports
@@ -10,9 +10,9 @@ keywords:
   - download report as PDF
 ---
 
-# Generate Reports in Directory Manager
+# Generate Reports in GroupID
 
-Generating reports in the Directory Manager portal is a two-step process. The steps for generating a
+Generating reports in the GroupID portal is a two-step process. The steps for generating a
 report are the same for all reports. You specify settings, such as the source container or
 organizational unit, the field to sort all records by, and the display names for the fields in the
 report.
@@ -33,7 +33,7 @@ is joined to the techwr5.local domain, reports display data for techwr5.local.
 
 **To generate a report:**
 
-1. In the Directory Manager portal, select **Reports** from the left pane.
+1. In the GroupID portal, select **Reports** from the left pane.
 2. On Reports Portal, select the type of objects whose report you want to generate. It displays
    the report templates for that object.
 
@@ -85,14 +85,14 @@ is joined to the techwr5.local domain, reports display data for techwr5.local.
 
 ## Scheduled Report job
 
-You can create a **Scheduled Report job** in Directory Manager Admin Center. See
-[Create a Reports Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/reports.md).
+You can create a **Scheduled Report job** in GroupID Admin Center. See
+[Create a Reports Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/reports.md).
 
 **See Also:**
 
-- [Directory Manager Reports Dashboard](/docs/directorymanager/11.0/welcome/dashboard/dashboard.md)
-- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [Group Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/group.md)
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [GroupID Reports Dashboard](/docs/directorymanager/11.0/welcome/dashboard/dashboard.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [Group Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/group.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

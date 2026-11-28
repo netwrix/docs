@@ -1,6 +1,6 @@
 ---
-title: "Manage Directory Manager Data Service Settings"
-description: "Rename, start, stop, view the deployment and launch URL of, configure logging for, and delete Directory Manager Data services in Admin Center."
+title: "Manage GroupID Data Service Settings"
+description: "Rename, start, stop, view the deployment and launch URL of, configure logging for, and delete GroupID Data services in Admin Center."
 keywords:
   - Data service launch URL
   - service display name
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Manage Directory Manager Data Service Settings
+# Manage GroupID Data Service Settings
 
-Data services in Directory Manager are displayed on the **Data Service** tab. A card for a service displays
+Data services in GroupID are displayed on the **Data Service** tab. A card for a service displays
 information such as its name and status.
 
 You can manage several settings for a service, such as:
@@ -26,9 +26,9 @@ You can manage several settings for a service, such as:
 
 1. In Admin Center, click **Applications** in the left pane.
 2. On the **Applications** page, click the **Data Service** tab. The **Data Service** tab page is
-   displayed. It lists the default Data service created while configuring Directory Manager and any other
+   displayed. It lists the default Data service created while configuring GroupID and any other
    Data service that you have created.  
-   When multiple Directory Manager instances have been deployed, you find multiple default Data services
+   When multiple GroupID instances have been deployed, you find multiple default Data services
    on this tab page, as each instance has its own default Data service. See the
    [Elasticsearch Clusters, Nodes, and GroupID](/docs/directorymanager/11.0/signin/service/overview.md#elasticsearch-clusters-nodes-and-groupid)
    topic.
@@ -38,14 +38,14 @@ You can manage several settings for a service, such as:
     | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Name                 | The name given to the service. For a Mobile service, the identity stores associated with the service are also displayed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
     | Deployment Instances | Displays the deployment name of the service and the web server where it is deployed. For a Mobile service, this area can display multiple deployment instances of a service. Each instance is represented by a tile that shows the deployment name of the instance and the target web server.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-    | Status               | A service has one of the following statuses: - **Running:** Indicates that the service is running. - **Stopped:** Indicates that Directory Manager is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS, remote IIS, or Docker) and ensure the service is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.                                                                                                                                                                                                                                                                                 |
-    | Launch Application   | Click it to launch the service page. - For a Data service, Replication service, Email service, and Scheduler service, a page is displayed that shows the status of the service as _running_, _stopped_, or _error_. - For a Security service, the **GroupID Applications** page is displayed. The respective Security service performs any action on this page. See the [Access Your Applications in Directory Manager](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic. - For Admin Center, this launches the Admin Center application. - For Mobile service, it launches the **GroupIDMobileService** page, where users can configure the Directory Manager mobile app on a phone. |
+    | Status               | A service has one of the following statuses: - **Running:** Indicates that the service is running. - **Stopped:** Indicates that GroupID is unable to communicate with the service. To troubleshoot, go to the web server where the service is deployed (IIS, remote IIS, or Docker) and ensure the service is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. Contact your system administrator to resolve it.                                                                                                                                                                                                                                                                                 |
+    | Launch Application   | Click it to launch the service page. - For a Data service, Replication service, Email service, and Scheduler service, a page is displayed that shows the status of the service as _running_, _stopped_, or _error_. - For a Security service, the **GroupID Applications** page is displayed. The respective Security service performs any action on this page. See the [Access Your Applications in GroupID](/docs/directorymanager/11.0/signin/concepts/accessapplications.md) topic. - For Admin Center, this launches the Admin Center application. - For Mobile service, it launches the **GroupIDMobileService** page, where users can configure the GroupID mobile app on a phone. |
     | Ellipsis             | Click it to launch a shortcut menu with the following options: - **Settings:** launches the service settings page, where you can manage deployment settings and log settings. - **Delete:** deletes the service. This option isn't available for the default services. For Mobile service, this shortcut menu also displays the following options: - **Deploy Another Instance:** lets you deploy another instance of the service. - **Copy:** lets you create a new Mobile service by copying the settings of this service.                                                                                                                                                                                                 |
 
 ## Change a Service's Display Name
 
 A service is assigned an application name during creation, which is used as its display name in
-Directory Manager. When you change it, Directory Manager displays the service with the new name.
+GroupID. When you change it, GroupID displays the service with the new name.
 
 To change the display name:
 
@@ -62,9 +62,9 @@ To change the display name:
 You can start and stop a service deployed in native IIS, remote IIS, and Docker. When you stop a
 service, the following happens:
 
-- For a native IIS deployment, Directory Manager stops the service's application pool.
-- For a remote IIS deployment, Directory Manager stops the site that hosts the service.
-- For a Docker deployment, Directory Manager stops the container where the service is deployed.
+- For a native IIS deployment, GroupID stops the service's application pool.
+- For a remote IIS deployment, GroupID stops the site that hosts the service.
+- For a Docker deployment, GroupID stops the container where the service is deployed.
 
 To start or stop a service:
 
@@ -120,7 +120,7 @@ To start or stop a service:
 
 ## Specify Log Settings for a Service
 
-Directory Manager uses file logging and Windows logging to monitor events from a service. You can set the
+GroupID uses file logging and Windows logging to monitor events from a service. You can set the
 logging level for a service to track a specific set of information for it.
 
 For details on file logging and Windows logging, see the
@@ -207,9 +207,9 @@ Deleting a Data service removes the following:
 
 - **For a native IIS deployment:**
 
-    - The Data service directory under the following location on the Directory Manager server:  
+    - The Data service directory under the following location on the GroupID server:  
       X:\Program Files\Imanami\GroupID 11.0\GroupIDDataService\Inetpub\  
-      (X represents the Directory Manager installation drive)
+      (X represents the GroupID installation drive)
     - The Data service directory from the website in IIS
 
 - **For a remote IIS deployment:**
@@ -230,12 +230,12 @@ To delete a Data service:
 
 :::note
 You can't delete the default Data service. You also can't delete a Data service that has
-been linked with a Directory Manager client, such as the Directory Manager portal or a Mobile service.
+been linked with a GroupID client, such as the GroupID portal or a Mobile service.
 :::
 
 **See Also**
 
-- [Manage Directory Manager Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
-- [Directory Manager Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
-- [Create a Directory Manager Data Service in IIS](/docs/directorymanager/11.0/signin/service/dataservice/create.md)
-- [Download Directory Manager Logs from Admin Center](/docs/directorymanager/11.0/signin/concepts/logs.md)
+- [Manage GroupID Applications](/docs/directorymanager/11.0/signin/applications/applications.md)
+- [GroupID Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
+- [Create a GroupID Data Service in IIS](/docs/directorymanager/11.0/signin/service/dataservice/create.md)
+- [Download GroupID Logs from Admin Center](/docs/directorymanager/11.0/signin/concepts/logs.md)

@@ -1,6 +1,6 @@
 ---
-title: "Customize Directory Manager Notification Templates"
-description: "Edit the subject line, content, and tags of Directory Manager notification templates in the Notification Editor, in any supported language."
+title: "Customize GroupID Notification Templates"
+description: "Edit the subject line, content, and tags of GroupID notification templates in the Notification Editor, in any supported language."
 keywords:
   - notification templates
   - Notification Editor
@@ -10,22 +10,22 @@ keywords:
 sidebar_position: 20
 ---
 
-# Customize Directory Manager Notification Templates
+# Customize GroupID Notification Templates
 
-Directory Manager generates notifications for different events, such as when someone changes a
+GroupID generates notifications for different events, such as when someone changes a
 group, when workflows start, and when profile validation is due for users. The
 [Localization](/docs/directorymanager/11.0/gettingstarted.md#localization) topic lists the
 supported languages for notifications.
 
-Templates for all Directory Manager notifications are available in these languages. You can
+Templates for all GroupID notifications are available in these languages. You can
 customize a notification template for the following in each of the supported languages:
 
 - Subject line
 - Message (content and format)
 
-By default, Directory Manager sends notifications to users in English. However, a user can opt to
+By default, GroupID sends notifications to users in English. However, a user can opt to
 receive notifications in a different language by personalizing the language settings from the
-**Settings** panel in the Directory Manager portal.
+**Settings** panel in the GroupID portal.
 
 ## Customize a Notification Template
 
@@ -34,7 +34,7 @@ receive notifications in a different language by personalizing the language sett
    Or
    In Admin Center, click **Notification Editor** at the bottom of the left navigation pane.
 
-    The editor displays a list of all notifications that Directory Manager generates. The editor
+    The editor displays a list of all notifications that GroupID generates. The editor
     displays notification names in English, regardless of the language you select.
 
 2. By default, the editor selects English (United States), so you can view and customize the
@@ -175,4 +175,4 @@ can also use any custom attributes.
 
 **See Also**
 
-- [How Directory Manager Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)
+- [How GroupID Email Notifications Work](/docs/directorymanager/11.0/signin/notification/overview.md)

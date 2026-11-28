@@ -1,5 +1,5 @@
 ---
-title: "Set-Mailbox Cmdlet in Directory Manager"
+title: "Set-Mailbox Cmdlet in GroupID"
 description: "Modify mailbox properties, such as name, address, and custom attributes, with the Set-Mailbox cmdlet."
 keywords:
   - Set-Mailbox
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# Set-Mailbox Cmdlet in Directory Manager
+# Set-Mailbox Cmdlet in GroupID
 
 The **Set-Mailbox** cmdlet modifies a mailbox in the directory. You can modify most mailbox
 properties directly by using the parameters of this cmdlet.
@@ -83,6 +83,6 @@ Set-MailBox -Identity "SampleMailBox" -Country "Pakistan"
 
 **See Also**
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Mailbox Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Mailbox Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/mailbox/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

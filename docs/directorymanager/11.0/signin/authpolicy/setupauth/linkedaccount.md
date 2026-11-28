@@ -1,5 +1,5 @@
 ---
-title: "Set Up Linked Account Authentication in Directory Manager"
+title: "Set Up Linked Account Authentication in GroupID"
 description: "Let users enroll and authenticate across linked identity store accounts, and enable and enforce Linked Account authentication for multifactor use."
 keywords:
   - Linked Account authentication
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 40
 ---
 
-# Set Up Linked Account Authentication in Directory Manager
+# Set Up Linked Account Authentication in GroupID
 
-In the Directory Manager portal, users can link accounts that they might have in different identity
-stores. When a user enrolls any one of those linked accounts in Directory Manager, it counts for the
+In the GroupID portal, users can link accounts that they might have in different identity
+stores. When a user enrolls any one of those linked accounts in GroupID, it counts for the
 enrollment of all linked accounts.
 
 Users can then reset their account passwords and unlock accounts through a linked account. Suppose
@@ -51,4 +51,4 @@ and authentication.
 
 See Also
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

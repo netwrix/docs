@@ -1,5 +1,5 @@
 ---
-title: "Set-Schedule Cmdlet for Directory Manager"
+title: "Set-Schedule Cmdlet for GroupID"
 description: "Modify a schedule's name, targets, credentials, notifications, and triggers in the connected identity store with the Set-Schedule cmdlet."
 keywords:
   - Set-Schedule
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 60
 ---
 
-# Set-Schedule Cmdlet for Directory Manager
+# Set-Schedule Cmdlet for GroupID
 
 The **Set-Schedule** cmdlet modifies the attributes and settings of a schedule in the identity
 store connected to the current instance of the Management Shell.
@@ -128,6 +128,6 @@ Set-Schedule -ScheduleName smm4_ -TriggerOperation Add -TriggerType Monthly -Sta
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

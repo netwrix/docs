@@ -1,5 +1,5 @@
 ---
-title: "Set managerial Dynasty options in Directory Manager"
+title: "Set managerial Dynasty options in GroupID"
 description: "Choose the top manager, Dynasty type, owner, container, and attributes for a managerial Dynasty on the Dynasty Options page."
 keywords:
   - managerial Dynasty
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Set managerial Dynasty options in Directory Manager
+# Set managerial Dynasty options in GroupID
 
 On the **Dynasty Options** page, select whether you want to create separate Smart Groups for the
 direct reports of the top manager and sub-level managers, or add all direct reports of the top
@@ -24,7 +24,7 @@ On the **Dynasty Options** page:
    the Dynasty.
 
     Click the ellipsis button and use the
-    [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) to select a top
+    [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) to select a top
     manager.
 
 2. Select an option from **Dynasty Type** to specify the type of managerial Dynasty you want to
@@ -48,7 +48,7 @@ On the **Dynasty Options** page:
         - Don has three direct reports: Ashley, Jason, and Tanya.
         - Jason has a direct report, April.
 
-        Directory Manager creates a Dynasty with the following child groups:
+        GroupID creates a Dynasty with the following child groups:
 
         - Direct reports of Paul
 
@@ -84,7 +84,7 @@ On the **Dynasty Options** page:
         sub-manager. For members, each group contains the respective manager’s direct reports,
         the direct reports of those direct reports, and so on down to the nth level.
 
-        Referring to the data set used for a Managerial List, Directory Manager creates the following
+        Referring to the data set used for a Managerial List, GroupID creates the following
         child groups:
 
         - Direct reports of Paul
@@ -104,7 +104,7 @@ On the **Dynasty Options** page:
             Members: April
 
         On the
-        [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+        [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
         page, you can also specify a criterion to filter the managers for whom you want to create
         child groups in the Dynasty.
 
@@ -123,7 +123,7 @@ On the **Dynasty Options** page:
     If you change it, the new recipient becomes the owner, even with the **Set manager as owner**
     checkbox selected.
 
-    In case the Dynasty isn't a flat managerial Dynasty, Directory Manager sets the manager of each
+    In case the Dynasty isn't a flat managerial Dynasty, GroupID sets the manager of each
     child Dynasty as its respective owner.
 
 5. For a hierarchical managerial Dynasty, by default, the Dynasty structure adds a sub-level
@@ -188,7 +188,7 @@ On the **Dynasty Options** page:
 
                 (This child Dynasty is a part of the Direct reports of Martin.)
 
-        If no user is set as additional manager, Directory Manager creates no child Dynasty with the
+        If no user is set as additional manager, GroupID creates no child Dynasty with the
         additional manager attribute.
 
     - Specify a single attribute, ‘XadditionalManager’
@@ -211,7 +211,7 @@ On the **Dynasty Options** page:
         - Direct reports of Mark
         - Direct reports of Martin
 
-        When Alan isn't the additional manager of any user, Directory Manager creates the parent Dynasty
+        When Alan isn't the additional manager of any user, GroupID creates the parent Dynasty
         without any child Dynasties.
 
     - Specify a custom attribute, ‘customattribute1’
@@ -244,4 +244,4 @@ On the **Dynasty Options** page:
 
 **See Also**
 
-- [Create an Active Directory Dynasty in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
+- [Create an Active Directory Dynasty in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)

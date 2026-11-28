@@ -1,6 +1,6 @@
 ---
-title: "Get All Directory Manager Workflow Routes"
-description: "Use this GET endpoint to list every system-defined and user-defined workflow route in a Directory Manager identity store."
+title: "Get All GroupID Workflow Routes"
+description: "Use this GET endpoint to list every system-defined and user-defined workflow route in a GroupID identity store."
 keywords:
   - workflow routes API
   - get workflow routes
@@ -11,7 +11,7 @@ sidebar_position: 10
 unlisted: true
 ---
 
-# Get All Directory Manager Workflow Routes
+# Get All GroupID Workflow Routes
 
 Use this API to get information about all workflow routes, system-defined and user-defined, in a
 specified identity store.
@@ -412,5 +412,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Workflow APIs](/docs/directorymanager/11.0/apis/workflow/workflowapis.md)

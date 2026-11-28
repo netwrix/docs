@@ -1,5 +1,5 @@
 ---
-title: "Disable-DistributionGroup Cmdlet in Directory Manager"
+title: "Disable-DistributionGroup Cmdlet in GroupID"
 description: "Disable the mailing capabilities of a distribution group with the Disable-DistributionGroup cmdlet."
 keywords:
   - Disable-DistributionGroup
@@ -9,11 +9,11 @@ keywords:
 sidebar_position: 10
 ---
 
-# Disable-DistributionGroup Cmdlet in Directory Manager
+# Disable-DistributionGroup Cmdlet in GroupID
 
 Use this cmdlet to disable the mailing capabilities of a distribution group in the directory.
 
-Directory Manager maintains a history for this cmdlet, which you can view in the Directory Manager
+GroupID maintains a history for this cmdlet, which you can view in the GroupID
 Management Console using the History tab of the object's properties dialog box.
 
 ## Syntax
@@ -42,6 +42,6 @@ Disable-DistributionGroup -Identity "CN=Smart_Training,OU=Recruiting,DC=HR,DC=Im
 
 **See Also**
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Mail-Enable and Mail-Disable Group Cmdlets](/docs/directorymanager/11.0/managementshell/mailenableddisabledgroups/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Mail-Enable and Mail-Disable Group Cmdlets](/docs/directorymanager/11.0/managementshell/mailenableddisabledgroups/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

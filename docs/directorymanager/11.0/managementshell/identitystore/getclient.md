@@ -1,19 +1,19 @@
 ---
-title: "Get-Client Cmdlet in Directory Manager"
-description: "Get the name, type, and enabled or disabled status of Directory Manager clients, such as Admin Center, portals, and services, with the Get-Client cmdlet."
+title: "Get-Client Cmdlet in GroupID"
+description: "Get the name, type, and enabled or disabled status of GroupID clients, such as Admin Center, portals, and services, with the Get-Client cmdlet."
 keywords:
   - Get-Client
-  - Directory Manager clients
+  - GroupID clients
   - client status
   - Management Shell
   - PowerShell cmdlet
 sidebar_position: 50
 ---
 
-# Get-Client Cmdlet in Directory Manager
+# Get-Client Cmdlet in GroupID
 
-The Get-Client cmdlet gets information about Directory Manager clients, such as Admin Center,
-Directory Manager portals, and Management Shell. It also covers Directory Manager services such as
+The Get-Client cmdlet gets information about GroupID clients, such as Admin Center,
+GroupID portals, and Management Shell. It also covers GroupID services such as
 the replication, scheduler, and data services. The information includes the client name and type,
 and whether the client is enabled or disabled.
 
@@ -56,7 +56,7 @@ GroupIDPortal1) through the pipeline operator.
 
 Example 3:
 
-This example lists all Directory Manager clients available on the Directory Manager machine.
+This example lists all GroupID clients available on the GroupID machine.
 
 ```
 Get-Client
@@ -64,6 +64,6 @@ Get-Client
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

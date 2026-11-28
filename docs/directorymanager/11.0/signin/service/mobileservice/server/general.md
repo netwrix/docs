@@ -1,5 +1,5 @@
 ---
-title: "Manage General Mobile Service Settings in Directory Manager"
+title: "Manage General Mobile Service Settings in GroupID"
 description: "Change the display name of a Mobile service and associate identity stores with it so users can sign in from the mobile app."
 keywords:
   - Mobile service display name
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage General Mobile Service Settings in Directory Manager
+# Manage General Mobile Service Settings in GroupID
 
 You can change the display name of a Mobile service and associate identity stores with it.
 
@@ -47,5 +47,5 @@ app for signing in.
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
-- [Mobile Service Server Settings in Directory Manager](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [Mobile Service Server Settings in GroupID](/docs/directorymanager/11.0/signin/service/mobileservice/server/overview.md)

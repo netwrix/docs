@@ -1,12 +1,12 @@
 ---
 title: "Restore-TombStoneObject"
-description: "Restore a deleted group from its tombstone to its original container as an unmanaged group, using the Restore-TombStoneObject cmdlet in Directory Manager."
+description: "Restore a deleted group from its tombstone to its original container as an unmanaged group, using the Restore-TombStoneObject cmdlet in GroupID."
 keywords:
   - Restore-TombStoneObject
   - tombstone object
   - restore deleted group
   - unmanaged group
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 100
 ---
 
@@ -45,6 +45,6 @@ Restore-TombStoneObject -identity "Event Management" -Credential $Cred
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

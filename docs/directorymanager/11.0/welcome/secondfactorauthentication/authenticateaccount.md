@@ -1,6 +1,6 @@
 ---
-title: "Authenticate Your Identity Store Account in Directory Manager"
-description: "Authenticate your identity store account in the Directory Manager portal with security questions, SMS, email, an authenticator app, YubiKey, or Windows Hello."
+title: "Authenticate Your Identity Store Account in GroupID"
+description: "Authenticate your identity store account in the GroupID portal with security questions, SMS, email, an authenticator app, YubiKey, or Windows Hello."
 keywords:
   - second factor authentication
   - authenticate account
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Authenticate Your Identity Store Account in Directory Manager
+# Authenticate Your Identity Store Account in GroupID
 
 With second factor authentication enabled, users must authenticate the identity store account they
 use to sign in to the portal.
@@ -88,5 +88,5 @@ enroll their identity store account.
 
 **See Also**
 
-- [Second Factor Authentication in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Second Factor Authentication in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/secondfactorauthentication.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)

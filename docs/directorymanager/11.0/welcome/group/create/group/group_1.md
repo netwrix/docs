@@ -1,6 +1,6 @@
 ---
-title: "Create Microsoft Entra ID Groups in Directory Manager"
-description: "Create static groups and Smart Groups in a Microsoft Entra ID identity store by using the Create Group wizard in the Directory Manager portal."
+title: "Create Microsoft Entra ID Groups in GroupID"
+description: "Create static groups and Smart Groups in a Microsoft Entra ID identity store by using the Create Group wizard in the GroupID portal."
 keywords:
   - create Entra ID group
   - Create Group wizard
@@ -10,15 +10,15 @@ keywords:
 sidebar_position: 30
 ---
 
-# Create Microsoft Entra ID Groups in Directory Manager
+# Create Microsoft Entra ID Groups in GroupID
 
-Using the Directory Manager portal, you can create static groups and Smart Groups in a Microsoft
+Using the GroupID portal, you can create static groups and Smart Groups in a Microsoft
 Entra ID identity store.
 
 :::note
-If the Directory Manager administrator has specified the group creation action for review, the new
+If the GroupID administrator has specified the group creation action for review, the new
 group is created after an approver verifies it. See the
-[Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
+[Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) topic.
 :::
 
 What do you want to do?
@@ -30,7 +30,7 @@ What do you want to do?
 
 To create a static group:
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
+1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
@@ -39,7 +39,7 @@ To create a static group:
     customize the wizard by adding or removing tabs and fields.
     :::
 
-2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in GroupID](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Static Group** option button and click **Next**.
 3. On the [General Page for Entra ID Groups in Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/general_1.md),
    specify basic information about the group.
@@ -64,14 +64,14 @@ To create a static group:
 
 To create a Smart Group:
 
-1. In the Directory Manager portal, click the **Create New** button in the left pane and select **Group**.
+1. In the GroupID portal, click the **Create New** button in the left pane and select **Group**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
     Pages and fields on the Create Group wizard can vary, since the administrator can
     customize the wizard by adding or removing tabs and fields.
 
-2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in GroupID](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the **Smart Group** option button and click **Next**.
 3. On the [General Page for Entra ID Groups in Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/general_1.md),
    specify basic information about the group.
@@ -81,7 +81,7 @@ To create a Smart Group:
 
     Smart Groups in a Microsoft Entra ID-based identity store use a device structured query
     language to update group membership. Apply a query to a group either in the Microsoft
-    Entra ID portal or in Directory Manager.
+    Entra ID portal or in GroupID.
 
 5. On the
    [Owners Page in the Create Group Wizard](/docs/directorymanager/11.0/welcome/group/create/group/owners.md),
@@ -101,4 +101,4 @@ To create a Smart Group:
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

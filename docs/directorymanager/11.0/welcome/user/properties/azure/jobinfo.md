@@ -1,6 +1,6 @@
 ---
 title: "Entra ID User Properties: Job Info Tab"
-description: "Learn what the Title and Department fields on the Job Info tab show for Microsoft Entra ID users and mailboxes in the Directory Manager portal."
+description: "Learn what the Title and Department fields on the Job Info tab show for Microsoft Entra ID users and mailboxes in the GroupID portal."
 keywords:
   - Job Info tab Entra ID
   - Entra ID job title field
@@ -24,4 +24,4 @@ The department in the organization that the user or mailbox works in.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

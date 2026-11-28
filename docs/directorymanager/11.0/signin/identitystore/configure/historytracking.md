@@ -1,6 +1,6 @@
 ---
-title: "Configure History Tracking in Directory Manager"
-description: "Enable history tracking for an identity store, choose which actions to track, and set how long Directory Manager retains history data."
+title: "Configure History Tracking in GroupID"
+description: "Enable history tracking for an identity store, choose which actions to track, and set how long GroupID retains history data."
 keywords:
   - enable history tracking
   - tracked actions
@@ -9,17 +9,17 @@ keywords:
 sidebar_position: 90
 ---
 
-# Configure History Tracking in Directory Manager
+# Configure History Tracking in GroupID
 
-In Directory Manager, history for an identity store is tracked at two levels:
+In GroupID, history for an identity store is tracked at two levels:
 
 - **When objects are created, modified, and deleted** - When you enable history tracking for an
-  identity store, Directory Manager tracks all actions that are committed to the directory using:
+  identity store, GroupID tracks all actions that are committed to the directory using:
 
-    - Directory Manager portal (whether manually, through Synchronize jobs, or changes to object
+    - GroupID portal (whether manually, through Synchronize jobs, or changes to object
       entitlements)
     - Management Shell cmdlets
-    - Directory Manager mobile app
+    - GroupID mobile app
     - Admin Center (actions performed by schedules only)
     - APIs
 
@@ -28,11 +28,11 @@ In Directory Manager, history for an identity store is tracked at two levels:
     [Track Specific Actions for an Identity Store](#track-specific-actions-for-an-identity-store)
     topic lists some individual actions available for tracking.
 
-    Use the _History_ node in the Directory Manager portal to view the history data that the history
+    Use the _History_ node in the GroupID portal to view the history data that the history
     tracking function collects for objects. History for individual objects is also displayed in the
     respective object's properties.
 
-- **When changes are made to an identity store's configurations** - Directory Manager lets you
+- **When changes are made to an identity store's configurations** - GroupID lets you
   track the changes made to an identity store's configurations, which include the following:
 
     - identity store properties
@@ -40,19 +40,19 @@ In Directory Manager, history for an identity store is tracked at two levels:
     - security roles
 
     See the
-    [View Identity Store History in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
+    [View Identity Store History in GroupID](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
     topic to view the tracked history data.
 
 By default, history tracking is disabled. You can:
 
 - Enable the history tracking function for an identity store.
 - Track all or specific actions.
-- Specify a period for retaining history data in the Directory Manager database. When the period is
+- Specify a period for retaining history data in the GroupID database. When the period is
   over, data is exported to CSV files and deleted from the database.
 
 :::info
 History tracking can slow down system performance. For optimal performance, track only specific,
-more important actions and limit Directory Manager history data storage to the most recent
+more important actions and limit GroupID history data storage to the most recent
 records.
 :::
 
@@ -67,9 +67,9 @@ What do you want to do?
 ## Enable History Tracking for All Actions
 
 You can choose to enable or disable history tracking for an identity store. When enabled, all
-actions that users perform on directory objects using Directory Manager are tracked by default. For
+actions that users perform on directory objects using GroupID are tracked by default. For
 example, when a user creates a group, adds members to it, changes its expiry date, and assigns
-owners, history logs are generated in Directory Manager. Moreover, changes made to identity store configurations,
+owners, history logs are generated in GroupID. Moreover, changes made to identity store configurations,
 workflows, and security roles are also tracked.
 
 **To enable history tracking:**
@@ -126,8 +126,8 @@ actions, such as changes to a group's primary owner and object creation.
 
 ## Retain Complete History Data
 
-You can set Directory Manager to retain history data for the identity store in the Directory
-Manager database indefinitely.
+You can set GroupID to retain history data for the identity store in the GroupID
+database indefinitely.
 
 **To retain history data forever:**
 
@@ -139,7 +139,7 @@ Manager database indefinitely.
    tracked history data in the database.
 
     :::note
-    This setting can greatly increase the database size and can affect Directory Manager
+    This setting can greatly increase the database size and can affect GroupID
     performance.
     :::
 
@@ -147,10 +147,10 @@ Manager database indefinitely.
 
 ## Retain History for a Specific Period
 
-You can set Directory Manager to retain an identity store's history data for a specified length of
+You can set GroupID to retain an identity store's history data for a specified length of
 time in the database. When the retention period is over, the History Retention schedule archives this data by
 moving it from the database to CSV files. See the
-[Directory Manager History Retention Schedule](/docs/directorymanager/11.0/signin/schedule/historyretention.md)
+[GroupID History Retention Schedule](/docs/directorymanager/11.0/signin/schedule/historyretention.md)
 topic.
 
 **To retain history data for a specific period:**
@@ -175,7 +175,7 @@ topic.
 
 ## Disable History Tracking
 
-When you disable history tracking for an identity store, Directory Manager doesn't log the history
+When you disable history tracking for an identity store, GroupID doesn't log the history
 for actions performed in the identity store. Disabling history tracking doesn't delete any already
 recorded history data.
 
@@ -191,6 +191,6 @@ recorded history data.
 
 **See Also**
 
-- [View Identity Store History in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
-- [History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history.md)
-- [Directory Manager Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+- [View Identity Store History in GroupID](/docs/directorymanager/11.0/signin/identitystore/view/view.md)
+- [History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md)
+- [GroupID Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)

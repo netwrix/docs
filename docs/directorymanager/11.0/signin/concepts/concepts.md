@@ -1,6 +1,6 @@
 ---
-title: "Directory Manager Group Management Concepts"
-description: "Learn how Directory Manager classifies groups as unmanaged, Smart Groups, or Dynasties, and how group type, scope, and security type work."
+title: "GroupID Group Management Concepts"
+description: "Learn how GroupID classifies groups as unmanaged, Smart Groups, or Dynasties, and how group type, scope, and security type work."
 keywords:
   - Smart Groups
   - Dynasties
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager Group Management Concepts
+# GroupID Group Management Concepts
 
-To get the most from Directory Manager, you must be familiar with the following group management concepts:
+To get the most from GroupID, you must be familiar with the following group management concepts:
 
 - [Group Classification](#group-classification)
 - [Group Types](#group-types)
@@ -21,7 +21,7 @@ To get the most from Directory Manager, you must be familiar with the following 
 
 ## Group Classification
 
-Using Directory Manager, you can manage the following three kinds of groups:
+Using GroupID, you can manage the following three kinds of groups:
 
 - [Unmanaged Groups](#unmanaged-groups)
 - [Smart Groups](#smart-groups)
@@ -31,7 +31,7 @@ Using Directory Manager, you can manage the following three kinds of groups:
 
 An unmanaged group, also called a static group, is a group you normally create in a directory, for
 example, by using the Active Directory Users and Computers console. Though such groups can be
-created using the Directory Manager portal and Management Shell, Directory Manager doesn't support dynamic updates to
+created using the GroupID portal and Management Shell, GroupID doesn't support dynamic updates to
 them. Any changes to the membership have to be updated manually.
 
 ### Smart Groups
@@ -68,7 +68,7 @@ Marketing, and Human Resources.
 
 #### Built-in Updates
 
-Directory Manager keeps the Dynasty active in two ways:
+GroupID keeps the Dynasty active in two ways:
 
 - By adding new child groups as new values are returned for the group-by field.
 - By removing existing child groups as previous values of the group-by field no longer exist in the
@@ -94,7 +94,7 @@ the parent level.
 
 #### Dynasty Types
 
-Directory Manager provides the following templates for creating Dynasties:
+GroupID provides the following templates for creating Dynasties:
 
 - **Organizational** - to create a Smart Group for every distinct company, then for each department
   within a company, and finally for each title in a department.
@@ -191,7 +191,7 @@ Such a group can be a member of any domain local group in the same domain.
 ## Group Security Types
 
 A group's security type determines how non-members can access the group and become its members.
-Directory Manager provides three security types:
+GroupID provides three security types:
 
 - **Private** - to restrict access to the group to members selected by the group owner. Only the
   owner can add or remove members from the group. Requests to join or leave the group can't be
@@ -204,4 +204,4 @@ Directory Manager provides three security types:
 
 **See Also**
 
-- [Monitor Directory Manager with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)
+- [Monitor GroupID with the Admin Center Dashboard](/docs/directorymanager/11.0/signin/concepts/dashboard.md)

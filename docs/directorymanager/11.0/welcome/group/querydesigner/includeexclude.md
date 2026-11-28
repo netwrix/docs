@@ -1,6 +1,6 @@
 ---
 title: "Query Designer Include/Exclude tab"
-description: "Add or remove specific objects from group membership regardless of what the Directory Manager query returns."
+description: "Add or remove specific objects from group membership regardless of what the GroupID query returns."
 keywords:
   - Query Designer
   - Include list
@@ -16,13 +16,13 @@ Use this tab to include or exclude an object from group membership, regardless o
 query returns it. The Include and Exclude lists affect group membership at two points in the
 update process:
 
-- **Immediately** - When you close the Query Designer dialog box, the Directory Manager portal adds the
+- **Immediately** - When you close the Query Designer dialog box, the GroupID portal adds the
   objects in the Include list to the group membership and removes the objects in the Exclude list
   from the group membership. If you remove objects from the Include list, the group's
   membership is updated immediately. However, if you remove objects from the Exclude list, the
   group's membership is updated only by a manual update or a scheduled job.
 - **At group membership update** - When a scheduled job or the
-  Update command updates the group membership, Directory Manager obtains the query results, adds the objects to include, and then removes
+  Update command updates the group membership, GroupID obtains the query results, adds the objects to include, and then removes
   the objects to exclude.
 
 :::note
@@ -61,4 +61,4 @@ View the provider query in the LDAP Query box.
 
 **See Also**
 
-- [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+- [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)

@@ -1,8 +1,8 @@
 ---
 title: "Enable Authentication Types for an Identity Store"
-description: "Enable authentication types and enrollment for a Directory Manager identity store so users can enroll and use second-factor or multifactor authentication."
+description: "Enable authentication types and enrollment for a GroupID identity store so users can enroll and use second-factor or multifactor authentication."
 keywords:
-  - Directory Manager
+  - GroupID
   - authentication types
   - enable enrollment
   - multifactor authentication
@@ -54,24 +54,24 @@ What do you want to do?
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Authentication Types**.
 4. On the **Authentication Types** page, select the **Enrollment Enabled** checkbox to force
-   unenrolled users to enroll their identity store accounts in Directory Manager.  
+   unenrolled users to enroll their identity store accounts in GroupID.  
    Don't select this checkbox if you don't want to use multifactor authentication or second
-   factor authentication in Directory Manager.
+   factor authentication in GroupID.
 5. Click **Save**.
 
 :::note
-For second factor authentication and multifactor authentication to work in Directory Manager,
+For second factor authentication and multifactor authentication to work in GroupID,
 the **Enrollment Enabled** checkbox must be selected. Otherwise, users can't enroll, which
-prevents them from using Directory Manager.
+prevents them from using GroupID.
 :::
 
 ## Enable QR Code
 
 You can enable the QR code option for an identity store to give users a passwordless method for
-signing in to Directory Manager.
+signing in to GroupID.
 
-Users can scan the QR code with the Directory Manager mobile app on their smartphones to connect
-Admin Center or the Directory Manager portal to an identity store and sign in, without providing a
+Users can scan the QR code with the GroupID mobile app on their smartphones to connect
+Admin Center or the GroupID portal to an identity store and sign in, without providing a
 username and password.
 
 To enable QR code for an identity store:
@@ -83,15 +83,15 @@ To enable QR code for an identity store:
 4. On the **Authentication Types** page, set the **QR Code Authentication** toggle button to
    _Enabled_ to enable QR code for the identity store.  
    Users can use QR code for passwordless authentication while connecting Admin Center or the
-   Directory Manager portal to this identity store.
+   GroupID portal to this identity store.
 5. Click **Save**.
 
 ### Prerequisite for Using QR Code
 
-To sign in with a QR code, users must first install the Directory Manager mobile app on their mobile
+To sign in with a QR code, users must first install the GroupID mobile app on their mobile
 device.
 
-**To install the Directory Manager app:**
+**To install the GroupID app:**
 
 1. On your device, do one of the following:
 
@@ -103,11 +103,11 @@ device.
 ### Sign in with QR Code
 
 To sign in using the QR code, see the
-[Sign In to Directory Manager Admin Center](/docs/directorymanager/11.0/signin/signin.md) topic.
+[Sign In to GroupID Admin Center](/docs/directorymanager/11.0/signin/signin.md) topic.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Configure Second Factor Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/sfa.md)
-- [Configure Multifactor Authentication in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/mfa.md)
-- [Set Up Authentication Types in Directory Manager](/docs/directorymanager/11.0/signin/authpolicy/setupauth/overview.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Configure Second Factor Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/sfa.md)
+- [Configure Multifactor Authentication in GroupID](/docs/directorymanager/11.0/signin/authpolicy/mfa.md)
+- [Set Up Authentication Types in GroupID](/docs/directorymanager/11.0/signin/authpolicy/setupauth/overview.md)

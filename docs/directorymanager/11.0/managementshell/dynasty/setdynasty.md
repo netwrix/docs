@@ -1,5 +1,5 @@
 ---
-title: "Set-Dynasty Cmdlet in Directory Manager"
+title: "Set-Dynasty Cmdlet in GroupID"
 description: "Modify a Dynasty or its child groups with the Set-Dynasty cmdlet, including syntax, required parameters, and examples."
 keywords:
   - Set-Dynasty
@@ -10,11 +10,11 @@ keywords:
 sidebar_position: 20
 ---
 
-# Set-Dynasty Cmdlet in Directory Manager
+# Set-Dynasty Cmdlet in GroupID
 
 The **Set-Dynasty** cmdlet lets you modify a Dynasty or its children in the directory.
 
-Directory Manager maintains a history for this cmdlet, which you can view against the **History** node in
+GroupID maintains a history for this cmdlet, which you can view against the **History** node in
 the left panel.
 
 ## Syntax
@@ -195,6 +195,6 @@ Set-Dynasty -Identity "CN=Managerial,OU=Recruiting,DC=HR,DC=Imanami,DC=US" -Clea
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Dynasty Cmdlets](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Dynasty Cmdlets](/docs/directorymanager/11.0/managementshell/dynasty/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

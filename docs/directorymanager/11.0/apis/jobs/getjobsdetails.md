@@ -1,5 +1,5 @@
 ---
-title: "Get Job Details API in Directory Manager"
+title: "Get Job Details API in GroupID"
 description: "Retrieve the full configuration details of a single Synchronize job by its job ID using a GET request."
 keywords:
   - "get job details API"
@@ -9,7 +9,7 @@ sidebar_position: 90
 unlisted: true
 ---
 
-# Get Job Details API in Directory Manager
+# Get Job Details API in GroupID
 
 Use this API to get details of the job specified in the endpoint URL.
 
@@ -387,5 +387,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

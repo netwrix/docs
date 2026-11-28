@@ -1,8 +1,8 @@
 ---
-title: "Update a Data Source with the Directory Manager API"
-description: "Send a PUT request to the Directory Manager API to change the name, provider settings, or connection details of an existing data source."
+title: "Update a Data Source with the GroupID API"
+description: "Send a PUT request to the GroupID API to change the name, provider settings, or connection details of an existing data source."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - update data source
   - DataSource Update endpoint
   - PUT request
@@ -11,7 +11,7 @@ sidebar_position: 160
 unlisted: true
 ---
 
-# Update a Data Source with the Directory Manager API
+# Update a Data Source with the GroupID API
 
 Use this API to update the information of an existing data source.
 
@@ -63,5 +63,5 @@ PUT
 
 See Also
 
-- [Directory Manager Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Data Source APIs](/docs/directorymanager/11.0/apis/datasource/datasourceapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

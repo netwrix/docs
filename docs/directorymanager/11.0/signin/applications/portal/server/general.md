@@ -1,6 +1,6 @@
 ---
-title: "Manage General Portal Server Settings in Directory Manager"
-description: "Rename a Directory Manager portal, associate identity stores with it, and view its deployment instances from the General Settings page."
+title: "Manage General Portal Server Settings in GroupID"
+description: "Rename a GroupID portal, associate identity stores with it, and view its deployment instances from the General Settings page."
 keywords:
   - portal display name
   - identity store association
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Manage General Portal Server Settings in Directory Manager
+# Manage General Portal Server Settings in GroupID
 
 You can manage general server settings for a portal, such as changing its display name, associating
 identity stores with it, and viewing its various deployments.
@@ -18,7 +18,7 @@ identity stores with it, and viewing its various deployments.
 ## Change a Portal's Display Name
 
 A portal is assigned an _application name_ during creation, which is used as its display name in
-Directory Manager. When you change it, the portal appears with the new name.
+GroupID. When you change it, the portal appears with the new name.
 
 **To change a portal's display name:**
 
@@ -44,7 +44,7 @@ Users can connect a portal to an associated identity store only.
    associated with it.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. The **Identity Stores** area on the **General Settings** page lists the identity stores in
-   Directory Manager. It displays the provider type for each identity store and whether the
+   GroupID. It displays the provider type for each identity store and whether the
    identity store is enabled.
 
     - Select the checkbox for an identity store to associate it with the portal.
@@ -59,9 +59,9 @@ You might see the following message on the **Server Settings – General** page:
 
 ![Message on the Server Settings General page about linked identity stores](/images/directorymanager/11.0/admincenter/portal/linked_message.webp)
 
-It relates to the scenario when identity stores in Directory Manager have been linked, as discussed
+It relates to the scenario when identity stores in GroupID have been linked, as discussed
 in the
-[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
+[Linked Identity Stores and the GroupID Portal](/docs/directorymanager/11.0/signin/identitystore/link/overview.md#linked-identity-stores-and-the-groupid-portal)
 topic. When two identity stores (IdentityStoreA and IdentityStoreB) are linked and you
 associate IdentityStoreA with the portal, this message is displayed. It alerts you to associate the
 second identity store in the linked pair (IdentityStoreB) with the portal too, to benefit
@@ -87,16 +87,16 @@ settings for each deployment instance of a portal.
       Select an instance to view the name of the instance directory in IIS, the IIS site that hosts
       the instance, the URL for the instance, the Data service and Security service associated with
       the instance, and logging levels. See the
-      [Manage Native IIS Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/nativeiis.md)
+      [Manage Native IIS Deployment Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/nativeiis.md)
       topic for details.
     - The **Remote IIS** tab is available when one or more portal instances are deployed in remote
       IIS. Select an instance to view the Microsoft IIS Administration API URL and access token that
-      Directory Manager uses to communicate with the remote IIS server, the credentials used to
+      GroupID uses to communicate with the remote IIS server, the credentials used to
       communicate with the API, the site that hosts the instance, the Data service and Security service
       associated with the instance, and logging levels. See the
-      [Manage Remote IIS Deployment Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/remoteiis.md)
+      [Manage Remote IIS Deployment Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/remoteiis.md)
       topic for details.
 
 **See Also**
 
-- [Create a Directory Manager Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)
+- [Create a GroupID Portal](/docs/directorymanager/11.0/signin/applications/portal/create.md)

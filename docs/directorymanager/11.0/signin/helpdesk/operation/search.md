@@ -1,5 +1,5 @@
 ---
-title: "Search Users in Directory Manager Helpdesk"
+title: "Search Users in GroupID Helpdesk"
 description: "Search for users across identity stores in Admin Center Helpdesk and filter them by name, email address, or enrollment status."
 keywords:
   - Helpdesk search
@@ -9,16 +9,16 @@ keywords:
 sidebar_position: 30
 ---
 
-# Search Users in Directory Manager Helpdesk
+# Search Users in GroupID Helpdesk
 
 Helpdesk users can search for users in specific identity stores or all identity stores defined in
-Directory Manager. A search filter is also available to narrow down your search results.
+GroupID. A search filter is also available to narrow down your search results.
 
 ## Perform a Search
 
 1. In Admin Center, click **Helpdesk** in the left pane.
 2. The **Helpdesk** page opens to the **Helpdesk Operations** tab. It lists all users from all
-   identity stores in Directory Manager (_All_ is displayed in the **Identity store** box).
+   identity stores in GroupID (_All_ is displayed in the **Identity store** box).
 3. Use the following options to filter users:
 
     - **Identity store box** - To get users from one or specific identity stores, click in the
@@ -60,5 +60,5 @@ Click the ellipsis button for a user to perform any of these actions:
 
 **See Also**
 
-- [Directory Manager Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
-- [Helpdesk Operations in Directory Manager](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)
+- [GroupID Helpdesk Overview](/docs/directorymanager/11.0/signin/helpdesk/overview.md)
+- [Helpdesk Operations in GroupID](/docs/directorymanager/11.0/signin/helpdesk/operation/overview.md)

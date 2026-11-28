@@ -1,5 +1,5 @@
 ---
-title: "Get Job Collection Details by ID in Directory Manager"
+title: "Get Job Collection Details by ID in GroupID"
 description: "Retrieve details of a Synchronize job collection by its job collection ID using a GET request."
 keywords:
   - "get job collection details API"
@@ -9,12 +9,12 @@ sidebar_position: 60
 unlisted: true
 ---
 
-# Get Job Collection Details by ID in Directory Manager
+# Get Job Collection Details by ID in GroupID
 
 Use this API to retrieve information about the job collection whose ID is given in the endpoint URL.
 
 See the
-[Create a Job Collection in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
+[Create a Job Collection in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md) topic for
 additional information on job collections.
 
 ## Endpoint
@@ -639,5 +639,5 @@ GET
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Synchronize Jobs APIs in Directory Manager](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [Synchronize Jobs APIs in GroupID](/docs/directorymanager/11.0/apis/jobs/jobsapis.md)

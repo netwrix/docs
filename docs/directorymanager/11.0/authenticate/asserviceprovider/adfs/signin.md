@@ -1,8 +1,8 @@
 ---
-title: "Sign In to Directory Manager Using AD FS"
-description: "Sign in to a Directory Manager portal with AD FS using SP-initiated or IdP-initiated single sign-on."
+title: "Sign In to GroupID Using AD FS"
+description: "Sign in to a GroupID portal with AD FS using SP-initiated or IdP-initiated single sign-on."
 keywords:
-  - Directory Manager AD FS sign in
+  - GroupID AD FS sign in
   - SP-initiated single sign-on
   - IdP-initiated single sign-on
   - AD FS relying party sign in
@@ -10,20 +10,20 @@ keywords:
 sidebar_position: 30
 ---
 
-# Sign In to Directory Manager Using AD FS
+# Sign In to GroupID Using AD FS
 
-This example configures the AD FS provider with a Directory Manager client, specifically the
-Directory Manager portal _Wizard_. For single sign-on using AD FS, you can use either of the
+This example configures the AD FS provider with a GroupID client, specifically the
+GroupID portal _Wizard_. For single sign-on using AD FS, you can use either of the
 following methods:
 
 - SP-initiated single sign-on – the SSO operation starts from the service provider (SP) end, that
-  is, from the Directory Manager portal, Wizard.
+  is, from the GroupID portal, Wizard.
 - IdP-initiated single sign-on – the SSO operation starts from the identity provider (IdP) end, that
   is, from AD FS.
 
 ## SP-Initiated Single Sign-On
 
-1. Launch the Directory Manager portal _Wizard_.  
+1. Launch the GroupID portal _Wizard_.  
    On the **Login** page, the availability of the user name and password fields depends on whether
    you disabled GroupID Authentication (see step 2 in the
    [Specify Advanced Configurations](/docs/directorymanager/11.0/authenticate/asserviceprovider/adfs/configureadfsindirectorymanager.md#specify-advanced-configurations)
@@ -35,9 +35,9 @@ following methods:
    topic).
 3. Sign in as a regular Active Directory user. The authentication is routed to AD FS, which
    validates the user against the specified attribute (that is, the user principal name – UPN in
-   this example) and signs the user in to the Directory Manager portal.
+   this example) and signs the user in to the GroupID portal.
 
-With single sign-on, you can launch any Directory Manager client without having to sign in again.
+With single sign-on, you can launch any GroupID client without having to sign in again.
 
 ## IdP-Initiated Single Sign-On
 

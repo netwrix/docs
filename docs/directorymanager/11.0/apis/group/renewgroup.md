@@ -1,6 +1,6 @@
 ---
 title: "Renew a Group API"
-description: "Renew a single group by identity with a POST request to the Directory Manager data service."
+description: "Renew a single group by identity with a POST request to the GroupID data service."
 sidebar_position: 140
 keywords:
   - renew group API
@@ -42,5 +42,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

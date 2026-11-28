@@ -1,11 +1,11 @@
 ---
 title: "ShortMessage.ReferenceId Property (SMS Gateway API)"
-description: "Get or set the reference ID that identifies a text message sent through a custom SMS gateway in Directory Manager."
+description: "Get or set the reference ID that identifies a text message sent through a custom SMS gateway in GroupID."
 keywords:
   - ShortMessage.ReferenceId
   - SMS reference ID
   - custom SMS gateway
-  - Directory Manager SMS API
+  - GroupID SMS API
 sidebar_position: 50
 ---
 
@@ -13,9 +13,9 @@ sidebar_position: 50
 
 Gets or sets the reference ID for the text message.
 
-**Namespace:** Imanami.directorymanager.DataTransferObjects.DataContracts.SMS
+**Namespace:** Imanami.GroupID.DataTransferObjects.DataContracts.SMS
 
-**Assembly:** Imanami.directorymanager.DataTransferObjects.dll
+**Assembly:** Imanami.GroupID.DataTransferObjects.dll
 
 **Syntax**
 

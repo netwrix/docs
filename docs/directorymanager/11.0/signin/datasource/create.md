@@ -1,5 +1,5 @@
 ---
-title: "Create Data Sources in Directory Manager"
+title: "Create Data Sources in GroupID"
 description: "Create data sources for Excel, Access, Oracle, SQL Server, text/CSV, ODBC, and SCIM providers to use in Synchronize jobs and queries."
 keywords:
   - create data source
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create Data Sources in Directory Manager
+# Create Data Sources in GroupID
 
 You can create Synchronize jobs to synchronize data across different providers. As a prerequisite,
 you must create data sources for those providers.
@@ -40,8 +40,8 @@ provider. Use it as a destination in a Synchronize job to export data from a sou
 worksheet. The schema of the new Excel worksheet is automatically built according to fields that you
 select from the source to map to the destination.
 
-The Directory Manager installer installs the required components for the MS Excel provider while installing
-Directory Manager. However, if you experience any issue, ensure the following are installed on the Directory Manager
+The GroupID installer installs the required components for the MS Excel provider while installing
+GroupID. However, if you experience any issue, ensure the following are installed on the GroupID
 server:
 
 - Microsoft Office 2007 or later
@@ -87,7 +87,7 @@ steps in the respective section to create a data source.
 3. In the **Service Account** and **Service Account Password** boxes, enter the username and
    password of a service account to access the file on OneDrive.
 4. In the **Registered Application ID on Azure Active Directory** box, enter the application ID
-   assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
+   assigned to the GroupID application when you registered it in Microsoft Entra admin center.
 
     :::note
     The registered app must have the following API permissions to access files on OneDrive:
@@ -95,7 +95,7 @@ steps in the respective section to create a data source.
     :::
 
 5. In the **Registered Tenant ID on Azure Active Directory** box, enter the tenant ID assigned to
-   the Directory Manager application when you registered it in Microsoft Entra admin center.
+   the GroupID application when you registered it in Microsoft Entra admin center.
 6. Enter the name of the file in the **File Name** box. This name should be complete with the file
    extension, for example, Employee Contact Details.xlsx
 7. Click **Create Data Source**.
@@ -111,7 +111,7 @@ Synchronize supports Microsoft Access (.mdb | .accdb) to serve as both a source 
 provider.
 
 The MS Access provider supports automatic schema detection. For Synchronize to communicate with this
-provider, data connectivity components must be installed on the Directory Manager server. These components can
+provider, data connectivity components must be installed on the GroupID server. These components can
 be found at
 [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
@@ -156,7 +156,7 @@ steps in the respective section to create a data source.
    password of a service account to access the file on OneDrive.
 4. If the database file is password protected, enter the password in the **File Password** box.
 5. In the **Registered Application ID on Azure Active Directory** box, enter the application ID
-   assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
+   assigned to the GroupID application when you registered it in Microsoft Entra admin center.
 
     :::note
     The registered app must have the following API permissions to access files on OneDrive:
@@ -164,7 +164,7 @@ steps in the respective section to create a data source.
     :::
 
 6. In the **Registered Tenant ID on Azure Active Directory** box, enter the tenant ID assigned to
-   the Directory Manager application when you registered it in Microsoft Entra admin center.
+   the GroupID application when you registered it in Microsoft Entra admin center.
 7. Enter the name of the file in the **File Name** box. This name should be complete with the file
    extension, for example, Employee Medical Records.accdb.
 8. Click **Create Data Source**.
@@ -284,7 +284,7 @@ Follow the steps in the respective section to create a data source.
 4. In the **Delimiter** box, specify the character that is used to separate values in the file. You
    can also enter a space as a character.
 5. In the **Registered Application ID on Azure Active Directory** box, enter the application ID
-   assigned to the Directory Manager application when you registered it in Microsoft Entra admin center.
+   assigned to the GroupID application when you registered it in Microsoft Entra admin center.
 
     :::note
     The registered app must have the following API permissions to access files on OneDrive:
@@ -292,7 +292,7 @@ Follow the steps in the respective section to create a data source.
     :::
 
 6. In the **Registered Tenant ID on Azure Active Directory** box, enter the tenant ID assigned to
-   the Directory Manager application when you registered it in Microsoft Entra admin center.
+   the GroupID application when you registered it in Microsoft Entra admin center.
 7. Enter the name of the file in the **File Name** box. This name should be complete with the file
    extension, for example, "Employee Contact Details.csv".
 8. Click **Create Data Source**.
@@ -314,7 +314,7 @@ want to use in queries or as source/destination in Synchronize jobs.
 3. In the **Data Source Type** dropdown list, select a provider type to create a data source for.
    This list displays the supported providers. Select _ODBC_.
 4. Enter a name for the data source in the **Name** box.
-5. Enter the DSN name in the **DSN** box. Directory Manager uses this name to request a connection to the ODBC
+5. Enter the DSN name in the **DSN** box. GroupID uses this name to request a connection to the ODBC
    data source. Note the following:
 
     - For a system DSN, simply provide the name of the DSN.
@@ -332,11 +332,11 @@ want to use in queries or as source/destination in Synchronize jobs.
 
 ## Create a Data Source for SCIM
 
-Directory Manager supports identity providers, namely Active Directory, Microsoft Entra ID, and Google
+GroupID supports identity providers, namely Active Directory, Microsoft Entra ID, and Google
 Workspace, but it doesn't support Slack, AWS, JumpCloud, and GitHub. You can create a SCIM-based
 data source for these and other providers to use them in queries and as source/destinations in
 Synchronize jobs. As a prerequisite, the provider must support SCIM and expose an endpoint URL that
-Directory Manager can consume.
+GroupID can consume.
 
 **To create a data source:**
 
@@ -354,6 +354,6 @@ Directory Manager can consume.
 
 **See Also**
 
-- [Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/overview.md)
-- [Manage Data Sources in Directory Manager](/docs/directorymanager/11.0/signin/datasource/manage.md)
-- [Directory Manager Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)
+- [Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/overview.md)
+- [Manage Data Sources in GroupID](/docs/directorymanager/11.0/signin/datasource/manage.md)
+- [GroupID Data Service](/docs/directorymanager/11.0/signin/service/dataservice/overview.md)

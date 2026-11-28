@@ -1,17 +1,17 @@
 ---
-title: "Manage Remote IIS Deployment Settings in Directory Manager"
-description: "View the deployment settings of a Directory Manager portal instance in remote IIS, including the API URL, access token, site, and bound services."
+title: "Manage Remote IIS Deployment Settings in GroupID"
+description: "View the deployment settings of a GroupID portal instance in remote IIS, including the API URL, access token, site, and bound services."
 keywords:
   - remote IIS deployment
   - IIS Administration API
   - access token
   - portal instance
   - deployment configurations
-  - Directory Manager portal
+  - GroupID portal
 sidebar_position: 30
 ---
 
-# Manage Remote IIS Deployment Settings in Directory Manager
+# Manage Remote IIS Deployment Settings in GroupID
 
 You can manage various settings for a portal instance deployed in remote IIS.
 
@@ -33,8 +33,8 @@ topic.
 When creating a portal’s deployment instance in remote IIS, you must provide information related to the
 [Microsoft IIS Administration API](https://learn.microsoft.com/en-us/iis-administration/), such as:
 
-- The API URL that Directory Manager uses for communicating with the remote IIS server
-- The access token that Directory Manager uses to access the API
+- The API URL that GroupID uses for communicating with the remote IIS server
+- The access token that GroupID uses to access the API
 - The credentials used to connect to the API
 
 You also must provide an IIS application name, select a site to host the portal instance, and
@@ -61,7 +61,7 @@ After the instance is created, you can view these settings but you can’t modif
 ## Set File Logging and Windows Logging for an Instance
 
 To set file logging and Windows logging levels for a deployment instance, see the
-[Manage Portal Log Settings in Directory Manager](/docs/directorymanager/11.0/signin/applications/portal/server/log.md) topic.
+[Manage Portal Log Settings in GroupID](/docs/directorymanager/11.0/signin/applications/portal/server/log.md) topic.
 
 ## Delete an Instance
 
@@ -71,4 +71,4 @@ topic.
 
 **See Also**
 
-- [Directory Manager Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)
+- [GroupID Portal Server Settings](/docs/directorymanager/11.0/signin/applications/portal/server/overview.md)

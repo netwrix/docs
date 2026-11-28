@@ -1,15 +1,15 @@
 ---
-title: "Get-User Cmdlet in Directory Manager"
+title: "Get-User Cmdlet in GroupID"
 description: "Retrieve basic information about users that match your criteria from an identity store with the Get-User cmdlet."
 keywords:
   - Get-User
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - retrieve user
   - user search filters
 sidebar_position: 10
 ---
 
-# Get-User Cmdlet in Directory Manager
+# Get-User Cmdlet in GroupID
 
 Use the **Get-User** cmdlet to retrieve basic information about users that match your
 criteria.
@@ -48,6 +48,6 @@ Get-User -Identity "Sample"
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [User Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/user/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [User Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/user/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

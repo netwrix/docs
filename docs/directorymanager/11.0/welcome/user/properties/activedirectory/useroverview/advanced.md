@@ -1,5 +1,5 @@
 ---
-title: "Advanced User and Mailbox Settings in Directory Manager"
+title: "Advanced User and Mailbox Settings in GroupID"
 description: "Set the home page, employee details, address book visibility, and mail forwarding for a user or mailbox on the Advanced tab."
 keywords:
   - Advanced tab
@@ -9,7 +9,7 @@ keywords:
 sidebar_position: 20
 ---
 
-# Advanced User and Mailbox Settings in Directory Manager
+# Advanced User and Mailbox Settings in GroupID
 
 Use this tab to specify advanced settings for a user/mailbox.
 
@@ -51,7 +51,7 @@ The server name of the messaging provider where the mailbox resides.
 An email address or mailbox object that should receive the emails sent to the particular mailbox.
 
 Enter a search string to locate the object to add as a recipient, or click the ellipsis button to
-use the [Find Users, Groups, and Contacts in Directory Manager](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing
+use the [Find Users, Groups, and Contacts in GroupID](/docs/directorymanager/11.0/welcome/generalfeatures/find.md) for performing
 a search.
 
 **Deliver messages to both forwarding address and mailbox**
@@ -65,4 +65,4 @@ object/email specified in the **Recipient** box.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

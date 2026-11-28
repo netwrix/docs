@@ -1,6 +1,6 @@
 ---
 title: "Renew Multiple Groups API"
-description: "Renew several groups at once by sending their identities in a POST request body to the Directory Manager data service."
+description: "Renew several groups at once by sending their identities in a POST request body to the GroupID data service."
 sidebar_position: 150
 keywords:
   - renew multiple groups
@@ -94,5 +94,5 @@ POST
 
 See Also
 
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)

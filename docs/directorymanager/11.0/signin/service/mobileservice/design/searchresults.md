@@ -1,6 +1,6 @@
 ---
-title: "Customize Search Results Pages in the Directory Manager Mobile App"
-description: "Add, edit, or remove the fields on the Groups and Default search results pages in the Directory Manager mobile app."
+title: "Customize Search Results Pages in the GroupID Mobile App"
+description: "Add, edit, or remove the fields on the Groups and Default search results pages in the GroupID mobile app."
 keywords:
   - mobile app search results
   - mobile app search results fields
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 20
 ---
 
-# Customize Search Results Pages in the Directory Manager Mobile App
+# Customize Search Results Pages in the GroupID Mobile App
 
-When a user searches for objects in the Directory Manager app, matched items appear on the following
+When a user searches for objects in the GroupID app, matched items appear on the following
 search results pages:
 
 - Groups: displays search results for group objects.
@@ -35,7 +35,7 @@ What do you want to do?
    can design a different app for each of these.
 4. Click **Search Forms** in the left pane.  
    The **Search Results** tab of the **Search Forms** page lists the search result forms in the
-   Directory Manager mobile app.
+   GroupID mobile app.
 5. Click **Edit** for a form to modify it.
 6. On the **Edit Search Results** pane, the **Fields** area lists the fields available on the search
    results page. Click **Add Field** to add a new field.
@@ -69,7 +69,7 @@ To update a field:
    can design a different app for each of these.
 4. Click **Search Forms** in the left pane.  
    The **Search Results** tab of the **Search Forms** page lists the search result forms in the
-   Directory Manager mobile app.
+   GroupID mobile app.
 5. Click **Edit** for a form to modify it.
 6. On the **Edit Search Results** pane, click **Edit** for a field to update it.  
    The **Edit Field** pane opens. Follow step 7 onward in the
@@ -85,7 +85,7 @@ To update a field:
    can design a different app for each of these.
 4. Click **Search Forms** in the left pane.  
    The **Search Results** tab of the **Search Forms** page lists the search result forms in the
-   Directory Manager mobile app.
+   GroupID mobile app.
 5. Click **Edit** for a form to modify it.
 6. On the **Edit Search Results** pane, click **Remove** for a field to remove it from the search
    results page.
@@ -94,5 +94,5 @@ To update a field:
 
 **See Also**
 
-- [Directory Manager Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
+- [GroupID Mobile Service Overview](/docs/directorymanager/11.0/signin/service/mobileservice/overview.md)
 - [Design Settings for the Mobile Service](/docs/directorymanager/11.0/signin/service/mobileservice/design/overview.md)

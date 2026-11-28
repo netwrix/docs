@@ -1,8 +1,8 @@
 ---
-title: "Directory Manager Hardware Requirements"
-description: "Check the minimum processor, memory, and disk space a server needs to run Directory Manager, including extra RAM when you host SQL Server on it."
+title: "GroupID Hardware Requirements"
+description: "Check the minimum processor, memory, and disk space a server needs to run GroupID, including extra RAM when you host SQL Server on it."
 keywords:
-  - Directory Manager hardware requirements
+  - GroupID hardware requirements
   - minimum RAM
   - Elasticsearch memory
   - disk space
@@ -10,18 +10,18 @@ keywords:
 sidebar_position: 10
 ---
 
-# Directory Manager Hardware Requirements
+# GroupID Hardware Requirements
 
-The minimum hardware requirements for Directory Manager are:
+The minimum hardware requirements for GroupID are:
 
 - 1.4 GHz or faster with four or more cores on a 64-bit processor
-- 8 GB of RAM if Directory Manager manages Elasticsearch
+- 8 GB of RAM if GroupID manages Elasticsearch
 
     6 GB of RAM if you manage Elasticsearch yourself
 
     :::info
-    A dedicated server is recommended for Directory Manager. If you install any other
-    application on the Directory Manager server, adjust RAM requirements accordingly. For
+    A dedicated server is recommended for GroupID. If you install any other
+    application on the GroupID server, adjust RAM requirements accordingly. For
     example, if you install SQL Server, you may need to add 2-4 GB of RAM, depending on the edition of
     SQL Server.
     :::
@@ -38,4 +38,4 @@ The minimum hardware requirements for Directory Manager are:
 
 See Also
 
-- [Directory Manager 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)
+- [GroupID 11.0 System Requirements](/docs/directorymanager/11.0/requirements/requirements.md)

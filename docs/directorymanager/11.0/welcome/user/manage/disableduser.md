@@ -1,6 +1,6 @@
 ---
-title: "View and Manage Disabled Users in Directory Manager"
-description: "View disabled and expired users in the Directory Manager portal, then reinstate them, grant extensions, or export the list to Excel."
+title: "View and Manage Disabled Users in GroupID"
+description: "View disabled and expired users in the GroupID portal, then reinstate them, grant extensions, or export the list to Excel."
 keywords:
   - disabled users
   - expired users
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 70
 ---
 
-# View and Manage Disabled Users in Directory Manager
+# View and Manage Disabled Users in GroupID
 
 To view a list of disabled users in the identity store, click **Users** on the left navigation bar
 and select **My Direct Reports**. On the displayed page, select the **Disabled Users** tab.
@@ -55,7 +55,7 @@ The extension period applies to users who didn't validate their profiles within 
 period, and were consequently expired.
 
 On extension, the user's account is temporarily unlocked. If they don't validate their profile
-information within that extension period either, Directory Manager expires them again. Only the administrator
+information within that extension period either, GroupID expires them again. Only the administrator
 or Helpdesk users can reactivate these accounts.
 
 The duration of the extension period is set by the administrator in identity store configurations.
@@ -74,6 +74,6 @@ Directory**. You can select the entire directory or a domain to search active gr
 
 **See Also**
 
-- [Validate your profile in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
-- [Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)
+- [Validate your profile in GroupID](/docs/directorymanager/11.0/welcome/user/manage/validateprofile.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md)

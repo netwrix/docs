@@ -1,8 +1,8 @@
 ---
-title: "Configure Directory Manager in Okta for SSO"
-description: "Create the Directory Manager SAML app in Okta, download the Okta metadata file, and set up the users who can sign in."
+title: "Configure GroupID in Okta for SSO"
+description: "Create the GroupID SAML app in Okta, download the Okta metadata file, and set up the users who can sign in."
 keywords:
-  - Directory Manager Okta app
+  - GroupID Okta app
   - Okta SAML 2.0 app
   - Okta metadata file
   - Okta single sign-on
@@ -10,19 +10,19 @@ keywords:
 sidebar_position: 20
 ---
 
-# Configure Directory Manager in Okta for SSO
+# Configure GroupID in Okta for SSO
 
-To configure Directory Manager in Okta, follow these steps:
+To configure GroupID in Okta, follow these steps:
 
-- Create an app for Directory Manager in Okta
+- Create an app for GroupID in Okta
 - Download the Okta metadata file
 - Configure users in Okta
 
-## Create the Directory Manager App in Okta
+## Create the GroupID App in Okta
 
 1. Launch Okta and sign in.
 2. After you sign in, the Okta dashboard is displayed.
-3. To configure the Directory Manager application in Okta, click **Applications** in the ribbon at
+3. To configure the GroupID application in Okta, click **Applications** in the ribbon at
    the top.
 4. On the **Applications** page, click the **Add Application** button.
 5. The **Add Application** page displays some preconfigured options. Click the **Create New App**
@@ -30,24 +30,24 @@ To configure Directory Manager in Okta, follow these steps:
 6. On the **Create a New Application Integration** dialog box, select the **SAML 2.0** option button
    and click **Create**.
 7. On the **General Settings** tab of the **Create SAML Integration** page, provide a user-friendly
-   name for the app (for example, Directory Manager Okta Sign-On) in the **App name** box.
-8. Use the **App Logo** option to upload a logo for the Directory Manager app. This logo is
+   name for the app (for example, GroupID Okta Sign-On) in the **App name** box.
+8. Use the **App Logo** option to upload a logo for the GroupID app. This logo is
    displayed on the Okta dashboard. When a user signs in to Okta, they're redirected to the
-   dashboard that has Directory Manager and other applications listed for single sign-on.
+   dashboard that has GroupID and other applications listed for single sign-on.
 9. Click **Next**.
 10. On the **Configure SAML** tab of the **Create SAML Integration** page, provide the consumer URL
-    and audience URL that you generated for the Directory Manager client in the **Single sign on
+    and audience URL that you generated for the GroupID client in the **Single sign on
     URL** and **Audience URI (SP Entity ID)** boxes respectively. See the
     [Generate Consumer and Audience URLs for Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/generateurls.md)
     topic.
 11. Leave the **Default Relay State** field blank to not specify any default relay state.
 12. Leave the **Name ID format** field set to _Unspecified_.
 13. In the **Application username** list, ensure _Okta username_ is selected. This means that only
-    users defined in Okta can authenticate on the Directory Manager portal _Wizard_ using the Okta
+    users defined in Okta can authenticate on the GroupID portal _Wizard_ using the Okta
     single sign-on option. See the [Configure Users in Okta](#configure-users-in-okta) section.
 14. Click **Show Advanced Settings**.
 15. The **Attribute Statements** area is for specifying an attribute that is used to authenticate
-    users who sign in to Directory Manager using Okta. This attribute is meant for user
+    users who sign in to GroupID using Okta. This attribute is meant for user
     identification.  
     Skip this section and leave the default selections. The Okta provider authenticates users on
     the basis of the username.
@@ -57,12 +57,12 @@ To configure Directory Manager in Okta, follow these steps:
     software vendor. I’d like to integrate my app with Okta** and click **Finish**.
 <!-- vale Netwrix.FirstPerson = YES -->
 
-The Directory Manager Okta SSO app is now added in Okta, and the **Sign-On** page is displayed.
+The GroupID Okta SSO app is now added in Okta, and the **Sign-On** page is displayed.
 
 ## Download the Okta Metadata File
 
-You can download a metadata file from Okta and import it into Directory Manager to configure the
-Okta provider in Directory Manager.
+You can download a metadata file from Okta and import it into GroupID to configure the
+Okta provider in GroupID.
 
 **To download the file:**
 
@@ -74,13 +74,13 @@ Okta provider in Directory Manager.
    menu.
 4. The next dialog box displays the file at its download location. Either copy the file to your
    desktop for simplicity or save its location, so that you can locate it for import into
-   Directory Manager.
+   GroupID.
 
 ## Configure Users in Okta
 
-You must define users in Okta. Only these users can authenticate on the Directory Manager portal
+You must define users in Okta. Only these users can authenticate on the GroupID portal
 _Wizard_ using Okta. See the
-[Sign In to Directory Manager Using Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/signin.md)
+[Sign In to GroupID Using Okta](/docs/directorymanager/11.0/authenticate/asserviceprovider/okta/signin.md)
 topic.
 
 There are multiple ways to define users in Okta, such as:
@@ -89,7 +89,7 @@ There are multiple ways to define users in Okta, such as:
 - Use a CSV file to import users
 - Use the Active Directory tool provided by Okta (that syncs Active Directory users to Okta)
 
-For all of these, if Okta finds an existing user in its own database, it links the Directory Manager
+For all of these, if Okta finds an existing user in its own database, it links the GroupID
 application to the existing account. If not, it creates a new Okta account for the user. For new
 users, Okta generates a password and sends it to them by email.
 
@@ -108,7 +108,7 @@ users, Okta generates a password and sends it to them by email.
 3. After defining users, you must manually add these users. On the **People** tab, click the
    **Assign to People** button.
 4. On the **Assign Okta Sign-On to People** dialog box, click **Assign** for a user so that they can
-   authenticate on the Directory Manager portal _Wizard_ using Okta.
+   authenticate on the GroupID portal _Wizard_ using Okta.
 5. The next page on the dialog box displays the **User Name** field populated with the user name.
    Remove the domain after the user name, which is the part starting with "@". The user signs in to
    the _Wizard_ portal through Okta with the remaining user name.  

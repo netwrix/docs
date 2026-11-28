@@ -1,6 +1,6 @@
 ---
-title: "Register Directory Manager in Microsoft Entra ID"
-description: "Register the Directory Manager application in Microsoft Entra ID, assign directory roles, and add API permissions."
+title: "Register GroupID in Microsoft Entra ID"
+description: "Register the GroupID application in Microsoft Entra ID, assign directory roles, and add API permissions."
 keywords:
   - app registration
   - Microsoft Entra Admin Center
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Register Directory Manager in Microsoft Entra ID
+# Register GroupID in Microsoft Entra ID
 
-This topic describes how to register the Directory Manager application and assign its permissions.
+This topic describes how to register the GroupID application and assign its permissions.
 
 1. Sign in to the Microsoft Entra Admin Center ([https://portal.azure.com/](https://portal.azure.com/))
    with a user that is part of the "Global Administrator" role or any role that has rights to
@@ -66,7 +66,7 @@ This topic describes how to register the Directory Manager application and assig
             Account Administrators only.
 
             :::note
-            By default, the Directory Manager Administrator security role in a Microsoft Entra
+            By default, the GroupID Administrator security role in a Microsoft Entra
             ID identity store binds to Global Administrator. If you use minimum role assignment for
             the service account, also change the default Admin Security role criteria to the
             _User Account Administrators_ group.
@@ -86,7 +86,7 @@ This topic describes how to register the Directory Manager application and assig
     ![Application permissions tab listing Microsoft Graph permissions](/images/directorymanager/11.0/configureentraid/register/application_permission.webp)
 
     The page lists the permissions. See the
-    [Microsoft Entra ID Permissions for Directory Manager](/docs/directorymanager/11.0/configureentraid/register/apppermissions.md)
+    [Microsoft Entra ID Permissions for GroupID](/docs/directorymanager/11.0/configureentraid/register/apppermissions.md)
     topic for the mandatory permissions required for creating the directory object you want.
 
 13. [Optional] To add a permission from Office 365 Exchange Online API, click the **Add a
@@ -110,11 +110,11 @@ This topic describes how to register the Directory Manager application and assig
     See
     [SharePoint Delegated Permissions](/docs/directorymanager/11.0/configureentraid/register/apppermissions.md#sharepoint-delegated-permissions)
     section of the
-    [Microsoft Entra ID Permissions for Directory Manager](/docs/directorymanager/11.0/configureentraid/register/apppermissions.md)
+    [Microsoft Entra ID Permissions for GroupID](/docs/directorymanager/11.0/configureentraid/register/apppermissions.md)
     topic for the required permission name.
 
-This completes the registration process of Directory Manager in Microsoft Entra ID.
+This completes the registration process of GroupID in Microsoft Entra ID.
 
 See Also
 
-- [Directory Manager Registration Requirements in Entra ID](/docs/directorymanager/11.0/configureentraid/register/overview.md)
+- [GroupID Registration Requirements in Entra ID](/docs/directorymanager/11.0/configureentraid/register/overview.md)

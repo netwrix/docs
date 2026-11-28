@@ -1,19 +1,19 @@
 ---
-title: "Unlock your Directory Manager account"
+title: "Unlock your GroupID account"
 description: "Unlock your identity store account yourself after wrong password attempts or failed authentication, without waiting for the administrator."
 keywords:
   - unlock account
   - account lockout
-  - Directory Manager portal
+  - GroupID portal
   - Account Locked
   - multifactor authentication
   - identity store
 sidebar_position: 40
 ---
 
-# Unlock your Directory Manager account
+# Unlock your GroupID account
 
-In the Directory Manager portal, you can unlock your identity store account yourself, without having
+In the GroupID portal, you can unlock your identity store account yourself, without having
 to contact the administrator or wait.
 
 Your account can get locked because of:
@@ -24,14 +24,14 @@ Your account can get locked because of:
     - the duration to lock the user account (_Account lockout duration_).
 2. **Invalid response to authentication type(s)**
 
-    The Directory Manager administrator can specify a password policy for the identity store, which
+    The GroupID administrator can specify a password policy for the identity store, which
     includes:
 
     - the consecutive number of times a role member can provide a wrong value for any authentication
       type (Failed Authentication Attempts Threshold).
     - the duration to lock the user account (_Account Lockout duration_).
 
-With authentication disabled, you can't authenticate yourself on the Directory Manager portal, so you
+With authentication disabled, you can't authenticate yourself on the GroupID portal, so you
 can't unlock your identity store accounts or reset your passwords until the account is unlocked.
 
 ## Unlock identity store user accounts (after wrong password attempts) - enrolled users
@@ -131,7 +131,7 @@ instructions to unlock your account:
 6. Click **Unlock Account**.
 7. A message that the account has been unlocked successfully is displayed.
 
-You can now sign in to the Directory Manager portal with your account and perform the required function.
+You can now sign in to the GroupID portal with your account and perform the required function.
 
 ## Unlock identity store user accounts (after wrong password attempts) - unenrolled users
 
@@ -214,6 +214,6 @@ This type of account unlock can be resolved in one of the following two ways:
 
 **See Also**
 
-- [Enroll Your Identity Store Account in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
-- [Reset Your Account Password in Directory Manager](/docs/directorymanager/11.0/welcome/secondfactorauthentication/passwordreset.md)
-- [Change Your Password in Directory Manager](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)
+- [Enroll Your Identity Store Account in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/enrollaccount.md)
+- [Reset Your Account Password in GroupID](/docs/directorymanager/11.0/welcome/secondfactorauthentication/passwordreset.md)
+- [Change Your Password in GroupID](/docs/directorymanager/11.0/welcome/user/manage/changepassword.md)

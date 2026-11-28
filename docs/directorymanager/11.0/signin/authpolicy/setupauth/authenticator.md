@@ -1,5 +1,5 @@
 ---
-title: "Set Up Authenticator Authentication in Directory Manager"
+title: "Set Up Authenticator Authentication in GroupID"
 description: "Enable and enforce the Authenticator authentication type so users can enroll in and authenticate with an authenticator app such as Google Authenticator."
 keywords:
   - authenticator app
@@ -10,10 +10,10 @@ keywords:
 sidebar_position: 30
 ---
 
-# Set Up Authenticator Authentication in Directory Manager
+# Set Up Authenticator Authentication in GroupID
 
 Users must install an authenticator app, such as Google Authenticator or Microsoft Authenticator, on
-their phones and use it to enroll in and authenticate their identity store accounts in Directory Manager.
+their phones and use it to enroll in and authenticate their identity store accounts in GroupID.
 
 What do you want to do?
 
@@ -41,4 +41,4 @@ and authentication.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)

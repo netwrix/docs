@@ -37,7 +37,7 @@ In a Microsoft Entra ID identity store, the default query returns the following:
 You can do the following:
 
 1. To modify the query, click the **Query Designer** button. This opens the
-   [Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
+   [Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md)
    dialog box, where you can modify the query.
 2. You can also associate a Smart Group Update job with the group. This scheduled job
    updates the group’s membership when it runs.
@@ -55,4 +55,4 @@ You can do the following:
 
 **See Also**
 
-- [Create Active Directory Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)

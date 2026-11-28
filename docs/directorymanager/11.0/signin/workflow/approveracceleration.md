@@ -1,9 +1,9 @@
 ---
-title: "Configure Workflow Approver Acceleration in Directory Manager"
+title: "Configure Workflow Approver Acceleration in GroupID"
 description: "Escalate workflow requests to the next approver when no one acts on them, and learn the rules for users, groups, and default approvers."
 keywords:
   - workflow approver acceleration
-  - Directory Manager workflows
+  - GroupID workflows
   - Workflow Acceleration schedule
   - default approver
   - static request
@@ -11,7 +11,7 @@ keywords:
 sidebar_position: 30
 ---
 
-# Configure Workflow Approver Acceleration in Directory Manager
+# Configure Workflow Approver Acceleration in GroupID
 
 The workflow approver acceleration feature ensures that no workflow request remains undecided. It
 automatically accelerates a request to another approver if the current approver doesn't act on it
@@ -22,7 +22,7 @@ of days. The request accelerates to User B (first acceleration level), and if Us
 take action for x days, it accelerates to User C (second acceleration level). The request
 continues to accelerate to the maximum level, and if it isn't approved or denied, it goes to the
 default approver. When no default approver is defined, the request becomes static. A static request
-is one that is active in Directory Manager and can be approved or denied by the approver at any time.
+is one that is active in GroupID and can be approved or denied by the approver at any time.
 It continues to appear in the list of pending requests for the approvers.
 
 Workflow approver acceleration settings apply to all workflows in the identity store. However, you
@@ -39,7 +39,7 @@ To configure approver acceleration for an identity store, you must:
 
 A scheduled job, Workflow Acceleration, is responsible for accelerating requests to the next level,
 auto-approving requests, and sending notifications. See the
-[Update the Directory Manager Workflow Acceleration Schedule](/docs/directorymanager/11.0/signin/schedule/workflowacceleration.md)
+[Update the GroupID Workflow Acceleration Schedule](/docs/directorymanager/11.0/signin/schedule/workflowacceleration.md)
 topic.
 
 **To apply approver acceleration:**
@@ -73,14 +73,14 @@ topic.
 ## Workflow Approver Acceleration Rules
 
 When the approver of a workflow doesn't approve or deny a request within a certain number of days,
-Directory Manager applies rules to forward it to another approver.
+GroupID applies rules to forward it to another approver.
 
 On acceleration, the new approver receives an email notification to approve or deny the request.
 
 :::note
 Even after acceleration, all previous approvers are authorized to approve or deny the requests.
 Administrators can also approve or deny these requests at any given time from the _All Requests_
-node in the Directory Manager portal.
+node in the GroupID portal.
 :::
 
 The following sections describe workflow acceleration rules, with these assumed acceleration settings:
@@ -196,12 +196,12 @@ Rules for the default approver are:
    Example: A workflow request accelerates to User A but before User A approves or denies it and the
    next acceleration is due, User A is replaced by User B as manager. In this case, the request
    moves to User B and ascends User B's managerial line accordingly.
-5. If an administrator re-routes a workflow request to another user (User B) from the Directory Manager
+5. If an administrator re-routes a workflow request to another user (User B) from the GroupID
    portal, the request acceleration chain follows User B's managerial line.
 
 **See Also**
 
-- [Directory Manager Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
-- [Create and Manage Workflows in Directory Manager](/docs/directorymanager/11.0/signin/workflow/implement.md)
-- [Manage Advanced Workflow Settings in Directory Manager](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
-- [Link Directory Manager Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)
+- [GroupID Workflows Overview](/docs/directorymanager/11.0/signin/workflow/overview.md)
+- [Create and Manage Workflows in GroupID](/docs/directorymanager/11.0/signin/workflow/implement.md)
+- [Manage Advanced Workflow Settings in GroupID](/docs/directorymanager/11.0/signin/workflow/advancedsettings.md)
+- [Link GroupID Workflows to Power Automate](/docs/directorymanager/11.0/signin/workflow/integrate.md)

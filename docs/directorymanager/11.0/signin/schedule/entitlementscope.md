@@ -1,5 +1,5 @@
 ---
-title: "Edit the Directory Manager Entitlement Scope Schedule"
+title: "Edit the GroupID Entitlement Scope Schedule"
 description: "Learn how the Entitlement Scope schedule replicates permission changes made in the portal to Elasticsearch, and how to edit it."
 keywords:
   - Entitlement Scope schedule
@@ -10,36 +10,36 @@ keywords:
 sidebar_position: 50
 ---
 
-# Edit the Directory Manager Entitlement Scope Schedule
+# Edit the GroupID Entitlement Scope Schedule
 
 An Entitlement Scope schedule is automatically created for an identity store when:
 
 - A server is added for permission analysis on the **Entitlement** page in an Active Directory
   identity store. See the
-  [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+  [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
   topic for additional information on adding a server.
 
     Or
 
 - A SharePoint site is added for permission analysis on the **Entitlement** page in a Microsoft
   Entra ID identity store. See the
-  [Manage SharePoint Sites for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
+  [Manage SharePoint Sites for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
   topic for additional information on adding a SharePoint site.
 
-Using the Directory Manager portal, users can update the permissions on files and folders residing on file
+Using the GroupID portal, users can update the permissions on files and folders residing on file
 servers (for Active Directory) and the document libraries in SharePoint sites (for Microsoft Entra
 ID). These changes to permissions are instantly committed to the respective file server or site;
-however, they are displayed in the Directory Manager portal after the Entitlement Scope schedule runs.
+however, they are displayed in the GroupID portal after the Entitlement Scope schedule runs.
 
 By default, the schedule runs daily to replicate the permissions from file servers or sites to
 Elasticsearch. Permissions are replicated for the target folder, site, or document library and its
-subtrees, up to the nth level. Changes made to permissions outside of Directory Manager are beyond the scope
+subtrees, up to the nth level. Changes made to permissions outside of GroupID are beyond the scope
 of this schedule.
 
 Permissions replicated by the Entitlement Scope schedule are also replicated by the
-[Edit the Directory Manager Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md),
+[Edit the GroupID Entitlement Schedule](/docs/directorymanager/11.0/signin/schedule/entitlement.md),
 as the latter replicates all permissions. However, the default triggering frequency for the
-Directory Manager Entitlement schedule (weekly) requires a separate Entitlement Scope schedule.
+GroupID Entitlement schedule (weekly) requires a separate Entitlement Scope schedule.
 
 The Entitlement Scope schedule runs in the context of the following accounts:
 
@@ -82,7 +82,7 @@ Step 6 – In the **Scheduler Service Name** dropdown list, select a Scheduler s
 responsible for triggering this schedule. The number of services displayed in the list depends on the
 number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler service.
 See the
-[Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+[GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
 topic.
 
 Step 7 – The **Triggers** area displays the default triggering frequency for the schedule.
@@ -102,4 +102,4 @@ For general schedule info, see the
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

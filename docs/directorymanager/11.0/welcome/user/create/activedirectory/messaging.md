@@ -1,8 +1,8 @@
 ---
 title: "Mail-enable a user on the Exchange page"
-description: "Create a user or mailbox as mail-enabled by setting the alias, email type, and email address on the Exchange page of the Directory Manager wizards."
+description: "Create a user or mailbox as mail-enabled by setting the alias, email type, and email address on the Exchange page of the GroupID wizards."
 keywords:
-  - Directory Manager
+  - GroupID
   - mail-enabled user
   - Create User wizard
   - email address
@@ -20,7 +20,7 @@ Use this page to create the object as mail-enabled.
 
 2. The **Alias** box displays an alias for the user.
 3. The **Email Type** dropdown list displays all the types of email you can create.
-4. In the **Email Address** box, enter an email address for the user. Directory Manager uses this
+4. In the **Email Address** box, enter an email address for the user. GroupID uses this
    email address to send email notifications to the user.
 5. Click **Next**.
 
@@ -31,5 +31,5 @@ for the identity store. If it isn't configured, the **Messaging** page is disabl
 
 **See Also**
 
-- [Create an AD user in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
-- [Create an Active Directory contact in Directory Manager](/docs/directorymanager/11.0/welcome/user/create/activedirectory/contact.md)
+- [Create an AD user in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/user.md)
+- [Create an Active Directory contact in GroupID](/docs/directorymanager/11.0/welcome/user/create/activedirectory/contact.md)

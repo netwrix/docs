@@ -1,21 +1,21 @@
 ---
-title: "Group Reports in Directory Manager"
-description: "Browse the group report templates in Directory Manager, from group scope and membership to expiration and Smart Group reports, and generate one."
+title: "Group Reports in GroupID"
+description: "Browse the group report templates in GroupID, from group scope and membership to expiration and Smart Group reports, and generate one."
 sidebar_position: 40
 keywords:
-  - Directory Manager group reports
+  - GroupID group reports
   - group report templates
   - Smart Group report
   - group membership report
   - group expiration report
 ---
 
-# Group Reports in Directory Manager
+# Group Reports in GroupID
 
-Directory Manager Reports include reports for the group objects in the directory. To find a specific
+GroupID Reports include reports for the group objects in the directory. To find a specific
 report, type its name in the **Search Reports** box.
 
-Click any report template in the list to [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
+Click any report template in the list to [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md).
 
 The following table lists the reports in this category:
 
@@ -39,7 +39,7 @@ The following table lists the reports in this category:
 | All universal security groups in domain                                         | Provides a list of security groups with Universal scope in the domain.                                                                                                                               |
 | All unmanaged groups in domain                                                  | Provides a list of unmanaged (static) groups in the domain. Any change in the membership of an unmanaged group is made manually.                                                                     |
 | Deleted groups                                                                  | Provides a list of logically deleted groups. Logically deleted groups are those expired groups that aren't renewed within the time interval set in the identity store configurations.               |
-| Distribution Lists managed by GroupID                                           | Provides a list of the distribution lists that are managed by Directory Manager.                                                                                                                     |
+| Distribution Lists managed by GroupID                                           | Provides a list of the distribution lists that are managed by GroupID.                                                                                                                     |
 | Distribution lists with no delivery restrictions (Exchange)                     | Provides a list of groups that can receive email from everyone.                                                                                                                                      |
 | Dynasty with Script                                                             | Provides a list of Dynasties that have a script provided on the Smart Script tab of the Query Designer window.                                                                                       |
 | Expired groups                                                                  | Provides a list of groups that are either expired by the Group Life Cycle job according to their associated expiry policy or are manually expired by users.                                          |
@@ -62,8 +62,8 @@ The following table lists the reports in this category:
 | Groups with message delivery restrictions                                       | Provides a list of groups with message delivery restrictions options specified.                                                                                                                      |
 | Groups with message size restrictions                                           | Provides a list of groups with restriction on the maximum message size.                                                                                                                              |
 | Groups with no owner                                                            | Provides a list of groups that don't have an owner.                                                                                                                                                 |
-| Groups with security types                                                      | Provides a list of the groups with security types. Directory Manager supports three security types: Public, Private, and Semi-Private.                                                               |
-| Groups without additional owners                                                | Provides a list of groups that don't have any Directory Manager or Microsoft Exchange additional owners.                                                                                             |
+| Groups with security types                                                      | Provides a list of the groups with security types. GroupID supports three security types: Public, Private, and Semi-Private.                                                               |
+| Groups without additional owners                                                | Provides a list of groups that don't have any GroupID or Microsoft Exchange additional owners.                                                                                             |
 | Groups without expiration policy defined                                        | Provides a list of groups without an expiration policy defined.                                                                                                                                      |
 | Groups without message delivery restriction                                     | Provides a list of groups with no message delivery restrictions. Members of such groups can send messages to users in your Exchange organization and can accept or reject messages sent by any user. |
 | Groups without message size restrictions                                        | Provides a list of groups that have no message size restriction on an entire message as a whole, or the size of individual parts of a message, or both.                                              |
@@ -76,8 +76,8 @@ The following table lists the reports in this category:
 | Mail-enabled groups with no members (Exchange)                                  | Provides a list of all mail-enabled groups having no members.                                                                                                                                        |
 | Mail-enabled groups with no owner (Exchange)                                    | Provides a list of mail-enabled groups having no owner.                                                                                                                                              |
 | Mail enabled Security Groups (Exchange)                                         | Provides a list of mail-enabled groups in the domain.                                                                                                                                                |
-| Owners and objects they own Listed in [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md) category as well. | Provides a list of managers and their direct reports.                                                                                                                                                |
-| Security Groups managed by GroupID                                              | Provides a list of the security groups that are managed by Directory Manager.                                                                                                                        |
+| Owners and objects they own Listed in [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md) category as well. | Provides a list of managers and their direct reports.                                                                                                                                                |
+| Security Groups managed by GroupID                                              | Provides a list of the security groups that are managed by GroupID.                                                                                                                        |
 | Smart Groups/Dynasties with their update status                                 | Provides a list of Smart Groups and Dynasties with their update status information.                                                                                                                  |
 | Smart Groups and Included members                                               | Provides a list of Smart Group members that are mentioned in the Include list on the Include/Exclude tab of the Query Designer window.                                                               |
 | Smart Groups and number of expected members                                     | Provides a count of the expected members for the Smart Groups in the selected container or domain.                                                                                                   |
@@ -87,8 +87,8 @@ The following table lists the reports in this category:
 
 **See Also:**
 
-- [Generate Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
-- [Manage Directory Manager Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
-- [User Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/user.md)
-- [Directory Manager Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
-- [Contact Reports in Directory Manager](/docs/directorymanager/11.0/welcome/dashboard/contact.md)
+- [Generate Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/generate.md)
+- [Manage GroupID Reports](/docs/directorymanager/11.0/welcome/dashboard/manage.md)
+- [User Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/user.md)
+- [GroupID Computer Reports](/docs/directorymanager/11.0/welcome/dashboard/computer.md)
+- [Contact Reports in GroupID](/docs/directorymanager/11.0/welcome/dashboard/contact.md)

@@ -1,6 +1,6 @@
 ---
-title: "Edit the Directory Manager Entitlement Schedule"
-description: "Learn how the Directory Manager Entitlement schedule replicates permissions to Elasticsearch and how to edit its Scheduler service and triggers."
+title: "Edit the GroupID Entitlement Schedule"
+description: "Learn how the GroupID Entitlement schedule replicates permissions to Elasticsearch and how to edit its Scheduler service and triggers."
 keywords:
   - Entitlement schedule
   - permission replication
@@ -10,31 +10,31 @@ keywords:
 sidebar_position: 40
 ---
 
-# Edit the Directory Manager Entitlement Schedule
+# Edit the GroupID Entitlement Schedule
 
 An Entitlement schedule is automatically created for an identity store when:
 
 - A server is added for permission analysis on the Entitlement page in an Active Directory identity
   store. See the
-  [Manage File Servers for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
+  [Manage File Servers for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage.md)
   topic for additional information on adding a server.
 
     Or
 
 - A SharePoint site is added for permission analysis on the Entitlement page in a Microsoft Entra ID
   identity store. See the
-  [Manage SharePoint Sites for Directory Manager Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
+  [Manage SharePoint Sites for GroupID Entitlement](/docs/directorymanager/11.0/signin/entitlement/manage_1.md)
   topic for additional information on adding a SharePoint site.
 
 By default, the schedule runs weekly to compute permissions on shared files and folders residing on
 the specified servers (for Active Directory), and the document libraries present in the specified
 sites (for SharePoint). It then replicates these permissions to Elasticsearch, enabling users to
-view, manage, and update these permissions in the Directory Manager portal.
+view, manage, and update these permissions in the GroupID portal.
 
 On the very first run of the Entitlement schedule, it computes all permissions from the beginning and
 performs a complete replication. On each later run, it creates a parallel index for that specific
 server/SharePoint site index with the suffix _replication, which computes all permissions from
-scratch. In the meantime, users can perform actions in Directory Manager Entitlement. The actions performed
+scratch. In the meantime, users can perform actions in GroupID Entitlement. The actions performed
 during this parallel replication are committed directly at the provider and stored in the database.
 These changes are then immediately committed to Elasticsearch after the replication is complete.
 
@@ -42,7 +42,7 @@ The scope schedule changes are replicated after the new index is done replicatin
 the server/SharePoint. When this parallel index gets completely replicated, it becomes the new
 primary index for this server/SharePoint site and the _replication index is deleted from indices.
 
-The Directory Manager Entitlement schedule runs in the context of the following accounts:
+The GroupID Entitlement schedule runs in the context of the following accounts:
 
 - For file servers, the schedule runs in the context of the service account defined for the identity
   store. If you specify a different account for a file server, the schedule runs in the context
@@ -55,15 +55,15 @@ The Directory Manager Entitlement schedule runs in the context of the following 
   [Connect to a Site Using a Different Account](/docs/directorymanager/11.0/signin/entitlement/manage_1.md#connect-to-a-site-using-a-different-account)
   topic.
 
-You can't create or delete a Directory Manager Entitlement schedule; you can only edit the existing schedule.
+You can't create or delete a GroupID Entitlement schedule; you can only edit the existing schedule.
 
 What do you want to do?
 
-- [Update the Directory Manager Entitlement Schedule](#update-the-directory-manager-entitlement-schedule)
+- [Update the GroupID Entitlement Schedule](#update-the-groupid-entitlement-schedule)
 
-## Update the Directory Manager Entitlement Schedule
+## Update the GroupID Entitlement Schedule
 
-To update the Directory Manager Entitlement schedule:
+To update the GroupID Entitlement schedule:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -83,7 +83,7 @@ Step 6 – In the **Scheduler Service Name** dropdown list, select a Scheduler s
 responsible for triggering this schedule. The number of services displayed in the list depends on the
 number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler service.
 See the
-[Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+[GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
 topic.
 
 Step 7 – The **Triggers** area displays the default triggering frequency for the schedule.
@@ -104,4 +104,4 @@ topic.
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

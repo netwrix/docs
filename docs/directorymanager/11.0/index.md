@@ -1,8 +1,8 @@
 ---
-title: "Netwrix Directory Manager v11.0 Documentation"
-description: "Overview of Netwrix Directory Manager v11.0, an identity and access management (IAM) solution for managing groups, users, and passwords."
+title: "Netwrix GroupID v11.0 Documentation"
+description: "Overview of Netwrix GroupID v11.0, an identity and access management (IAM) solution for managing groups, users, and passwords."
 keywords:
-  - Directory Manager
+  - GroupID
   - identity and access management
   - group management
   - user management
@@ -10,18 +10,18 @@ keywords:
 sidebar_position: 1
 ---
 
-# Netwrix Directory Manager v11.0 Documentation
+# Netwrix GroupID v11.0 Documentation
 
 Managing directory objects, such as Active Directory users and groups, is a continuous task.
 Employees move locations and change departments frequently, so IT professionals must constantly
 update security and distribution groups, often by hand.
 
-Directory Manager is an identity and access management (IAM) solution that automates these changes
+GroupID is an identity and access management (IAM) solution that automates these changes
 and handles the requests and requirements that IT teams see every day.
 
 ## Functions
 
-Directory Manager works with a directory service, such as Active Directory and Microsoft Entra ID,
+GroupID works with a directory service, such as Active Directory and Microsoft Entra ID,
 to provide the following:
 
 - Group management
@@ -30,7 +30,7 @@ to provide the following:
 
 ### Group Management
 
-Directory Manager offers administration and automation features for directory groups. You can:
+GroupID offers administration and automation features for directory groups. You can:
 
 - Define rules to manage group memberships dynamically as changes occur within your organization.
 - Automate the group lifecycle with membership attestation and automatic expiry or deletion.
@@ -46,7 +46,7 @@ Directory Manager offers administration and automation features for directory gr
 
 ### User Management
 
-With Directory Manager, you can:
+With GroupID, you can:
 
 - Automate user provisioning and deprovisioning in bulk.
 - Establish ownership by defining a clear managerial hierarchy with dotted-line management.
@@ -61,7 +61,7 @@ With Directory Manager, you can:
 
 ### Password Management
 
-Directory Manager provides password management functions for administrators, help desk staff, and
+GroupID provides password management functions for administrators, help desk staff, and
 end users.
 
 - Administrators can define password checks, such as disallowing passwords that contain certain words

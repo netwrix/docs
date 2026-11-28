@@ -1,12 +1,12 @@
 ---
 title: "Update-Group Cmdlet"
-description: "Refresh the membership of a Smart Group or Dynasty in Directory Manager by re-running the LDAP query associated with it."
+description: "Refresh the membership of a Smart Group or Dynasty in GroupID by re-running the LDAP query associated with it."
 keywords:
   - Update-Group
   - update Smart Group membership
   - refresh Dynasty
   - LDAP query
-  - Directory Manager cmdlet
+  - GroupID cmdlet
   - Management Shell
 sidebar_position: 50
 ---
@@ -19,7 +19,7 @@ can be updated at any time using the **Set-SmartGroup** cmdlet. When the **Updat
 is run, it searches the directory to find recipients matching the criteria defined in the query
 and modifies the group membership list with the returned recipients, if any.
 
-You can view events related to this cmdlet in the Directory Manager portal, under the **History** node in
+You can view events related to this cmdlet in the GroupID portal, under the **History** node in
 the left panel.
 
 ## Syntax
@@ -40,7 +40,7 @@ Update-Group
 
 Example 1:
 
-The following command updates all the Directory Manager groups, by using the credentials of a locally logged-on
+The following command updates all the GroupID groups, by using the credentials of a locally logged-on
 user, in a container specified by the "SearchContainer" parameter.
 
 ```
@@ -60,6 +60,6 @@ Update-Group -SearchContainer "OU=Training,DC=HR,DC=Imanami,DC=US" -Credential $
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

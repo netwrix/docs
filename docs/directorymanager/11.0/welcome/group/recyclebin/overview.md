@@ -1,6 +1,6 @@
 ---
-title: "Restore or Delete Groups in the Directory Manager Recycle Bin"
-description: "Learn how Directory Manager handles physically and logically deleted groups, and how to filter, restore, or permanently delete them."
+title: "Restore or Delete Groups in the GroupID Recycle Bin"
+description: "Learn how GroupID handles physically and logically deleted groups, and how to filter, restore, or permanently delete them."
 keywords:
   - Recycle Bin
   - deleted groups
@@ -10,14 +10,14 @@ keywords:
 sidebar_position: 60
 ---
 
-# Restore or Delete Groups in the Directory Manager Recycle Bin
+# Restore or Delete Groups in the GroupID Recycle Bin
 
-The Directory Manager portal handles group deletion as either physical or logical.
+The GroupID portal handles group deletion as either physical or logical.
 
 ## Tombstone Groups
 
 Physically deleted groups have Tombstone as type. Physical group deletion refers to manually
-deleting groups using the **Delete** option on the **Actions** menu or shortcut menu. Directory Manager
+deleting groups using the **Delete** option on the **Actions** menu or shortcut menu. GroupID
 moves a physically deleted group to the Recycle Bin while stripping it of most of its properties.
 You can delete or restore a group from the Recycle Bin. The restoration process not only restores
 the group to its original container, but it also reinstates the home container for the group, if
@@ -79,7 +79,7 @@ Groups**.
 
 To delete a group from the Recycle Bin:
 
-1. In the Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
+1. In the GroupID portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
 3. Click **Delete** on the shortcut menu.
 
@@ -89,7 +89,7 @@ The selected groups are permanently deleted from the Recycle Bin.
 
 To restore a deleted group:
 
-1. In the Directory Manager portal, select **Groups > Deleted Groups** from the left pane.
+1. In the GroupID portal, select **Groups > Deleted Groups** from the left pane.
 2. From the groups list, select one or more groups.
 3. Click **Restore** on the shortcut menu.
 
@@ -101,7 +101,7 @@ for the connected identity store has the 'Reanimate Tombstone' permissions.
 :::
 
 :::note
-While Elasticsearch handles all searches in Directory Manager, the Recycle Bin is
+While Elasticsearch handles all searches in GroupID, the Recycle Bin is
 an exception, as it fetches data from the directory.
 :::
 
@@ -111,7 +111,7 @@ The Recycle Bin doesn't display data for a Microsoft Entra ID based identity sto
 
 **See Also**
 
-- [Create Active Directory Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
-- [Create an Active Directory Dynasty in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Create Active Directory Groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/group/group.md)
+- [Create an Active Directory Dynasty in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/createdynasty/createdynasty.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)

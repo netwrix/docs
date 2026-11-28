@@ -1,6 +1,6 @@
 ---
 title: "Get-ImanamiCommand Cmdlet"
-description: "List Directory Manager Management Shell cmdlets and command elements, filtered by name, verb, or noun."
+description: "List GroupID Management Shell cmdlets and command elements, filtered by name, verb, or noun."
 keywords:
   - Get-ImanamiCommand
   - Management Shell commands
@@ -11,7 +11,7 @@ sidebar_position: 40
 
 # Get-ImanamiCommand Cmdlet
 
-Use the Get-ImanamiCommand cmdlet to retrieve basic information about Directory Manager Management
+Use the Get-ImanamiCommand cmdlet to retrieve basic information about GroupID Management
 Shell cmdlets and command elements.
 
 ## Syntax
@@ -59,6 +59,6 @@ Get-ImanamiCommand -Verb *Y*
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID General Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/general/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

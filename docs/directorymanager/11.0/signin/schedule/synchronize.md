@@ -1,18 +1,18 @@
 ---
-title: "Create a Directory Manager Synchronize Schedule"
+title: "Create a GroupID Synchronize Schedule"
 description: "Create a schedule that runs Synchronize jobs and job collections automatically, and set its targets, triggers, and authentication."
 keywords:
   - Synchronize schedule
   - Synchronize jobs
   - job collections
   - scheduled synchronization
-  - Directory Manager schedule
+  - GroupID schedule
 sidebar_position: 130
 ---
 
-# Create a Directory Manager Synchronize Schedule
+# Create a GroupID Synchronize Schedule
 
-Use the Directory Manager scheduling function to configure any Synchronize job or job collection to
+Use the GroupID scheduling function to configure any Synchronize job or job collection to
 run automatically. Create a Synchronize schedule and add Synchronize jobs and job collections as
 targets. When the schedule runs, the target jobs and job collections are executed.
 
@@ -35,7 +35,7 @@ What do you want to do?
    responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 8. Add a Synchronize job or a job collection or both to this schedule.
 
@@ -66,4 +66,4 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)

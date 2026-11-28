@@ -14,10 +14,10 @@ sidebar_position: 140
 
 Users can enroll in and authenticate their identity store accounts using SMS if an
 SMS gateway account is linked with the identity store. Using this gateway account,
-Directory Manager sends confirmation codes to the users' mobile phone numbers for verification.
+GroupID sends confirmation codes to the users' mobile phone numbers for verification.
 
 For creating and managing SMS gateway accounts, see the
-[Manage SMS Gateway Accounts in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/manage.md)
+[Manage SMS Gateway Accounts in GroupID](/docs/directorymanager/11.0/signin/smsgateway/manage.md)
 topic.
 
 What do you want to do?
@@ -46,14 +46,14 @@ topic.
    before the identity store was created, it is selected automatically in this list.
 5. In the **Text message** box, modify the displayed message, except the [Code] placeholder.  
    This box displays the text that is sent to the users' mobile phone numbers along with the
-   confirmation code. Directory Manager randomly generates a confirmation code and inserts it into the [Code]
-   placeholder. Users must enter this code in Directory Manager for enrollment and authentication.
+   confirmation code. GroupID randomly generates a confirmation code and inserts it into the [Code]
+   placeholder. Users must enter this code in GroupID for enrollment and authentication.
 6. Click **Save**.
 
 ## Enforce SMS Authentication for a Security Role
 
 To enforce an authentication type, see the
-[Authentication Policy for Security Roles in Directory Manager](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
+[Authentication Policy for Security Roles in GroupID](/docs/directorymanager/11.0/signin/securityrole/policy/authentication.md)
 topic.
 
 Role members must use an enforced authentication type for multifactor authentication. When an
@@ -62,5 +62,5 @@ and authentication.
 
 **See Also**
 
-- [Directory Manager Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
-- [Manage SMS Gateway Accounts in Directory Manager](/docs/directorymanager/11.0/signin/smsgateway/manage.md)
+- [GroupID Authentication Policies](/docs/directorymanager/11.0/signin/authpolicy/authpolicy.md)
+- [Manage SMS Gateway Accounts in GroupID](/docs/directorymanager/11.0/signin/smsgateway/manage.md)

@@ -1,5 +1,5 @@
 ---
-title: "Job Templates in Directory Manager Synchronize"
+title: "Job Templates in GroupID Synchronize"
 description: "Create, import, export, rename, delete, and filter Synchronize job templates, and create a job from a template."
 keywords:
   - job templates
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 40
 ---
 
-# Job Templates in Directory Manager Synchronize
+# Job Templates in GroupID Synchronize
 
 Synchronize comes with a set of predefined job templates that represent some of the most common
 business scenarios in use. You can use these templates as is, modify them to suit your needs, or
@@ -32,7 +32,7 @@ What do you want to do?
 
 ## Create a Job Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, select **All Jobs**.
 3. From the **All Jobs** list, select the job you want to save as a template.
 4. Click the **three vertical dots** icon and select **Save as Template**.
@@ -41,12 +41,12 @@ What do you want to do?
 
 ## Import a Job Template
 
-You can also import job templates. Only job templates that were exported from Directory
-Manager Synchronize can be imported to other machines running Directory Manager Synchronize.
+You can also import job templates. Only job templates that were exported from GroupID
+Synchronize can be imported to other machines running GroupID Synchronize.
 
 The import action only requires you to select the location where the exported template resides.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Templates**.
 3. Click **Import Jobs** to open the dialog box.
 4. Click the **Browse** button to browse to the location where the exported job templates are
@@ -67,7 +67,7 @@ to differentiate it from the existing template.
 
 To export a job template:
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Templates**.
 3. On the **Job Templates** page, click the **three vertical dots** icon on the template in the list
    that you want to export and click **Export**.
@@ -77,7 +77,7 @@ right corner.
 
 ## Create a Job from a Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Templates**.
 
     For every template listed, the view provides its name, description, source, and the destination
@@ -91,12 +91,12 @@ right corner.
     Click the job template you want to use for the new job.
 
 4. This launches the
-   [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) wizard.
+   [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md) wizard.
    Proceed to map the settings stored in the template on to the new job.
 
 ## Rename a Job Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Templates**.
 3. On the **Job Templates** page, click the **three vertical dots** icon on the template in the list,
    and click **Rename**.
@@ -105,7 +105,7 @@ right corner.
 
 ## Delete a Job Template
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, select **Job Templates**.
 3. On the **Job Templates** list, click the **three vertical dots** icon of the template that you
    want to delete and select **Delete** from the menu.
@@ -115,7 +115,7 @@ right corner.
 You can apply filters on the **Job Templates** page to display only those job templates that match
 the criteria set in the **Search Filters** section.
 
-1. In the Directory Manager portal, select **Synchronize** in the left pane.
+1. In the GroupID portal, select **Synchronize** in the left pane.
 2. In the Synchronize portal, click **Job Templates**.
 3. In the **Search Filters** section, select one of the following attributes from the **Attributes**
    list to filter job templates:
@@ -136,6 +136,6 @@ the criteria set in the **Search Filters** section.
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Manage Jobs in Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
-- [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Manage Jobs in GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/manage/job.md)
+- [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)

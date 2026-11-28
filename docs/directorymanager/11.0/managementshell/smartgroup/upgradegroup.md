@@ -1,23 +1,23 @@
 ---
-title: "Upgrade-Group Cmdlet in Directory Manager"
-description: "Upgrade managed and non-managed groups from GroupID 9 and 10 to Directory Manager 11.0 with the Upgrade-Group cmdlet."
+title: "Upgrade-Group Cmdlet in GroupID"
+description: "Upgrade managed and non-managed groups from GroupID 9 and 10 to GroupID 11.0 with the Upgrade-Group cmdlet."
 keywords:
   - Upgrade-Group
-  - Directory Manager Management Shell
+  - GroupID Management Shell
   - upgrade Smart Groups
   - upgrade Dynasties
   - upgrade non-managed groups
 sidebar_position: 60
 ---
 
-# Upgrade-Group Cmdlet in Directory Manager
+# Upgrade-Group Cmdlet in GroupID
 
 The **Upgrade-Group** cmdlet upgrades managed (Smart Groups and Dynasties) and non-managed
-groups of GroupID 9 and 10 to Directory Manager 11.0.
+groups of GroupID 9 and 10 to GroupID 11.0.
 
 :::note
-Directory Manager upgrades groups from the connected database to the current instance of Directory
-Manager. This database can be an upgraded database or a copy of the database from a previous
+GroupID upgrades groups from the connected database to the current instance of GroupID.
+This database can be an upgraded database or a copy of the database from a previous
 version, such as GroupID 9 or 10.
 :::
 
@@ -53,7 +53,7 @@ Upgrade-Group
 Example 1:
 
 The following command upgrades a GroupID 10.0 Smart Group _GIDSmart1_ using the database _GroupID10_
-that resides on SQL Server _sqlexpress_. To upgrade the Smart Group to Directory Manager 11.0, the
+that resides on SQL Server _sqlexpress_. To upgrade the Smart Group to GroupID 11.0, the
 command uses the _sa_ user account of the specified SQL Server.
 
 ```
@@ -64,7 +64,7 @@ Example 2:
 
 The following command upgrades all GroupID 10.0 Smart Groups in the _Jobs_ container using the
 _GroupID10_ database that resides on SQL Server _sqlexpress_. To upgrade the Smart Groups to
-Directory Manager 11.0, the command uses the _sa_ user account of the specified SQL Server.
+GroupID 11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "2"
@@ -74,8 +74,8 @@ Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqle
 Example 3:
 
 The following command upgrades all GroupID 10.0 Dynasties in the _Jobs_ container using the
-_GroupID10_ database that resides on SQL Server _sqlexpress_. To upgrade the Dynasties to Directory
-Manager 11.0, the command uses the _sa_ user account of the specified SQL Server.
+_GroupID10_ database that resides on SQL Server _sqlexpress_. To upgrade the Dynasties to GroupID
+11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "3"
@@ -85,8 +85,8 @@ Upgrade-Group -SearchContainer "OU=Jobs,DC=Demo1,DC=com" -SQLServer "msvr02\sqle
 Example 4:
 
 The following command upgrades non-managed groups in the _GID10_ container using the _GroupID10_
-database that resides on SQL Server _sqlexpress_. To upgrade the non-managed groups to Directory
-Manager 11.0, the command uses the _sa_ user account of the specified SQL Server.
+database that resides on SQL Server _sqlexpress_. To upgrade the non-managed groups to GroupID
+11.0, the command uses the _sa_ user account of the specified SQL Server.
 
 ```
 Upgrade-Group -Identity "departsales" -SearchContainer "OU=GID10,DC=Demo1,DC=com" -SQLServer "msvr02\sqlexpress" -SQLUserName "sa" -Database "GroupID10" -Password "support123R" -GroupIDVersion "10.0" -GroupType "1"
@@ -94,6 +94,6 @@ Upgrade-Group -Identity "departsales" -SearchContainer "OU=GID10,DC=Demo1,DC=com
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Smart Group Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Smart Group Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/smartgroup/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

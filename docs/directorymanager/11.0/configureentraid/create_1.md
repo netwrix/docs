@@ -1,6 +1,6 @@
 ---
 title: "Create a Microsoft Entra ID Service Account User"
-description: "Create the Microsoft Entra ID user that Directory Manager uses as the service account for a Microsoft Entra ID identity store."
+description: "Create the Microsoft Entra ID user that GroupID uses as the service account for a Microsoft Entra ID identity store."
 keywords:
   - Microsoft Entra ID user
   - service account
@@ -14,7 +14,7 @@ sidebar_position: 30
 
 After you register your application with Microsoft Entra ID, formerly Azure Active Directory, create
 a user to set as the service account when you create an identity store for Microsoft Entra ID in
-Directory Manager.
+GroupID.
 
 To create a user in Microsoft Entra ID:
 
@@ -68,17 +68,17 @@ To create a user in Microsoft Entra ID:
 
         Select the **Review + create** button.
 
-By default, the Directory Manager Administrator security role in a Microsoft Entra ID identity
+By default, the GroupID Administrator security role in a Microsoft Entra ID identity
 store binds to Global Administrator. If you use minimum role assignment for the service account,
 also change the default Admin Security role criteria to the User Account Administrators group.
 
 The user is created and added to your Microsoft Entra ID tenant.
 
-You can now create an identity store for Microsoft Entra ID in Directory Manager.
+You can now create an identity store for Microsoft Entra ID in GroupID.
 
 Ensure that you copy the application ID that Microsoft Entra ID generates when you register the
 application. You need this application ID when you create an identity store for Microsoft Entra ID.
 
 See Also
 
-- [Register Directory Manager in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)
+- [Register GroupID in Microsoft Entra ID](/docs/directorymanager/11.0/configureentraid/register/appregister.md)

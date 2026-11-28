@@ -1,5 +1,5 @@
 ---
-title: "Set-Notifications Cmdlet in Directory Manager"
+title: "Set-Notifications Cmdlet in GroupID"
 description: "Change the notification recipients and membership lifecycle notification settings of an identity store with the Set-Notifications cmdlet."
 keywords:
   - Set-Notifications
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 190
 ---
 
-# Set-Notifications Cmdlet in Directory Manager
+# Set-Notifications Cmdlet in GroupID
 
 Use the **Set-Notifications** cmdlet to modify the notification settings of an identity store.
 
@@ -61,6 +61,6 @@ Set-Notifications -IdentityStoreName AdStore9 -NotifyUserGroupJoinML $true -XDay
 
 ## See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Identity Store Cmdlets](/docs/directorymanager/11.0/managementshell/identitystore/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

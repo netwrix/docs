@@ -1,6 +1,6 @@
 ---
-title: "Connect-IdentityStore Cmdlet in Directory Manager"
-description: "Connect Directory Manager Management Shell to an identity store with a chosen authentication mode and credentials using Connect-IdentityStore."
+title: "Connect-IdentityStore Cmdlet in GroupID"
+description: "Connect GroupID Management Shell to an identity store with a chosen authentication mode and credentials using Connect-IdentityStore."
 keywords:
   - Connect-IdentityStore
   - connect to identity store
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 10
 ---
 
-# Connect-IdentityStore Cmdlet in Directory Manager
+# Connect-IdentityStore Cmdlet in GroupID
 
-If an identity store of the connected domain is available, Directory Manager Management Shell
+If an identity store of the connected domain is available, GroupID Management Shell
 connects to that identity store when you launch it. If one doesn't exist, the
 **Connect-IdentityStore** cmdlet establishes a connection with the required identity store.
 
@@ -47,6 +47,6 @@ Connect-IdentityStore -AuthenticationMode 2 -IdentityStoreId 2 -Credential $Cred
 
 ## See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Identity Store Connection Cmdlets in Directory Manager](/docs/directorymanager/11.0/managementshell/identitystoreconnection/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [Identity Store Connection Cmdlets in GroupID](/docs/directorymanager/11.0/managementshell/identitystoreconnection/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

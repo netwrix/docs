@@ -1,6 +1,6 @@
 ---
-title: "Create a Microsoft Teams Group in Directory Manager"
-description: "Create a Microsoft Teams group in the identity store by using the Create Group wizard in the Directory Manager portal."
+title: "Create a Microsoft Teams Group in GroupID"
+description: "Create a Microsoft Teams group in the identity store by using the Create Group wizard in the GroupID portal."
 keywords:
   - create team
   - Microsoft Teams
@@ -9,9 +9,9 @@ keywords:
 sidebar_position: 80
 ---
 
-# Create a Microsoft Teams Group in Directory Manager
+# Create a Microsoft Teams Group in GroupID
 
-Using the Directory Manager portal, you can create a Team in the identity store.
+Using the GroupID portal, you can create a Team in the identity store.
 
 What do you want to do?
 
@@ -19,7 +19,7 @@ What do you want to do?
 
 ## Create Teams
 
-1. In the Directory Manager portal, click the **Create New** button and select **Team**.
+1. In the GroupID portal, click the **Create New** button and select **Team**.
 
     The **Create Group** wizard opens to the **Group Type** page.
 
@@ -28,7 +28,7 @@ What do you want to do?
     wizard by adding or removing pages and fields.
     :::
 
-2. On the [Select a group type in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
+2. On the [Select a group type in GroupID](/docs/directorymanager/11.0/welcome/group/create/grouptype.md),
    select the required group type and click **Next**.
 3. On the General page, specify basic information about the group.
 4. If you select Static Group, specify members for the group on the
@@ -45,4 +45,4 @@ What do you want to do?
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

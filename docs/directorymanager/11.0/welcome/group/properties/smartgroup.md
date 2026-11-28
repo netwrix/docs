@@ -41,7 +41,7 @@ server and storage for the query to fetch the records from.
 **Query Designer**
 
 To modify the query, click the **Query Designer** button. This launches the
-[Query Designer in the Directory Manager portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md) dialog
+[Query Designer in the GroupID portal](/docs/directorymanager/11.0/welcome/group/querydesigner/overview.md) dialog
 box, where you can modify the query.
 
 Smart Groups and Dynasties in a Microsoft Entra ID based identity store use a device structured query
@@ -80,4 +80,4 @@ You can create a new schedule other than the ones on the list.
 
 **See Also**
 
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)

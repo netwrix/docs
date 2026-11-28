@@ -50,12 +50,12 @@ ignores the value in the source field mapped to it.
       name in the target field.
     - If static text is set to variables **%NOW%** and **%Computer%** as follows:
 
-        _Updated by Directory Manager %NOW% from %COMPUTERNAME%._
+        _Updated by GroupID %NOW% from %COMPUTERNAME%._
 
         Running the job returns the current date and the name of the host machine. The results
         look like this:
 
-        _Updated by Directory Manager 1/12/2003 10:04 AM from EX01-DTM_
+        _Updated by GroupID 1/12/2003 10:04 AM from EX01-DTM_
 
         Environment variables might vary for different Windows releases and editions. Before using
         environment variables, determine that they are supported by the Windows installed on your
@@ -156,10 +156,10 @@ need.
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
 - [Map Objects and Fields in a Synchronize Job ](/docs/directorymanager/11.0/welcome/synchronize/create/objectfieldsandmapping.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)
-- [Write Synchronize Scripts for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
-- [Visual Basic .NET Scripting for Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
-- [Sample Transform Scripts for Directory Manager Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
+- [Write Synchronize Scripts for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/dtmscript.md)
+- [Visual Basic .NET Scripting for GroupID](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/visualbasicnetbasic.md)
+- [Sample Transform Scripts for GroupID Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/sampletransformscript.md)
 - [Sample Container Scripts for Synchronize](/docs/directorymanager/11.0/welcome/synchronize/dtmscript/samplecontainerscript.md)

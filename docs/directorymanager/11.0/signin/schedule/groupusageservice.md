@@ -1,5 +1,5 @@
 ---
-title: "Create a Group Usage Service Schedule in Directory Manager"
+title: "Create a Group Usage Service Schedule in GroupID"
 description: "Create a Group Usage Service schedule that reads Exchange expansion logs to record when distribution lists were last used."
 keywords:
   - Group Usage Service schedule
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Create a Group Usage Service Schedule in Directory Manager
+# Create a Group Usage Service Schedule in GroupID
 
 A Group Usage Service schedule monitors expansion events and timestamps affected groups of the
 Microsoft Exchange Servers for an identity store.
@@ -19,7 +19,7 @@ An expansion event occurs when an Exchange Server expands a distribution list fo
 The Exchange Server records the event in its message tracking log. The Group Usage Service schedule reads this log to find the timestamp showing when the distribution list was last used.
 
 The timestamp is then used by the
-[Create a Group Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md)
+[Create a Group Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md)
 to extend or reduce the life of mail-enabled distribution groups based on their usage. See the
 [Enable Group Usage Lifecycle](/docs/directorymanager/11.0/signin/identitystore/configure/grouplifecycle.md#enable-group-usage-lifecycle)
 topic.
@@ -39,12 +39,12 @@ What do you want to do?
    The **Create Schedule** page appears.
 5. In the **Schedule Name** box, enter a name for the schedule.
 6. The **Name Preview** box displays the schedule name prefixed with \_GUS\_\_; email notifications show the schedule with this name.
-7. Select a Directory Manager portal URL in the **Portal URL** dropdown list to include it in notifications
+7. Select a GroupID portal URL in the **Portal URL** dropdown list to include it in notifications
    generated for the schedule. Users are redirected to this portal to perform any necessary action.
 8. In the **Scheduler Service Name** dropdown list, select a Scheduler service that's responsible for triggering this schedule. The number of services in the list depends on
    the number of Elasticsearch clusters in the environment, as each cluster has its own Scheduler
    service. See the
-   [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+   [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
    topic.
 9. You can specify containers as targets for the schedule. The schedule processes all groups in
    those containers and sub-containers.
@@ -80,7 +80,7 @@ What do you want to do?
        to start the schedule.
 
         - **On a schedule:** Starts a schedule at a specific time of day or multiple times on a daily, weekly, or monthly schedule.
-        - **At startup:** Starts the schedule every time the GroupIDSchedulerService starts. This is a Directory Manager service created in native IIS.
+        - **At startup:** Starts the schedule every time the GroupIDSchedulerService starts. This is a GroupID service created in native IIS.
 
     2. On selecting an option, the dialog box displays relevant settings for the trigger.  
        The **Triggers** dialog box is the same as the one in Windows Task Scheduler. See the
@@ -112,7 +112,7 @@ What do you want to do?
     specify the signed-in user's account. See the
     [Schedules for Microsoft Entra ID Identity Store](/docs/directorymanager/11.0/signin/schedule/overview.md#schedules-for-microsoft-entra-id-identity-store)
     section of the
-    [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md) topic for
+    [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md) topic for
     additional information.
     :::
 
@@ -124,5 +124,5 @@ What do you want to do?
 
 See Also
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
-- [Directory Manager Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [GroupID Scheduler Service](/docs/directorymanager/11.0/signin/service/schedulerservice.md)

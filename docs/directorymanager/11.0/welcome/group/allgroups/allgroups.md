@@ -1,5 +1,5 @@
 ---
-title: "View and Manage All Groups in Directory Manager"
+title: "View and Manage All Groups in GroupID"
 description: "View every group in the identity store, then update, expire, renew, join, move, or delete groups and filter the list."
 keywords:
   - All Groups
@@ -10,19 +10,19 @@ keywords:
 sidebar_position: 30
 ---
 
-# View and Manage All Groups in Directory Manager
+# View and Manage All Groups in GroupID
 
 This tab lists all groups defined in the identity store including all active groups:
 
-- [View Private Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/privategroups.md)
-- [View Semi-Private Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/semiprivategroups.md)
-- [View Public Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/publicgroups.md)
-- [View Expired Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allexpiredgroups.md)
-- [View Expiring Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allexpiringgroups.md)
-- [View Smart Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/allsmartgroups.md)
-- [View Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/alldynasties.md)
-- [View Password Expiry Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/passwordexpirygroups.md)
-- [View Microsoft Teams Groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/allgroups/teams.md) (for Microsoft Entra ID based
+- [View Private Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/privategroups.md)
+- [View Semi-Private Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/semiprivategroups.md)
+- [View Public Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/publicgroups.md)
+- [View Expired Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allexpiredgroups.md)
+- [View Expiring Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allexpiringgroups.md)
+- [View Smart Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/allsmartgroups.md)
+- [View Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/alldynasties.md)
+- [View Password Expiry Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/passwordexpirygroups.md)
+- [View Microsoft Teams Groups in GroupID](/docs/directorymanager/11.0/welcome/group/allgroups/teams.md) (for Microsoft Entra ID based
   identity store)
 
 Viewing all groups from the directory source may slow down the loading of groups in the view,
@@ -37,7 +37,7 @@ especially when there are more than 100 groups.
     Tasks** tab.
 
 - View and modify the
-  [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
+  [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md) of a
   group.
 - [Expire a group manually](/docs/directorymanager/11.0/welcome/group/workingwithgroups/groupexpiryfunction.md#expire-a-group-manually).
   After you expire the group, it appears in the **Expired Group** list.
@@ -109,7 +109,7 @@ Use the page numbers under the group listing to page through all groups.
 
 You can also control the number of records to be displayed per page by modifying the **Search
 results per page** setting on the
-[Configure Directory Manager Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
+[Configure GroupID Portal Settings](/docs/directorymanager/11.0/welcome/generalfeatures/portal.md) panel.
 
 ## Modify Search Directory
 
@@ -119,7 +119,7 @@ a domain to search active groups from.
 ## Transfer Ownership
 
 You can find the
-[Transfer Group Ownership in Directory Manager](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
+[Transfer Group Ownership in GroupID](/docs/directorymanager/11.0/welcome/group/transferownership.md) option
 on the top right corner. Transfer Ownership lets you:
 
 - Assign owners to orphan groups.
@@ -146,8 +146,8 @@ You can add filters in **All Group Grid Filters** while searching for specific g
 
 **See Also**
 
-- [Create groups in Directory Manager](/docs/directorymanager/11.0/welcome/group/create/overview.md)
-- [Dynasties in Directory Manager](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
-- [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
-- [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Create groups in GroupID](/docs/directorymanager/11.0/welcome/group/create/overview.md)
+- [Dynasties in GroupID](/docs/directorymanager/11.0/welcome/group/dynasty/overview.md)
+- [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+- [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

@@ -7,7 +7,7 @@ keywords:
   - Smart Group Update job
   - source query
   - destination query
-  - Directory Manager
+  - GroupID
 sidebar_position: 60
 ---
 
@@ -26,7 +26,7 @@ configure the notification settings for the job.
        manually or from the Synchronize job scheduler.
 
         If you are modifying an existing job, you can also add a new schedule for the job. See
-        [Create a Directory Manager Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
+        [Create a GroupID Synchronize Schedule](/docs/directorymanager/11.0/signin/schedule/synchronize.md)
 
 2. Set up email notification of job run results:
 
@@ -101,13 +101,13 @@ configure the notification settings for the job.
 10. Click **Finish** to create the job.
 11. After you run the job, a workflow request is triggered.
 12. The generated workflow request appears in the
-    [Workflow Requests in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
+    [Workflow Requests in the GroupID Portal](/docs/directorymanager/11.0/welcome/request/overview.md) section for the
     workflow approvers. If the approver approves the workflow request, the job executes the
     results.
 
 **See Also**
 
-- [Create a Synchronize Job in Directory Manager](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
-- [Create a Job Collection in Directory Manager Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
+- [Create a Synchronize Job in GroupID](/docs/directorymanager/11.0/welcome/synchronize/create/create.md)
+- [Create a Job Collection in GroupID Synchronize ](/docs/directorymanager/11.0/welcome/synchronize/create/create_1.md)
 - [Transform Data in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/overview.md)
 - [Auto-Generate Unique Passwords in Synchronize Jobs](/docs/directorymanager/11.0/welcome/synchronize/transformation/autogenerateuniquepassword.md)

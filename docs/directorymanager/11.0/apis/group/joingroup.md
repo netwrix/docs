@@ -1,16 +1,16 @@
 ---
-title: "Join a Group API in Directory Manager"
+title: "Join a Group API in GroupID"
 description: "Join a group with a specified membership type, start date, end date, and reason."
 sidebar_position: 90
 keywords:
   - join group API
   - group membership type
-  - Directory Manager API
+  - GroupID API
   - membership request
 unlisted: true
 ---
 
-# Join a Group API in Directory Manager
+# Join a Group API in GroupID
 
 Use this API to join a group with the membership type you specify.
 
@@ -70,5 +70,5 @@ POST
 
 See Also
 
-- [Directory Manager Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
-- [Directory Manager API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)
+- [GroupID Group APIs](/docs/directorymanager/11.0/apis/group/groupapis.md)
+- [GroupID API Common Errors](/docs/directorymanager/11.0/apis/commonerrors.md)

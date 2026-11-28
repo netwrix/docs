@@ -1,21 +1,21 @@
 ---
-title: "View and Export Admin Center History in Directory Manager"
+title: "View and Export Admin Center History in GroupID"
 description: "View, annotate, filter, and export the history of actions performed in Admin Center, such as creating identity stores and changing notification templates."
 keywords:
   - Admin Center history
   - history export
   - annotate history
-  - Directory Manager auditing
+  - GroupID auditing
 sidebar_position: 40
 ---
 
-# View and Export Admin Center History in Directory Manager
+# View and Export Admin Center History in GroupID
 
-Directory Manager automatically tracks the following actions performed in Admin Center:
+GroupID automatically tracks the following actions performed in Admin Center:
 
 - Creation and deletion of identity stores
 - Creation and deletion of SMS gateway accounts
-- Creation and deletion of applications, namely Directory Manager portal, Mobile service, Data service, and
+- Creation and deletion of applications, namely GroupID portal, Mobile service, Data service, and
   Security service
 - Addition and removal of security questions in the global question pool
 - Changes to global replication settings
@@ -37,7 +37,7 @@ What do you want to do?
 
 ## View Admin Center History
 
-You can view the history data that Directory Manager automatically tracks for high-level actions performed in Admin
+You can view the history data that GroupID automatically tracks for high-level actions performed in Admin
 Center.
 
 To view history:
@@ -99,5 +99,5 @@ You can export Admin Center history to Microsoft Excel, CSV, and XML formats.
 
 **See Also**
 
-- [History in Directory Manager](/docs/directorymanager/11.0/signin/concepts/history.md)
-- [Directory Manager Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)
+- [History in GroupID](/docs/directorymanager/11.0/signin/concepts/history.md)
+- [GroupID Event Logging](/docs/directorymanager/11.0/signin/identitystore/view/eventlogging.md)

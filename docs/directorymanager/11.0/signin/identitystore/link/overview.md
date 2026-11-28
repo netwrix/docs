@@ -1,5 +1,5 @@
 ---
-title: "Link Identity Stores in Directory Manager"
+title: "Link Identity Stores in GroupID"
 description: "Learn how linking identity stores keeps identical user and group objects in sync across domains and how to link two or more stores."
 keywords:
   - link identity stores
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 60
 ---
 
-# Link Identity Stores in Directory Manager
+# Link Identity Stores in GroupID
 
-You can link identity stores in Directory Manager. In this way, identical user and group objects
+You can link identity stores in GroupID. In this way, identical user and group objects
 that exist in multiple identity stores (domains) can be linked together and automatically synced.
 
 For example, you can create a link between the following types of identity stores:
@@ -24,12 +24,12 @@ For example, you can create a link between the following types of identity store
 
 :::note
 (1) Two identity stores built on the same domain can't be linked.  
-(2) An identity store must be replicated in Directory Manager before it can be linked.
+(2) An identity store must be replicated in GroupID before it can be linked.
 :::
 
-## Linked Identity Stores and the Directory Manager Portal
+## Linked Identity Stores and the GroupID Portal
 
-Linking isn't effective until the linked identity stores are associated with a Directory Manager
+Linking isn't effective until the linked identity stores are associated with a GroupID
 portal, such as Portal_A. Consider the following:
 
 - The administrator links IdentityStoreA and IdentityStoreB.
@@ -102,12 +102,12 @@ Linking two identity stores follows a straightforward process:
   operator.  
   You must create a separate filter expression for user and group objects.
 - When two objects have the same value for the mapped attributes in the two identity stores,
-  Directory Manager identifies them as identical objects, and hence links them.
+  GroupID identifies them as identical objects, and hence links them.
 
 For example, to link IdentityStoreA to IdentityStoreB, select the displayName and cn attributes from
 IdentityStoreA and IdentityStoreB respectively to map them. Now when an object has _Mary Jones_ as
 value for the distinguishedname attribute in IdentityStoreA and an object has _Mary Jones_ as value
-for the cn attribute in IdentityStoreB, Directory Manager identifies them as identical objects
+for the cn attribute in IdentityStoreB, GroupID identifies them as identical objects
 existing in two distinct directories, and links them.
 
 :::info
@@ -117,7 +117,7 @@ For mapping, always use attributes that store unique values.
 ## How to Link Multiple Identity Stores
 
 You can link more than two identity stores; in fact, you can link identity
-stores created for any provider Directory Manager supports.
+stores created for any provider GroupID supports.
 
 You can't create one link to link multiple identity stores. Instead, to link three
 identity stores, create two links; to link four identity stores, create three
@@ -128,7 +128,7 @@ Here is how it works:
 
 - Link IdentityStoreA to IdentityStoreB by following the discussion in the
   [How to Link Two Identity Stores](#how-to-link-two-identity-stores) section.  
-  Directory Manager now treats these two identity stores as a single entity. Call it Entity1.
+  GroupID now treats these two identity stores as a single entity. Call it Entity1.
 - Next, link IdentityStoreA or IdentityStoreB to IdentityStoreC using the same method.  
   This establishes a link between Entity1 and IdentityStoreC.
 
@@ -136,5 +136,5 @@ In this way, you can create a chain of links between identity stores.
 
 **See Also**
 
-- [Identity Stores in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/overview.md)
-- [Manage Identity Store Links in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/link/manage.md)
+- [Identity Stores in GroupID](/docs/directorymanager/11.0/signin/identitystore/overview.md)
+- [Manage Identity Store Links in GroupID](/docs/directorymanager/11.0/signin/identitystore/link/manage.md)

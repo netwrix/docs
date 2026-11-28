@@ -1,8 +1,8 @@
 ---
-title: "Get a User with the Directory Manager API"
+title: "Get a User with the GroupID API"
 description: "Retrieve the attributes and details of a single user from an identity store."
 keywords:
-  - Directory Manager API
+  - GroupID API
   - get user
   - Users/{userIdentity} endpoint
   - identity store
@@ -10,7 +10,7 @@ sidebar_position: 140
 unlisted: true
 ---
 
-# Get a User with the Directory Manager API
+# Get a User with the GroupID API
 
 Use this API to get information about a single user.
 
@@ -171,5 +171,5 @@ GET
 See Also
 
 - Common Errors
-- [User APIs in Directory Manager](/docs/directorymanager/11.0/apis/user/userapis.md)
+- [User APIs in GroupID](/docs/directorymanager/11.0/apis/user/userapis.md)
 - Group APIs

@@ -1,5 +1,5 @@
 ---
-title: "Get-Schedule Cmdlet in Directory Manager"
+title: "Get-Schedule Cmdlet in GroupID"
 description: "Use the Get-Schedule cmdlet to list scheduled jobs in the connected identity store and filter them by job type, trigger type, or notifications."
 keywords:
   - Get-Schedule
@@ -10,7 +10,7 @@ keywords:
 sidebar_position: 10
 ---
 
-# Get-Schedule Cmdlet in Directory Manager
+# Get-Schedule Cmdlet in GroupID
 
 The **Get-Schedule** cmdlet retrieves the scheduled jobs created in the identity store connected
 to the current instance of the Management Shell. By default, this cmdlet returns all the jobs
@@ -82,6 +82,6 @@ This example retrieves the two scheduled jobs – GUS1 and GLM6 – through the 
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Scheduling Cmdlets](/docs/directorymanager/11.0/managementshell/scheduling/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)

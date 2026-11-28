@@ -1,5 +1,5 @@
 ---
-title: "Manage Group Lifecycle Settings in Directory Manager"
+title: "Manage Group Lifecycle Settings in GroupID"
 description: "Set default expiry, deletion wait periods, usage-based renewal, attestation, and expiry notifications to control the lifecycle of groups in an identity store."
 keywords:
   - group lifecycle
@@ -10,9 +10,9 @@ keywords:
 sidebar_position: 30
 ---
 
-# Manage Group Lifecycle Settings in Directory Manager
+# Manage Group Lifecycle Settings in GroupID
 
-Directory Manager manages the group life cycle through all stages, from creation to deletion. Use
+GroupID manages the group life cycle through all stages, from creation to deletion. Use
 the following settings to control the group life cycle in an identity store:
 
 - A default expiry policy for groups
@@ -31,7 +31,7 @@ The Group Life Cycle schedule defined for the identity store is responsible for 
 life cycle settings to groups. This schedule runs on containers you specify as its targets, to
 process the groups that reside therein. The schedule doesn't process groups that reside outside of the target containers;
 hence, the group life cycle policy isn't applied to them. See the
-[Create a Group Life Cycle Schedule in Directory Manager](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md) topic.
+[Create a Group Life Cycle Schedule in GroupID](/docs/directorymanager/11.0/signin/schedule/grouplifecycle.md) topic.
 
 :::note
 Before you specify a group life cycle policy for a Microsoft Entra ID identity store, see the
@@ -129,7 +129,7 @@ By default, security group expiration is disabled, indicating that security grou
 store can't be expired either manually or by the Group Life Cycle schedule. You must enable it to
 expire security groups.
 
-When a security group expires, its membership is cleared. However, Directory Manager keeps a backup
+When a security group expires, its membership is cleared. However, GroupID keeps a backup
 of its membership in the database.
 
 :::note
@@ -162,7 +162,7 @@ way, those groups don't expire even if you enable the expiry of security groups.
 
 ## Auto Delete Expired Groups
 
-You can set Directory Manager to delete expired groups automatically a set number of days after
+You can set GroupID to delete expired groups automatically a set number of days after
 expiry. These wait days apply to both auto expired and manually expired groups. The Group Life Cycle
 schedule is responsible for deleting expired groups. These automatically deleted groups are called
 logically deleted groups.
@@ -182,9 +182,9 @@ logically deleted groups.
 
 You can set the expiry of mail-enabled distribution groups based on their usage. It works as follows:
 
-- If an expiring group was used in the last x number of days, Directory Manager renews it by
+- If an expiring group was used in the last x number of days, GroupID renews it by
   reapplying the expiry policy to it.
-- If a group wasn't used in the last x number of days, Directory Manager reduces its life to 7 days.
+- If a group wasn't used in the last x number of days, GroupID reduces its life to 7 days.
 
 The Group Usage Service schedule time stamps each mail-enabled distribution group with respect to
 its last usage. The Group Life Cycle schedule extends or reduces the life of a group based on this
@@ -230,7 +230,7 @@ before renewing them. While enabling group attestation, consider the following:
 - With group attestation enabled, the Group Usage Lifecycle settings can't be applied. If those
   settings are already defined, they get disabled when you enable group attestation. See the
   [Enable Group Usage Lifecycle](#enable-group-usage-lifecycle) topic.
-- For attestation, group owners must use the Directory Manager portal.
+- For attestation, group owners must use the GroupID portal.
 - In the default portal template, a few fields (attributes) for group attestation are specified. You
   can add and remove fields to include those that you want group owners to validate and update.
 - You must attest parent and child Dynasties individually. Child Dynasties
@@ -256,13 +256,13 @@ before renewing them. While enabling group attestation, consider the following:
 
     - Select the **Specify member inactive period** checkbox and specify a duration in days (for
       example, 5). When the status of a member is set to _inactive_, the member is instantly removed
-      from group membership in the directory. In Directory Manager, however, the member remains a
+      from group membership in the directory. In GroupID, however, the member remains a
       group member until the specified number of days, starting from the inactivation date. During
       this period, the member can be activated (added back to group membership). If the member isn't
       activated, the Membership Life Cycle schedule removes the member from group membership in
-      Directory Manager when the specified number of days pass.
+      GroupID when the specified number of days pass.
     - If you want inactive members to be instantly removed from group membership in the directory
-      and in Directory Manager, do one of the following:
+      and in GroupID, do one of the following:
 
         - Select the **Specify member inactive period** checkbox and specify "0" in the box.
         - Don't select the **Specify member inactive period** checkbox.
@@ -303,9 +303,9 @@ The Group Life Cycle schedule handles group expiry notifications as follows:
   notification is sent.
 - When the **1 day before group expiration** option is selected for sending notifications and the
   Group Life Cycle schedule evaluates the group for the first time a day before its expiration date,
-  Directory Manager extends the group's expiration date by 7 days.
+  GroupID extends the group's expiration date by 7 days.
 
 **See Also**
 
-- [Schedules in Directory Manager](/docs/directorymanager/11.0/signin/schedule/overview.md)
-- [ Group Expiry and Deletion in Directory Manager](/docs/directorymanager/11.0/signin/identitystore/configure/groupexpirydeletion.md)
+- [Schedules in GroupID](/docs/directorymanager/11.0/signin/schedule/overview.md)
+- [ Group Expiry and Deletion in GroupID](/docs/directorymanager/11.0/signin/identitystore/configure/groupexpirydeletion.md)

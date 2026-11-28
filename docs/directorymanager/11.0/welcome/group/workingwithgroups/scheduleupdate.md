@@ -43,7 +43,7 @@ When a scheduled job updates a Smart Group or Dynasty, it involves the following
 
 ## Update Methods
 
-The Directory Manager portal provides different methods to update Smart Groups and Dynasties, namely:
+The GroupID portal provides different methods to update Smart Groups and Dynasties, namely:
 
 - Manual update
 - Scheduled update
@@ -52,7 +52,7 @@ In both methods, the query defined for the group runs to update membership. The 
 is that in a manual update, you can run the query at any time, while scheduled updates run
 automatically at a specified frequency.
 
-In the Directory Manager portal, you can perform the following functions for Smart Groups and Dynasties.
+In the GroupID portal, you can perform the following functions for Smart Groups and Dynasties.
 
 What do you want to do?
 
@@ -64,13 +64,13 @@ What do you want to do?
 
 ## Modify the query for a Smart Group/Dynasty
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
     want to modify the query for.
 
 2. Select the required Smart Group or Dynasty and click **Properties** on the toolbar.
@@ -98,19 +98,19 @@ query.
 Membership update settings defined for the identity store also impact Smart Group and Dynasty
 membership update.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 
     The Groups page is displayed with the **My Groups** tab in view.
 
     Or
 
-    [Search Directory Objects in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
+    [Search Directory Objects in the GroupID Portal](/docs/directorymanager/11.0/welcome/generalfeatures/search.md) the group you
     want to associate a Smart Group Update job with.
 
 2. Select the required Smart Group or Dynasty and click **Properties** on the toolbar.
 
     The group's
-    [View and Edit Group Properties in Directory Manager](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
+    [View and Edit Group Properties in GroupID](/docs/directorymanager/11.0/welcome/group/properties/overview.md)
     page is displayed.
 
 3. On the **Smart Group/Query Designer** tab, select a Smart Group Update job from the **Scheduled
@@ -134,7 +134,7 @@ You can manually update a Smart Group or Dynasty any time by selecting the group
 Membership update settings defined for the identity store also impact Smart Group and Dynasty
 membership update.
 
-1. In the Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
+1. In the GroupID portal, click **Groups** in the left navigation pane, select **My Groups**.
 2. On the Groups page, click the **My Groups**, **My Memberships**, or **My Expiring Groups** tab.
 3. On the page displayed, select the groups for manual membership update and click **Update** on the
    toolbar.
@@ -174,7 +174,7 @@ a member:
 
 A member of administrator role has created a Smart Group named QDGroup1.
 
-1. In the Directory Manager portal, search for the group whose query you want to view or modify.
+1. In the GroupID portal, search for the group whose query you want to view or modify.
 2. On the **Properties** page, select the **Smart Group** tab.
 3. Click the **Query Designer** button to open the Query Designer dialog box.
 
@@ -192,4 +192,4 @@ A member of administrator role has created a Smart Group named QDGroup1.
 
 **See Also**
 
-- [Work with Groups in the Directory Manager Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)
+- [Work with Groups in the GroupID Portal](/docs/directorymanager/11.0/welcome/group/workingwithgroups/workingwithgroups.md)

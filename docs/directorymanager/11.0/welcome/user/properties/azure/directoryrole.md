@@ -1,6 +1,6 @@
 ---
 title: "Entra ID User Directory Role Tab"
-description: "View or change the directory role and role privileges assigned to a Microsoft Entra ID user or mailbox in Directory Manager."
+description: "View or change the directory role and role privileges assigned to a Microsoft Entra ID user or mailbox in GroupID."
 keywords:
   - Entra ID directory role
   - Global Administrator
@@ -25,4 +25,4 @@ the checkboxes for the role privileges for assignment.
 
 **See Also**
 
-- [Directory Manager User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)
+- [GroupID User, Mailbox, and Contact Properties](/docs/directorymanager/11.0/welcome/user/properties/overview.md)

@@ -5,7 +5,7 @@ keywords:
   - Expire-Group
   - expire group
   - group expiry
-  - Directory Manager PowerShell
+  - GroupID PowerShell
 sidebar_position: 20
 ---
 
@@ -14,7 +14,7 @@ sidebar_position: 20
 The **Expire-Group** commandlet expires a group temporarily. The commandlet stops all notifications to the
 expired group.
 
-You can view events related to this commandlet in the Directory Manager portal, under the
+You can view events related to this commandlet in the GroupID portal, under the
 **History** node in the left pane.
 
 ## Syntax
@@ -42,6 +42,6 @@ Expire-Group –Identity "CN=Training,OU=Local Recruiting,DC=HR,DC=Imanami,DC=US
 
 See Also
 
-- [Directory Manager Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
-- [Directory Manager Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
-- [Directory Manager Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
+- [GroupID Management Shell Cmdlets](/docs/directorymanager/11.0/managementshell/commands.md)
+- [GroupID Group Cmdlets](/docs/directorymanager/11.0/managementshell/group/overview.md)
+- [GroupID Management Shell Parameters](/docs/directorymanager/11.0/managementshell/parameters.md)
